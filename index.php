@@ -1,6 +1,6 @@
 <html>
     <head>
-	<link rel="stylesheet" href="style.css?v=8">
+	<link rel="stylesheet" href="style.css?v=9">
     </head>
     <body>
 	<h1 id="title-container" class="morph-container">

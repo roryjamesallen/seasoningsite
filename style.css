@@ -35,9 +35,11 @@ body {
     left: 0;
     top: 0;
     padding: 0.5rem;
+    /*
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+*/
 }
 #toolbar {
     width: 50vw;
@@ -65,7 +67,7 @@ body {
     height: 100%;
 }
 .morph-container {
-    -webkit-filter: blur(7px) contrast(100) invert(0);
+    /*-webkit-filter: blur(7px) contrast(100) invert(0);*/
     background: white;
     mix-blend-mode: darken;
     will-change: opacity;
@@ -76,7 +78,7 @@ body {
     mix-blend-mode: difference;
     background: black;
     color: white;
-
+    /*
     padding: 1px;
     -webkit-background-clip: content-box;
     background-clip: content-box;
@@ -86,6 +88,7 @@ body {
     transform: translateZ(0);
     will-change: transform;
     -webkit-perspective: 1000;
+*/
 }
 
 

@@ -1,17 +1,33 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include 'lib.php';
+?>
 <html>
     <head>
 	<link rel="stylesheet" href="style.css?v=13">
     </head>
     <body>
+	<div id="grain-overlay"></div>
+	<div id="gl5-backdrop"><div></div></div>
 	<h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1>
-	<h2 class="moving-children" movementpx="4">
-	    <span>l</span><span>i</span><span>v</span><span>e</span><span></span><span>e</span><span>v</span><span>e</span><span>n</span><span>t</span><span>s</span><span></span><span>i</span><span>n</span><span></span><span>t</span><span>h</span><span>e</span><span></span><span>s</span><span>o</span><span>u</span><span>t</span><span>h</span><span></span><span>w</span><span>e</span><span>s</span><span>t</span>
+	<h2 class="moving-children" movementpx="4"><?php echo $tagline; ?></h2>
 
-	</h2>
+	<div class="paragraph" style="margin-top: 1rem;">
+	    Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.
+	</div>
+	
+	<h3 style="margin-top: 1rem;">All Shows</h3>
+	<div class="paragraph" style="margin-top: 1rem">
+	    <?php echo renderEventList(); ?>
+	</div>
+
 	<div class="paragraph" style="margin-top: 1rem">
 	    <iframe src="https://ra.co/promoters/119677/widget/events?theme=light" height="100%" width="100%" style="border: none;"></iframe>
-		    
 	</div>
+	
     </body>
 </html>
 <script>

@@ -27,10 +27,38 @@ body {
     margin: 0;
     color: white;
 }
+#grain-overlay {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    background: 
+	linear-gradient(0deg, rgba(255,255,255,255), rgba(0,0,0,0)),
+	url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter) saturate(0)'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+}
+#gl5-backdrop {
+    position: absolute;
+    width: 100vw;
+    z-index: -1;
+    aspect-ratio: 1 / 2;
+    filter: blur(20px);
+    pointer-events: none;
+}
+#gl5-backdrop > div {
+    width: 100%;
+    height: 100%;
+    background-color: var(--green);
+    mask-image: url('images/gl5-outline.svg');
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    filter: brightness(0.7);
+}
 h1 {
     width: var(--page-width);
     height: 14rem;
-    margin: 4rem auto -4rem;
+    margin: 4rem auto -5rem;
     padding: 1rem;
     left: 0;
     top: 0;
@@ -39,6 +67,7 @@ h1 {
     justify-content: space-between;
     font-family: GaramondBold;
     font-weight: normal;
+    color: white;
 }
 h1 > span {
     margin: -7rem -5.25rem 0;
@@ -48,8 +77,17 @@ h1 > span {
 h2 {
     width: var(--page-width);
     margin: 0 auto;
-    font-size: 3rem;
+    font-size: 2.7rem;
     display: flex;
+    font-weight: normal;
+    font-family: GaramondBold;
+}
+h3 {
+    width: var(--page-width);
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: normal;
+    font-family: GaramondBold;
 }
 span:empty {
     display: block;
@@ -87,12 +125,54 @@ span:empty {
     background: black;
     mix-blend-mode: lighten;
     filter: blur(3px) contrast(10);
+    overflow: hidden;
 }
 .paragraph {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: justify;
     width: var(--page-width);
     margin: 0 auto;
+}
+
+
+
+/* Events */
+.event-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.event {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background: rgba(0,0,0,0.1);
+}
+.event-date, .event-venue, .event-city {
+    flex-basis: 30%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    font-size: 2rem;
+}
+.event-city {
+    text-align: center;
+}
+.event-venue {
+    text-align: right;
+}
+.event > hr {
+    flex-basis: 100%;
+    height: 3px;
+    border: none;
+    background: var(--green);
+}
+.artist-link {
+    color: white;
+    text-decoration: none;
+}
+.artist-link:hover {
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 1000px){
@@ -104,7 +184,7 @@ span:empty {
 	margin-bottom: -9rem;
     }
     h2 {
-	font-size: 2rem;
+	font-size: 1.75rem;
     }
     #toolbar {
 	height: 100px;

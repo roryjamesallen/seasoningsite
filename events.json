@@ -1,0 +1,316 @@
+{
+    "1": {
+	"date": "2022-04-02T00:00:00-00:00",
+	"venue": "SVA",
+	"city": "Stroud",
+	"artists": [
+	    "FrazerRay",
+	    "Jakobin",
+	    "Lovellious",
+	    "Ansätze"
+	]
+    },
+    "2": {
+	"name": "Winter Party",
+	"date": "2022-12-23T00:00:00-00:00",
+	"venue": "Studio 18",
+	"city": "Stroud",
+	"artists": [
+	    "Berwick",
+	    "Lovellious",
+	    "Crème",
+	    "Ansätze",
+	    "Yorke"
+	]
+    },
+    "3": {
+	"name": "Earthquake Solidarity Fundraiser",
+	"date": "2023-03-04T00:00:00-00:00",
+	"venue": "SVA",
+	"city": "Stroud",
+	"artists": [
+	    "Berwick",
+	    "Jakobin",
+	    "Monobrow",
+	    "Scuffed",
+	    "Kurent",
+	    "HOP",
+	    "DJ WITH-E",
+	    "Frove",
+	    "Lysergic",
+	    "YouYou",
+	    "Amelie",
+	    "Ansätze",
+	    "spr1ngbr34ka"
+	]
+    },
+    "4": {
+	"date": "2023-03-24T00:00:00-00:00",
+	"venue": "The Island",
+	"city": "Bristol",
+	"artists": [
+	    "Yushh",
+	    "Berwick",
+	    "Jakobin",
+	    "Calaida",
+	    "Ansätze",
+	    "spr1ng br34ka"
+	]
+    },
+    "5": {
+	"date": "2023-04-15T00:00:00-00:00",
+	"venue": "Studio 18",
+	"city": "Stroud",
+	"artists": [
+	    "Tañ",
+	    "Berwick",
+	    "Moomaw",
+	    "Ansätze",
+	    "spr1ng br34ka",
+	    "Scaro-B",
+	    "Eilema"
+	]
+    },
+    "6": {
+	"name": "Ram Fete",
+	"date": "2023-08-19T00:00:00-00:00",
+	"venue": "Studio 18",
+	"city": "Stroud",
+	"artists": [
+	    "Global Beats",
+	    "H.O.P",
+	    "Jakobin",
+	    "Jungle Cast",
+	    "Lovellious",
+	    "Monobrow",
+	    "Valley Steppas",
+	    "Crème",
+	    "Albino Tarantino",
+	    "Berwick",
+	    "Careful Spider",
+	    "Cotswold Track",
+	    "Earl Temple Foundation",
+	    "Felix Jupiter",
+	    "Poppy Lomax",
+	    "Wooolheads",
+	    "Yorke",
+	    "YouYou",
+	    "Eilema",
+	    "Kincaid",
+	    "Loose Joints",
+	    "Marcel Lune",
+	    "Memory Play",
+	    "RISHI",
+	    "SASK",
+	    "Wizard Tree"
+	]
+    },
+    "7": {
+	"date": "2023-12-22T00:00:00-00:00",
+	"venue": "SVA",
+	"city": "Stroud",
+	"artists": [
+	    "Berwick",
+	    "YouYou",
+	    "Lovellious",
+	    "Tikoda",
+	    "Leftleft",
+	    "Chungo",
+	    "Joice",
+	    "Throblabs"
+	]
+    },
+    "8": {
+	"date": "2024-03-30T00:00:00-00:00",
+	"venue": "The Goods Shed",
+	"city": "Stroud",
+	"artists": [
+	    "Papa Nugs",
+	    "Berwick",
+	    "YouYou"
+	]
+    },
+    "9": {
+	"name": "Day Festival",
+	"date": "2024-06-01T00:00:00-00:00",
+	"venue": "Studio 18",
+	"city": "Stroud",
+	"artists": [
+	    "Lovellious",
+	    "Jakobin",
+	    "Amelie",
+	    "Crème",
+	    "Righteous Heretics",
+	    "H.O.P",
+	    "Ansätze",
+	    "Dudbridge Garage Int.",
+	    "Yorke",
+	    "DJ WITH-E",
+	    "Scaro-B",
+	    "DJ Opher",
+	    "Subterra",
+	    "Webb"
+	]
+    },
+    "10": {
+	"name": "Palestine Solidarity Fundraiser",
+	"date": "2024-11-02T00:00:00-00:00",
+	"venue": "SVA",
+	"city": "Stroud",
+	"artists": [
+	    "Sarra Wild",
+	    "Loefah",
+	    "YouYou"
+	]
+    },
+    "11": {
+	"date": "2024-12-21T00:00:00-00:00",
+	"venue": "Studio 18",
+	"city": "Stroud",
+	"artists": [
+	    "MJK",
+	    "RISHI",
+	    "Kincaid",
+	    "Berwick",
+	    "Lovellious",
+	    "Amelie"
+	]
+    },
+    "12": {
+	"name": "Day Festival",
+	"date": "2025-05-31T00:00:00-00:00",
+	"venue": "Studio 18",
+	"city": "Stroud",
+	"artists": [
+	    "BAKEY",
+	    "Amelie",
+	    "Neon Pumps",
+	    "Darius Akashic",
+	    "Monobrow",
+	    "Drumocracy",
+	    "Wobgoblin",
+	    "Fever Dream",
+	    "DJ Opher",
+	    "Finch",
+	    "Immigrant Parties",
+	    "H.O.P",
+	    "Pegs",
+	    "Dan Parties",
+	    "Jakobin",
+	    "Lovellious",
+	    "Kusmishko",
+	    "Not So Genius",
+	    "Tibor",
+	    "LWS",
+	    "Yushh",
+	    "Ostad",
+	    "Papi Clamm",
+	    "Sam Judd",
+	    "Sask",
+	    "SSSLIP",
+	    "Yours Truly",
+	    "Sludge Hub",
+	    "spr1ng br34ka",
+	    "Ash",
+	    "Arfa P",
+	    "Ben Randle",
+	    "BFG",
+	    "Blyth",
+	    "Chaka",
+	    "Chase Tha Worst",
+	    "Crème",
+	    "Oscar P",
+	    "Rudini",
+	    "Ruben",
+	    "SollÉ",
+	    "T Santana",
+	    "Vinnie B",
+	    "Righteous Heretics",
+	    "Yorke"
+	]
+    },
+    "13": {
+	"date": "2025-04-05T00:00:00-00:00",
+	"venue": "The Love Inn",
+	"city": "Bristol",
+	"artists": [
+	    "Minor Science",
+	    "Amelie",
+	    "Yours Truly"
+	]
+    },
+    "14": {
+	"name": "3 Years of Seasoning",
+	"date": "2025-04-19T00:00:00-00:00",
+	"venue": "Studio 18",
+	"city": "Stroud",
+	"artists": [
+	    "Mia Koden",
+	    "RIZ LA TEEF",
+	    "Amelie",
+	    "Lovellious"
+	]
+    },
+    "15": {
+	"date": "2025-06-06T00:00:00-00:00",
+	"venue": "The Love Inn",
+	"city": "Bristol",
+	"artists": [
+	    "Jay Duncan",
+	    "Small Crab",
+	    "Syz",
+	    "YouYou"
+	]
+    },
+    "16": {
+	"date": "2025-11-29T00:00:00-00:00",
+	"venue": "The Island",
+	"city": "Bristol",
+	"artists": [
+	    "Alia",
+	    "Oblig",
+	    "Axle",
+	    "Dyslecta",
+	    "Ostad",
+	    "SASK"
+	]
+    },
+    "17": {
+	"date": "2025-12-20T00:00:00-00:00",
+	"venue": "Studio 18",
+	"city": "Stroud",
+	"artists": [
+	    "Pariah",
+	    "Lovellious",
+	    "YouYou",
+	    "Rider Shafique",
+	    "Re:Cast",
+	    "Saskia",
+	    "Ansätze",
+	    "Papi Clamm",
+	    "Mandrill Sound"
+	]
+    },
+    "18": {
+	"date": "2026-02-27T00:00:00-00:00",
+	"venue": "Strange Brew",
+	"city": "Bristol",
+	"artists": [
+	    "Tim Reaper",
+	    "Severine"
+	]
+    },
+    "19": {
+	"date": "2026-02-07T00:00:00-00:00",
+	"venue": "The Old Blue Last",
+	"city": "London",
+	"artists": [
+	    "Aloka",
+	    "Carré",
+	    "Kincaid",
+	    "Ottomani Parker",
+	    "Ostad",
+	    "spr1ng br34ka"
+	]
+    }
+}

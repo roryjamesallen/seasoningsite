@@ -34,7 +34,10 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    padding: 0.5rem; 
+    padding: 0.5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 #toolbar {
     width: 50vw;
@@ -59,7 +62,7 @@ body {
     transform: scale(1.1);
 }
 .morph-container {
-    filter: blur(5px) contrast(10) invert(1);
+    -webkit-filter: blur(5px) contrast(10) invert(1);
     background: white;
     mix-blend-mode: lighten;
     will-change: opacity;

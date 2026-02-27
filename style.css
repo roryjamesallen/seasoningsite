@@ -1,0 +1,35 @@
+@font-face {
+    font-family: GaramondRegular;
+    src: url('fonts/GaramondRegular.otf');
+}
+:root {
+    --green: #0f9171;
+    --light-blue: #36abde;
+    --dark-blue: #5c7bb5;
+    --purple: #796684;
+    --red: #b53e66;
+    --orange: #e1a25d;
+    --yellow: #b0b859;
+    --black: #32262e;
+    --white: #d6d6e2;
+}
+html {
+    font-family: GaramondRegular;
+}
+#title-container {
+    width: fit-content;
+    margin: 6rem auto;
+    position: relative;
+    filter: blur(5px) contrast(20);
+    mix-blend-mode: color;
+}
+#title-container > * {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: inherit;
+    transition-timing-function: ease;
+    background: white;
+    mix-blend-mode: multiply;
+    padding: 0.2rem;
+}

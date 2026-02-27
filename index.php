@@ -1,6 +1,6 @@
 <html>
     <head>
-	<link rel="stylesheet" href="style.css?v=7">
+	<link rel="stylesheet" href="style.css?v=8">
     </head>
     <body>
 	<h1 id="title-container" class="morph-container">
@@ -65,7 +65,7 @@
 	 updateMovingLetters(element, elements[i][1]);
 	 if (elements[i][2] == true){ //animated
 	     setTimeout(function(){ element.style.transition = 'transform 5s ease-in-out'; }, 1000);
-	     setInterval(function(){ updateMovingLetters(element, elements[i][1]); }, 2500);
+	     //setInterval(function(){ updateMovingLetters(element, elements[i][1]); }, 2500);
 	 }
      }
  }

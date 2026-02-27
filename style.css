@@ -48,8 +48,8 @@ body {
     gap: 2rem;
     justify-content: center;
     background: black;
-    mix-blend-mode: darken;
-    filter: blur(2px) contrast(3) invert(1);
+    filter: invert(1);
+    mix-blend-mode: multiply;
 }
 #toolbar > * {
     width: fit-content;
@@ -65,7 +65,7 @@ body {
     height: 100%;
 }
 .morph-container {
-    -webkit-filter: blur(7px) contrast(10) invert(0);
+    -webkit-filter: blur(7px) contrast(100) invert(0);
     background: white;
     mix-blend-mode: darken;
     will-change: opacity;
@@ -76,9 +76,6 @@ body {
     mix-blend-mode: difference;
     background: black;
     color: white;
-    
-    transition: inherit;
-    transition-timing-function: ease;
 
     padding: 1px;
     -webkit-background-clip: content-box;

@@ -27,8 +27,8 @@
  function updateMovingLetters(element){
      const max_letter_offset_rem = 0.5; // +- in both directions
      for (let i=0; i<element.children.length; ++i){
-	 let horizontal_offset_rem = Math.floor(Math.random()*2) * max_letter_offset_rem;
-	 const vertical_offset_rem =  Math.floor(Math.random()*2) * max_letter_offset_rem;
+	 let horizontal_offset_rem = (Math.random()*2) * max_letter_offset_rem;
+	 const vertical_offset_rem =  (Math.random()*2) * max_letter_offset_rem;
 	 element.children[i].style.transform = 'translate('+horizontal_offset_rem+'rem, '+vertical_offset_rem+'rem)';
      }
  }
@@ -51,9 +51,9 @@
      title_letters.style.transition = 'transform 1s ease-out, opacity 1s ease-out';
      title_letters.style.opacity = '1';
      //updateMovingLetters(title_letters);
-     setTimeout(function(){ title_letters.style.transition = 'transform 10s ease-in'; }, 1000);
+     setTimeout(function(){ title_letters.style.transition = 'transform 5s ease-in-out'; }, 1000);
      title_letters.style.fontSize = title_size_rem + 'rem';
-     setInterval(function(){ updateMovingLetters(title_letters); }, 1500);
+     setInterval(function(){ updateMovingLetters(title_letters); }, 2500);
  }
 
  window.onload = (event) => {

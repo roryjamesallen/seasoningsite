@@ -37,4 +37,5 @@ body {
     padding: 0.5rem;
     background: black;
     color: white;
+    will-change: transform, opacity;
 }

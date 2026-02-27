@@ -31,15 +31,20 @@ h1 {
     display: flex;
     justify-content: center;
     color: white;
+    font-weight: normal;
 }
 h1 > span {
-    margin-right: -1.25rem;
+    margin-right: -1.5rem;
     padding: 0.5rem;
-    transition: transform 5s;
     z-index: -1;
 }
+.moving-children > * {
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    transition: transform 5s;
+}
 #toolbar {
-    width: 34rem;
+    width: 32rem;
     height: 50px;
     margin: -5rem auto 0;
     padding: 1rem;
@@ -52,15 +57,18 @@ h1 > span {
     font-size: 3rem;
     text-decoration: none;
     color: white;
-}
-#toolbar > a {
-    transition: transform 0.2s;
+    z-index: 1;
 }
 #toolbar > a:hover {
-    transform: scale(1.1);
+    filter: opacity(0.75);
 }
 #toolbar > a > img {
     height: 100%;
+}
+.goo {
+    background: black;
+    mix-blend-mode: lighten;
+    filter: blur(3px) contrast(10);
 }
 
 @media screen and (max-width: 1000px){

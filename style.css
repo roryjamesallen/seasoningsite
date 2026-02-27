@@ -17,47 +17,43 @@ html {
     font-family: GaramondRegular;
 }
 body {
-    background: var(--white);
+    background: var(--green);
     margin: 0;
 }
-#title-container {
+h1 {
     width: 100vw;
     height: 14rem;
-    margin: 6rem auto;
-    position: absolute;
+    margin: 0 auto;
+    padding-top: 6rem;
     left: 0;
     top: 0;
-    z-index: -1;
     font-size: 12rem;
+    display: flex;
+    justify-content: center;
+    color: white;
 }
-#title-container > * {
-    position: absolute;
-    left: 0;
-    top: 0;
+h1 > span {
+    margin-right: -1.25rem;
     padding: 0.5rem;
-    /*
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-*/
+    transition: transform 5s;
+    z-index: -1;
 }
 #toolbar {
-    width: 50vw;
+    width: 34rem;
     height: 50px;
-    margin: 17rem auto 0;
+    margin: -5rem auto 0;
     padding: 1rem;
     display: flex;
     gap: 2rem;
-    justify-content: center;
-    background: black;
-    filter: invert(1);
-    mix-blend-mode: multiply;
+    justify-content: end;
 }
 #toolbar > * {
     width: fit-content;
     font-size: 3rem;
     text-decoration: none;
     color: white;
+}
+#toolbar > a {
     transition: transform 0.2s;
 }
 #toolbar > a:hover {
@@ -66,43 +62,9 @@ body {
 #toolbar > a > img {
     height: 100%;
 }
-.morph-container {
-    /*-webkit-filter: blur(7px) contrast(100) invert(0);*/
-    background: white;
-    mix-blend-mode: darken;
-    will-change: opacity;
-    opacity: 0;
-    transform: translate3d(0,0,0);
-}
-.morph-container > * {
-    mix-blend-mode: difference;
-    background: black;
-    color: white;
-    /*
-    padding: 1px;
-    -webkit-background-clip: content-box;
-    background-clip: content-box;
-    outline: 1px solid transparent;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    will-change: transform;
-    -webkit-perspective: 1000;
-*/
-}
-
 
 @media screen and (max-width: 1000px){
-    h1 {
-	font-size: 17rem !important;
-	height: 19rem !important;
-	margin-left: -1.5rem !important;
-    }
     #toolbar {
-	margin-top: 21rem !important;
-	height: 100px !important;
-    }
-    #toolbar > a {
-	font-size: 5rem;
+	height: 100px;
     }
 }

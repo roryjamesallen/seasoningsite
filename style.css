@@ -2,6 +2,10 @@
     font-family: GaramondRegular;
     src: url('fonts/GaramondRegular.otf');
 }
+@font-face {
+    font-family: GaramondBold;
+    src: url('fonts/GaramondBold.ttf');
+}
 :root {
     --green: #0f9171;
     --light-blue: #36abde;
@@ -12,6 +16,8 @@
     --yellow: #b0b859;
     --black: #32262e;
     --white: #d6d6e2;
+
+    --page-width: min(750px, 80vw);
 }
 html {
     font-family: GaramondRegular;
@@ -19,6 +25,7 @@ html {
 body {
     background: var(--green);
     margin: 0;
+    color: white;
 }
 h1 {
     width: 100vw;
@@ -30,12 +37,12 @@ h1 {
     font-size: 12rem;
     display: flex;
     justify-content: center;
-    color: white;
+    font-family: GaramondBold;
     font-weight: normal;
 }
 h1 > span {
-    margin-right: -1.5rem;
-    padding: 0.5rem;
+    margin: -7rem -5.25rem 0;
+    padding: 5rem;
     z-index: -1;
 }
 .moving-children > * {
@@ -45,6 +52,7 @@ h1 > span {
 }
 #toolbar {
     width: 32rem;
+    max-width: var(--page-width);
     height: 50px;
     margin: -4rem auto 0;
     padding: 1rem;
@@ -70,9 +78,22 @@ h1 > span {
     mix-blend-mode: lighten;
     filter: blur(3px) contrast(10);
 }
+.paragraph {
+    font-size: 1.5rem;
+    text-align: justify;
+    width: var(--page-width);
+    margin: 0 auto;
+}
 
 @media screen and (max-width: 1000px){
+    html {
+	font-size: 30px;
+    }
+    h1 {
+	font-size: 7rem;
+    }
     #toolbar {
 	height: 100px;
+	margin-top: -6rem;
     }
 }

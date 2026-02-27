@@ -17,7 +17,7 @@ html {
     font-family: GaramondRegular;
 }
 body {
-    background: var(--black);
+    background: var(--white);
     margin: 0;
 }
 #title-container {
@@ -47,7 +47,7 @@ body {
     gap: 2rem;
     justify-content: center;
     background: black;
-    mix-blend-mode: lighten;
+    mix-blend-mode: difference;
     filter: contrast(3);
 }
 #toolbar > * {
@@ -64,7 +64,7 @@ body {
 .morph-container {
     -webkit-filter: blur(5px) contrast(10) invert(1);
     background: white;
-    mix-blend-mode: lighten;
+    mix-blend-mode: difference;
     will-change: opacity;
     opacity: 0;
     transform: translate3d(0,0,0);

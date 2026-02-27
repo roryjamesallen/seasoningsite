@@ -28,15 +28,15 @@ body {
     color: white;
 }
 h1 {
-    width: 100vw;
+    width: var(--page-width);
     height: 14rem;
-    margin: 0 auto;
-    padding-top: 6rem;
+    margin: 4rem auto -4rem;
+    padding: 1rem;
     left: 0;
     top: 0;
     font-size: 12rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     font-family: GaramondBold;
     font-weight: normal;
 }
@@ -44,6 +44,16 @@ h1 > span {
     margin: -7rem -5.25rem 0;
     padding: 5rem;
     z-index: -1;
+}
+h2 {
+    width: var(--page-width);
+    margin: 0 auto;
+    font-size: 3rem;
+    display: flex;
+}
+span:empty {
+    display: block;
+    width: 10px;
 }
 .moving-children > * {
     will-change: transform;
@@ -91,6 +101,10 @@ h1 > span {
     }
     h1 {
 	font-size: 7rem;
+	margin-bottom: -9rem;
+    }
+    h2 {
+	font-size: 2rem;
     }
     #toolbar {
 	height: 100px;

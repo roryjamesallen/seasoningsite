@@ -17,9 +17,11 @@
      for (let j=0; j<document.getElementsByClassName('moving-children').length; ++j){
 	 const parent = document.getElementsByClassName('moving-children')[j];
 	 for (let i=0; i<parent.children.length; ++i){
-	     const x_px = Math.floor((((Math.random() * 2) - 1) * movement_px));
-	     const y_px = Math.floor((((Math.random() * 2) - 1) * movement_px));
-	     parent.children[i].style.transform = 'translate3d('+x_px+'px, '+y_px+ 'px, 0)';
+	     if (Math.floor(Math.random()*5) == 0){
+		 const x_px = Math.floor((((Math.random() * 2) - 1) * movement_px));
+		 const y_px = Math.floor((((Math.random() * 2) - 1) * movement_px));
+		 parent.children[i].style.transform = 'translate3d('+x_px+'px, '+y_px+ 'px, 0)';
+	     }
 	 }
      }
  }

@@ -46,17 +46,17 @@ h1 > span {
 #toolbar {
     width: 32rem;
     height: 50px;
-    margin: -5rem auto 0;
+    margin: -4rem auto 0;
     padding: 1rem;
     display: flex;
     gap: 2rem;
     justify-content: end;
+    filter: contrast(5);
 }
 #toolbar > * {
     width: fit-content;
     font-size: 3rem;
     text-decoration: none;
-    color: white;
     z-index: 1;
 }
 #toolbar > a:hover {

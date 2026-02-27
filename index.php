@@ -59,7 +59,7 @@
  function initialiseSelectMovingLetters(elements){
      for (let i=0; i<elements.length; ++i){
 	 const element = elements[i][0];
-	 initialiseMovingLetters(element,elements[i][3]);
+	 //initialiseMovingLetters(element,elements[i][3]);
 	 element.style.transition = 'transform 1s ease-out, opacity 1s ease-out';
 	 element.style.opacity = '1';
 	 //updateMovingLetters(element, elements[i][1]);

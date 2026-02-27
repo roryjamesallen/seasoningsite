@@ -77,8 +77,12 @@ body {
     transition: inherit;
     transition-timing-function: ease;
 
+    padding: 1px;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
     outline: 1px solid transparent;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     transform: translateZ(0);
     will-change: transform;
     -webkit-perspective: 1000;

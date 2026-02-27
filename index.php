@@ -1,6 +1,6 @@
 <html>
     <head>
-	<link rel="stylesheet" href="style.css?v=5">
+	<link rel="stylesheet" href="style.css?v=6">
     </head>
     <body>
 	<h1 id="title-container" class="morph-container">
@@ -15,8 +15,8 @@
 	    <span>g</span>
 	</h1>
 	<div id="toolbar">
-	    <a id="insta-link" href="https://www.instagram.com/seas0ning_/"><img src="images/icons/instagram.png" width="50px"></a>
-	    <a id="ra-link" href="https://ra.co/promoters/119677"><img src="images/icons/resident-advisor.png" width="100px"></a>
+	    <a id="insta-link" href="https://www.instagram.com/seas0ning_/"><img src="images/icons/instagram.png"></a>
+	    <a id="ra-link" href="https://ra.co/promoters/119677"><img src="images/icons/resident-advisor.png"></a>
 	</div>
     </body>
 </html>
@@ -59,13 +59,13 @@
  function initialiseSelectMovingLetters(elements){
      for (let i=0; i<elements.length; ++i){
 	 const element = elements[i][0];
-	 //initialiseMovingLetters(element,elements[i][3]);
+	 initialiseMovingLetters(element,elements[i][3]);
 	 element.style.transition = 'transform 1s ease-out, opacity 1s ease-out';
 	 element.style.opacity = '1';
-	 //updateMovingLetters(element, elements[i][1]);
+	 updateMovingLetters(element, elements[i][1]);
 	 if (elements[i][2] == true){ //animated
 	     setTimeout(function(){ element.style.transition = 'transform 5s ease-in-out'; }, 1000);
-	     //setInterval(function(){ updateMovingLetters(element, elements[i][1]); }, 2500);
+	     setInterval(function(){ updateMovingLetters(element, elements[i][1]); }, 2500);
 	 }
      }
  }

@@ -1,6 +1,6 @@
 <html>
     <head>
-	<link rel="stylesheet" href="style.css?v=3">
+	<link rel="stylesheet" href="style.css?v=4">
     </head>
     <body>
 	<h1 id="title-container" class="morph-container">
@@ -62,10 +62,10 @@
 	 initialiseMovingLetters(element,elements[i][3]);
 	 element.style.transition = 'transform 1s ease-out, opacity 1s ease-out';
 	 element.style.opacity = '1';
-	 updateMovingLetters(element, elements[i][1]);
+	 //updateMovingLetters(element, elements[i][1]);
 	 if (elements[i][2] == true){ //animated
 	     setTimeout(function(){ element.style.transition = 'transform 5s ease-in-out'; }, 1000);
-	     setInterval(function(){ updateMovingLetters(element, elements[i][1]); }, 2500);
+	     //setInterval(function(){ updateMovingLetters(element, elements[i][1]); }, 2500);
 	 }
      }
  }

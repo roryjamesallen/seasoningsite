@@ -8,7 +8,8 @@
 	    "Jakobin",
 	    "Lovellious",
 	    "Ansätze"
-	]
+	],
+	"image": "1"
     },
     "2": {
 	"name": "Winter Party",
@@ -21,7 +22,8 @@
 	    "Crème",
 	    "Ansätze",
 	    "Yorke"
-	]
+	],
+	"image": "2"
     },
     "3": {
 	"name": "Earthquake Solidarity Fundraiser",
@@ -42,7 +44,8 @@
 	    "Amelie",
 	    "Ansätze",
 	    "spr1ngbr34ka"
-	]
+	],
+	"image": "3"
     },
     "4": {
 	"date": "2023-03-24T00:00:00-00:00",
@@ -55,7 +58,8 @@
 	    "Calaida",
 	    "Ansätze",
 	    "spr1ng br34ka"
-	]
+	],
+	"image": "4"
     },
     "5": {
 	"date": "2023-04-15T00:00:00-00:00",
@@ -69,7 +73,8 @@
 	    "spr1ng br34ka",
 	    "Scaro-B",
 	    "Eilema"
-	]
+	],
+	"image": "5"
     },
     "6": {
 	"name": "Ram Fete",
@@ -103,7 +108,8 @@
 	    "RISHI",
 	    "SASK",
 	    "Wizard Tree"
-	]
+	],
+	"image": "6"
     },
     "7": {
 	"date": "2023-12-22T00:00:00-00:00",
@@ -118,7 +124,8 @@
 	    "Chungo",
 	    "Joice",
 	    "Throblabs"
-	]
+	],
+	"image": "7"
     },
     "8": {
 	"date": "2024-03-30T00:00:00-00:00",
@@ -128,7 +135,8 @@
 	    "Papa Nugs",
 	    "Berwick",
 	    "YouYou"
-	]
+	],
+	"image": "8"
     },
     "9": {
 	"name": "Day Festival",
@@ -150,7 +158,8 @@
 	    "DJ Opher",
 	    "Subterra",
 	    "Webb"
-	]
+	],
+	"image": "9"
     },
     "10": {
 	"name": "Palestine Solidarity Fundraiser",
@@ -161,7 +170,8 @@
 	    "Sarra Wild",
 	    "Loefah",
 	    "YouYou"
-	]
+	],
+	"image": "10"
     },
     "11": {
 	"date": "2024-12-21T00:00:00-00:00",
@@ -174,7 +184,8 @@
 	    "Berwick",
 	    "Lovellious",
 	    "Amelie"
-	]
+	],
+	"image": "11"
     },
     "12": {
 	"name": "Day Festival",
@@ -227,7 +238,8 @@
 	    "Vinnie B",
 	    "Righteous Heretics",
 	    "Yorke"
-	]
+	],
+	"image": "12"
     },
     "13": {
 	"date": "2025-04-05T00:00:00-00:00",
@@ -237,7 +249,8 @@
 	    "Minor Science",
 	    "Amelie",
 	    "Yours Truly"
-	]
+	],
+	"image": "13"
     },
     "14": {
 	"name": "3 Years of Seasoning",
@@ -249,7 +262,8 @@
 	    "RIZ LA TEEF",
 	    "Amelie",
 	    "Lovellious"
-	]
+	],
+	"image": "14"
     },
     "15": {
 	"date": "2025-06-06T00:00:00-00:00",
@@ -260,7 +274,8 @@
 	    "Small Crab",
 	    "Syz",
 	    "YouYou"
-	]
+	],
+	"image": "15"
     },
     "16": {
 	"date": "2025-11-29T00:00:00-00:00",
@@ -273,7 +288,8 @@
 	    "Dyslecta",
 	    "Ostad",
 	    "SASK"
-	]
+	],
+	"image": "16"
     },
     "17": {
 	"date": "2025-12-20T00:00:00-00:00",
@@ -289,7 +305,8 @@
 	    "Ansätze",
 	    "Papi Clamm",
 	    "Mandrill Sound"
-	]
+	],
+	"image": "17"
     },
     "18": {
 	"date": "2026-02-27T00:00:00-00:00",
@@ -298,7 +315,8 @@
 	"artists": [
 	    "Tim Reaper",
 	    "Severine"
-	]
+	],
+	"image": "18"
     },
     "19": {
 	"date": "2026-02-07T00:00:00-00:00",
@@ -311,6 +329,7 @@
 	    "Ottomani Parker",
 	    "Ostad",
 	    "spr1ng br34ka"
-	]
+	],
+	"image": "19"
     }
 }

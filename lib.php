@@ -3,7 +3,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$root = $_SERVER['DOCUMENT_ROOT'].'/seasoningsite/';
+if (!isset($root)){
+    $root = '';
+}
 
 function readJSON($filename){
     global $root;
@@ -13,7 +15,8 @@ function readJSON($filename){
     });
     return $json;
 }
-function renderEvent($event){
+function renderEvent($event_key, $event){
+    global $root;
     echo '<div class="event"><span class="event-date">'.date("d.m.Y",strtotime($event['date'])).'</span>';
     echo '<span class="event-city">'.$event['city'].'</span>';
     echo '<span class="event-venue">'.$event['venue'].'</span><hr>';
@@ -27,13 +30,15 @@ function renderEvent($event){
 	}
 	echo join('<span style="margin: 0 5px">/</span>', $artist_links);
     }
+    $image_path = 'images/event-posters/'.$event['image'].'.jpg';
+    echo '<img class="event-poster" src="'.$image_path.'">';
     echo '</div>';
 }
 function renderEventList(){
     $json = readJSON('events.json');
     echo '<div class="event-list">';
     foreach ($json as $event_key => $event){
-	renderEvent($event);
+	renderEvent($event_key, $event);
     }
     echo '</div>';
 }
@@ -43,7 +48,7 @@ function renderEventsForArtist($artist){
     foreach ($json as $event_key => $event){
 	if (isset($event['artists'])){
 	    if (in_array($artist, $event['artists'])){
-		renderEvent($event);
+		renderEvent($event_key, $event);
 	    }
 	}
     }

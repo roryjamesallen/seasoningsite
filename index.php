@@ -8,12 +8,12 @@ include 'lib.php';
 <html>
     <head>
 	<?php echo $seo; ?>
-	<link rel="stylesheet" href="style.css?v=16">
+	<link rel="stylesheet" href="style.css?v=17">
     </head>
     <body>
 	<div id="gl5-backdrop"><div></div></div>
 	<h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1>
-	<h2 class="moving-children" movementpx="4"><?php echo $tagline; ?></h2>
+	<h2 class="" movementpx="4"><?php echo $tagline; ?></h2>
 
 	<div class="paragraph" style="margin-top: 1rem;">
 	    Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.

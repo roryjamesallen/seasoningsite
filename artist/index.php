@@ -15,7 +15,8 @@ if (isset($_GET['a'])){
 <html>
     <head>
 	<base href="../">
-	<link rel="stylesheet" href="style.css?v=13">
+	<?php echo $seo; ?>
+	<link rel="stylesheet" href="style.css?v=14">
     </head>
     <body>
 	<div id="gl5-backdrop"></div>

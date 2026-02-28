@@ -7,6 +7,7 @@ include 'lib.php';
 ?>
 <html>
     <head>
+	<?php echo $seo; ?>
 	<link rel="stylesheet" href="style.css?v=13">
     </head>
     <body>

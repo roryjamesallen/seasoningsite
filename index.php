@@ -8,7 +8,7 @@ include 'lib.php';
 <html>
     <head>
 	<?php echo $seo; ?>
-	<link rel="stylesheet" href="style.css?v=13">
+	<link rel="stylesheet" href="style.css?v=15">
     </head>
     <body>
 	<div id="gl5-backdrop"><div></div></div>

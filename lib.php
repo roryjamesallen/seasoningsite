@@ -64,7 +64,6 @@ $seo = '
      <meta property="og:description" content="Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.">
      <meta property="og:image" content="">
      <meta property="og:url" content="https://seasoning.live">
-     <meta name="viewport" content="width=device-width, initial-scale=1"/>
      <title>Seasoning - Live Events</title>
 
 <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />

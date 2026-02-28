@@ -18,7 +18,6 @@ if (isset($_GET['a'])){
 	<link rel="stylesheet" href="style.css?v=13">
     </head>
     <body>
-	<div id="grain-overlay"></div>
 	<div id="gl5-backdrop"></div>
 	<a href=""><h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a>
 	<h2 class="moving-children" movementpx="4">Artist Highlight: <?php echo $artist; ?></h2>

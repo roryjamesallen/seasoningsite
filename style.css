@@ -145,8 +145,9 @@ span:empty {
 .event {
     flex-basis: 100%;
     display: flex;
+    position: relative;
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: 1rem 1rem 2rem;
     background: rgba(0,0,0,0.1);
     transition: background 0.2s;
 }
@@ -168,6 +169,14 @@ span:empty {
     border: none;
     background: var(--green);
 }
+.event-view-poster {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.5rem;
+    transition: opacity 0.2s;
+    opacity: 0.5;
+}
 .event-poster {
     flex-basis: 100%;
     margin-top: 1rem;
@@ -180,6 +189,9 @@ span:empty {
 }
 .event:hover .event-poster, .event:focus .event-poster {
     max-height: 1000px;
+}
+.event:hover .event-view-poster {
+    opacity: 0;
 }
 .artist-link {
     color: white;

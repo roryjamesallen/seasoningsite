@@ -30,6 +30,7 @@ function renderEvent($event_key, $event){
 	}
 	echo join('<span style="margin: 0 5px">/</span>', $artist_links);
     }
+    echo '<span class="event-view-poster">View Poster</span>';
     $image_path = 'images/event-posters/'.$event['image'].'.jpg';
     echo '<img class="event-poster" src="'.$image_path.'">';
     echo '</div>';

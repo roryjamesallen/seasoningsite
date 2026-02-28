@@ -8,7 +8,7 @@ include 'lib.php';
 <html>
     <head>
 	<?php echo $seo; ?>
-	<link rel="stylesheet" href="style.css?v=15">
+	<link rel="stylesheet" href="style.css?v=16">
     </head>
     <body>
 	<div id="gl5-backdrop"><div></div></div>
@@ -18,9 +18,9 @@ include 'lib.php';
 	<div class="paragraph" style="margin-top: 1rem;">
 	    Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.
 	</div>
-
-	<div class="paragraph" style="margin-top: 1rem">
-	    <iframe src="https://ra.co/promoters/119677/widget/events?theme=light" height="350rem" width="100%" style="border: none;"></iframe>
+	<hr>
+	<div class="paragraph" style="margin-top: 1rem; height: fit-content">
+	    <iframe id="ra-embed" src="https://ra.co/promoters/119677/widget/events?theme=dark&customBackgroundColor=%2332262E&customTextColor=" width="100%" style="border: none; mix-blend-mode: lighten; aspect-ratio: 3 / 1"></iframe>
 	</div>
 	
 	<h3 style="margin-top: 1rem;">All Shows</h3>

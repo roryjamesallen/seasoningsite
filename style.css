@@ -6,6 +6,14 @@
     font-family: GaramondBold;
     src: url('fonts/GaramondBold.ttf');
 }
+@font-face {
+    font-family: Milker;
+    src: url('fonts/Milker.otf');
+}
+@font-face {
+    font-family: AileronSemi;
+    src: url('fonts/AileronSemi.otf');
+}
 :root {
     --green: #0f9171;
     --light-blue: #36abde;
@@ -16,14 +24,16 @@
     --yellow: #b0b859;
     --black: #32262e;
     --white: #d6d6e2;
+    
+    --cyan: #31e5e6;
 
     --page-width: min(750px, 80vw);
 }
 html {
-    font-family: GaramondRegular;
+    font-family: AileronSemi;
 }
 body {
-    background: var(--green);
+    background: var(--black);
     margin: 0;
     color: white;
 }
@@ -49,7 +59,7 @@ body {
 #gl5-backdrop > div {
     width: 100%;
     height: 100%;
-    background-color: var(--green);
+    background-color: var(--white);
     mask-image: url('images/gl5-outline.svg');
     mask-size: cover;
     mask-repeat: no-repeat;
@@ -62,15 +72,16 @@ h1 {
     padding: 1rem;
     left: 0;
     top: 0;
-    font-size: 12rem;
+    font-size: 8rem;
     display: flex;
     justify-content: space-between;
-    font-family: GaramondBold;
+    font-family: Milker;
     font-weight: normal;
-    color: white;
+    color: var(--cyan);
+    transform: scale(1,2);
 }
 h1 > span {
-    margin: -7rem -5.25rem 0;
+    margin: -3rem -5.25rem 0;
     padding: 5rem;
     z-index: -1;
     text-decoration: none !important;
@@ -78,17 +89,23 @@ h1 > span {
 h2 {
     width: var(--page-width);
     margin: 0 auto;
-    font-size: 2.7rem;
+    font-size: 2rem;
     display: flex;
     font-weight: normal;
-    font-family: GaramondBold;
+    font-family: Milker;
 }
 h3 {
     width: var(--page-width);
     margin: 0 auto;
     font-size: 2rem;
     font-weight: normal;
-    font-family: GaramondBold;
+    font-family: Milker;
+}
+hr {
+    width: var(--page-width);
+    height: 3px;
+    border: none;
+    background: var(--white);
 }
 span:empty {
     display: block;
@@ -129,7 +146,7 @@ span:empty {
     overflow: hidden;
 }
 .paragraph {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: justify;
     width: var(--page-width);
     margin: 0 auto;
@@ -149,7 +166,7 @@ span:empty {
     position: relative;
     flex-wrap: wrap;
     padding: 1rem 1rem 2rem;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.2);
     transition: background 0.2s;
 }
 .event-date, .event-venue, .event-city {
@@ -157,6 +174,8 @@ span:empty {
     flex-grow: 1;
     flex-shrink: 1;
     font-size: 2rem;
+    font-family: Milker;
+    color: var(--cyan);
 }
 .event-city {
     text-align: center;
@@ -166,9 +185,6 @@ span:empty {
 }
 .event > hr {
     flex-basis: 100%;
-    height: 3px;
-    border: none;
-    background: var(--green);
 }
 .event-view-poster {
     position: absolute;
@@ -186,7 +202,7 @@ span:empty {
     transition: max-height 0.2s;
 }
 .event:hover {
-    background: rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0.2);
 }
 .event:hover .event-poster, .event:focus .event-poster {
     max-height: 1000px;

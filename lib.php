@@ -17,7 +17,7 @@ function readJSON($filename){
 }
 function renderEvent($event_key, $event){
     global $root;
-    echo '<div class="event"><span class="event-date">'.date("d.m.Y",strtotime($event['date'])).'</span>';
+    echo '<div class="event" tabindex="1"><span class="event-date">'.date("d.m.Y",strtotime($event['date'])).'</span>';
     echo '<span class="event-city">'.$event['city'].'</span>';
     echo '<span class="event-venue">'.$event['venue'].'</span><hr>';
     if (isset($event['name'])){

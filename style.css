@@ -178,7 +178,7 @@ span:empty {
 .event:hover {
     background: rgba(0,0,0,0.2);
 }
-.event:hover .event-poster {
+.event:hover .event-poster, .event:focus .event-poster {
     max-height: 1000px;
 }
 .artist-link {

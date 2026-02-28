@@ -150,6 +150,14 @@ span:empty {
     text-align: justify;
     width: var(--page-width);
     margin: 0 auto;
+    color: white;
+}
+.paragraph a {
+    color: white;
+    text-decoration: none;
+}
+.paragraph a:hover {
+    text-decoration: underline;
 }
 
 
@@ -217,6 +225,22 @@ span:empty {
 .artist-link:hover {
     text-decoration: underline;
 }
+
+
+.collapsed {
+    display: none;
+}
+.collapser {
+    cursor: pointer;
+}
+.collapser:after {
+    display: inline;
+    content: ' ⇝';
+}
+.collapser:not(.collapser-collapsed):after {
+    content: ' ↯';
+}
+
 
 /*
 @media screen and (max-width: 1000px){

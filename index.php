@@ -17,17 +17,22 @@ include 'lib.php';
 
 	<div class="paragraph" style="margin-top: 1rem;">
 	    Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.
-	</div>
+	</div><br>
 	<hr>
 	<div class="paragraph" style="margin-top: 1rem; height: fit-content">
 	    <iframe id="ra-embed" src="https://ra.co/promoters/119677/widget/events?theme=dark&customBackgroundColor=%2332262E&customTextColor=" width="100%" style="border: none; mix-blend-mode: lighten; aspect-ratio: 3 / 1"></iframe>
 	</div>
 	
-	<h3 style="margin-top: 1rem;">All Shows</h3>
-	<div class="paragraph" style="margin-top: 1rem">
+	<h3 style="margin-top: 1rem;" class="collapser" collapse="event-list">All Shows</h3>
+	<div class="paragraph" style="margin-top: 1rem" id="event-list">
 	    <?php echo renderEventList(); ?>
+	</div><br>
+
+	<h3 style="margin-top: 1rem;">Contact</h3>
+	<div class="paragraph" style="margin-top: 1rem">
+	    <a href="https://www.instagram.com/seas0ning_/?hl=en">Instagram</a> / <a href="https://www.facebook.com/Seas0ning/">Facebook</a> / <a href="https://ra.co/promoters/119677">Resident Advisor</a> / <a href="https://soundcloud.com/seas0ning">SoundCloud</a>
 	</div>
-	
+	    
     </body>
 </html>
 <script>
@@ -50,8 +55,30 @@ include 'lib.php';
      }
  }
 
+ function toggleCollapse(event){
+     console.log('eh');
+     const collapser = event.target;
+     const collapsee = document.getElementById(collapser.getAttribute('collapse'));
+     if ([...collapsee.classList].includes('collapsed')){
+	 collapsee.classList.remove('collapsed')
+	 collapser.classList.remove('collapser-collapsed');
+     } else {
+	 collapsee.classList.add('collapsed');
+	 collapser.classList.add('collapser-collapsed');
+     }
+ }
+
+ function initialiseCollapsers(){
+     const collapsers = document.getElementsByClassName('collapser');
+     for (let i=0; i<collapsers.length; ++i){
+	 console.log(collapsers[i]);
+	 collapsers[i].addEventListener('click', toggleCollapse);
+     }
+ }
+
  window.onload = (event) => {
      moveTitleLetters();
      setInterval(moveTitleLetters, 2000);
+     initialiseCollapsers();
  };
 </script>

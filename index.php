@@ -18,14 +18,14 @@ include 'lib.php';
 	<div class="paragraph" style="margin-top: 1rem;">
 	    Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.
 	</div>
+
+	<div class="paragraph" style="margin-top: 1rem">
+	    <iframe src="https://ra.co/promoters/119677/widget/events?theme=light" height="350rem" width="100%" style="border: none;"></iframe>
+	</div>
 	
 	<h3 style="margin-top: 1rem;">All Shows</h3>
 	<div class="paragraph" style="margin-top: 1rem">
 	    <?php echo renderEventList(); ?>
-	</div>
-
-	<div class="paragraph" style="margin-top: 1rem">
-	    <iframe src="https://ra.co/promoters/119677/widget/events?theme=light" height="100%" width="100%" style="border: none;"></iframe>
 	</div>
 	
     </body>

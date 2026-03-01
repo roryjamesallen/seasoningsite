@@ -61,7 +61,7 @@ function renderArtistInfo($artist){
 	}
 	if ($started){
 	    echo '<h3 style="margin-top: 1rem;">About</h3><div class="paragraph" style="margin-top: 1rem"><div class="artist-info">';
-	    if ($artist_json['bio']){
+	    if (isset($artist_json['bio'])){
 		echo $artist_json['bio'];
 	    }
 	    echo '<span class="artist-links">'.join('<span style="margin: 0 5px">/</span>', $links).'</span></div>';

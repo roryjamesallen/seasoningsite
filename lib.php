@@ -66,7 +66,7 @@ function renderArtistInfo($artist){
 	    }
 	    echo '</span><span class="artist-links">'.join('<span style="margin: 0 5px">/</span>', $links).'</span></div>';
 	    if (file_exists('../images/artists/'.urlencode($artist).'.jpg')){
-		echo '<img alt="Profile photo for '.$artist.'" src="images/artists/'.urlencode($artist).'.jpg">';
+		echo '<img width="0" height="0" alt="Profile photo for '.$artist.'" src="images/artists/'.urlencode($artist).'.jpg">';
 	    }
 	    if (isset($artist_json['embed'])){
 		echo '

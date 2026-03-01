@@ -115,19 +115,20 @@ function renderEventsForArtist($artist){
 function renderFooter(){
     echo '
 <footer>
-<a href="https://seasoning.live">Home</a>
-<a href="https://www.instagram.com/seas0ning_">Instagram</a>
-<a href="https://www.facebook.com/Seas0ning">Facebook</a>
-<a href="https://ra.co/promoters/119677">Resident Advisor</a>
+<a href="https://seasoning.live" style="font-family: Milker; color: var(--cyan)">SEASONING.LIVE 2026</a>
+<div>
+<a href="https://www.instagram.com/seas0ning_">Instagram</a><span style="margin: 0 0.5rem">/</span>
+<a href="https://www.facebook.com/Seas0ning">Facebook</a><span style="margin: 0 0.5rem">/</span>
+<a href="https://ra.co/promoters/119677">Resident Advisor</a><span style="margin: 0 0.5rem">/</span>
 <a href="https://soundcloud.com/seas0ning">SoundCloud</a>
-</footer>
+</div></footer>
     ';
 }
 function renderTitle($subheading){
     echo '<div id="gl5-backdrop"><div></div></div><a href=""><h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="moving-children" movementpx="4" style="margin-bottom: 4rem;">'.$subheading.'</h2>';
 }
 
-    $seo = '
+$seo = '
 <meta charset="utf-8">
      <meta name="description" content="Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.">
      <meta property="og:title" content="Seasoning - Live Events">
@@ -144,9 +145,9 @@ function renderTitle($subheading){
 <meta name="apple-mobile-web-app-title" content="Seasoning" />
 <link rel="manifest" href="favicon/site.webmanifest" />
 <meta property="og:image" content="favicon/sharing.png">
-    ';
+';
 
-    $analytics = '
+$analytics = '
 <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ0H3P8DZ0"></script>
     <script>
@@ -155,7 +156,7 @@ function renderTitle($subheading){
      gtag("js", new Date());
      gtag("config", "G-DJ0H3P8DZ0");
     </script>
-    ';
+';
 
-    $tagline = '<span>l</span><span>i</span><span>v</span><span>e</span><span></span><span>e</span><span>v</span><span>e</span><span>n</span><span>t</span><span>s</span><span></span><span>i</span><span>n</span><span></span><span>t</span><span>h</span><span>e</span><span></span><span>s</span><span>o</span><span>u</span><span>t</span><span>h</span><span></span><span>w</span><span>e</span><span>s</span><span>t</span><span></span><span>&</span><span></span><span>b</span><span>e</span><span>y</span><span>o</span><span>n</span><span>d</span>';
+$tagline = '<span>l</span><span>i</span><span>v</span><span>e</span><span></span><span>e</span><span>v</span><span>e</span><span>n</span><span>t</span><span>s</span><span></span><span>i</span><span>n</span><span></span><span>t</span><span>h</span><span>e</span><span></span><span>s</span><span>o</span><span>u</span><span>t</span><span>h</span><span></span><span>w</span><span>e</span><span>s</span><span>t</span><span></span><span>&</span><span></span><span>b</span><span>e</span><span>y</span><span>o</span><span>n</span><span>d</span>';
 ?>

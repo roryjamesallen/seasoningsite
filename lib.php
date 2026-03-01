@@ -66,7 +66,12 @@ function renderArtistInfo($artist){
 	    }
 	    echo '</span><span class="artist-links">'.join('<span style="margin: 0 5px">/</span>', $links).'</span></div>';
 	    if (file_exists('../images/artists/'.urlencode($artist).'.jpg')){
-		echo '<img src="images/artists/'.urlencode($artist).'.jpg">';
+		echo '<img alt="Profile photo for '.$artist.'" src="images/artists/'.urlencode($artist).'.jpg">';
+	    }
+	    if (isset($artist_json['embed'])){
+		echo '
+<iframe width="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A'.$artist_json['embed'].'&color=%2331e5e6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+		';
 	    }
 	    echo '</div><br><hr>';
 	}
@@ -97,6 +102,7 @@ $seo = '
      <meta name="description" content="Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.">
      <meta property="og:title" content="Seasoning - Live Events">
      <meta property="og:description" content="Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.">
+<meta name="keywords" content="Stroud, Bristol, London, Rave, Live, Events, Performance, Club, Dance, Music, Scene, Studio, Community, Culture, Collective, Party">
      <meta property="og:image" content="">
      <meta property="og:url" content="https://seasoning.live">
      <title>Seasoning - Live Events</title>

@@ -4,7 +4,8 @@
 	"instagram": "https://www.instagram.com/lovellious",
 	"soundcloud": "https://soundcloud.com/user-472395296",
 	"bandcamp": "https://lovellious1.bandcamp.com/",
-	"resident advisor": "https://ra.co/dj/lovellious"
+	"resident advisor": "https://ra.co/dj/lovellious",
+	"embed": "2275503233"
     },
     "Jakobin": {
 	"bio": "Hailing from Bristol, 26-year-old artist Jakobin has made waves in the underground music scene, blending UK Funky and Bass genres while staying true to his Madagascar roots with rhythmic percussion and tribal influences.",
@@ -15,7 +16,8 @@
     "Berwick": {
 	"bio": "Berwick is a DJ and producer focused on esoteric, rave-infused sounds encompassing a dance floor and environments that have inspired his music.",
 	"instagram": "https://www.instagram.com/aux.berwick",
-	"resident advisor": "https://ra.co/dj/berwick"
+	"resident advisor": "https://ra.co/dj/berwick",
+	"embed": "2172756339"
     },
     "YouYou": {
 	"bio": "Co-founder of SOMNAMBULA and a shapeshifter behind the decks, YouYou weaves genre and mood with instinctual ease.",
@@ -27,8 +29,10 @@
 	"instagram": "https://www.instagram.com/ameliegracee"
     },
     "spr1ng br34ka": {
+	"bio": "A blend of uk funky, heavy hitting bass, latin, jersey, world music and leftfield sounds from near and far.",
 	"instagram": "https://www.instagram.com/4lw4ys_0n_spr1ng_br34k/",
-	"soundcloud": "https://soundcloud.com/spr1ng-br34ka"
+	"soundcloud": "https://soundcloud.com/spr1ng-br34ka",
+	"embed": "2040054332"
     },
     "Crème": {
 	"bio": "Cardiff-based MC Crème explores the more psychedelic corners of UK rap with both feet firmly rooted in soundsystem culture"
@@ -42,5 +46,11 @@
 	"instagram": "https://www.instagram.com/kincaid_next_of_kin/",
 	"soundcloud": "https://soundcloud.com/kincaidofficial",
 	"resident advisor": "https://ra.co/dj/kincaid"
+    },
+    "Severine": {
+	"bio": "Severine is a Bristol-based DJ firmly standing atop the fringes of club music with a distinct blend of left-field bass, warped percussion, and emotionally charged textures.",
+	"resident advisor": "https://ra.co/dj/severine-uk",
+	"soundcloud": "https://soundcloud.com/wdfn9pkrVpK9CFxUuu",
+	"embed": "2268323294"
     }
 }

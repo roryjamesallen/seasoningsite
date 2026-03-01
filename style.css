@@ -165,7 +165,6 @@ span:empty {
     flex-wrap: wrap;
     gap: 2rem;
     font-size: 1.5rem;
-    text-align: justify;
     width: var(--page-width);
     margin: 0 auto;
     color: white;
@@ -225,19 +224,26 @@ span:empty {
     max-height: 0px;
     transition: max-height 0.2s;
 }
-.event:hover {
+.event:hover, .event:focus {
     background: rgba(255,255,255,0.2);
 }
-.event:hover .event-poster, .event:focus .event-poster {
+.event:focus .event-poster {
     max-height: 1000px;
 }
-.event:hover .event-view-poster {
+.event-view-poster {
+    cursor: pointer;
+}
+.event:focus .event-view-poster {
     opacity: 0;
 }
 .artist-info {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
+}
+.artist-info h3 {
+    width: unset;
+    margin: 0 0 0.5rem !important;
 }
 .artist-link {
     opacity: 0.75;

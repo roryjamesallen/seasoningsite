@@ -59,12 +59,12 @@ function renderArtistInfo($artist){
 		$links[] = '<a class="artist-link" href="'.$artist_json[strtolower($link)].'">'.$link.'</a>';
 	    }
 	}
-	if ($started){
-	    echo '<h3 style="margin-top: 1rem;">About</h3><div class="paragraph" style="margin-top: 1rem"><div class="artist-info">';
+	if ($started | isset($artist_json['bio'])){
+	    echo '<div class="paragraph" style="margin-top: 1rem"><div class="artist-info"><span><h3 style="margin-top: 1rem;">About</h3>';
 	    if (isset($artist_json['bio'])){
 		echo $artist_json['bio'];
 	    }
-	    echo '<span class="artist-links">'.join('<span style="margin: 0 5px">/</span>', $links).'</span></div>';
+	    echo '</span><span class="artist-links">'.join('<span style="margin: 0 5px">/</span>', $links).'</span></div>';
 	    if (file_exists('../images/artists/'.urlencode($artist).'.jpg')){
 		echo '<img src="images/artists/'.urlencode($artist).'.jpg">';
 	    }

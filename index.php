@@ -8,7 +8,7 @@ include 'lib.php';
 <html>
     <head>
 	<?php echo $seo; ?>
-	<link rel="stylesheet" href="style.css?v=22">
+	<link rel="stylesheet" href="style.css?v=23">
     </head>
     <?php echo $analytics ?>
     

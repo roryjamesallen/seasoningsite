@@ -248,6 +248,9 @@ span:empty {
 .artist-link {
     opacity: 0.75;
 }
+.artist-embed {
+    flex-basis: 100%;
+}
 .paragraph:has(> .artist-info) > img {
     width: 0;
     height: fit-content;

@@ -8,7 +8,7 @@ include 'lib.php';
 <html>
     <head>
 	<?php echo $seo; ?>
-	<link rel="stylesheet" href="style.css?v=18">
+	<link rel="stylesheet" href="style.css?v=19">
     </head>
     <?php echo $analytics ?>
     
@@ -58,7 +58,6 @@ include 'lib.php';
  }
 
  function toggleCollapse(event){
-     console.log('eh');
      const collapser = event.target;
      const collapsee = document.getElementById(collapser.getAttribute('collapse'));
      if ([...collapsee.classList].includes('collapsed')){

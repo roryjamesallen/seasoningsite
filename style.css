@@ -252,6 +252,7 @@ span:empty {
     flex-basis: 100%;
 }
 .paragraph:has(> .artist-info) > img {
+    position: relative;
     width: 0;
     height: fit-content;
     filter: saturate(0);

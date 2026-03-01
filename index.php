@@ -21,9 +21,12 @@ include 'lib.php';
 	    Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.
 	</div><br>
 	<hr>
+
+	<!--
 	<div class="paragraph" style="margin-top: 1rem; height: fit-content">
 	    <iframe id="ra-embed" src="https://ra.co/promoters/119677/widget/events?theme=dark&customBackgroundColor=%2332262E&customTextColor=" width="100%" style="border: none; mix-blend-mode: lighten; aspect-ratio: 2 / 1"></iframe>
 	</div>
+	-->
 	
 	<h3 style="margin-top: 1rem;" class="collapser" collapse="event-list">All Shows</h3>
 	<div class="paragraph" style="margin-top: 1rem" id="event-list">

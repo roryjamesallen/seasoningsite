@@ -241,10 +241,15 @@ span:empty {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
+    gap: 1rem;
 }
 .artist-info h3 {
     width: unset;
     margin: 0 0 0.5rem !important;
+}
+.artist-links {
+    display: flex;
+    flex-wrap: wrap;
 }
 .artist-link {
     opacity: 0.75;

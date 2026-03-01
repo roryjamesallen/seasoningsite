@@ -294,4 +294,7 @@ span:empty {
     .event-date, .event-venue, .event-city {
 	font-size: 1.5rem;
     }
+    .paragraph > * {
+	flex-basis: 100%;
+    }
 }

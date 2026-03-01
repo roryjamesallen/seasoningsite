@@ -16,7 +16,7 @@ if (isset($_GET['a'])){
     <head>
 	<base href="../">
 	<?php echo $seo; ?>
-	<link rel="stylesheet" href="style.css?v=25">
+	<link rel="stylesheet" href="style.css?v=26">
     </head>
     <?php echo $analytics ?>
     

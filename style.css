@@ -255,6 +255,7 @@ span:empty {
     position: relative;
     width: 0;
     height: fit-content;
+    object-fit: contain;
     filter: saturate(0);
     mix-blend-mode: lighten;
 }

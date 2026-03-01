@@ -8,7 +8,7 @@ include 'lib.php';
 <html>
     <head>
 	<?php echo $seo; ?>
-	<link rel="stylesheet" href="style.css?v=32">
+	<link rel="stylesheet" href="style.css?v=33">
     </head>
     <?php echo $analytics ?>
     
@@ -29,7 +29,7 @@ include 'lib.php';
 	<h3 style="margin-top: 1rem;" class="collapser" collapse="event-list">All Shows</h3>
 	<div class="paragraph" style="margin-top: 1rem" id="event-list">
 	    <?php echo renderEventList(); ?>
-	</div><br>
+	</div>
 	    
     </body>
 

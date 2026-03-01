@@ -11,7 +11,7 @@ include '../lib.php';
     <head>
 	<base href="../">
 	<?php echo $seo; ?>
-	<link rel="stylesheet" href="style.css?v=32">
+	<link rel="stylesheet" href="style.css?v=33">
     </head>
     <?php echo $analytics ?>
     

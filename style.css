@@ -250,6 +250,7 @@ span:empty {
 }
 .paragraph:has(> .artist-info) > img {
     width: 0;
+    height: fit-content;
     filter: saturate(0);
     mix-blend-mode: lighten;
 }
@@ -274,7 +275,17 @@ span:empty {
     :root {
 	--page-width: 90vw;
     }
+    html {
+	font-size: 30px;
+    }
+    h1 {
+	font-size: 4rem;
+	margin-bottom: -11rem;
+    }
     h2 {
-	font-size: 2.25rem;
+	font-size: 1.2rem;
+    }
+    .event-date, .event-venue, .event-city {
+	font-size: 1.5rem;
     }
 }

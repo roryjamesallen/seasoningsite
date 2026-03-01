@@ -8,16 +8,14 @@ include 'lib.php';
 <html>
     <head>
 	<?php echo $seo; ?>
-	<link rel="stylesheet" href="style.css?v=30">
+	<link rel="stylesheet" href="style.css?v=31">
     </head>
     <?php echo $analytics ?>
     
     <body>
-	<div id="gl5-backdrop"><div></div></div>
-	<h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1>
-	<h2 class="" movementpx="4"><?php echo $tagline; ?></h2>
+	<?php echo renderTitle($tagline); ?>
 
-	<div class="paragraph" style="margin-top: 1rem;">
+	<div class="paragraph">
 	    Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.
 	</div><br>
 	<hr>
@@ -32,13 +30,10 @@ include 'lib.php';
 	<div class="paragraph" style="margin-top: 1rem" id="event-list">
 	    <?php echo renderEventList(); ?>
 	</div><br>
-
-	<h3 style="margin-top: 1rem;">Contact</h3>
-	<div class="paragraph" style="margin-top: 1rem">
-	    <span><a href="https://www.instagram.com/seas0ning_/?hl=en">Instagram</a> / <a href="https://www.facebook.com/Seas0ning/">Facebook</a> / <a href="https://ra.co/promoters/119677">Resident Advisor</a> / <a href="https://soundcloud.com/seas0ning">SoundCloud</a></span>
-	</div>
 	    
     </body>
+
+    <?php renderFooter() ?>
 </html>
 <script>
  const movement_px = 10;

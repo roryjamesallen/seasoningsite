@@ -6,11 +6,6 @@ error_reporting(E_ALL);
 $root = '../';
 include '../lib.php';
 
-if (isset($_GET['a'])){
-    $artist = urldecode($_GET['a']);
-} else {
-    header('Location: ../');
-}
 ?>
 <html>
     <head>
@@ -21,9 +16,8 @@ if (isset($_GET['a'])){
     <?php echo $analytics ?>
     
     <body>
-	<?php echo renderTitle('Artist Spotlight: '.$artist); ?>
-	<?php echo renderArtistInfo($artist); ?>
-	<?php echo renderEventsForArtist($artist); ?>
+	<?php echo renderTitle('The Roster'); ?>
+	<?php echo renderArtistList(); ?>
     </body>
 
     <?php renderFooter() ?>

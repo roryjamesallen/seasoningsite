@@ -18,6 +18,8 @@ if (isset($_GET['a'])){
 	<?php echo $seo; ?>
 	<link rel="stylesheet" href="style.css?v=17">
     </head>
+    <?php echo $analytics ?>
+    
     <body>
 	<div id="gl5-backdrop"></div>
 	<a href=""><h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a>

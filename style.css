@@ -34,7 +34,7 @@ html {
 }
 body {
     background: var(--black);
-    margin: 0;
+    margin: 0 0 5rem 0;
     color: white;
 }
 #grain-overlay {
@@ -65,6 +65,9 @@ body {
     mask-repeat: no-repeat;
     filter: brightness(0.7);
 }
+br {
+    height: 0.5rem;
+}
 h1 {
     width: var(--page-width);
     height: 14rem;
@@ -74,6 +77,8 @@ h1 {
     top: 0;
     font-size: 8rem;
     display: flex;
+    position: relative;
+    z-index: -1;
     justify-content: space-between;
     font-family: Milker;
     font-weight: normal;
@@ -103,6 +108,13 @@ h3 {
     font-size: 2rem;
     font-weight: normal;
     font-family: Milker;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover:not(a:has(> h1)) {
+    text-decoration: underline;
 }
 hr {
     width: var(--page-width);
@@ -149,20 +161,19 @@ span:empty {
     overflow: hidden;
 }
 .paragraph {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
     font-size: 1.5rem;
     text-align: justify;
     width: var(--page-width);
     margin: 0 auto;
     color: white;
 }
-.paragraph a {
-    color: white;
-    text-decoration: none;
+.paragraph > * {
+    flex-basis: 45%;
+    flex-grow: 1;
 }
-.paragraph a:hover {
-    text-decoration: underline;
-}
-
 
 
 /* Events */
@@ -223,14 +234,19 @@ span:empty {
 .event:hover .event-view-poster {
     opacity: 0;
 }
+.artist-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
 .artist-link {
-    color: white;
-    text-decoration: none;
+    opacity: 0.75;
 }
-.artist-link:hover {
-    text-decoration: underline;
+.paragraph:has(> .artist-info) > img {
+    width: 0;
+    filter: saturate(0);
+    mix-blend-mode: lighten;
 }
-
 
 .collapsed {
     display: none;

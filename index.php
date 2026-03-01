@@ -32,7 +32,7 @@ include 'lib.php';
 
 	<h3 style="margin-top: 1rem;">Contact</h3>
 	<div class="paragraph" style="margin-top: 1rem">
-	    <a href="https://www.instagram.com/seas0ning_/?hl=en">Instagram</a> / <a href="https://www.facebook.com/Seas0ning/">Facebook</a> / <a href="https://ra.co/promoters/119677">Resident Advisor</a> / <a href="https://soundcloud.com/seas0ning">SoundCloud</a>
+	    <span><a href="https://www.instagram.com/seas0ning_/?hl=en">Instagram</a> / <a href="https://www.facebook.com/Seas0ning/">Facebook</a> / <a href="https://ra.co/promoters/119677">Resident Advisor</a> / <a href="https://soundcloud.com/seas0ning">SoundCloud</a></span>
 	</div>
 	    
     </body>

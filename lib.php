@@ -7,12 +7,14 @@ if (!isset($root)){
     $root = '';
 }
 
-function readJSON($filename){
+function readJSON($filename, $relational=true, $sort=true){
     global $root;
-    $json = json_decode(file_get_contents($root.$filename), true);
-    usort($json, function ($a, $b) {
-	return $b['date'] <=> $a['date'];
-    });
+    $json = json_decode(file_get_contents($root.$filename), $relational);
+    if ($sort){
+	usort($json, function ($a, $b) {
+	    return $b['date'] <=> $a['date'];
+	});
+    }
     return $json;
 }
 function renderEvent($event_key, $event){
@@ -43,17 +45,50 @@ function renderEventList(){
     }
     echo '</div>';
 }
+function renderArtistInfo($artist){
+    $artists_json = readJSON('artists.json', true, false);
+    if (isset($artists_json[$artist])){
+	$artist_json = $artists_json[$artist];
+	$started = false;
+	$links = [];
+	foreach (['Instagram','Facebook','SoundCloud','Bandcamp','Resident Advisor','Website'] as $link){
+	    if (isset($artist_json[strtolower($link)])){
+		if (!$started){
+		    $started = true;
+		}
+		$links[] = '<a class="artist-link" href="'.$artist_json[strtolower($link)].'">'.$link.'</a>';
+	    }
+	}
+	if ($started){
+	    echo '<h3 style="margin-top: 1rem;">About</h3><div class="paragraph" style="margin-top: 1rem"><div class="artist-info">';
+	    if ($artist_json['bio']){
+		echo $artist_json['bio'];
+	    }
+	    echo '<span class="artist-links">'.join('<span style="margin: 0 5px">/</span>', $links).'</span></div>';
+	    if (file_exists('../images/artists/'.urlencode($artist).'.jpg')){
+		echo '<img src="images/artists/'.urlencode($artist).'.jpg">';
+	    }
+	    echo '</div><br><hr>';
+	}
+    }
+}
 function renderEventsForArtist($artist){
-    $json = readJSON('events.json');
-    echo '<div class="event-list">';
-    foreach ($json as $event_key => $event){
+    $events_json = readJSON('events.json');
+    $started = false;
+    foreach ($events_json as $event_key => $event){
 	if (isset($event['artists'])){
 	    if (in_array($artist, $event['artists'])){
+		if (!$started){
+		    echo '<h3 style="margin-top: 2rem;">Shows</h3><div class="paragraph" style="margin-top: 1rem"><div class="event-list">';
+		    $started = true;
+		}
 		renderEvent($event_key, $event);
 	    }
 	}
     }
-    echo '</div>';
+    if ($started){
+	echo '</div></div>';
+    }
 }
 
 

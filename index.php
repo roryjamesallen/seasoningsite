@@ -7,13 +7,13 @@ include 'lib.php';
 ?>
 <html>
     <head>
-	<?php echo $seo; ?>
+	<?php renderSEO(); ?>
 	<link rel="stylesheet" href="style.css?v=33">
     </head>
     <?php echo $analytics ?>
     
     <body>
-	<?php echo renderTitle($tagline); ?>
+	<?php renderTitle($tagline); ?>
 
 	<div class="paragraph">
 	    Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.
@@ -28,7 +28,7 @@ include 'lib.php';
 	
 	<h3 style="margin-top: 1rem;" class="collapser" collapse="event-list">All Shows</h3>
 	<div class="paragraph" style="margin-top: 1rem" id="event-list">
-	    <?php echo renderEventList(); ?>
+	    <?php renderEventList(); ?>
 	</div>
 	    
     </body>

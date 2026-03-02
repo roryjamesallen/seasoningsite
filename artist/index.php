@@ -15,15 +15,15 @@ if (isset($_GET['a'])){
 <html>
     <head>
 	<base href="../">
-	<?php echo $seo; ?>
+	<?php renderSEO('Seasoning Artist - '.$artist); ?>
 	<link rel="stylesheet" href="style.css?v=33">
     </head>
     <?php echo $analytics ?>
     
     <body>
-	<?php echo renderTitle('Artist Spotlight: '.$artist); ?>
-	<?php echo renderArtistInfo($artist); ?>
-	<?php echo renderEventsForArtist($artist); ?>
+	<?php renderTitle('Artist Spotlight: '.$artist); ?>
+	<?php renderArtistInfo($artist); ?>
+	<?php renderEventsForArtist($artist); ?>
     </body>
 
     <?php renderFooter() ?>

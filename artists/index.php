@@ -10,14 +10,14 @@ include '../lib.php';
 <html>
     <head>
 	<base href="../">
-	<?php echo $seo; ?>
+	<?php renderSEO('Seasoning - The Roster'); ?>
 	<link rel="stylesheet" href="style.css?v=33">
     </head>
     <?php echo $analytics ?>
     
     <body>
-	<?php echo renderTitle('The Roster'); ?>
-	<?php echo renderArtistList(); ?>
+	<?php renderTitle('The Roster'); ?>
+	<?php renderArtistList(); ?>
     </body>
 
     <?php renderFooter() ?>

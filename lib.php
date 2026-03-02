@@ -128,16 +128,15 @@ function renderTitle($subheading){
     echo '<div id="gl5-backdrop"><div></div></div><a href=""><h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="moving-children" movementpx="4" style="margin-bottom: 4rem;">'.$subheading.'</h2>';
 }
 
-$seo = '
+function renderSEO($title='Seasoning - Live Events'){
+    echo '
 <meta charset="utf-8">
      <meta name="description" content="Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.">
      <meta property="og:title" content="Seasoning - Live Events">
      <meta property="og:description" content="Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.">
 <meta name="keywords" content="Stroud, Bristol, London, Rave, Live, Events, Performance, Club, Dance, Music, Scene, Studio, Community, Culture, Collective, Party">
-     <meta property="og:image" content="">
      <meta property="og:url" content="https://seasoning.live">
-     <title>Seasoning - Live Events</title>
-
+     <title>'.$title.'</title>
 <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
 <link rel="shortcut icon" href="favicon/favicon.ico" />
@@ -146,6 +145,7 @@ $seo = '
 <link rel="manifest" href="favicon/site.webmanifest" />
 <meta property="og:image" content="favicon/sharing.png">
 ';
+}
 
 $analytics = '
 <!-- Google tag (gtag.js) -->

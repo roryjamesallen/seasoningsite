@@ -34,7 +34,7 @@ function renderEvent($event_key, $event){
     }
     echo '<span class="event-view-poster">View Poster</span>';
     $image_path = 'images/event-posters/'.$event['image'].'.jpg';
-    echo '<img class="event-poster" src="'.$image_path.'">';
+    echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" class="event-poster" src="'.$image_path.'">';
     echo '</div>';
 }
 function renderEventList(){

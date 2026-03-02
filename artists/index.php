@@ -7,7 +7,8 @@ $root = '../';
 include '../lib.php';
 
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 	<base href="../">
 	<?php renderSEO('Seasoning - The Roster'); ?>

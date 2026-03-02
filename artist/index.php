@@ -12,7 +12,8 @@ if (isset($_GET['a'])){
     header('Location: ../');
 }
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 	<base href="../">
 	<?php renderSEO('Seasoning Artist - '.$artist); ?>

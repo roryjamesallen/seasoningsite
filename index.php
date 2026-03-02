@@ -5,7 +5,8 @@ error_reporting(E_ALL);
 
 include 'lib.php';
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 	<?php renderSEO(); ?>
 	<link rel="stylesheet" href="style.css?v=33">
@@ -15,9 +16,9 @@ include 'lib.php';
     <body>
 	<?php renderTitle($tagline); ?>
 
-	<div class="paragraph">
+	<p class="paragraph">
 	    Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.
-	</div><br>
+	</p><br>
 	<hr>
 
 	<!--

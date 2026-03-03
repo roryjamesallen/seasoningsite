@@ -55,9 +55,11 @@ function renderArtistList(){
     $events_json = readJSON('events.json');
     $artists = [];
     foreach ($events_json as $event){
-        foreach ($event['artists'] as $artist){
-            if (!in_array($artist, $artists)){
-                $artists[] = $artist;
+        if (array_key_exists('artists',$event)){
+            foreach ($event['artists'] as $artist){
+                if (!in_array($artist, $artists)){
+                    $artists[] = $artist;
+                }
             }
         }
     }

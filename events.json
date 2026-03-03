@@ -324,7 +324,7 @@
     "19": {
 	"name": "Seasoning X Independent Venue Week",
 	"date": "2026-02-07T00:00:00-00:00",
-	"venue": "The Old Blue Last",
+	"venue": "Old Blue Last",
 	"city": "London",
 	"artists": [
 	    "Aloka",
@@ -335,5 +335,11 @@
 	    "spr1ng br34ka"
 	],
 	"image": "19"
+    },
+    "20": {
+	"name": "Outlook Origins 2026",
+	"date": "2026-07-23T00:00:00-00:00",
+	"venue": "The Garden",
+	"city": "Tisno (Croatia)"
     }
 }

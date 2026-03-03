@@ -4,39 +4,43 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 if (!isset($root)){
-    $root = '';
+$root = '';
 }
 
 function readJSON($filename, $relational=true, $sort=true){
-    global $root;
-    $json = json_decode(file_get_contents($root.$filename), $relational);
-    if ($sort){
-        usort($json, function ($a, $b) {
-            return $b['date'] <=> $a['date'];
-        });
-    }
-    return $json;
+global $root;
+$json = json_decode(file_get_contents($root.$filename), $relational);
+if ($sort){
+usort($json, function ($a, $b) {
+return $b['date'] <=> $a['date'];
+});
+}
+return $json;
 }
 function renderEvent($event_key, $event){
-    global $root;
-    echo '<div class="event" tabindex="1">';
+global $root;
+echo '<div class="event" tabindex="1">';
     if (isset($event['name'])){
-        echo '<span class="event-name">'.$event['name'].'</span><hr>';
+    echo '<span class="event-name">'.$event['name'].'</span><hr>';
     }
     echo '<span class="event-date">'.date("d.m.Y",strtotime($event['date'])).'</span>';
     echo '<span class="event-city">'.$event['city'].'</span>';
-    echo '<span class="event-venue">'.$event['venue'].'</span><hr>';
+    echo '<span class="event-venue">'.$event['venue'].'</span>';
     
     if (isset($event['artists'])){
+        echo '<hr>';
         $artist_links = [];
         foreach ($event['artists'] as $artist){
             $artist_links[] = '<a class="artist-link" href="artist?a='.urlencode($artist).'">'.$artist.'</a>';
-        }
-        echo join('<span style="margin: 0 5px">/</span>', $artist_links);
     }
-    echo '<span class="event-view-poster">View Poster</span>';
-    $image_path = 'images/event-posters/'.$event['image'].'.jpg';
-    echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" class="event-poster" src="'.$image_path.'">';
+    echo join('<span style="margin: 0 5px">/</span>', $artist_links);
+    }
+    
+    if (array_key_exists('image',$event)){
+        $image_path = 'images/event-posters/'.$event['image'].'.jpg';
+        echo '<span class="event-view-poster">View Poster</span>';
+        echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" class="event-poster" src="'.$image_path.'">';
+    }
     echo '</div>';
 }
 function renderEventList(){

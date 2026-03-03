@@ -145,14 +145,15 @@ function renderSEO($title='Seasoning - Live Events'){
 <meta name="keywords" content="Stroud, Bristol, London, Rave, Live, Events, Performance, Club, Dance, Music, Scene, Studio, Community, Culture, Collective, Party">
      <meta property="og:url" content="https://seasoning.live">
      <title>'.$title.'</title>
-<link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-<link rel="shortcut icon" href="favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Seasoning" />
-<link rel="manifest" href="favicon/site.webmanifest" />
-<meta property="og:image" content="favicon/sharing.png">
-';
+     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+     <link rel="shortcut icon" href="favicon/favicon.ico" />
+     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+     <meta name="apple-mobile-web-app-title" content="Seasoning" />
+     <link rel="manifest" href="favicon/site.webmanifest" />
+     <meta property="og:image" content="favicon/sharing.png">
+     <link rel="canonical" href="https://seasoning.live"/>
+     ';
 }
 
 $analytics = '

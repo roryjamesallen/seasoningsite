@@ -37,25 +37,6 @@ include 'lib.php';
     <?php renderFooter() ?>
 </html>
 <script>
- const movement_px = 10;
-
- function moveTitleLetters(){
-     for (let j=0; j<document.getElementsByClassName('moving-children').length; ++j){
-	 const parent = document.getElementsByClassName('moving-children')[j];
-	 for (let i=0; i<parent.children.length; ++i){
-	     if (Math.floor(Math.random()*5) == 0){
-		 let element_movement_px = movement_px;
-		 if (parent.hasAttribute('movementpx')){
-		     element_movement_px = parseFloat(parent.getAttribute('movementpx'));
-		 }
-		 const x_px = Math.floor((((Math.random() * 2) - 1) * element_movement_px));
-		 const y_px = Math.floor((((Math.random() * 2) - 1) * element_movement_px));
-		 parent.children[i].style.transform = 'translate3d('+x_px+'px, '+y_px+ 'px, 0)';
-	     }
-	 }
-     }
- }
-
  function toggleCollapse(event){
      const collapser = event.target;
      const collapsee = document.getElementById(collapser.getAttribute('collapse'));
@@ -77,8 +58,6 @@ include 'lib.php';
  }
 
  window.onload = (event) => {
-     //moveTitleLetters();
-     //setInterval(moveTitleLetters, 2000);
      initialiseCollapsers();
  };
 </script>

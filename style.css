@@ -307,26 +307,14 @@ footer > div {
 
 @keyframes movingTitle {
     0% {
-	font-size: var(--h1-size);
-	margin-left: var(--h1-margin-sides);
-	margin-right: var(--h1-margin-sides);
+	transform: scale(0.9);
     }
     50% {
-	font-size: calc(var(--h1-size) + 1rem);
-	margin-left: calc(var(--h1-margin-sides) - 1rem );
-	margin-right: calc(var(--h1-margin-sides) - 1rem );
+	transform: scale(1.2, 1);
     }
     100% {
-	font-size: var(--h1-size);
-	margin-left: var(--h1-margin-sides);
-	margin-right: var(--h1-margin-sides);
+	transform: scale(0.9);
     }
-    
-    /*
-    0% { transform: translate(0, 0) }
-    50% { transform: translate(0, 0.25rem) }
-    100% { transform: translate(0, 0) }
-   */
 }
 h1.moving-children  > * {
     animation-name: movingTitle;

@@ -77,8 +77,8 @@ include 'lib.php';
  }
 
  window.onload = (event) => {
-     moveTitleLetters();
-     setInterval(moveTitleLetters, 2000);
+     //moveTitleLetters();
+     //setInterval(moveTitleLetters, 2000);
      initialiseCollapsers();
  };
 </script>

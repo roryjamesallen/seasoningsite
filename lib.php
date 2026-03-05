@@ -8,14 +8,14 @@ $root = '';
 }
 
 function readJSON($filename, $relational=true, $sort=true){
-global $root;
-$json = json_decode(file_get_contents($root.$filename), $relational);
-if ($sort){
-usort($json, function ($a, $b) {
-return $b['date'] <=> $a['date'];
-});
-}
-return $json;
+    global $root;
+    $json = json_decode(file_get_contents($root.$filename), $relational);
+    if ($sort){
+        usort($json, function ($a, $b) {
+            return $b['date'] <=> $a['date'];
+        });
+    }
+    return $json;
 }
 function renderEvent($event_key, $event){
 global $root;
@@ -51,7 +51,7 @@ function renderEventList(){
     }
     echo '</div>';
 }
-function renderArtistList(){
+function getArtistList(){
     $events_json = readJSON('events.json');
     $artists = [];
     foreach ($events_json as $event){
@@ -64,6 +64,10 @@ function renderArtistList(){
         }
     }
     sort($artists);
+    return $artists;
+}
+function renderArtistList(){
+    $artists = getArtistList();
     echo '<div class="paragraph artist-list"><span>';
     foreach ($artists as $artist){
         echo '<a class="artist-link" href="artist?a='.urlencode($artist).'">'.$artist.'</a> / ';
@@ -133,7 +137,7 @@ function renderFooter(){
     ';
 }
 function renderTitle($subheading){
-    echo '<div id="gl5-backdrop"><div></div></div><a href=""><h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="moving-children" movementpx="4" style="margin-bottom: 4rem;">'.$subheading.'</h2>';
+    echo '<div id="gl5-backdrop"><div></div></div><a href=""><h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="moving-children" movementpx="4">'.$subheading.'</h2>';
 }
 
 function renderSEO($title='Seasoning - Live Events'){
@@ -154,6 +158,51 @@ function renderSEO($title='Seasoning - Live Events'){
      <meta property="og:image" content="favicon/sharing.png">
      <link rel="canonical" href="https://seasoning.live"/>
      ';
+}
+
+function getArtistOptions(){
+    $artist_options = '';
+    foreach (getArtistList() as $artist){
+        $artist_options .= '<option value="'.$artist.'">'.$artist.'</option>';
+    }
+    return $artist_options;
+}
+function renderArtistEditor($artist){
+    $artists_json = readJSON('artists.json', true, false);
+    if (isset($artists_json[$artist])){
+        $artist_json = $artists_json[$artist];
+    } else {
+        $artist_json = [];
+    }
+    echo '<h2>Editing: '.$artist.'</h2>';
+    echo '<form method="POST">';
+    foreach (["Bio","Instagram","SoundCloud","Bandcamp","Resident Advisor","Website","Embed"] as $category){
+        $key = strtolower($category);
+        $name = str_replace(' ','-',$key);
+        echo '<label for="'.$name.'">'.$category.'</label><br>';
+        echo '<textarea id="'.$name.'" name="'.$name.'">';
+        if (isset($artist_json[$key])){
+            echo $artist_json[$key];
+        }
+        echo '</textarea><br>';
+    }
+    echo '<input type="submit" value="Submit Edits"></form>';
+}
+function renderAdmin($post){
+    echo '<style>textarea { width: 20rem; height: 5rem; }</style>';
+    if (isset($post['pwd'])){
+        if ($post['pwd'] == 'H{*z_l$esyGVN.(('){
+            echo '<form method="POST"><label for="artist-selector">Select Artist To Edit</label><br><select id="artist-selector" name="artist">'.getArtistOptions().'</select><input type="submit" value="Edit Artist"></form>';
+        } else {
+            echo 'wrong password!!';
+        }
+    } else if (isset($post['artist'])){
+        renderArtistEditor($post['artist']);
+    } else if (isset($post['bio'])){
+        echo 'submit edits /  confirm';
+    } else {
+        echo '<form method="POST"><label for="pwd">Enter Password</label><br><input id="pwd" name="pwd"><input type="submit" value="Enter"></form>';
+    }
 }
 
 $analytics = '

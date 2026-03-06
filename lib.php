@@ -19,7 +19,7 @@ function readJSON($filename, $relational=true, $sort=true){
 }
 function renderEvent($event_key, $event){
 global $root;
-echo '<div class="event" tabindex="1">';
+echo '<div class="event" tabindex="0">';
     if (isset($event['name'])){
     echo '<span class="event-name">'.$event['name'].'</span><hr>';
     }
@@ -137,7 +137,7 @@ function renderFooter(){
     ';
 }
 function renderTitle($subheading){
-    echo '<div id="gl5-backdrop"><div></div></div><a href=""><h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="moving-children" movementpx="4">'.$subheading.'</h2>';
+    echo '<a href=""><h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="moving-children" movementpx="4">'.$subheading.'</h2>';
 }
 
 function renderSEO($title='Seasoning - Live Events'){

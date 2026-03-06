@@ -16,7 +16,7 @@ if (isset($_GET['a'])){
 <html lang="en">
     <head>
 	<base href="../">
-	<?php renderSEO('Seasoning Artist - '.$artist); ?>
+<?php renderSEO('Seasoning Artist - '.$artist, 'https://seasoning.live/artist?a='.urlencode($artist)); ?>
 	<link rel="stylesheet" href="style.css?v=38">
     </head>
     <?php echo $analytics ?>

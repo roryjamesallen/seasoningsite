@@ -134,20 +134,20 @@ function renderFooter(){
 <a href="https://ra.co/promoters/119677">Resident Advisor</a><span style="margin: 0 0.5rem">/</span>
 <a href="https://soundcloud.com/seas0ning">SoundCloud</a>
 </div></footer>
-    ';
+';
 }
 function renderTitle($subheading){
-    echo '<a href=""><h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="moving-children" movementpx="4">'.$subheading.'</h2>';
+echo '<a href=""><h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="moving-children" movementpx="4">'.$subheading.'</h2>';
 }
 
-function renderSEO($title='Seasoning - Live Events'){
+function renderSEO($title='Seasoning - Live Events', $canonical='https://seasoning.live'){
     echo '
 <meta charset="utf-8">
      <meta name="description" content="Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.">
      <meta property="og:title" content="Seasoning - Live Events">
      <meta property="og:description" content="Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.">
 <meta name="keywords" content="Stroud, Bristol, London, Rave, Live, Events, Performance, Club, Dance, Music, Scene, Studio, Community, Culture, Collective, Party">
-     <meta property="og:url" content="https://seasoning.live">
+     <meta property="og:url" content="'.$canonical.'">
      <title>'.$title.'</title>
      <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
      <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
@@ -156,7 +156,7 @@ function renderSEO($title='Seasoning - Live Events'){
      <meta name="apple-mobile-web-app-title" content="Seasoning" />
      <link rel="manifest" href="favicon/site.webmanifest" />
      <meta property="og:image" content="favicon/sharing.png">
-     <link rel="canonical" href="https://seasoning.live"/>
+     <link rel="canonical" href="'.$canonical.'"/>
      ';
 }
 

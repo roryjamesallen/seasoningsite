@@ -11,7 +11,7 @@ include '../lib.php';
 <html lang="en">
     <head>
 	<base href="../">
-	<?php renderSEO('Seasoning - The Roster'); ?>
+<?php renderSEO('Seasoning - The Roster', 'https://seasoning.live/artists'); ?>
 	<link rel="stylesheet" href="style.css?v=38">
     </head>
     <?php echo $analytics ?>

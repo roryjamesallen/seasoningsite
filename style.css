@@ -43,6 +43,7 @@ body {
 body::before {
     content: "";
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     width: 100%;
@@ -232,7 +233,9 @@ footer > div {
     padding: 0.5rem;
     transition: opacity 0.2s;
     opacity: 0.5;
+    font-size: 1.25rem;
 }
+/*
 .event-poster {
     flex-basis: 100%;
     margin-top: 1rem;
@@ -246,12 +249,13 @@ footer > div {
 .event:focus .event-poster {
     max-height: 1000px;
 }
+.event:focus .event-view-poster {
+    opacity: 0;
+}*/
 .event-view-poster {
     cursor: pointer;
 }
-.event:focus .event-view-poster {
-    opacity: 0;
-}
+
 .artist-info {
     display: flex;
     flex-wrap: wrap;
@@ -369,6 +373,27 @@ h1.moving-children  > * {
     animation-iteration-count: infinite;
 }
 
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+form > span {
+    flex-basis: 100%;
+    display: flex;
+}
+form > span > * {
+    flex-basis: 30%;
+    box-sizing: border-box;
+}
+.button {
+    background: var(--white);
+    color: var(--black);
+    font-size: 1.25rem;
+    padding: 0.25rem;
+    cursor: pointer;
+}
 
 
 @media screen and (max-width: 1000px){

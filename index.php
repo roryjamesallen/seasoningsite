@@ -9,7 +9,7 @@ include 'lib.php';
 <html lang="en">
     <head>
 	<?php renderSEO(); ?>
-	<link rel="stylesheet" href="style.css?v=39">
+	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
     </head>
     <?php echo $analytics ?>
     

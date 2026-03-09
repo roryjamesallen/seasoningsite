@@ -29,11 +29,7 @@ function renderEvent($event_key, $event){
     
     if (isset($event['artists'])){
         echo '<hr>';
-        $artist_links = [];
-        foreach ($event['artists'] as $artist){
-            $artist_links[] = '<a class="artist-link" href="artist?a='.urlencode($artist).'">'.$artist.'</a>';
-	}
-	echo join('<span style="margin: 0 5px">/</span>', $artist_links);
+        renderArtistList($event['artists'],'pale-text');
     }
 
     echo '<a href="event?e='.$event_key.'" class="event-view-poster">See More</a>';
@@ -45,16 +41,30 @@ function renderEvent($event_key, $event){
        }*/
     echo '</div>';
 }
-function renderEventDetails($event){
-    echo '<p class="paragraph">';
-    if (isset($event['artists'])){
-	renderArtistList($event['artists']);
+function getDaysRemaining($date){
+    $days_remaining = round((strtotime($date) - strtotime(date('Y-m-d'))) / 86400);
+    if ($days_remaining == 0){
+        $text = '(TODAY!)';
+    } else if ($days_remaining < 0){
+        $text = '(This event has been and gone)';
+    } else {
+        $text = '('.$days_remaining.' days left to go)';
     }
+    return $text;
+}
+function renderEventDetails($event){
+    echo '<div class="paragraph"><span><span class="pale-text">Date:</span> '.date("d M Y",strtotime($event['date'])).' <span class="pale-text">'.getDaysRemaining($event['date']).'</span>';
+    echo '<br><span class="pale-text">Venue:</span> '.$event['venue'].', '.$event['city'];
+    if (isset($event['artists'])){
+        echo '<br><span class="pale-text">Artists:</span> ';
+        renderArtistList($event['artists']);
+    }
+    echo '</span>';
     if (isset($event['image'])){
 	echo '<style>body::before { background-image: url(images/event-posters/'.$event['image'].'.jpg); filter: blur(20px) contrast(0.3) } h1 { color: white; }</style>';
+    echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" src="images/event-posters/'.$event['image'].'.jpg">';
     }
-    
-    echo '</p>';
+    echo '</div>';
 }
 function renderEventList(){
     $json = readJSON('events.json');
@@ -90,15 +100,18 @@ function getEventValueList($key){
 function getArtistList(){
     return getEventValueList('artists');
 }
-function renderArtistList($artists=false){
+function renderArtistList($artists=false, $class=''){
     if (!$artists){
 	$artists = getArtistList();
     }
-    echo '<div class="paragraph artist-list"><span>';
+    echo '<span class="'.$class.'">';
     foreach ($artists as $artist){
-        echo '<a class="artist-link" href="artist?a='.urlencode($artist).'">'.$artist.'</a> / ';
+        echo '<a class="artist-link" href="artist?a='.urlencode($artist).'">'.$artist.'</a>';
+        if ($artist != $artists[count($artists)-1]){
+            echo ' / ';
+        }
     }
-    echo '</span></div>';
+    echo '</span>';
 }
 function renderArtistInfo($artist){
     $artists_json = readJSON('artists.json', true, false);

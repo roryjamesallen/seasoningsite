@@ -12,7 +12,7 @@ include '../lib.php';
     <head>
 	<base href="../">
 <?php renderSEO('Seasoning - The Roster', 'https://seasoning.live/artists'); ?>
-	<link rel="stylesheet" href="style.css?v=39">
+    <link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
     </head>
     <?php echo $analytics ?>
     

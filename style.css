@@ -171,6 +171,7 @@ span:empty {
 .paragraph > * {
     flex-basis: 35%;
     flex-grow: 1;
+    max-width: 100%;
 }
 footer {
     border-top: 4px solid white;
@@ -270,7 +271,8 @@ footer > div {
     display: flex;
     flex-wrap: wrap;
 }
-.artist-link {
+.pale-text {
+    display: inline;
     opacity: 0.75;
 }
 .artist-embed {

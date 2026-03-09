@@ -23,11 +23,18 @@ if (isset($_GET['e'])){
 	<base href="../">
 	<?php renderSEO(date("d.m.Y",strtotime($event['date'])).' @ '.$event['venue'].', '.$event['city']); ?>
 	<link rel="stylesheet" href="style.css?v=39">
+    <link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
     </head>
     <?php echo $analytics ?>
     
     <body>
-	<?php renderTitle(date("d.m.Y",strtotime($event['date'])).' @ '.$event['venue'].', '.$event['city']); ?>
+<?php
+    if (isset($event['name'])){
+        renderTitle($event['name']);
+    } else {
+        renderTitle(date("d.m.Y",strtotime($event['date'])).' @ '.$event['venue'].', '.$event['city']);
+    }
+?>
 	<?php renderEventDetails($event); ?>
     </body>
 

@@ -19,10 +19,10 @@
     --light-blue: #36abde;
     --dark-blue: #5c7bb5;
     --purple: #796684;
-    --red: #b53e66;
+    --red: #CE1A19;
     --orange: #e1a25d;
     --yellow: #b0b859;
-    --black: #32262e;
+    --black: #1F181D;
     --white: #d6d6e2;
     
     --cyan: #31e5e6;
@@ -157,6 +157,9 @@ span:empty {
     mix-blend-mode: lighten;
     filter: blur(3px) contrast(10);
     overflow: hidden;
+}
+.goo-minor {
+    filter: blur(1.5px) contrast(10);
 }
 .paragraph {
     display: flex;
@@ -397,6 +400,17 @@ form > span > * {
     cursor: pointer;
 }
 
+.page-banner {
+    display: block;
+    font-family: Milker;
+    font-size: 2.4rem;
+    text-align: center;
+    padding: 0.7rem 0.5rem 0.3rem;
+    background: var(--white);
+}
+.page-banner > span {
+    mix-blend-mode: difference;
+}
 
 @media screen and (max-width: 1000px){
     :root {
@@ -424,5 +438,8 @@ form > span > * {
     }
     footer {
 	font-size: 1.2rem;
+    }
+    .page-banner {
+	font-size: 1.6rem;
     }
 }

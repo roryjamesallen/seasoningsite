@@ -14,11 +14,16 @@ include 'lib.php';
     <?php echo $analytics ?>
     
     <body>
+	<a href="event?e=20260529" class="page-banner">
+	    <span>Seasoning Festival 2026</span>
+	</a>
+
 	<?php renderTitle($tagline); ?>
 
 	<p class="paragraph">
 	    Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.
 	</p><br>
+
 	<hr>
 
 	<!--

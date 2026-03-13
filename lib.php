@@ -48,16 +48,23 @@ function getDaysRemaining($date){
     } else if ($days_remaining < 0){
         $text = '(This event has been and gone)';
     } else {
-        $text = '('.$days_remaining.' days left to go)';
+        $text = '('.$days_remaining.' days to go)';
     }
     return $text;
 }
 function renderEventDetails($event){
-    echo '<div class="paragraph"><span><span class="pale-text">Date:</span> '.date("d M Y",strtotime($event['date'])).' <span class="pale-text">'.getDaysRemaining($event['date']).'</span>';
+    echo '<div class="paragraph"><span><span class="pale-text">Date:</span> '.date("d M Y",strtotime($event['date']));
+    if (isset($event['end-date'])){
+        echo ' - '.date("d M Y",strtotime($event['end-date']));
+    }
+    echo ' <span class="pale-text">'.getDaysRemaining($event['date']).'</span>';
     echo '<br><span class="pale-text">Venue:</span> '.$event['venue'].', '.$event['city'];
     if (isset($event['artists'])){
         echo '<br><span class="pale-text">Artists:</span> ';
         renderArtistList($event['artists']);
+    }
+    if (isset($event['description'])){
+        echo '<br><br>'.$event['description'];
     }
     echo '</span>';
     if (isset($event['image'])){

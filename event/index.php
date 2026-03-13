@@ -21,7 +21,13 @@ if (isset($_GET['e'])){
 <html lang="en">
     <head>
 	<base href="../">
-	<?php renderSEO(date("d.m.Y",strtotime($event['date'])).' @ '.$event['venue'].', '.$event['city']); ?>
+	<?php
+	$title = date("d.m.Y",strtotime($event['date'])).' @ '.$event['venue'].', '.$event['city'];
+	if (isset($event['name'])){
+	    $title = $event['name'];
+	}
+	renderSEO($title);
+	?>
 	<link rel="stylesheet" href="style.css?v=39">
     <link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
     </head>

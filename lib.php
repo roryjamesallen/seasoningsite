@@ -68,7 +68,7 @@ function renderEventDetails($event){
     }
     echo '</span>';
     if (isset($event['image'])){
-	echo '<style>body::before { background-image: url(images/event-posters/'.$event['image'].'.jpg); filter: blur(20px) contrast(0.3) } h1 { color: white; }</style>';
+        //echo '<style>body::before { background-image: url(images/event-posters/'.$event['image'].'.jpg); filter: blur(20px) contrast(0.3) } h1 { color: white; }</style>';
     echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" src="images/event-posters/'.$event['image'].'.jpg">';
     }
     echo '</div>';
@@ -111,14 +111,14 @@ function renderArtistList($artists=false, $class=''){
     if (!$artists){
 	$artists = getArtistList();
     }
-    echo '<span class="'.$class.'">';
+    echo '<span class="'.$class.'"><span>';
     foreach ($artists as $artist){
         echo '<a class="artist-link" href="artist?a='.urlencode($artist).'">'.$artist.'</a>';
         if ($artist != $artists[count($artists)-1]){
             echo ' / ';
         }
     }
-    echo '</span>';
+    echo '</span></span>';
 }
 function renderArtistInfo($artist){
     $artists_json = readJSON('artists.json', true, false);

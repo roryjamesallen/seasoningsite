@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 $root = '../';
 include '../lib.php';
 
-$event_id = '20260411';
+$event_id = '20260529';
 $event = getEventFromId($event_id);
 ?>
 <!DOCTYPE html>
@@ -19,6 +19,13 @@ $event = getEventFromId($event_id);
     <?php echo $analytics ?>
 
     <style>
+     :root {
+	 --beige: #f5eee5;
+	 
+	 --title: #1B1C0C;
+	 --background: #F7D5E5;
+	 --extra: #007EA6;
+     }
      @font-face {
 	 font-family: Cormorant;
 	 src: url('fonts/Cormorant.ttf');
@@ -27,7 +34,7 @@ $event = getEventFromId($event_id);
 	 content: none;
      }
      body {
-	 background-color: #f5eee5;
+	 background-color: var(--background);
      }
      #grass {
 	 height: 100vh;
@@ -38,6 +45,11 @@ $event = getEventFromId($event_id);
 	 left: 50%;
 	 top: 50%;
 	 transform: translate(-50%, -50%);
+	 filter: brightness(0.5);
+     }
+
+     #circlePath, #circle-text {
+	 display: none;
      }
      #circle-text {
 	 position: absolute;
@@ -52,13 +64,26 @@ $event = getEventFromId($event_id);
      #circle-text > * {
 	 width: 100%;
      }
+
+     #festival-logo {
+	 position: absolute;
+	 left: 50%;
+	 top: 50%;
+	 transform: translate(-50%, -50%);
+	 width: 90%;
+     }
+     
      .paragraph {
 	 gap: 1rem;
      }
      .paragraph > * {
 	 font-family: Cormorant;
 	 display: block;
-	 color: black;
+	 color: var(--title);
+     }
+     .paragraph > *:empty{
+	 max-height: 0;
+	 overflow: hidden;
      }
      h2 {
 	 font-size: 3rem;
@@ -68,12 +93,25 @@ $event = getEventFromId($event_id);
 	 flex-basis: 100% !important;
      }
 
+     #partners {
+	 display: flex;
+	 justify-content: space-between;
+	 max-width: 100%;
+	 gap: 1rem;
+     }
+     #partners > * {
+	 flex-basis: 0;
+	 flex-grow: 1;
+	 width: 0;
+	 object-fit: contain;
+	 max-height: 50px;
+     }
      
      footer * {
-	 color: grey !important;
+	 color: var(--extra) !important;
      }
      footer > a {
-	 color: black !important;
+	 color: var(--title) !important;
      }
      .full {
 	 flex-basis: 100%;
@@ -83,7 +121,7 @@ $event = getEventFromId($event_id);
 	 margin: 0 0 1rem;
      }
      .artist-list  a {
-	 color: black;
+	 color: var(--extra);
      }
     </style>
     
@@ -108,18 +146,31 @@ $event = getEventFromId($event_id);
       </textPath>
   </text>
 	</svg>
+	<img src="festival/seasoning-festival-logo.svg" id="festival-logo">
 	<div style="height: 100vh"></div>
 	<div class="paragraph" style="margin-top: 3rem">
 	    <h2 style="text-align: left; font-family: Milker">Rave Culture Is Folk Culture</h2>
-	    <h3 style="text-align: right;">Not a weekend away from life, but a durable scene inside it. Something earthy, bass-led, porous and strange.</h3>
-	    <h3 style="align-self: last baseline"></h3>
-	    <h2 style="text-align: right; font-family: Milker; align-self: last baseline; margin-bottom: 0">3 Days<br>3 Nights</h2>
-	    <img src="festival/moon-phases.png" style="max-height: 500px; object-fit: contain">
-	    <h4 style="align-self: start; margin: 0; font-weight: normal; text-align: right"><i>Figure 5: Moon phase circle culminating in the 31 May 2026 blue moon, with dated phases distributed around the orbit and a ray extending inward to Stroud as both site and concept.</i></h4>
+	    <h3 style="text-align: right;">Not a weekend away from life, but a durable scene inside it. Something earthy, bass-led, porous and <strong>strange.</strong></h3>
+	    <br><h2 style="text-align: right; font-family: Milker; align-self: start; margin-bottom: 0" class="full">3 Days<br>3 Nights<br><span style="font-size: 2rem; font-family: Cormorant">The Goods Shed + SVA,<br>Stroud, GL5 3AP<br><br>A Weekend of <strong>Soundsystem Mysticism</strong> in The Five Valleys</span></h2>
 	    <hr>
-	    <h2 style="font-family: Milker; margin: 0">The Artists</h2>
-	    <p class="full artist-list"><?php renderArtistList($event['artists']);?><hr class="full"> <h3 style="font-family: Milker">& Many More To Come</h3></p>
-	    <p></p><h3 style="max-width: fit-content"><a href="https://fixr.co/event/seasoning-festival-2026-tickets-738401183?ref=MC3012" style="font-family: Milker; border: 2px solid black; padding: 0.5rem; color: black">Buy Tickets</a></h3><br><br>
+	    <h2 style="font-family: Milker; margin: 0">Over 130 artists moving across four stages</h2><h3 style="text-align: right">Bringing together strands of rave that have long run parallel, low-end pressure, percussive intensity, dubwise psychedelia, hypnotic techno and everything in between.</h3>
+	    <p class="full artist-list" style="font-size: 3rem"><?php renderArtistList($event['artists']);?>
+		<hr class="full">
+		<h3 style="font-family: Milker; align-self: center">& Many More To Come</h3>
+		<h3 style="max-width: fit-content">
+		    <a href="https://fixr.co/event/seasoning-festival-2026-tickets-738401183?ref=MC3012" style="font-family: Milker; border: 2px solid var(--title); padding: 0.5rem; color: var(--title)">Buy Tickets</a>
+		</h3>
+	    </p>
+	    <p class="full" id="partners">
+		<img src="festival/partners/club-blanco.png">
+		<img src="festival/partners/joy-lift.png">
+		<img src="festival/partners/loose-joints.png">
+		<img src="festival/partners/arts-council-england.png">
+		<img src="festival/partners/cabin-fever.png">
+		<img src="festival/partners/dance-policy.png">
+		<img src="festival/partners/cranium.png">
+	    </p>
+	    
 	</div>
     </body>
 

@@ -9,11 +9,16 @@ include '../lib.php';
 if (isset($_GET['e'])){
     $event_id = urldecode($_GET['e']);
     try {
-	$event = getEventFromId($event_id);
+        $event = getEventFromId($event_id);
     } catch (Exception $e) {
-	header('Location: ../');
+        header('Location: ../');
+    }
+
+    if ($event_id == '20260529'){
+        header('Location: ../festival');
     }
 } else {
+    header("HTTP/1.1 301 Moved Permanently");
     header('Location: ../');
 }
 ?>

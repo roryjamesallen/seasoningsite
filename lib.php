@@ -31,8 +31,11 @@ function renderEvent($event_key, $event){
         echo '<hr>';
         renderArtistList($event['artists'],'pale-text');
     }
-
-    echo '<a href="event?e='.$event_key.'" class="event-view-poster">See More</a>';
+    if (isset($event['permalink'])){
+        echo '<a href="'.$event['permalink'].'" class="event-view-poster">See More</a>';
+    } else {
+        echo '<a href="event?e='.$event_key.'" class="event-view-poster">See More</a>';
+    }
     /*
        if (array_key_exists('image',$event)){
        $image_path = 'images/event-posters/'.$event['image'].'.jpg';
@@ -66,6 +69,9 @@ function renderEventDetails($event){
     if (isset($event['description'])){
         echo '<br><br>'.$event['description'];
     }
+    if (isset($event['ra'])){
+        echo '<iframe src="https://ra.co/promoters/'.$event['ra'].'/widgets/events?theme=dark" height="100%" width="100%" style="border: none;">';
+    }
     echo '</span>';
     if (isset($event['image'])){
         //echo '<style>body::before { background-image: url(images/event-posters/'.$event['image'].'.jpg); filter: blur(20px) contrast(0.3) } h1 { color: white; }</style>';
@@ -90,15 +96,15 @@ function getEventValueList($key){
     $values = [];
     foreach ($events_json as $event){
         if (array_key_exists($key, $event)){
-	    if (is_array($event[$key])){
-		foreach ($event[$key] as $value){
+            if (is_array($event[$key])){
+                foreach ($event[$key] as $value){
                     if (!in_array($value, $values)){
-			$values[] = $value;
+                        $values[] = $value;
                     }
-		}
+                }
             } else if (!in_array($event[$key], $values)){
-		$values[] = $event[$key];
-	    }
+                $values[] = $event[$key];
+            }
         }
     }
     sort($values);

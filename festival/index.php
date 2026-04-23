@@ -15,7 +15,7 @@ $event = getEventFromId($event_id);
 	<base href="../">
 	<?php renderSEO('Seasoning Festival 2026 - Rave Culture Is Folk Culture', 'https://seasoning.live/festival'); ?>
 	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
-	<link rel="stylesheet" href="festival/festival-style.css?v=2">
+	<link rel="stylesheet" href="festival/festival-style.css?v=3">
     </head>
     <?php echo $analytics ?>
 

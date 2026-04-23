@@ -2,12 +2,13 @@
     --beige: #f5eee5;
     
     --title: #1B1C0C;
-    --paragraph: #F7D5E5;
     --paragraph: white;
-    --title: rgb(226,152,173);
+    --title: rgb(230,152,190);
+    --paragraph: white;
     --background: rgb(10,19,13);
+    --background: rgb(30,30,8);
     --extra: #007EA6;
-    --extra: #209EC6;
+    --extra: rgb(58, 132, 169);
     --grey: #888888;
 }
 @font-face {

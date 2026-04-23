@@ -15,7 +15,7 @@ $event = getEventFromId($event_id);
 	<base href="../">
 	<?php renderSEO('Seasoning Festival 2026 - Rave Culture Is Folk Culture', 'https://seasoning.live/festival'); ?>
 	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
-	<link rel="stylesheet" href="festival/festival-style.css?v=3">
+	<link rel="stylesheet" href="festival/festival-style.css?v=4">
     </head>
     <?php echo $analytics ?>
 
@@ -24,10 +24,13 @@ $event = getEventFromId($event_id);
 	<img src="festival/seasoning-festival-logo.svg" id="festival-logo" alt="Logo for Seasoning Festival 2026">
 	<h1 style="display: none">Seasoning Festival 2026 - Rave Culture Is Folk Culture</h1>
 	<div style="height: 100vh"></div>
-	<div class="paragraph" style="margin-top: 3rem; gap: 2rem">
-	    <h2 style="text-align: left; font-family: Milker; font-size: 3rem;"><span style="color: var(--extra)"><span style="font-size: 4rem">Rave</span> Culture</span> <span style="color: var(--paragraph)"><br>Is <span style="font-size: 4rem">Folk</span> Culture</span></h2>
+	<img src="festival/blue-circle-background.svg" style="position: absolute; top: 100vh; left: 0; width: 100%">
+	<img src="festival/lightning-background.svg" style="position: absolute; top: 100vh; left: 0; width: 100%">
+	<img src="festival/lightning-background.svg" style="position: absolute; top: 300vh; left: 0; width: 100%">
+	<div class="paragraph" style="margin-top: 3rem; gap: 2rem; position: relative">
+	    <h2 style="text-align: left; font-family: Milker; font-size: 3rem;"><span style="color: var(--title)"><span style="font-size: 4rem">Rave</span> Culture</span> <span style="color: var(--paragraph)"><br>Is <span style="font-size: 4rem">Folk</span> Culture</span></h2>
 	    <p style="text-align: right; font-size: 2rem; margin: 0">Not a weekend away from life, but a durable scene inside it. Something earthy, bass-led, porous and <strong>strange.</strong></p>
-	    <p style="font-size: 2rem; margin: 0">At The Goods Shed + SVA<br>Stroud, GL5 3AP</p><h2 style="text-align: right; font-family: Milker; align-self: last baseline; margin-bottom: 0; color: var(--paragraph)"><span style="font-size: 6rem; margin-right: -0.75rem; color: var(--extra); display: inline-block; margin-bottom: -0.5rem">3</span> Days<br><span style="font-size: 5rem; margin-right: -0.75rem; margin-top: -0.35rem; display: inline-block; color: var(--extra)">3</span> <span style="vertical-align: top">Nights</span></h2>
+	    <p style="font-size: 2rem; margin: 0">At The Goods Shed + SVA<br>Stroud, GL5 3AP</p><h2 style="text-align: right; font-family: Milker; align-self: last baseline; margin-bottom: 0; color: var(--paragraph)"><span style="font-size: 6rem; margin-right: -0.75rem; color: var(--title); display: inline-block; margin-bottom: -0.5rem">3</span> Days<br><span style="font-size: 5rem; margin-right: -0.75rem; margin-top: -0.35rem; display: inline-block; color: var(--title)">3</span> <span style="vertical-align: top">Nights</span></h2>
 	    <!--<h2 style="font-family: Milker; margin: 0; text-align: center; background-color: var(--extra); padding: 2rem; color: white; font-size: 2rem" class="full">A Weekend of <strong style="font-size: 3rem">Soundsystem Mysticism</strong> in The Five Valleys</h2>-->
 
 	    <p style="font-size: 2rem; margin: 0" class="full">Bringing together strands of rave that have long run parallel, low-end pressure, percussive intensity, dubwise psychedelia, hypnotic techno and everything in between.</p>
@@ -61,8 +64,8 @@ $event = getEventFromId($event_id);
 		?>
 	    </div>
 	    <p style="font-family: Milker; align-self: center; font-size: 2rem; margin: 0">& Many More To Come</p>
-	    <div style="border: 2px solid var(--title); padding: 0.5rem; max-width: fit-content; margin: 0 auto">
-		<a href="https://fixr.co/event/seasoning-festival-2026-tickets-738401183?ref=MC3012" style="font-family: Milker;  color: var(--title)">Buy Tickets</a>
+	    <div style="border: 2px solid var(--title); padding: 0.5rem; max-width: fit-content; margin: 0 auto; background-color: var(--background)">
+		<a href="https://fixr.co/event/seasoning-festival-2026-tickets-738401183?ref=MC3012" style="font-family: Milker;  color: var(--title);">Buy Tickets</a>
 	    </div>
 	    <hr>
 	    <p class="full" id="partners" style="margin-bottom: -1rem; margin-top: 0">

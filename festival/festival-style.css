@@ -12,7 +12,7 @@
 }
 @font-face {
     font-family: Cormorant;
-    src: url('fonts/Cormorant.ttf');
+    src: url('../fonts/Cormorant.ttf');
 }
 body::before {
     content: none;
@@ -92,13 +92,13 @@ hr {
     flex-grow: 1;
     width: 0;
     max-width: fit-content;
-    object-fit: contain;
     max-height: 35px;
     filter: invert(1);
 }
 #partners > a > img {
     max-height: 100%;
     max-width: 100%;
+    object-fit: contain;
 }
 
 footer * {

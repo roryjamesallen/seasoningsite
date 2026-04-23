@@ -63,7 +63,7 @@ $event = getEventFromId($event_id);
 		};
 		echo '</div>';
 		?>
-		<p style="font-family: Milker; align-self: center; font-size: 2rem; margin: 0;">& Many More To Come</p>
+		<p style="font-family: Milker; align-self: center; font-size: 2rem; margin: 1rem 0 0;">& Many More To Come</p>
 	    </div>
 	    
 	    

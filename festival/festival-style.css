@@ -101,10 +101,6 @@ hr {
     max-width: 100%;
     object-fit: contain;
 }
-
-footer * {
-    color: var(--grey) !important;
-}
 footer > a {
     color: var(--title) !important;
 }
@@ -112,11 +108,13 @@ footer > a {
     flex-basis: 100%;
 }
 .artist-list {
-    font-size: 2rem;
+    font-size: 1.25rem;
     margin: 0 0 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    text-transform: uppercase;
+    font-family: Milker;
 }
 .artist-list a {
     color: var(--title);
@@ -130,4 +128,10 @@ footer > a {
 }
 .artist-list a:nth-child(even){
     text-align: right;
+}
+
+@media screen and (max-width: 1000px){
+    html {
+	font-size: 15px;
+    }
 }

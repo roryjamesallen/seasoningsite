@@ -50,7 +50,7 @@ body::before {
     height: 300vh;
     background-image: url('images/gl5-outline.svg');
     background-size: cover;
-    filter: invert(1) blur(20px);
+    filter: invert(0.2);
     pointer-events: none;
 }
 #grain-overlay {
@@ -419,9 +419,6 @@ form > span > * {
     }
     html {
 	font-size: 30px;
-    }
-    body::before {
-	filter: invert(1) blur(40px);
     }
     h1 {
 	margin-bottom: -10rem;

@@ -1,0 +1,132 @@
+:root {
+    --beige: #f5eee5;
+    
+    --title: #1B1C0C;
+    --paragraph: #F7D5E5;
+    --paragraph: white;
+    --title: rgb(226,152,173);
+    --background: rgb(10,19,13);
+    --extra: #007EA6;
+    --extra: #209EC6;
+    --grey: #888888;
+}
+@font-face {
+    font-family: Cormorant;
+    src: url('fonts/Cormorant.ttf');
+}
+body::before {
+    content: none;
+}
+body {
+    background-color: var(--background);
+}
+#grass {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    object-fit: cover;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    filter: brightness(0.5);
+}
+
+#circlePath, #circle-text {
+    display: none;
+}
+#circle-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Milker;
+    font-size: min(1.4vw, 0.8rem);
+    letter-spacing: 0.05rem;
+    width: 550px;
+}
+#circle-text > * {
+    width: 100%;
+}
+
+#festival-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.paragraph {
+    gap: 1rem;
+}
+.paragraph > * {
+    font-family: Cormorant;
+    display: block;
+    color: var(--paragraph);
+}
+.paragraph > *:empty:not(hr){
+    max-height: 0;
+    overflow: hidden;
+}
+h1, h2 {
+    color: var(--title);
+}
+
+h2 {
+    font-size: 3rem;
+}
+hr {
+    background-color: white;
+    flex-basis: 100% !important;
+}
+
+#partners {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    gap: 1rem;
+}
+#partners > a {
+    flex-basis: 0;
+    flex-grow: 1;
+    width: 0;
+    max-width: fit-content;
+    object-fit: contain;
+    max-height: 35px;
+    filter: invert(1);
+}
+#partners > a > img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+footer * {
+    color: var(--grey) !important;
+}
+footer > a {
+    color: var(--title) !important;
+}
+.full {
+    flex-basis: 100%;
+}
+.artist-list {
+    font-size: 2rem;
+    margin: 0 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.artist-list a {
+    color: var(--title);
+}
+.artist-list > div {
+    width: fit-content;
+    max-width: 50%;
+}
+.artist-list > div:nth-child(even){
+    text-align: right;
+}
+.artist-list a:nth-child(even){
+    text-align: right;
+}

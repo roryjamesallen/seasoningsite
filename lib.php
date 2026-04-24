@@ -192,7 +192,7 @@ function renderTitle($subheading){
     echo '<a href=""><h1 class="goo moving-children"><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="moving-children" movementpx="4">'.$subheading.'</h2>';
 }
 
-function renderSEO($title='Seasoning - Live Events', $canonical='https://seasoning.live'){
+function renderSEO($title='Seasoning - Live Events', $canonical='https://seasoning.live', $favicon_path='favicon'){
     echo '
 <meta charset="utf-8">
      <meta name="description" content="Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.">
@@ -201,13 +201,13 @@ function renderSEO($title='Seasoning - Live Events', $canonical='https://seasoni
 <meta name="keywords" content="Stroud, Bristol, London, Rave, Live, Events, Performance, Club, Dance, Music, Scene, Studio, Community, Culture, Collective, Party">
      <meta property="og:url" content="'.$canonical.'">
      <title>'.$title.'</title>
-     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-     <link rel="shortcut icon" href="favicon/favicon.ico" />
-     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+     <link rel="icon" type="image/png" href="'.$favicon_path.'/favicon-96x96.png" sizes="96x96" />
+     <link rel="icon" type="image/svg+xml" href="'.$favicon_path.'/favicon.svg" />
+     <link rel="shortcut icon" href="'.$favicon_path.'/favicon.ico" />
+     <link rel="apple-touch-icon" sizes="180x180" href="'.$favicon_path.'/apple-touch-icon.png" />
      <meta name="apple-mobile-web-app-title" content="Seasoning" />
-     <link rel="manifest" href="favicon/site.webmanifest" />
-     <meta property="og:image" content="favicon/sharing.png">
+     <link rel="manifest" href="'.$favicon_path.'/site.webmanifest" />
+     <meta property="og:image" content="'.$favicon_path.'/sharing.png">
      <link rel="canonical" href="'.$canonical.'"/>
      ';
 }

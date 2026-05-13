@@ -1,0 +1,101 @@
+body {
+    background-color: var(--beige);
+    padding: 2rem;
+}
+h1 {
+    margin: 0;
+    width: 100%;
+    height: unset;
+    padding: 0;
+    text-align: center;
+    display: inline-block;
+    transform: none;
+}
+hr {
+    width: 100%;
+}
+.venue-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.venue {
+    flex-basis: 20%;
+    flex-grow: 1;
+    min-width: min(500px, 100%);
+}
+.venue-title {
+    font-family: Milker;
+    color: inherit;
+    margin: 0;
+    width: fit-content;
+}
+.act-list {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.25rem;
+    background-color: var(--beige);
+}
+.act {
+    flex-basis: 100%;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--paragraph);
+    color: black;
+    font-size: 1.5rem;
+    font-family: AileronSemi;
+    align-items: center;
+}
+.act-note {
+    opacity: 0.5;
+}
+.act-artists {
+    flex: 3;
+}
+.act-time {
+    flex: 1;
+    font-family: monospace;
+    text-align: right;
+}
+.act:has(.act-past) {
+    opacity: 0.1;
+}
+
+.sva-main {
+    color: var(--red);
+}
+.sva-main .act:has(.act-now) {
+    background-color: var(--red);
+    color: white;
+}
+
+.sva-up {
+    color: var(--dark-blue);
+}
+.sva-up .act:has(.act-now) {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+.the-goods-shed {
+    color: var(--green);
+}
+.the-goods-shed .act:has(.act-now) {
+    background-color: var(--green);
+    color: white;
+}
+
+.the-goods-yard {
+    color: var(--orange);
+}
+.the-goods-yard .act:has(.act-now) {
+    background-color: var(--orange);
+    color: white;
+}
+
+@media screen and (max-width: 1000px){
+    html {
+	font-size: 10px;
+    }
+}

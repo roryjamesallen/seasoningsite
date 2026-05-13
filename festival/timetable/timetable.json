@@ -1,0 +1,184 @@
+{
+    "SVA Main": {
+	"2026-05-29T17:00:00Z": {
+	    "artists": ["YouYou"],
+	    "note": "Friday Stage Opener"
+	},
+	"2026-05-29T19:00:00Z": {
+	    "artists": ["A Wild"]
+	},
+	"2026-05-29T21:00:00Z": {
+	    "artists": ["Chez de Milo"]
+	},
+	"2026-05-29T23:00:00Z": {
+	    "artists": ["Vlada"]
+	},
+	"2026-05-30T01:00:00Z": {
+	    "artists": ["END OF ACTS"]
+	},
+	"2026-05-30T14:00:00Z": {
+	    "artists": ["Dom R"],
+	    "note": "Saturday Stage Opener"
+	},
+	"2026-05-30T15:30:00Z": {
+	    "artists": ["Medina"]
+	},
+	"2026-05-30T17:00:00Z": {
+	    "artists": ["FORTY"]
+	},
+	"2026-05-30T19:30:00Z": {
+	    "artists": ["Nadja"]
+	},
+	"2026-05-30T21:00:00Z": {
+	    "artists": ["MONOBROW", "SEFTO"]
+	},
+	"2026-05-30T23:00:00Z": {
+	    "artists": ["HOW WE MET"]
+	},
+	"2026-05-31T00:30:00Z": {
+	    "artists": ["CRANIUM"]
+	},
+	"2026-05-31T02:30:00Z": {
+	    "artists": ["Not So Genius", "Tom Thumb"]
+	},
+	"2026-05-31T04:30:00Z": {
+	    "artists": ["END OF ACTS"]
+	}
+    },
+    "SVA UP": {
+	"2026-05-30T20:00:00Z": {
+	    "artists": ["Acid Bloom", "Spinstress"],
+	    "note": "Saturday Stage Opener"
+	},
+	"2026-05-30T21:00:00Z": {
+	    "artists": ["Neon Pumps", "Sludge Hub"]
+	},
+	"2026-05-30T22:30:00Z": {
+	    "artists": ["OCCYX", "Severine"]
+	},
+	"2026-05-31T00:00:00Z": {
+	    "artists": ["Ansatze", "spr1ng br34ka"]
+	},
+	"2026-05-31T01:30:00Z": {
+	    "artists": ["Dyslecta", "Harpriya"]
+	},
+	"2026-05-31T03:00:00Z": {
+	    "artists": ["Buckley", "Ido Plumes"]
+	},
+	"2026-05-31T04:30:00Z": {
+	    "artists": ["END OF ACTS"]
+	},
+	"2026-05-31T15:30:00Z": {
+	    "artists": ["Kusmishko"],
+	    "note": "Sunday Stage Opener"
+	},
+	"2026-05-31T17:00:00Z": {
+	    "artists": ["Tani Atyabi"]
+	},
+	"2026-05-31T18:30:00Z": {
+	    "artists": ["SSSLIP", "SYZ"]
+	},
+	"2026-05-31T20:00:00Z": {
+	    "artists": ["END OF ACTS"]
+	}
+    },
+    "The Goods Shed": {
+	"2026-05-29T20:00:00Z": {
+	    "artists": ["Control Freak"],
+	    "note": "Friday Stage Opener"
+	},
+	"2026-05-29T22:00:00Z": {
+	    "artists": ["Stones Taro"]
+	},
+	"2026-05-30T00:00:00Z": {
+	    "artists": ["K-Lone", "Manami"]
+	},
+	"2026-05-30T02:00:00Z": {
+	    "artists": ["END OF ACTS"]
+	},
+	"2026-05-30T20:00:00Z": {
+	    "artists": ["Berwick"],
+	    "note": "Saturday Stage Opener"
+	},
+	"2026-05-30T21:00:00Z": {
+	    "artists": ["EM", "STAV"]
+	},
+	"2026-05-30T23:00:00Z": {
+	    "artists": ["mantra", "Pinch"]
+	},
+	"2026-05-31T01:00:00Z": {
+	    "artists": ["Josey Rebelle"]
+	},
+	"2026-05-31T03:00:00Z": {
+	    "artists": ["END OF ACTS"]
+	},
+	"2026-05-31T20:00:00Z": {
+	    "artists": ["Bake"],
+	    "note": "Sunday Stage Opener"
+	},
+	"2026-05-31T22:00:00Z": {
+	    "artists": ["Om Unit"]
+	},
+	"2026-06-01T00:00:00Z": {
+	    "artists": ["END OF ACTS"]
+	}
+    },
+    "The Goods Yard": {
+	"2026-05-29T12:00:00Z": {
+	    "artists": ["Fraser"],
+	    "note": "Opening Set"
+	},
+	"2026-05-29T13:00:00Z": {
+	    "artists": ["Mandrill Sound"],
+	    "note": "Special Opening Set"
+	},
+	"2026-05-29T15:00:00Z": {
+	    "artists": ["Darius Akashic"],
+	    "note": "Foundations of Acid Set '78-'86"
+	},
+	"2026-05-29T17:00:00Z": {
+	    "artists": ["Brown Excellence"]
+	},
+	"2026-05-29T20:00:00Z": {
+	    "artists": ["END OF ACTS"]
+	},
+	"2026-05-30T12:00:00Z": {
+	    "artists": ["Arabesque"],
+	    "note": "Saturday Stage Opener"
+	},
+	"2026-05-30T14:00:00Z": {
+	    "artists": ["HOW WE MET"]
+	},
+	"2026-05-30T15:30:00Z": {
+	    "artists": ["Immigrant Party"]
+	},
+	"2026-05-30T17:00:00Z": {
+	    "artists": ["Cypher"]
+	},
+	"2026-05-30T18:30:00Z": {
+	    "artists": ["Finch"]
+	},
+	"2026-05-30T20:00:00Z": {
+	    "artists": ["Toumba"]
+	},
+	"2026-05-30T22:00:00Z": {
+	    "artists": ["END OF ACTS"]
+	},
+	"2026-05-31T12:00:00Z": {
+	    "artists": ["Amelie"],
+	    "note": "Sunday Stage Opener"
+	},
+	"2026-05-31T14:00:00Z": {
+	    "artists": ["Matt Pond"]
+	},
+	"2026-05-31T16:00:00Z": {
+	    "artists": ["Lovellious", "XL Regular"]
+	},
+	"2026-05-31T18:00:00Z": {
+	    "artists": ["Shy One"]
+	},
+	"2026-05-31T20:00:00Z": {
+	    "artists": ["END OF ACTS"]
+	}
+    }
+}

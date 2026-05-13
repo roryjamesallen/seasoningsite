@@ -7,7 +7,7 @@ $root = '../../';
 include '../../lib.php';
 
 //$date_now = new DateTime(date("c"));
-$date_now = '2026-05-30T23:15:00Z';
+$date_now = '2026-05-30T21:30:00Z';
 
 function timeUntilAct($act_time, $other_act_on){
     global $date_now;
@@ -82,3 +82,9 @@ function renderTimetable(){
 	</div>
     </body>
 </html>
+
+<script>
+ setTimeout(() => {
+     //window.location.reload();
+ }, 1000);
+</script>

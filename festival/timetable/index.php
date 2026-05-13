@@ -7,7 +7,7 @@ $root = '../../';
 include '../../lib.php';
 
 //$date_now = new DateTime(date("c"));
-$date_now = '2026-05-30T20:15:00Z';
+$date_now = '2026-05-30T23:15:00Z';
 
 function timeUntilAct($act_time, $other_act_on){
     global $date_now;
@@ -74,10 +74,11 @@ function renderTimetable(){
     <?php echo $analytics ?>
 
     <body>
-	<h1>TIMETABLE</h1>
+	<img src="festival/blue-circle-background.svg" style="position: absolute; top: 0; left: 0; width: 100%; z-index: -1" alt="Blue circles background image">
+	<h1>FESTIVAL TIMETABLE</h1>
         <hr><br><br>
-    <div>
-	<?php renderTimetable();?>
-    </div>
+	<div>
+	    <?php renderTimetable();?>
+	</div>
     </body>
 </html>

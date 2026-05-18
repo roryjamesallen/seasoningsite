@@ -2,18 +2,29 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+date_default_timezone_set('UTC');
 
 $root = '../../';
 include '../../lib.php';
 
-//$date_now = new DateTime(date("c"));
-$date_now = '2026-05-30T21:30:00Z';
+$date_now = new DateTime('now');
+
+$debug = true;
+if ($debug){
+    $debug_interval = DateInterval::createFromDateString('12 days 11 hours 37 minutes 40 seconds');
+    $date_now = date_add($date_now, $debug_interval);
+}
+
+$time_now_formatted = $date_now->format('l H:i');
+$seconds = $date_now->format('s');
 
 function timeUntilAct($act_time, $other_act_on){
     global $date_now;
-    $act_time_formatted = date_format(new DateTime($act_time), 'H:i');
-    if ($act_time < $date_now){ // Already happened
-        if ($other_act_on){ // Another event is on already so this one is in the past
+    $act_time_date = new DateTime($act_time);
+    $act_time_formatted = date_format($act_time_date, 'H:i');
+    //echo $act_time_date->format('H:i').' vs '.$date_now->format('H:i').'<br>'.date_diff($act_time_date, $date_now)->format('%H:%i');
+    if ($act_time_date < $date_now){ // This act has already started
+        if ($other_act_on){ // Another event is on already so this event must have also already ended
             return [false, '<span class="act-past">'.$act_time_formatted.'</span>'];
         } else { // This act is on
             return [true, '<span class="act-now">NOW</span>'];
@@ -76,7 +87,7 @@ function renderTimetable(){
     <body>
 	<img src="festival/blue-circle-background.svg" style="position: absolute; top: 0; left: 0; width: 100%; z-index: -1" alt="Blue circles background image">
 	<h1>FESTIVAL TIMETABLE</h1>
-        <hr><br><br>
+    <hr><br><h2>It is <?php echo $time_now_formatted;?> <span id='seconds'><?php echo $seconds; ?></span></h2><br>
 	<div>
 	    <?php renderTimetable();?>
 	</div>
@@ -84,6 +95,18 @@ function renderTimetable(){
 </html>
 
 <script>
+ var seconds = <?php echo $seconds; ?>;
+ const seconds_element = document.getElementById('seconds');
+ function incrementSeconds(){
+     seconds += 1;
+     if (seconds >= 60){
+	 window.location.reload();
+     } else {
+	 seconds_element.innerText = String(seconds).padStart(2, '0');
+     }
+ }
+ setInterval(incrementSeconds, 1000);
+ 
  setTimeout(() => {
      //window.location.reload();
  }, 1000);

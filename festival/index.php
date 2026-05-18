@@ -37,7 +37,7 @@ $event = getEventFromId($event_id);
 	    <p style="font-size: 2rem; margin: 0" class="full">Bringing together strands of rave that have long run parallel, low-end pressure, percussive intensity, dubwise psychedelia, hypnotic techno and everything in between.</p>
 	    
 	    <h2 style="font-family: Milker; margin: 0; font-size: 2rem; display: flex; flex-direction: column; gap: 1rem; align-self: end">
-		<span>Over <span style="font-size: 5rem; color: var(--title)">130</span><span style="font-size: 3rem">artists</span></span>
+		<span>Over <span style="font-size: 5rem; color: var(--title)">60</span><span style="font-size: 3rem">artists</span></span>
 		<span style="display: flex; align-items: end; gap: 0.5rem; justify-content: end"><span>moving<br>across</span><span style="font-size: 5rem; color: var(--title); margin-bottom: -0.7rem">4</span><span>stages</span></span>
 	    </h2>
 

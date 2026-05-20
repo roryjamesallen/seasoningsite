@@ -11,7 +11,7 @@ $date_now = new DateTime('now');
 
 $debug = true;
 if ($debug){
-    $debug_interval = DateInterval::createFromDateString('12 days 11 hours 37 minutes 40 seconds');
+    $debug_interval = DateInterval::createFromDateString('10 days 13 hours 14 minutes 30 seconds');
     $date_now = date_add($date_now, $debug_interval);
 }
 
@@ -87,7 +87,7 @@ function renderTimetable(){
     <body>
 	<img src="festival/blue-circle-background.svg" style="position: absolute; top: 0; left: 0; width: 100%; z-index: -1" alt="Blue circles background image">
 	<h1>FESTIVAL TIMETABLE</h1>
-    <hr><br><h2>It is <?php echo $time_now_formatted;?> <span id='seconds'><?php echo $seconds; ?></span></h2><br>
+	<hr><br><h2><span><?php echo $time_now_formatted;?> <span id='seconds'><?php echo $seconds; ?></span></span></h2><br>
 	<div>
 	    <?php renderTimetable();?>
 	</div>
@@ -106,8 +106,24 @@ function renderTimetable(){
      }
  }
  setInterval(incrementSeconds, 1000);
+
+ /*
+ var now_act_positions = {};
+ var min_act_position = Infinity;
+ const now_acts = document.getElementsByClassName('act-now');
+ for (let i=0; i<now_acts.length; ++i){
+     const act = now_acts[i].closest('.act');
+     const position = act.getBoundingClientRect().top;
+     now_act_positions[act.closest('.venue').classList[1]] = position;
+     if (position < min_act_position){
+	 min_act_position = position;
+     }
+ }
+ const venues = document.getElementsByClassName('venue');
+ for (let j=0; j<venues.length; ++j){
+     const offset = (-now_act_positions[venues[j].classList[1]]) + min_act_position;
+     venues[j].style.marginTop = offset + 'px';
+ }
+ */
  
- setTimeout(() => {
-     //window.location.reload();
- }, 1000);
 </script>

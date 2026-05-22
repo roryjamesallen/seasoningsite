@@ -12,7 +12,7 @@ $event = getEventFromId($event_id);
 $date_now = new DateTime('now');
 $date_start = new DateTime('2026-05-29T12:00:00');
 
-$debug = true;
+$debug = false;
 if ($debug){
 $debug_interval = DateInterval::createFromDateString('-1 hour');
 $date_now = date_add($date_now, $debug_interval);

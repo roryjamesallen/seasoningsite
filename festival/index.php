@@ -67,7 +67,7 @@ if ($diff->format('%r') == '-'){
 	    <h2 style="font-size: 2rem; margin: 0; font-family: Milker; "><a href="https://fixr.co/event/738401183">Buy <span style="font-size: 3rem; color: var(--title)">Final release</span><br>tickets</a></h2>
 	    <h2 style="font-size: 2rem; margin: 0; font-family: Milker;"><span style="font-size: 3rem; color: var(--title)">Camping</span> & Shuttle Buses</a></h2>
 	    <p style="font-size: 2rem; margin: 0">Every weekend ticket includes <strong>free camping</strong>. Regular shuttle buses to and from the venues will be running for those who add the bus pass to their ticket.</p>
-	    <p style="margin: 0; font-size: 2rem">Buses will run continuously between these hours to get you back to your tent when each night is over.</p>
+	    <p style="margin: 0; font-size: 2rem">Buses will run regularly between these hours to get you back to your tent when each night is over.</p>
 	    <table style="font-size: 2rem">
 		<tr>
 		    <td>Fri</td>

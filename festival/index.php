@@ -43,6 +43,15 @@ if ($diff->format('%r') == '-'){
     <?php echo $analytics ?>
 
     <style>
+     :root {
+	 --background: #E9E2D6;
+	 --extra: #F391BC;
+	 --paragraph: #4F4E20;
+     }
+     body {
+	 background-color: var(--background);
+	 color: var(--paragraph);
+     }
      .block-children > * {
 	 display: block;
      }
@@ -52,80 +61,90 @@ if ($diff->format('%r') == '-'){
      table td:not(:first-child){
 	 padding-left: 0.5rem;
      }
+     #partners {
+	 filter: invert(1);
+     }
+     hr {
+	 background-color: var(--paragraph);
+     }
+     .paragraph, footer, footer a {
+	 color: var(--paragraph);
+	 border-color: var(--paragraph);
+     }
+     #timetable, #maps, #map, #campsite-map {
+	 width: calc(100% - 4rem);
+	 object-fit: contain;
+	 max-height: 90vh;
+	 display: flex;
+	 justify-content: center;
+	 padding: 2rem;
+     }
+     #campsite-map {
+	 padding-top: 0;
+     }
+     #timetable {
+	 flex-wrap: wrap;
+     }
+     #timetable div {
+	 flex-basis: 30%;
+	 max-height: 100%;
+     }
+     @media screen and (max-width: 1000px){
+	 #maps {
+	     flex-wrap: wrap;
+	     gap: 2rem;
+	 }
+	 #timetable {
+	     gap: 2rem;
+	     max-height: unset;
+	 }
+	 #timetable div {
+	     flex-basis: 100%;
+	 }
+     }
     </style>
     
     <body>
 	<script src="https://web-cdn.fixr.co/scripts/fixr-checkout-widget.v1.min.js"></script>
 	<!--<img id="grass" src="festival/grass.png" alt="Stone circle in a grassy field">
 	     <img src="festival/seasoning-festival-logo.svg" id="festival-logo" alt="Logo for Seasoning Festival 2026">-->
-	<h1 style="transform: none; margin: 1rem auto 0; height: unset; font-size: 3.5rem; text-align: center; z-index: 2; display: block">Seasoning Festival<br><span style="color: white; display: inline-block; font-size: 2.25rem; padding: 0; margin: 0; font-family: Cormorant"><?php echo $time_days; ?><br><span style="color: var(--white); font-size: 1.75rem"><?php echo $time_left; ?></span></span></h1>
-	<img src="festival/blue-circle-background.svg" style="position: absolute; top: 25vh; left: 0; width: 100%; z-index: -1" alt="Blue circles background image">
-	<img src="festival/lightning-background.svg" style="position: absolute; top: 8vh; left: 0; width: 100%; z-index: -1" alt="Yellow lightning background image">
-	<img src="festival/lightning-background.svg" style="position: absolute; top: 100vh; left: 0; width: 100%; z-index: -1" alt="Yellow lightning background image">
-	<div class="paragraph" style="margin-top: 1.5rem; gap: 2rem; position: relative">
-	    <p style="font-size: 2rem; margin: 0">Only a few tickets remain for Seasoning Festival 2026, with limited single day passes for those of you who can't make it for the whole 3 days.</p>
-	    <h2 style="font-size: 2rem; margin: 0; font-family: Milker; "><a href="https://fixr.co/event/738401183">Buy <span style="font-size: 3rem; color: var(--title)">Final release</span><br>tickets</a></h2>
-	    <h2 style="font-size: 2rem; margin: 0; font-family: Milker;"><span style="font-size: 3rem; color: var(--title)">Camping</span> & Shuttle Buses</a></h2>
-	    <p style="font-size: 2rem; margin: 0">Every weekend ticket includes <strong>free camping</strong>. Regular shuttle buses to and from the venues will be running for those who add the bus pass to their ticket.</p>
-	    <p style="margin: 0; font-size: 2rem">Buses will run regularly between these hours to get you back to your tent when each night is over.</p>
-	    <table style="font-size: 2rem">
-		<tr>
-		    <td>Fri</td>
-		    <td>1am - 3am</td>
-		</tr>
-		<tr>
-		    <td>Sat</td>
-		    <td>3:30am - 5:30am</td>
-		</tr>
-		<tr>
-		    <td>Sun</td>
-		    <td>11:30pm - 1:30am</td>
-		</tr>
-	    </table>
-	    <hr class="full">
-	    <h2 style="text-align: left; font-family: Milker; font-size: 3rem;"><span style="color: var(--title)"><span style="font-size: 4rem">Rave</span> Culture</span> <span style="color: var(--paragraph)"><br>Is <span style="font-size: 4rem">Folk</span> Culture</span></h2>
-	    <p style="text-align: right; font-size: 2rem; margin: 0">Not a weekend away from life, but a durable scene inside it. Something earthy, bass-led, porous and <strong>strange.</strong></p>
-	    <p style="font-size: 2rem; margin: 0">At The Goods Shed + SVA<br>Stroud, GL5 3AP</p><h2 style="text-align: right; font-family: Milker; align-self: last baseline; margin-bottom: 0; color: var(--paragraph)"><span style="font-size: 6rem; margin-right: -0.75rem; color: var(--title); display: inline-block; margin-bottom: -0.5rem">3</span> Days<br><span style="font-size: 5rem; margin-right: -0.75rem; margin-top: -0.35rem; display: inline-block; color: var(--title)">3</span> <span style="vertical-align: top">Nights</span></h2>
-	    <!--<h2 style="font-family: Milker; margin: 0; text-align: center; background-color: var(--extra); padding: 2rem; color: white; font-size: 2rem" class="full">A Weekend of <strong style="font-size: 3rem">Soundsystem Mysticism</strong> in The Five Valleys</h2>-->
+	<h1 style="transform: none; margin: 1rem auto 0; height: unset; font-size: 3.5rem; text-align: center; z-index: 2; display: none">Seasoning Festival</h1>
+	<div class="paragraph" style="margin: 2rem auto">
+	    <img style="max-height: unset" src="festival/seasoning-festival-logo.svg">
+	</div>
 
-	    <p style="font-size: 2rem; margin: 0" class="full">Bringing together strands of rave that have long run parallel, low-end pressure, percussive intensity, dubwise psychedelia, hypnotic techno and everything in between.</p>
-	    
-	    <h2 style="font-family: Milker; margin: 0; font-size: 2rem; display: flex; flex-direction: column; gap: 1rem; align-self: end">
-		<span>Over <span style="font-size: 5rem; color: var(--title)">60</span><span style="font-size: 3rem">artists</span></span>
-		<span style="display: flex; align-items: end; gap: 0.5rem; justify-content: end"><span>moving<br>across</span><span style="font-size: 5rem; color: var(--title); margin-bottom: -0.7rem">4</span><span>stages</span></span>
-	    </h2>
+	<h2 style="font-family: Cormorant; color: var(--paragraph); font-size: 2rem">The festival is happening right now! Scroll down for each day's timetable, venue and campsite maps, and information about The Retreat.</h2>
 
-	    
-	    <div class="full artist-list">
-		<?php
-		$artists = $event['artists'];
-		sort($artists, SORT_NATURAL | SORT_FLAG_CASE);
-		$halfway = floor(count($artists) / 2);
-		echo '<div>';
-		foreach($artists as $index => $artist){
-		    if ($index <= $halfway){
-			$url = 'https://seasoning.live/artist?a='.urlencode($artist);
-			echo "<a href='{$url}'>{$artist}</a><br>";
-		    }
-		};
-		echo '</div><div>';
-		foreach($artists as $index => $artist){
-		    if ($index > $halfway){
-			$url = 'https://seasoning.live/artist?a='.urlencode($artist);
-			echo "<a href='{$url}'>{$artist}</a><br>";
-		    }
-		};
-		echo '</div>';
-		?>
+	<div id="timetable">
+	    <div><img src="festival/seasoning-festival-timetable-friday.svg"></div>
+	    <div><img src="festival/seasoning-festival-timetable-saturday.svg"></div>
+	    <div><img src="festival/seasoning-festival-timetable-sunday.svg"></div>
+	    <div style="flex-basis: 100%; text-align: center">
+		* 12pm to 1pm: The Ritual Dimensions of Rave Culture / 1pm to 2pm: The Dancefloor's Role in Socio-Political Tensions<br>
+		** 2pm to 3pm: Intersections of Folk, Rave & The Idea Of Fusion w/ Lovellious<br>
+		*** 3pm to 4pm: Undulations Through Electronic Ambient, Chug & IDM w/YouYou<br>
+		**** 12pm to 2pm: Subcultural Capital under Platform Capitalism
 	    </div>
-	    
-	    
-	    <p style="font-size: 2rem; margin: 0">A space where emerging artists stand alongside those shaping the wider landscape, and where new forms begin to take hold.</p>
-	    <h2 style="text-align: right; font-family: Milker; align-self: last baseline; margin-bottom: 0; color: var(--paragraph); font-size:2rem">A programme<br> built on <span style="font-size: 3rem; color: var(--title); display: inline-block; margin-bottom: -0.5rem">connection</span> not hierarchy</h2>
-	    
-	    <div style="border: 2px solid var(--title); padding: 0.5rem; max-width: fit-content; margin: 3rem auto 0; background-color: var(--background); font-size: 2rem">
-		<a href="https://fixr.co/event/seasoning-festival-2026-tickets-738401183?ref=MC3012" style="font-family: Milker;  color: var(--title);">Buy Tickets</a>
-	    </div>
+	</div>
+
+	<img id="map" src="festival/seasoning-festival-map.png">
+	<img id="campsite-map" src="festival/seasoning-festival-campsite-map.png">
+	
+	<div class="paragraph" style="margin-bottom: 2rem">
+	    <h2 style="margin-bottom: 0">The Retreat:</h2>
+	    <span style="font-family: Cormorant">Nestled in the garden of The Long Table, next to the campsite, The Retreat is a quiet santuary space for anyone needing a moment of pause, stillness, or alone time away from the festival energy.<br>
+	    The Retreat is open 24 hours a day throughout the festival, and is intentionally unmanned to allow for privacy and calm.<br><br>
+	    If you would like additional support, you are always welcome to speak to a steward or member of the team, who can accompany you if needed.<br><br>
+		Please treat the space with care, softness and respect for others using it.<br><br>
+		<span style="opacity: 0.5; ">
+		    <span class="full" style="font-size: 1.5rem">Flyer Design by @bedspace</span><br>
+		    <span class="full" style="font-size: 1.5rem">Festival Identity by @alhowrk</span><br>
+		    <span class="full" style="font-size: 1.5rem">Website by Rory Allen</span>
+		</span>
+	    </span>
+	</div>
+
+	<div class="paragraph">
 	    <hr>
 	    <p class="full" id="partners" style="margin-bottom: -1rem; margin-top: 0">
 		<a href="https://www.instagram.com/fortyldn/"><img src="festival/partners/forty.png" alt="Logo for Seasoning Festival 2026 partner - Forty"></a>
@@ -135,8 +154,6 @@ if ($diff->format('%r') == '-'){
 	    </p>
 	    <p class="full" id="partners">
 		<a href=""><img src="festival/partners/loose-joints.png" alt="Logo for Seasoning Festival 2026 partner - Loose Joints"></a>
-		
-		
 		<a href="https://www.instagram.com/cabinfeverldn/"><img src="festival/partners/cabin-fever.png" alt="Logo for Seasoning Festival 2026 partner - Cabin Fever"></a>
 		<a href="https://www.instagram.com/clubblanco/?hl=en"><img src="festival/partners/club-blanco.png" alt="Logo for Seasoning Festival 2026 partner - Club Blanco"></a>
 		<a href="https://www.artscouncil.org.uk/"><img src="festival/partners/arts-council-england.png" alt="Logo for Seasoning Festival 2026 partner - Arts Council England"></a>
@@ -149,27 +166,4 @@ if ($diff->format('%r') == '-'){
     <?php renderFooter() ?>
 </html>
 <script>
- const seconds = document.getElementById('seconds');
- const minutes = document.getElementById('minutes');
- function incrementMinutes(){
-     var original = parseInt(minutes.innerText);
-     original -= 1;
-     if (original < 0){
-	 location.reload();
-     } else {
-	 minutes.innerText = original;
-     }
- }
- function incrementSeconds(){
-     var original = parseInt(seconds.innerText);
-     original -= 1;
-     if (original < 0){
-	 original = 59;
-         incrementMinutes();
-     }
-     seconds.innerText = original;
- }
- if (seconds.innerText != ''){
-     setInterval(incrementSeconds, 1000);
- } 
 </script>

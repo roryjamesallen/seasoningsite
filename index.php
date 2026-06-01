@@ -64,9 +64,10 @@ include 'lib.php';
  function createStar(){
      const star = document.createElement('img');
      star.src = 'images/icons/star-blue-' + (Math.floor(Math.random() * 3) + 1) + '.svg';
-     star.style.width = Math.random() + 'rem';
+     star.style.width = (Math.random() + 0.5) + 'rem';
      //star.style.opacity = Math.random() * 2;
      star.style.transform = 'rotate(' + Math.floor(Math.random() * 360) + 'deg)';
+     star.style.transition = 'left 30s, top 30s, transform 30s, opacity 30s, filter 30s';
      star.classList.add('logo-star');
      logo_stars.appendChild(star);
      return star;
@@ -76,7 +77,6 @@ include 'lib.php';
 	 const new_star = createStar();
 	 stars.push(new_star);
 	 moveStars();
-	 new_star.style.transition = 'left 30s, top 30s, transform 30s, opacity 30s, filter 30s';
      }
  }
  function moveStars(){
@@ -97,7 +97,7 @@ include 'lib.php';
  
  window.onload = (event) => {
      initialiseCollapsers();
-     initialiseStars(50);
+     initialiseStars(30);
      setInterval(moveStars, 30000);
  };
 </script>

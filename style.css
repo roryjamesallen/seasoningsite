@@ -45,10 +45,10 @@
 }
 html {
     font-family: Cormorant;
-    color: var(--black);
+    color: var(--beige);
 }
 body {
-    background: var(--beige);
+    background: var(--black);
     margin: 0;
     overflow-x: hidden;
 }
@@ -79,37 +79,15 @@ body::before {
 br {
     height: 0.5rem;
 }
-h1 {
-    width: var(--page-width);
-    height: 14rem;
-    margin: 4rem auto -5rem;
-    padding: 1rem;
-    left: 0;
-    top: 0;
-    display: flex;
-    position: relative;
-    z-index: -1;
-    justify-content: space-between;
-    font-size: var(--h1-size);
-    font-family: var(--title-font);
-    font-weight: normal;
-    color: var(--pink);
-    transform: scale(1,2);
-}
-h1 > span {
-    margin: -3rem var(--h1-margin-sides) 0;
-    padding: 5rem;
-    z-index: -1;
-    text-decoration: none !important;
-    mix-blend-mode: difference;
-}
 h2 {
+    color: var(--beige);
     font-size: 2.75rem;
     width: var(--page-width);
     margin: -1.5rem auto 3rem;
     font-family: var(--title-font);
 }
 h3 {
+    color: var(--beige);
     width: var(--page-width);
     margin: 0 auto;
     font-size: 2rem;
@@ -185,8 +163,9 @@ span:empty {
     max-width: 100%;
 }
 footer {
+    color: var(--beige);
     border-top: 4px solid var(--black);
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding-top: 1rem;
     margin: 1rem auto 4rem;
     font-family: var(--title-font);
@@ -195,6 +174,9 @@ footer {
 footer > div {
     display: flex;
     flex-wrap: wrap;
+}
+#footerLink {
+    color: var(--pink);
 }
 
 
@@ -205,6 +187,7 @@ footer > div {
     gap: 1rem;
 }
 .event {
+    color: var(--black);
     flex-basis: 80%;
     flex-grow: 1;
     display: flex;
@@ -283,6 +266,9 @@ footer > div {
     display: flex;
     flex-wrap: wrap;
 }
+.full-artist-list {
+    color: var(--beige);
+}
 .pale-text {
     display: inline;
     opacity: 0.75;
@@ -309,7 +295,8 @@ footer > div {
        }
     100% {
 	height: 0;
-	margin: 0;
+	margin-top: 0;
+	margin-bottom: 0;
     }
 }
 @keyframes collapseChildren {
@@ -450,7 +437,7 @@ form > span > * {
 	flex-basis: 100%;
     }
     footer {
-	font-size: 1.2rem;
+	font-size: 1.5rem;
     }
     .page-banner {
 	font-size: 1.6rem;

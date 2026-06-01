@@ -18,7 +18,7 @@ include '../lib.php';
     
     <body>
 	<?php renderTitle('The Roster'); ?>
-<?php renderArtistList(false, 'paragraph'); ?>
+<?php renderArtistList(false, 'paragraph full-artist-list'); ?>
     </body>
 
     <?php renderFooter() ?>

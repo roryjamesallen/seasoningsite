@@ -179,7 +179,7 @@ function renderEventsForArtist($artist){
 function renderFooter(){
     echo '
 <footer>
-<a href="https://seasoning.live" style="">Seasoning.live 2026</a>
+<a href="https://seasoning.live" id="footerLink">Seasoning.live 2026</a>
 <div>
 <a href="https://www.instagram.com/seas0ning_">Instagram</a><span style="margin: 0 0.5rem">/</span>
 <a href="https://www.facebook.com/Seas0ning">Facebook</a><span style="margin: 0 0.5rem">/</span>
@@ -190,8 +190,8 @@ function renderFooter(){
 }
 function renderTitle($subheading){
     //echo '<a href=""><h1 class=""><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="" movementpx="4">'.$subheading.'</h2>';
-    echo '<img class="paragraph" src="images/seasoning-logo-pink.svg" style="margin-top: 2rem" id="logo-img">
-	<h1 style="display: none">Seasoning</h1>';
+    echo '<a href="https://seasoning.live"><img class="paragraph" src="images/seasoning-logo-pink.svg" style="margin-top: 4rem" id="logo-img">
+	<h1 style="display: none">Seasoning</h1></a><h2>'.$subheading.'</h2>';
 }
 
 function renderSEO($title='Seasoning - Live Events', $canonical='https://seasoning.live', $favicon_path='favicon'){

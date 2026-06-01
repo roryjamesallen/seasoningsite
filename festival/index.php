@@ -113,54 +113,9 @@ if ($diff->format('%r') == '-'){
 	    <img style="max-height: unset" src="festival/seasoning-festival-logo.svg">
 	</div>
 
-	<h2 style="font-family: Cormorant; color: var(--paragraph); font-size: 2rem">The festival is happening right now! Scroll down for each day's timetable, venue and campsite maps, and information about The Retreat.</h2>
+	<h2 style="font-family: Cormorant; color: var(--paragraph); text-align: center">Seasoning festival is over for 2026, thank you for joining us!</h2>
 
-	<div id="timetable">
-	    <div><img src="festival/seasoning-festival-timetable-friday.svg"></div>
-	    <div><img src="festival/seasoning-festival-timetable-saturday.svg"></div>
-	    <div><img src="festival/seasoning-festival-timetable-sunday.svg"></div>
-	    <div style="flex-basis: 100%; text-align: center">
-		* 12pm to 1pm: The Ritual Dimensions of Rave Culture / 1pm to 2pm: The Dancefloor's Role in Socio-Political Tensions<br>
-		** 2pm to 3pm: Intersections of Folk, Rave & The Idea Of Fusion w/ Lovellious<br>
-		*** 3pm to 4pm: Undulations Through Electronic Ambient, Chug & IDM w/YouYou<br>
-		**** 12pm to 2pm: Subcultural Capital under Platform Capitalism
-	    </div>
-	</div>
-
-	<img id="map" src="festival/seasoning-festival-map.png">
-	<img id="campsite-map" src="festival/seasoning-festival-campsite-map.png">
-	
-	<div class="paragraph" style="margin-bottom: 2rem">
-	    <h2 style="margin-bottom: 0">The Retreat:</h2>
-	    <span style="font-family: Cormorant">Nestled in the garden of The Long Table, next to the campsite, The Retreat is a quiet santuary space for anyone needing a moment of pause, stillness, or alone time away from the festival energy.<br>
-	    The Retreat is open 24 hours a day throughout the festival, and is intentionally unmanned to allow for privacy and calm.<br><br>
-	    If you would like additional support, you are always welcome to speak to a steward or member of the team, who can accompany you if needed.<br><br>
-		Please treat the space with care, softness and respect for others using it.<br><br>
-		<span style="opacity: 0.5; ">
-		    <span class="full" style="font-size: 1.5rem">Flyer Design by @bedspace</span><br>
-		    <span class="full" style="font-size: 1.5rem">Festival Identity by @alhowrk</span><br>
-		    <span class="full" style="font-size: 1.5rem">Website by Rory Allen</span>
-		</span>
-	    </span>
-	</div>
-
-	<div class="paragraph">
-	    <hr>
-	    <p class="full" id="partners" style="margin-bottom: -1rem; margin-top: 0">
-		<a href="https://www.instagram.com/fortyldn/"><img src="festival/partners/forty.png" alt="Logo for Seasoning Festival 2026 partner - Forty"></a>
-		<a href="https://www.dancepolicy.com/"><img src="festival/partners/dance-policy.png" alt="Logo for Seasoning Festival 2026 partner - Dance Policy"></a>
-		<a href="https://www.instagram.com/joy__lift/"><img src="festival/partners/joy-lift.png" alt="Logo for Seasoning Festival 2026 partner - Joy Lift"></a>
-		<a href="https://www.instagram.com/craniummmmmmm/"><img src="festival/partners/cranium.png" alt="Logo for Seasoning Festival 2026 partner - Cranium"></a>
-	    </p>
-	    <p class="full" id="partners">
-		<a href=""><img src="festival/partners/loose-joints.png" alt="Logo for Seasoning Festival 2026 partner - Loose Joints"></a>
-		<a href="https://www.instagram.com/cabinfeverldn/"><img src="festival/partners/cabin-fever.png" alt="Logo for Seasoning Festival 2026 partner - Cabin Fever"></a>
-		<a href="https://www.instagram.com/clubblanco/?hl=en"><img src="festival/partners/club-blanco.png" alt="Logo for Seasoning Festival 2026 partner - Club Blanco"></a>
-		<a href="https://www.artscouncil.org.uk/"><img src="festival/partners/arts-council-england.png" alt="Logo for Seasoning Festival 2026 partner - Arts Council England"></a>
-		
-	    </p>
 	    
-	</div>
     </body>
 
     <?php renderFooter() ?>

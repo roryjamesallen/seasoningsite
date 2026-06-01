@@ -16,7 +16,7 @@ include 'lib.php';
     <body>
 
 	<?php renderTitle('Live events in the South West and beyond'); ?>
-	
+	<div id="logo-stars"></div>
 	
 	<!-- <h3 class="paragraph" style="text-align: right">Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.</h3>-->
 
@@ -39,6 +39,7 @@ include 'lib.php';
 </html>
 <script>
  const logo_img = document.getElementById('logo-img');
+ const logo_stars = document.getElementById('logo-stars');
  var stars = [];
  
  function toggleCollapse(event){
@@ -56,7 +57,6 @@ include 'lib.php';
  function initialiseCollapsers(){
      const collapsers = document.getElementsByClassName('collapser');
      for (let i=0; i<collapsers.length; ++i){
-	 console.log(collapsers[i]);
 	 collapsers[i].addEventListener('click', toggleCollapse);
      }
  }
@@ -68,7 +68,7 @@ include 'lib.php';
      //star.style.opacity = Math.random() * 2;
      star.style.transform = 'rotate(' + Math.floor(Math.random() * 360) + 'deg)';
      star.classList.add('logo-star');
-     document.body.appendChild(star);
+     logo_stars.appendChild(star);
      return star;
  }
  function initialiseStars(number){
@@ -76,14 +76,18 @@ include 'lib.php';
 	 const new_star = createStar();
 	 stars.push(new_star);
 	 moveStars();
-	 new_star.style.transition = 'left 50s, top 50s, transform 50s, opacity 50s, filter 50s';
+	 new_star.style.transition = 'left 30s, top 30s, transform 30s, opacity 30s, filter 30s';
      }
  }
  function moveStars(){
      const rect = logo_img.getBoundingClientRect();
      const bleed = 50;
+     rect.left -= bleed;
+     rect.top -= bleed;
+     rect.right += bleed;
+     rect.bottom += bleed;
      for (let i=0; i<stars.length; ++i){
-	 stars[i].style.left = (rect.left - bleed) + ((rect.right - rect.left) * Math.random()) + 'px';
+	 stars[i].style.left = rect.left + ((rect.right - rect.left) * Math.random()) + 'px';
 	 stars[i].style.top = rect.top + ((rect.bottom - rect.top) * Math.random()) + 'px';
 	 stars[i].style.transform = 'rotate(' + Math.floor(Math.random() * 360) + 'deg)';
 	 //stars[i].style.opacity = Math.random() * 2;
@@ -94,6 +98,6 @@ include 'lib.php';
  window.onload = (event) => {
      initialiseCollapsers();
      initialiseStars(50);
-     setInterval(moveStars, 50000);
+     setInterval(moveStars, 30000);
  };
 </script>

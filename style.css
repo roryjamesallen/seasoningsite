@@ -49,6 +49,7 @@ html {
 }
 body {
     background: var(--black);
+    background-image: url('images/gl5-outline.png');
     margin: 0;
     overflow-x: hidden;
 }

@@ -14,9 +14,6 @@ include 'lib.php';
     <?php echo $analytics ?>
     
     <body>
-	<a href="festival" class="page-banner">
-	    <span>Seasoning Festival 2026</span>
-	</a>
 
 	<?php renderTitle($tagline); ?>
 

@@ -1,4 +1,12 @@
 @font-face {
+    font-family: Cormorant;
+    src: url('fonts/Cormorant.ttf');
+}
+@font-face {
+    font-family: BlackBeard;
+    src: url('fonts/BlackBeard.otf');
+}
+@font-face {
     font-family: GaramondRegular;
     src: url('fonts/GaramondRegular.otf');
 }
@@ -16,28 +24,32 @@
 }
 :root {
     --green: #0f9171;
-    --light-blue: #36abde;
-    --dark-blue: #5c7bb5;
     --purple: #796684;
     --red: #CE1A19;
     --orange: #e1a25d;
     --yellow: #b0b859;
-    --black: #1F181D;
+    --black: rgb(30,30,8);
     --white: #d6d6e2;
+
+    --beige: #f5eee5;
+    --pink: rgb(230,152,190);
+    --light-blue: rgb(58, 132, 169);
     
     --cyan: #31e5e6;
+
+    --title-font: BlackBeard;
 
     --page-width: min(750px, 80vw);
     --h1-size: 8rem;
     --h1-margin-sides: -5.25rem;
 }
 html {
-    font-family: AileronSemi;
+    font-family: Cormorant;
 }
 body {
-    background: var(--black);
+    background: var(--beige);
     margin: 0;
-    color: white;
+    color: var(--black);
     overflow-x: hidden;
 }
 body::before {
@@ -79,9 +91,9 @@ h1 {
     z-index: -1;
     justify-content: space-between;
     font-size: var(--h1-size);
-    font-family: Milker;
+    font-family: var(--title-font);
     font-weight: normal;
-    color: var(--cyan);
+    color: var(--pink);
     transform: scale(1,2);
 }
 h1 > span {
@@ -98,14 +110,14 @@ h2 {
     display: flex;
     justify-content: center;
     font-weight: normal;
-    font-family: Milker;
+    font-family: var(--title-font);
 }
 h3 {
     width: var(--page-width);
     margin: 0 auto;
     font-size: 2rem;
     font-weight: normal;
-    font-family: Milker;
+    font-family: var(--title-font);
 }
 a {
     color: white;
@@ -169,7 +181,6 @@ span:empty {
     font-size: 1.5rem;
     width: var(--page-width);
     margin: 0 auto;
-    color: white;
 }
 .paragraph > * {
     flex-basis: 35%;
@@ -211,7 +222,7 @@ footer > div {
     flex-grow: 1;
     flex-shrink: 1;
     font-size: 1.5rem;
-    font-family: Milker;
+    font-family: var(--title-font);
     
 }
 .event-city {
@@ -221,10 +232,10 @@ footer > div {
     text-align: right;
 }
 .event-name {
-    color: var(--cyan);
+    color: var(--light-blue);
     flex-basis: 100%;
     text-align: center;
-    font-family: Milker;
+    font-family: var(--title-font);
 }
 .event > hr {
     flex-basis: 100%;
@@ -402,7 +413,7 @@ form > span > * {
 
 .page-banner {
     display: block;
-    font-family: Milker;
+    font-family: var(--title-font);
     font-size: 2.4rem;
     text-align: center;
     padding: 0.7rem 0.5rem 0.3rem;

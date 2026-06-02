@@ -225,9 +225,8 @@ footer > div {
 }
 .event-view-poster {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 0.5rem;
+    bottom: 0.5rem;
+    right: 1rem;
     transition: opacity 0.2s;
     opacity: 0.5;
     font-size: 1.5rem;

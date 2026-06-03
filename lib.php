@@ -226,7 +226,7 @@ function renderFooter(){
 }
 function renderTitle($subheading){
     //echo '<a href=""><h1 class=""><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="" movementpx="4">'.$subheading.'</h2>';
-    echo '<a href="https://seasoning.live"><img class="paragraph" src="images/seasoning-logo-pink.svg" style="margin-top: 4rem" id="logo-img">
+    echo '<a href="https://seasoning.live"><img loading="eager" class="paragraph" src="" style="margin-top: 4rem" id="logo-img">
 	<h1 style="display: none">Seasoning</h1></a><h2>'.$subheading.'</h2>';
 }
 

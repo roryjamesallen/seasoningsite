@@ -49,8 +49,13 @@ function moveStars(){
 	stars[i].style.filter = 'hue-rotate(' + (Math.random() * 360) + 'deg)'
     }
 }
+function logoLoaded(){
+    initialiseStars(20);
+    setInterval(moveStars, 30000);
+    document.body.onresize = moveStars;
+}
 
 initialiseCollapsers();
-initialiseStars(20);
-setInterval(moveStars, 30000);
-document.body.onresize = moveStars;
+
+logo_img.onload = logoLoaded;
+logo_img.src = 'images/seasoning-logo-pink.svg';

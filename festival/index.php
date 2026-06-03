@@ -71,7 +71,7 @@ if ($diff->format('%r') == '-'){
 	 color: var(--paragraph);
 	 border-color: var(--paragraph);
      }
-     #timetable, #maps, #map, #campsite-map {
+     #timetable, #maps, #map, #campsite-map, #festival-poster {
 	 width: calc(100% - 4rem);
 	 object-fit: contain;
 	 max-height: 90vh;
@@ -79,7 +79,7 @@ if ($diff->format('%r') == '-'){
 	 justify-content: center;
 	 padding: 2rem;
      }
-     #campsite-map {
+     #campsite-map, #festival-poster {
 	 padding-top: 0;
      }
      #timetable {
@@ -129,14 +129,11 @@ if ($diff->format('%r') == '-'){
 
 	<img id="map" src="festival/seasoning-festival-map.png">
 	<img id="campsite-map" src="festival/seasoning-festival-campsite-map.png">
+	<img id="festival-poster" src="festival/seasoning-festival-poster.jpg">
 	
 	<div class="paragraph" style="margin-bottom: 2rem">
-	    <h2 style="margin-bottom: 0">The Retreat:</h2>
-	    <span style="font-family: Cormorant">Nestled in the garden of The Long Table, next to the campsite, The Retreat is a quiet santuary space for anyone needing a moment of pause, stillness, or alone time away from the festival energy.<br>
-	    The Retreat is open 24 hours a day throughout the festival, and is intentionally unmanned to allow for privacy and calm.<br><br>
-	    If you would like additional support, you are always welcome to speak to a steward or member of the team, who can accompany you if needed.<br><br>
-		Please treat the space with care, softness and respect for others using it.<br><br>
-		<span style="opacity: 0.5; ">
+	    <span style="font-family: Cormorant; text-align: center">
+		<span style="opacity: 0.5;">
 		    <span class="full" style="font-size: 1.5rem">Flyer Design by @bedspace</span><br>
 		    <span class="full" style="font-size: 1.5rem">Festival Identity by @alhowrk</span><br>
 		    <span class="full" style="font-size: 1.5rem">Website by Rory Allen</span>

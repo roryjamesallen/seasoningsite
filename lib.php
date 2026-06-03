@@ -104,12 +104,20 @@ function renderEventList($title, $mode='all', $events=false){
 
     if (count($filtered_events) > 0){
         $id = strtolower(str_replace(' ','-',$title));
-        echo '<h3 style="margin-top: 1rem;" class="collapser" collapse="'.$id.'">'.$title.'</h3><div class="event-list"><div class="paragraph" style="margin-top: 1rem" id="'.$id.'">';
+        if ($mode == 'past'){
+            $h3_class = 'collapser collapser-collapsed';
+            $p_class = 'paragraph collapsed';
+        } else {
+            $h3_class = 'collapser';
+            $p_class = 'paragraph';
+        }
+        echo '<h3 style="margin-top: 1rem;" class="'.$h3_class.'" collapse="'.$id.'">'.$title.'</h3><div class="event-list"><div class="'.$p_class.'" style="margin-top: 1rem" id="'.$id.'">';
         foreach ($filtered_events as $event_key => $event){
             renderEvent($event_key, $event);
         }
         echo '</div></div>';
     }
+    return false;
 }
 function getEventFromId($id){
     $json = readJSON('events.json', true, false);

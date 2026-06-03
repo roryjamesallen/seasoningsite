@@ -16,8 +16,6 @@ include 'lib.php';
     <body>
 
 	<?php renderTitle('Live events in the South West and beyond'); ?>
-	<div id="logo-stars"></div>
-	<hr>
 
 	<?php
 	renderUpcomingAndPastEvents()

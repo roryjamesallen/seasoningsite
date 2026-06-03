@@ -39,15 +39,17 @@ if (isset($_GET['e'])){
     <?php echo $analytics ?>
     
     <body>
-<?php
-    if (isset($event['name'])){
-        renderTitle($event['name']);
-    } else {
-        renderTitle(date("d.m.Y",strtotime($event['date'])).' @ '.$event['venue'].', '.$event['city']);
-    }
-?>
+	<?php
+	if (isset($event['name'])){
+            renderTitle($event['name']);
+	} else {
+            renderTitle(date("d.m.Y",strtotime($event['date'])).' @ '.$event['venue'].', '.$event['city']);
+	}
+	?>
 	<?php renderEventDetails($event); ?>
     </body>
 
     <?php renderFooter() ?>
 </html>
+
+<script type="module" src="scripts.js"></script>

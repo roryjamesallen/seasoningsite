@@ -10,167 +10,162 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/festival</loc>
-  <lastmod>2026-03-13T16:31:41+00:00</lastmod>
-  <priority>0.9</priority>
-</url>
-<url>
-  <loc>https://seasoning.live/event?e=20220402</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20220402</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20221223</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20221223</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20230304</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20230304</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20230324</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20230324</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20230415</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20230415</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20230819</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20230819</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20231222</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20231222</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20240330</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20240330</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20240601</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20240601</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20241102</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20241102</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20241221</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20241221</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20250531</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20250531</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20250405</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20250405</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20250419</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20250419</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20250606</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20250606</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20251129</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20251129</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20251220</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20251220</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20260227</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20260227</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20260207</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20260207</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20260723</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20260723</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20260411</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20260411</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/event?e=20260529</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/event/20260529</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.75</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/artist?a=Lovellious</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/artist/Lovellious</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/artist?a=Jakobin</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/artist/Jakobin</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/artist?a=Berwick</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/artist/Berwick</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/artist?a=YouYou</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/artist/YouYou</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/artist?a=Amelie</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/artist/Amelie</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/artist?a=spr1ng+br34ka</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/artist/spr1ng+br34ka</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/artist?a=Cr%C3%A8me</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/artist/Cr%C3%A8me</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/artist?a=Yorke</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/artist/Yorke</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/artist?a=Kincaid</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/artist/Kincaid</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.5</priority>
 </url>
 <url>
-  <loc>https://seasoning.live/artist?a=Severine</loc>
-  <lastmod>2026-04-22</lastmod>
+  <loc>https://seasoning.live/artist/Severine</loc>
+  <lastmod>2026-06-03</lastmod>
   <priority>0.5</priority>
 </url></urlset>

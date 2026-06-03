@@ -16,16 +16,20 @@ if (isset($_GET['a'])){
 <html lang="en">
     <head>
 	<base href="../">
-<?php renderSEO('Seasoning Artist - '.$artist, 'https://seasoning.live/artist?a='.urlencode($artist)); ?>
-    <link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
+	<?php renderSEO('Seasoning Artist - '.$artist, 'https://seasoning.live/artist?a='.urlencode($artist)); ?>
+	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
     </head>
     <?php echo $analytics ?>
     
     <body>
-	<?php renderTitle('Artist Spotlight: '.$artist); ?>
-	<?php renderArtistInfo($artist); ?>
-	<?php renderEventsForArtist($artist); ?>
+	<?php
+	renderTitle('Artist Spotlight: '.$artist);
+	renderArtistInfo($artist);
+	renderUpcomingAndPastEvents($artist);
+	?>
     </body>
 
     <?php renderFooter() ?>
 </html>
+
+<script type="module" src="scripts.js"></script>

@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule /artist/^([^/]*)$ /artist/index.php?a=$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+Options       +FollowSymLinks
+RewriteCond "%{REQUEST_FILENAME}" !-f                
+RewriteCond "%{REQUEST_FILENAME}" !-d
+RewriteRule   "^artist/(.*)$" "artist/index.php?a=$1" [NC,L]
+
+RewriteCond "%{REQUEST_FILENAME}" !-f
+RewriteCond "%{REQUEST_FILENAME}" !-d
+RewriteRule   "^event/(.*)$" "event/index.php?e=$1" [NC,L]

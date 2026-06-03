@@ -34,7 +34,7 @@ function renderEvent($event_key, $event){
     if (isset($event['permalink'])){
         echo '<a href="'.$event['permalink'].'" class="event-view-poster">See More</a>';
     } else {
-        echo '<a href="event?e='.$event_key.'" class="event-view-poster">See More</a>';
+        echo '<a href="event/'.$event_key.'" class="event-view-poster">See More</a>';
     }
     /*
        if (array_key_exists('image',$event)){
@@ -79,13 +79,37 @@ function renderEventDetails($event){
     }
     echo '</div>';
 }
-function renderEventList(){
-    $json = readJSON('events.json');
-    echo '<div class="event-list">';
-    foreach ($json as $event_key => $event){
-        renderEvent($event_key, $event);
+
+function renderUpcomingAndPastEvents($artist=false){
+    if ($artist){
+        $events = getEventsForArtist($artist);
+    } else {
+        $events = false;
     }
-    echo '</div>';
+    renderEventList('Upcoming Events', 'future', $events);
+	renderEventList('Past Events', 'past', $events);
+}
+function renderEventList($title, $mode='all', $events=false){
+    if (!$events){
+        $events = readJSON('events.json');
+    }
+    $filtered_events = [];
+    $now = new DateTime('now');
+    foreach ($events as $event_key => $event){
+        $event_date = new DateTime($event['date']);
+        if ($mode == 'all' or ($mode == 'past' and $event_date < $now) or ($mode == 'future' and $event_date > $now)){
+            $filtered_events[$event_key] = $event;
+        }
+    }
+
+    if (count($filtered_events) > 0){
+        $id = strtolower(str_replace(' ','-',$title));
+        echo '<h3 style="margin-top: 1rem;" class="collapser" collapse="'.$id.'">'.$title.'</h3><div class="event-list"><div class="paragraph" style="margin-top: 1rem" id="'.$id.'">';
+        foreach ($filtered_events as $event_key => $event){
+            renderEvent($event_key, $event);
+        }
+        echo '</div></div>';
+    }
 }
 function getEventFromId($id){
     $json = readJSON('events.json', true, false);
@@ -119,7 +143,7 @@ function renderArtistList($artists=false, $class=''){
     }
     echo '<span class="'.$class.'"><span>';
     foreach ($artists as $artist){
-        echo '<a class="artist-link" href="artist?a='.urlencode($artist).'">'.$artist.'</a>';
+        echo '<a class="artist-link" href="artist/'.urlencode($artist).'">'.$artist.'</a>';
         if ($artist != $artists[count($artists)-1]){
             echo ' / ';
         }
@@ -157,6 +181,18 @@ function renderArtistInfo($artist){
 	    echo '</div><br><hr>';
         }
     }
+}
+function getEventsForArtist($artist){
+    $artist_events = [];
+    $events_json = readJSON('events.json');
+    foreach ($events_json as $event_key => $event){
+        if (isset($event['artists'])){
+            if (in_array($artist, $event['artists'])){
+                $artist_events[$event_key] = $event;
+            }
+        }
+    }
+    return $artist_events;
 }
 function renderEventsForArtist($artist){
     $events_json = readJSON('events.json');

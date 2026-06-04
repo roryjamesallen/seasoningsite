@@ -96,7 +96,26 @@ function logoLoaded(){
     document.body.onresize = moveStars;
 }
 
-initialiseCollapsers();
 
+// POPUP
+if (popup){
+    const popup_background = document.getElementById('popup-background');
+    const popup_element = document.getElementById('popup');
+    const popup_img = popup_element.children[2].children[0];
+    const popup_form = popup_element.children[2].children[1];
+    const frames = 8;
+    const delay = 100;
+
+    popup_element.style.display = 'block';
+    setTimeout(function(){ popup_background.style.opacity = 0.75; }, 10);
+    for (let i=1; i<=frames; ++i){
+	setTimeout(function(){ popup_img.src = 'images/popup/' + i + '.svg'; }, delay * i);
+    }
+    setTimeout(function(){
+	popup_form.style.opacity = '1';
+    }, frames * delay);
+}
+
+initialiseCollapsers();
 logo_img.onload = logoLoaded;
 logo_img.src = 'images/seasoning-logo-pink.svg';

@@ -4,6 +4,25 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 include 'lib.php';
+
+session_start();
+
+if (isset($_POST['email'])){
+    // record email
+    $_SESSION['popup'] = false;
+    header('Location: ?');
+} else if (isset($_POST['close'])){
+    $_SESSION['popup'] = false;
+    header('Location: ?');
+}
+
+$_SESSION['popup'] = true;
+
+if (isset($_SESSION['popup']) && $_SESSION['popup'] == false){
+    $popup = false;
+} else {
+    $popup = true;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +33,19 @@ include 'lib.php';
     <?php echo $analytics ?>
     
     <body>
-
+	<div id="popup">
+	    <div id="popup-background"></div>
+	    <form method="POST"><input type="submit" name="close" value="X" id="popup-close"></form>
+	    <div class="popup-form">
+		<img src="">
+		<form method="POST">
+		    <h2>Keep in touch!</h2>
+		    <input type="email" name="email" placeholder="you@example.com">
+		    <input type="submit" value="Sign Up">
+		</form>
+	    </div>
+	</div>
+	
 	<?php renderTitle('Live events in the South West and beyond'); ?>
 
 	<h3 class="collapser collapser-collapsed" collapse="gallery">Gallery</h3>
@@ -55,4 +86,8 @@ include 'lib.php';
     <?php renderFooter() ?>
 </html>
 
+<script>
+ const popup = <?php echo json_encode($popup); ?>
+</script>
+     
 <script type="module" src="scripts.js"></script>

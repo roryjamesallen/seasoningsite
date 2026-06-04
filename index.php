@@ -17,8 +17,8 @@ include 'lib.php';
 
 	<?php renderTitle('Live events in the South West and beyond'); ?>
 
-	<h3 class="collapser" collapse="gallery">Gallery</h3>
-	<div class="paragraph" id="gallery" style="margin: 1rem auto 2rem">
+	<h3 class="collapser collapser-collapsed" collapse="gallery">Gallery</h3>
+	<div class="paragraph collapsed" id="gallery" style="margin: 1rem auto 2rem">
 	    <p style="flex-basis: 100%; margin: 0 auto">Relive <a href="/festival">Seasoning Festival 2026</a> through these gorgeous photos taken by <a href="https://www.instagram.com/samuelwilsonphotography/">Samuel Wilson</a>.
 	    </p>
 	    <div class="gallery-container">

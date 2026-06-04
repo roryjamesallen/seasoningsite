@@ -234,8 +234,8 @@ function renderFooter(){
 }
 function renderTitle($subheading){
     //echo '<a href=""><h1 class=""><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="" movementpx="4">'.$subheading.'</h2>';
-    echo '<a href="https://seasoning.live"><img loading="eager" class="paragraph" src="" style="margin-top: 4rem" id="logo-img">
-    <h1 style="display: none">Seasoning</h1></a><h2>'.$subheading.'</h2><div id="logo-stars"></div><hr>';
+    echo '<div href="https://seasoning.live" id="logo-container" class="paragraph"><img loading="eager" src="" id="logo-img"></div>
+    <h1 style="display: none">Seasoning</h1></a><h2>'.$subheading.'</h2><hr>';
 }
 
 function renderSEO($title='Seasoning - Live Events', $canonical='https://seasoning.live', $favicon_path='favicon'){

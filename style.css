@@ -434,10 +434,15 @@ form > span > * {
 }
 
 
+#logo-container {
+    position: relative;
+    margin-top: 3rem;
+}
 .logo-star {
     position: absolute;
-    width: 1rem;
     z-index: -1;
+    top: 0;
+    left: 0;
 }
 
 @media screen and (max-width: 1000px){

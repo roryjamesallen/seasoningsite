@@ -87,6 +87,7 @@ function renderUpcomingAndPastEvents($artist=false){
         $events = false;
     }
     renderEventList('Upcoming Events', 'future', $events);
+    echo '<hr>';
 	renderEventList('Past Events', 'past', $events);
 }
 function renderEventList($title, $mode='all', $events=false){
@@ -111,7 +112,7 @@ function renderEventList($title, $mode='all', $events=false){
             $h3_class = 'collapser';
             $p_class = 'paragraph';
         }
-        echo '<h3 style="margin-top: 1rem;" class="'.$h3_class.'" collapse="'.$id.'">'.$title.'</h3><div class="event-list"><div class="'.$p_class.'" style="margin-top: 1rem" id="'.$id.'">';
+        echo '<h3 class="'.$h3_class.'" collapse="'.$id.'">'.$title.'</h3><div class="event-list"><div class="'.$p_class.'" style="margin-top: 1rem" id="'.$id.'">';
         foreach ($filtered_events as $event_key => $event){
             renderEvent($event_key, $event);
         }

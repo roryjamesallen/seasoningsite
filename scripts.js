@@ -1,8 +1,4 @@
-const logo_img = document.getElementById('logo-img');
-const logo_stars = document.getElementById('logo-stars');
-const logo_container = document.getElementById('logo-container');
-var stars = [];
-
+// COLLAPSERS
 function toggleCollapse(event){
     const collapser = event.target;
     const collapsee = document.getElementById(collapser.getAttribute('collapse'));
@@ -21,6 +17,32 @@ function initialiseCollapsers(){
 	collapsers[i].addEventListener('click', toggleCollapse);
     }
 }
+
+// GALLERY
+const gallery_container = document.getElementById('gallery');
+const gallery = gallery_container.getElementsByClassName('gallery')[0];
+let mouse_x = null;
+let mouse_start = null;
+document.onmousemove = function(e){
+    mouse_x = e.pageX;
+    if (mouse_start != null){
+	gallery.scrollLeft = mouse_start - mouse_x;
+    }
+}
+gallery.addEventListener('mousedown', function(e){
+    mouse_start = mouse_x + gallery.scrollLeft;
+    gallery.style.scrollSnapType = 'none';
+});
+document.addEventListener('mouseup', function(e){
+    mouse_start = null;
+    //gallery.style.scrollSnapType = 'x mandatory';
+});
+
+// STARS
+const logo_img = document.getElementById('logo-img');
+const logo_stars = document.getElementById('logo-stars');
+const logo_container = document.getElementById('logo-container');
+var stars = [];
 
 function createStar(){
     const star = document.createElement('img');

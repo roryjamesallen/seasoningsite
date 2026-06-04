@@ -23,19 +23,35 @@ const gallery_container = document.getElementById('gallery');
 const gallery = gallery_container.getElementsByClassName('gallery')[0];
 let mouse_x = null;
 let mouse_start = null;
+let gallery_start = null;
+let last_scroll = null;
+function slowDown(){
+    let multiplier = 1;
+    if (last_scroll < 0){
+	multiplier = -1;
+    }
+    for (let step=0; step<=25; ++step){
+	const step_offset = (25 * Math.pow(0.85, step));
+	setTimeout(function(){ gallery.scrollLeft = gallery.scrollLeft + (step_offset * multiplier); }, 10 * step);
+    }
+}
 document.onmousemove = function(e){
     mouse_x = e.pageX;
     if (mouse_start != null){
-	gallery.scrollLeft = mouse_start - mouse_x;
+	last_scroll = mouse_start - mouse_x;
+	gallery.scrollLeft = gallery_start - mouse_x;
     }
 }
 gallery.addEventListener('mousedown', function(e){
-    mouse_start = mouse_x + gallery.scrollLeft;
+    mouse_start = mouse_x;
+    gallery_start = mouse_start + gallery.scrollLeft;
     gallery.style.scrollSnapType = 'none';
 });
 document.addEventListener('mouseup', function(e){
-    mouse_start = null;
-    //gallery.style.scrollSnapType = 'x mandatory';
+    mouse_start = gallery_start = null;
+    if (gallery.style.scrollSnapType == 'none'){
+	slowDown();
+    }
 });
 
 // STARS

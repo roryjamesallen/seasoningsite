@@ -323,39 +323,11 @@ footer > div {
     mix-blend-mode: lighten;
 }
 
-
-@keyframes collapseSelf {
-    0% {
-	height: auto;
-       }
-    100% {
-	height: 0;
-	margin-top: 0;
-	margin-bottom: 0;
-    }
-}
-@keyframes collapseChildren {
-    0% {
-	transform: scale(1);
-	opacity: 1;
-       }
-    100% {
-	transform: scale(1, 0);
-	opacity: 0;
-	height: fit-content;
-    }
-}
 .collapsed {
-    transform-origin: top center;
-    animation-name: collapseSelf;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
+    display: none;
 }
 .collapsed * {
-    transform-origin: top center;
-    animation-name: collapseChildren;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
+    display: none;
 }
 
 @keyframes collapseIcon {

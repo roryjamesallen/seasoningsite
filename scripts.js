@@ -18,6 +18,29 @@ function initialiseCollapsers(){
     }
 }
 
+// TOGGLERS
+function toggleToggle(event){
+    const this_toggler = event.target;
+    const togglers = document.getElementsByClassName('toggler');
+    for (let i=0; i<togglers.length; ++i){
+	const toggler = togglers[i];
+	const togglee = document.getElementById(toggler.getAttribute('toggle'));
+	if (toggler != this_toggler){ // For every other toggle
+	    togglee.classList.add('toggled-off');
+	    toggler.classList.add('toggler-off');
+	} else {
+	    togglee.classList.remove('toggled-off');
+	    toggler.classList.remove('toggler-off');
+	}
+    }
+}
+function initialiseTogglers(){
+    const togglers = document.getElementsByClassName('toggler');
+    for (let i=0; i<togglers.length; ++i){
+	togglers[i].addEventListener('click', toggleToggle);
+    }
+}
+
 // GALLERY
 const gallery_elements = document.getElementsByClassName('gallery-container');
 let galleries = [];
@@ -124,5 +147,6 @@ if (popup){
 }
 
 initialiseCollapsers();
+initialiseTogglers();
 logo_img.onload = logoLoaded;
 logo_img.src = 'images/seasoning-logo-pink.svg';

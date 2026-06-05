@@ -85,16 +85,18 @@ function renderEventDetails($event){
     echo '</div>';
 }
 
-function renderUpcomingAndPastEvents($artist=false){
+function renderUpcomingAndPastEvents($artist=false, $extra_text=''){
     if ($artist){
         $events = getEventsForArtist($artist);
     } else {
         $events = false;
     }
-    renderEventList('Upcoming Events', 'future', $events);
-	renderEventList('Past Events', 'past', $events);
+    echo '<h2 class="collapser" collapse="events">Events</h2><div id="events"><h3><span class="toggler"toggle="events-upcoming">Upcoming</span> / <span class="toggler toggler-off" toggle="events-past">Past</span></h3>';
+    renderEventList('upcoming', $events, $extra_text);
+	renderEventList('past', $events, $extra_text);
+    echo '</div>';
 }
-function renderEventList($title, $mode='all', $events=false){
+function renderEventList($mode='all', $events=false, $extra_text=''){
     if (!$events){
         $events = readJSON('events.json');
     }
@@ -108,22 +110,21 @@ function renderEventList($title, $mode='all', $events=false){
     }
 
     if (count($filtered_events) > 0){
-        $id = strtolower(str_replace(' ','-',$title));
         if ($mode == 'past'){
-            $h3_class = 'collapser collapser-collapsed';
-            $p_class = 'paragraph collapsed';
+            $p_class = 'paragraph toggled-off';
         } else {
-            $h3_class = 'collapser';
             $p_class = 'paragraph';
         }
-        echo '<h2 class="'.$h3_class.'" collapse="'.$id.'">'.$title.'</h2><div class="event-list"><div class="'.$p_class.'" style="margin-top: 1rem" id="'.$id.'">';
+        echo '<div class="event-list"><div class="'.$p_class.'" style="margin-top: 1rem" id="events-'.$mode.'">';
         foreach ($filtered_events as $event_key => $event){
             renderEvent($event_key, $event);
         }
         echo '</div></div>';
-        if ($mode == 'future'){
-            echo '<hr>';
+        if ($mode == 'upcoming'){
+            echo '<br>';
         }
+    } else {
+        echo '<p class="paragraph" id="events-'.$mode.'">There are no '.$mode.' events'.$extra_text.'</p>';
     }
     return false;
 }

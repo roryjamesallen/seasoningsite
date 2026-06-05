@@ -25,7 +25,7 @@ if (isset($_GET['a'])){
 	<?php
 	renderTitle('Artist Spotlight: '.$artist);
 	renderArtistInfo($artist);
-	renderUpcomingAndPastEvents($artist);
+renderUpcomingAndPastEvents($artist, ' featuring '.$artist);
 	?>
     </body>
 

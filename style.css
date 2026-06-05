@@ -99,7 +99,7 @@ h3 {
 a {
     color: inherit;
 }
-a:hover:not(a:has(> h1)) {
+a:hover:not(:has(#logo-img)) {
     opacity: 0.75;
 }
 hr {

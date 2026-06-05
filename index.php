@@ -31,7 +31,7 @@ if (isset($_POST['email'])){
 	     </form>
 	-->
 	
-	<?php renderTitle('Live events in the South West and beyond'); ?>
+	<?php renderTitle('Rave Culture is Folk Culture'); ?>
 
 	<?php
 	renderUpcomingAndPastEvents(false,'. Watch this space...');

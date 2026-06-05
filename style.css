@@ -482,4 +482,7 @@ form > span > * {
     hr {
 	height: 2px;
     }
+    .paragraph > * {
+	flex-basis: 100%;
+    }
 }

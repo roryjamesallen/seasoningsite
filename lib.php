@@ -264,6 +264,7 @@ function renderSEO($title='Seasoning - Live Events', $canonical='https://seasoni
      <link rel="manifest" href="'.$favicon_path.'/site.webmanifest" />
      <meta property="og:image" content="'.$favicon_path.'/sharing.png">
      <link rel="canonical" href="'.$canonical.'"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
      ';
 }
 

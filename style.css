@@ -104,10 +104,10 @@ a:hover:not(:has(#logo-img)) {
 }
 hr {
     width: var(--page-width);
-    height: 5px;
+    height: 2px;
     border: none;
-    /*background: var(--white);*/
-    background-image: url('images/icons/horizontal-rule.svg');
+    background: var(--white);
+    /*background-image: url('images/icons/horizontal-rule.svg');*/
 }
 span:empty {
     display: block;
@@ -430,7 +430,7 @@ form > span > * {
     margin: 0;
 }
 #faqs > hr {
-    /*background-color: var(--pink);*/
+    background-color: var(--pink);
     flex-basis: 100%;
 }
 #faqs > img {
@@ -478,9 +478,6 @@ form > span > * {
     }
     h3 {
 	font-size: 1.75rem;
-    }
-    hr {
-	height: 2px;
     }
     .paragraph > * {
 	flex-basis: 100%;

@@ -5,8 +5,6 @@ error_reporting(E_ALL);
 
 include 'lib.php';
 
-session_start();
-
 if (isset($_POST['email'])){
     // record email
     $_SESSION['popup'] = false;
@@ -14,14 +12,6 @@ if (isset($_POST['email'])){
 } else if (isset($_POST['close'])){
     $_SESSION['popup'] = false;
     header('Location: ?');
-}
-
-$_SESSION['popup'] = true;
-
-if (isset($_SESSION['popup']) && $_SESSION['popup'] == false){
-    $popup = false;
-} else {
-    $popup = true;
 }
 ?>
 <!DOCTYPE html>

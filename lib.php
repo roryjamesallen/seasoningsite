@@ -6,6 +6,11 @@ error_reporting(E_ALL);
 if (!isset($root)){
     $root = '';
 }
+if (isset($popup)){
+    echo '<script>popup = <?php echo json_encode($popup);?></script>';
+} else {
+    echo '<script>popup = false</script>';
+}
 
 function readJSON($filename, $relational=true, $sort=true){
     global $root;
@@ -87,7 +92,6 @@ function renderUpcomingAndPastEvents($artist=false){
         $events = false;
     }
     renderEventList('Upcoming Events', 'future', $events);
-    echo '<hr>';
 	renderEventList('Past Events', 'past', $events);
 }
 function renderEventList($title, $mode='all', $events=false){
@@ -112,11 +116,14 @@ function renderEventList($title, $mode='all', $events=false){
             $h3_class = 'collapser';
             $p_class = 'paragraph';
         }
-        echo '<h3 class="'.$h3_class.'" collapse="'.$id.'">'.$title.'</h3><div class="event-list"><div class="'.$p_class.'" style="margin-top: 1rem" id="'.$id.'">';
+        echo '<h2 class="'.$h3_class.'" collapse="'.$id.'">'.$title.'</h2><div class="event-list"><div class="'.$p_class.'" style="margin-top: 1rem" id="'.$id.'">';
         foreach ($filtered_events as $event_key => $event){
             renderEvent($event_key, $event);
         }
         echo '</div></div>';
+        if ($mode == 'future'){
+            echo '<hr>';
+        }
     }
     return false;
 }
@@ -224,7 +231,7 @@ function renderEventsForArtist($artist){
 function renderFooter(){
     echo '
 <footer>
-<a href="https://seasoning.live" id="footerLink">Seasoning.live 2026</a>
+<a href="https://seasoning.live" id="footerLink" class="star-container" stars="10" star-size="5">Seasoning.live 2026</a>
 <div>
 <a href="https://www.instagram.com/seas0ning_">Instagram</a><span style="margin: 0 0.5rem">/</span>
 <a href="https://www.facebook.com/Seas0ning">Facebook</a><span style="margin: 0 0.5rem">/</span>
@@ -235,8 +242,8 @@ function renderFooter(){
 }
 function renderTitle($subheading){
     //echo '<a href=""><h1 class=""><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="" movementpx="4">'.$subheading.'</h2>';
-    echo '<div id="logo-container" class="paragraph"><a href="https://seasoning.live"><img loading="eager" src="" id="logo-img"></a></div>
-    <h1 style="display: none">Seasoning</h1></a><h2>'.$subheading.'</h2><hr>';
+    echo '<div id="logo-container" class="paragraph star-container" stars="20" star-size="2"><a href="https://seasoning.live"><img loading="eager" src="" id="logo-img"></a></div>
+    <h1 style="display: none">Seasoning</h1></a><h2 style="margin: -1.5rem auto 3rem;">'.$subheading.'</h2><hr>';
 }
 
 function renderSEO($title='Seasoning - Live Events', $canonical='https://seasoning.live', $favicon_path='favicon'){

@@ -35,6 +35,12 @@ foreach ($artists_json as $artist_name => $artist_info){
 </url>';
 }
 
+$sitemap .= '<url>
+  <loc>https://seasoning.live/artists</loc>
+  <lastmod>'.$date.'</lastmod>
+  <priority>0.25</priority>
+</url>';
+
 $sitemap .= '</urlset>';
 
 file_put_contents('../sitemap.xml', $sitemap);

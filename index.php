@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 session_start();
 //$_SESSION['popup'] = true;
-if (isset($_POST['email'])){
+if (isset($_POST['signup'])){
     // record email
     $popup = false;
     $_SESSION['popup'] = false;
@@ -35,7 +35,7 @@ include 'lib.php';
 	    <form method="POST">
 		<h2 class="star-container" stars="5" star-size="5">Keep in touch!</h2>
 		<input type="email" name="email" placeholder="you@example.com">
-		<input type="submit" value="Sign Up">
+		<input type="submit" value="Sign Up" name="signup">
 		<input type="submit" id="close-popup" name="close" value="✖">
 	    </form>
 	    

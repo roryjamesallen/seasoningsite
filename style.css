@@ -385,20 +385,6 @@ h1.moving-children  > * {
     animation-iteration-count: infinite;
 }
 
-
-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-form > span {
-    flex-basis: 100%;
-    display: flex;
-}
-form > span > * {
-    flex-basis: 30%;
-    box-sizing: border-box;
-}
 .button {
     background: var(--white);
     color: var(--black);
@@ -463,6 +449,72 @@ form > span > * {
 }
 .toggled-off {
     display: none;
+}
+
+#popup {
+    position: fixed;
+    z-index: 3;
+    width: 100vw;
+    height: 100vh;
+    top: -100vh;
+    transition: top 0.5s ease-in-out;
+    left: 0;
+    background-color: rgba(var(--black-separate), 0.95);
+}
+#popup, #popup > form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 0.5rem;
+}
+#popup > form {
+    width: 300px;
+    padding: 1rem;
+    box-sizing: border-box;
+    position: relative;
+}
+#popup > form > *:not(#close-popup) {
+    flex-basis: 100%;
+    text-align: center;
+    position: relative;
+}
+#popup > form > input[type=email] {
+    padding: 0.5rem 0;
+    width: 0;
+    font-family: Cormorant;
+    font-size: 1.25rem;
+    color: var(--black);
+}
+#popup > form > input[type=submit] {
+    font-family: BlackBeard;
+    font-size: 1.5rem;
+    border: 0;
+    cursor: pointer;
+    color: var(--beige);
+    background-color: var(--black);
+    border: 2px solid var(--beige);
+    padding: 0.5rem 0;
+}
+#popup > form > input[type=submit]:hover, #close-popup:hover {
+    opacity: 0.75;
+}
+#close-popup {
+    font-family: BlackBeard;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2rem;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    border: 2px solid var(--beige);
+    box-sizing: border-box;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0 !important;
 }
 
 @media screen and (max-width: 1000px){

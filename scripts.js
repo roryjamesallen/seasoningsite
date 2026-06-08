@@ -144,6 +144,7 @@ function logoLoaded(){
 
 // POPUP
 if (popup){
+    setTimeout(function(){ document.getElementById('popup').style.top = 0; }, 10);
 }
 
 initialiseCollapsers();

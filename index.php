@@ -5,13 +5,21 @@ error_reporting(E_ALL);
 
 include 'lib.php';
 
+session_start();
+//$_SESSION['popup'] = true;
 if (isset($_POST['email'])){
     // record email
+    $popup = false;
     $_SESSION['popup'] = false;
-    header('Location: ?');
+    header('Location: ?msg=Signed+up!');
 } else if (isset($_POST['close'])){
+    $popup = false;
     $_SESSION['popup'] = false;
-    header('Location: ?');
+    header('Location: ?msg=Popup+closed');
+} else if (isset($_SESSION['popup']) && $_SESSION['popup'] == false){
+    $popup = false;
+} else {
+    $popup = true;
 }
 ?>
 <!DOCTYPE html>
@@ -23,13 +31,16 @@ if (isset($_POST['email'])){
     <?php echo $analytics ?>
     
     <body>
-	<!-- 
-	     <form method="POST" id="popup">
-	     <h2>Keep in touch!</h2>
-	     <input type="email" name="email" placeholder="you@example.com">
-	     <input type="submit" value="Sign Up">
-	     </form>
-	-->
+	<div id="popup">
+	    <form method="POST">
+		<h2 class="star-container" stars="5" star-size="5">Keep in touch!</h2>
+		<input type="email" name="email" placeholder="you@example.com">
+		<input type="submit" value="Sign Up">
+		<input type="submit" id="close-popup" name="close" value="✖">
+	    </form>
+	    
+	</div>
+
 	
 	<?php renderTitle('Rave Culture is Folk Culture'); ?>
 
@@ -72,15 +83,18 @@ if (isset($_POST['email'])){
 	</div>
 	<hr>
 
+	<!-- 
 	<h2 class="collapser collapser-collapsed" collapse="mixes">Mixes</h2>
 	<div class="paragraph collapsed" id="mixes" style="margin: 1rem auto 2rem">
 	    <p>Listen back to the <a href="https://www.instagram.com/l0ve.cuts/">Love Cuts</a> 'Seasoning Special' <a href="https://www.worldwidefm.net/">Worldwide FM</a> broadcast where Fraser and <a href="artist/Lovellious">Lovellious</a> discuss the meaning behind the 'Rave Culture is Folk Culture' slogan ahead of <a href="festival">Seasoning Festival 2026</a> , interspersed with mystic folky funky music.</p>
 	    <iframe width="50%" height="400" src="https://player-widget.mixcloud.com/widget/iframe/?feed=%2Fworldwidefm%2Flove-cuts-lovellious-w-fraser-dahdouh-seasoning-special-08-05-26%2F" frameborder="0" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;" ></iframe>
-	</div>
+	</div>-->
 	
     </body>
-
+    
     <?php renderFooter() ?>
 </html>
-     
+
+<script>let popup = <?php echo json_encode($popup); ?></script>
 <script type="module" src="scripts.js"></script>
+                                                                               

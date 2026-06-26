@@ -516,6 +516,19 @@ h1.moving-children  > * {
     cursor: pointer;
     padding: 0 !important;
 }
+.fixr-link {
+    font-family: BlackBeard;
+    text-decoration: none;
+    margin-top: 1rem;
+    color: var(--pink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    min-width: 10rem;
+    height: 2rem;
+    border: 2px solid var(--pink);
+}
 
 @media screen and (max-width: 1000px){
     :root {

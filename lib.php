@@ -77,6 +77,9 @@ function renderEventDetails($event){
     if (isset($event['ra'])){
         echo '<iframe src="https://ra.co/promoters/'.$event['ra'].'/widgets/events?theme=dark" height="100%" width="100%" style="border: none;">';
     }
+    if (isset($event['fixr'])){
+        echo '<a class="fixr-link" href="https://fixr.co/event/'.$event['fixr'].'">Buy Tickets</a>';
+    }
     echo '</span>';
     if (isset($event['image'])){
         //echo '<style>body::before { background-image: url(images/event-posters/'.$event['image'].'.jpg); filter: blur(20px) contrast(0.3) } h1 { color: white; }</style>';
@@ -104,7 +107,7 @@ function renderEventList($mode='all', $events=false, $extra_text=''){
     $now = new DateTime('now');
     foreach ($events as $event_key => $event){
         $event_date = new DateTime($event['date']);
-        if ($mode == 'all' or ($mode == 'past' and $event_date < $now) or ($mode == 'future' and $event_date > $now)){
+        if ($mode == 'all' or ($mode == 'past' and $event_date < $now) or ($mode == 'upcoming' and $event_date > $now)){
             $filtered_events[$event_key] = $event;
         }
     }
@@ -239,12 +242,14 @@ function renderFooter(){
 <a href="https://ra.co/promoters/119677">Resident Advisor</a><span style="margin: 0 0.5rem">/</span>
 <a href="https://soundcloud.com/seas0ning">SoundCloud</a>
 </div></footer>
+<script src="https://web-cdn.fixr.co/scripts/fixr-checkout-widget.v1.min.js"></script>
     ';
 }
 function renderTitle($subheading){
     //echo '<a href=""><h1 class=""><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="" movementpx="4">'.$subheading.'</h2>';
     echo '<div id="logo-container" class="paragraph star-container" stars="20" star-size="2"><a href="https://seasoning.live"><img loading="eager" src="" id="logo-img"></a></div>
-    <h1 style="display: none">Seasoning - Rave Culture is Folk Culture</h1></a><h2 style="margin: -1.5rem auto 3rem;">'.$subheading.'</h2><hr>';
+    <h1 style="display: none">Seasoning - Rave Culture is Folk Culture</h1></a><h2 style="margin: -1.5rem auto 3rem;">'.$subheading.'</h2><hr>
+<style>.fixr-links-widget { --fixr-primary: var(--pink); }</style>';
 }
 
 function renderSEO($title='Seasoning - Rave Culture is Folk Culture', $canonical='https://seasoning.live', $favicon_path='favicon'){

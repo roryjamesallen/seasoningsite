@@ -48,7 +48,8 @@ include 'lib.php';
 	renderUpcomingAndPastEvents(false,'. Watch this space...');
 	?>
 	<hr>
-	
+
+	<!--
 	<h2 class="collapser collapser-collapsed" collapse="faqs">FAQs</h2>
 	<div class="paragraph collapsed" id="faqs" style="margin: 1rem auto 2rem">
 	    <hr>
@@ -59,10 +60,11 @@ include 'lib.php';
 	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 	</div>
 	<hr>
+	-->
 	
 	<h2 class="collapser collapser-collapsed" collapse="gallery">Gallery</h2>
 	<div class="paragraph collapsed" id="gallery" style="margin: 1rem auto 2rem">
-	    <p style="flex-basis: 100%; margin: 0 auto">Relive the sweet vibrations of <a href="festival">Seasoning Festival 2026</a> through the lens of on-site photographer <a href="https://www.instagram.com/samuelwilsonphotography/">Samuel Wilson</a>.
+	    <p style="flex-basis: 100%; margin: 0 auto">Relive <a href="festival">Seasoning Festival 2026</a> through the lens of on-site photographer <a href="https://www.instagram.com/samuelwilsonphotography/">Samuel Wilson</a>.
 	    </p>
 	    <div class="gallery-container">
 		<div class="gallery-gradient"></div>
@@ -83,13 +85,11 @@ include 'lib.php';
 	</div>
 	<hr>
 
-	<!-- 
 	<h2 class="collapser collapser-collapsed" collapse="mixes">Mixes</h2>
 	<div class="paragraph collapsed" id="mixes" style="margin: 1rem auto 2rem">
-	    <p>Listen back to the <a href="https://www.instagram.com/l0ve.cuts/">Love Cuts</a> 'Seasoning Special' <a href="https://www.worldwidefm.net/">Worldwide FM</a> broadcast where Fraser and <a href="artist/Lovellious">Lovellious</a> discuss the meaning behind the 'Rave Culture is Folk Culture' slogan ahead of <a href="festival">Seasoning Festival 2026</a> , interspersed with mystic folky funky music.</p>
+	    <p>Listen back to the <a href="https://www.instagram.com/l0ve.cuts/">Love Cuts</a> 'Seasoning Special' <a href="https://www.worldwidefm.net/">Worldwide FM</a> broadcast: Fraser and <a href="artist/Lovellious">Lovellious</a> discuss the meaning behind the 'Rave Culture is Folk Culture' slogan ahead of <a href="festival">Seasoning Festival 2026</a> , interspersed with mystic folky funky music.</p>
 	    <iframe width="50%" height="400" src="https://player-widget.mixcloud.com/widget/iframe/?feed=%2Fworldwidefm%2Flove-cuts-lovellious-w-fraser-dahdouh-seasoning-special-08-05-26%2F" frameborder="0" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;" ></iframe>
-	</div>-->
-	
+	</div>
     </body>
     
     <?php renderFooter() ?>
@@ -97,4 +97,3 @@ include 'lib.php';
 
 <script>let popup = <?php echo json_encode($popup); ?></script>
 <script type="module" src="scripts.js"></script>
-                                                                               

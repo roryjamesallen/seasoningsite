@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 date_default_timezone_set("Europe/London");
 session_start();
 
-$_SESSION['popup'] = true;
+$create_popup_cookie = false;
 if (isset($_POST['signup'])){
     if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
         $old_emails = json_decode(file_get_contents('../emails.json'), true);
@@ -14,20 +14,11 @@ if (isset($_POST['signup'])){
             $old_emails[$_POST['email']] = array('time'=>date('c'), 'ip'=>$_SERVER['REMOTE_ADDR']);
             file_put_contents('../emails.json', json_encode($old_emails));
         }
-        $popup = false;
-        $_SESSION['popup'] = false;
+        $create_popup_cookie = true;
         header('Location: ?msg=Signed+up!');
     } else {
         header('Location: ?e=Please+enter+a+valid+email+address!');
     }
-} else if (isset($_POST['close'])){
-    $popup = false;
-    $_SESSION['popup'] = false;
-    header('Location: ?msg=Popup+closed');
-} else if (isset($_SESSION['popup']) && $_SESSION['popup'] == false){
-    $popup = false;
-} else {
-    $popup = true;
 }
 
 include 'lib.php';
@@ -47,7 +38,7 @@ include 'lib.php';
 		<p class="error"><?php if (isset($_GET['e'])){ echo $_GET['e']; } ?></p>
 		<input type="email" name="email" placeholder="you@example.com">
 		<input type="submit" value="Sign Up" name="signup">
-		<input type="submit" id="close-popup" name="close" value="✖">
+		<div id="close-popup">✖</div>
 	    </form>
 	    
 	</div>
@@ -106,5 +97,7 @@ include 'lib.php';
     <?php renderFooter() ?>
 </html>
 
-<script>let popup = <?php echo json_encode($popup); ?></script>
 <script type="module" src="scripts.js"></script>
+<script>
+ const create_popup_cookie = <?php echo json_encode($create_popup_cookie); ?>
+</script>

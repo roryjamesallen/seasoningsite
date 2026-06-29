@@ -142,8 +142,34 @@ function logoLoaded(){
 }
 
 
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+	let c = ca[i];
+	while (c.charAt(0) == ' ') {
+	    c = c.substring(1);
+	}
+	if (c.indexOf(name) == 0) {
+	    return c.substring(name.length, c.length);
+	}
+    }
+    return null;
+}
+function closePopup(){
+    setCookie('popup', 'false', 365);
+    popup_element.parentNode.parentNode.style.top = ' -100vh';
+}
+
 // POPUP
-if (popup){
+if (getCookie('popup') != 'false'){
     setTimeout(function(){ document.getElementById('popup').style.top = 0; }, 10);
 }
 
@@ -151,3 +177,11 @@ initialiseCollapsers();
 initialiseTogglers();
 logo_img.onload = logoLoaded;
 logo_img.src = 'images/seasoning-logo-pink.svg';
+const popup_element = document.getElementById('close-popup');
+popup_element.addEventListener('click', closePopup);
+
+if (create_popup_cookie){
+    closePopup();
+}
+
+console.log(document.cookie);

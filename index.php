@@ -101,7 +101,6 @@ include 'lib.php';
 
 <script type="module" src="scripts.js"></script>
 <script>
- console.log(document.cookie);
  const create_popup_cookie = '<?php echo json_encode($_SESSION["create_popup_cookie"]); ?>';
  const popup_element = document.getElementById('close-popup');
  popup_element.addEventListener('click', closePopup);
@@ -135,5 +134,4 @@ include 'lib.php';
  if (create_popup_cookie == 'true' || getCookie('popup') != 'false'){
      closePopup();
  }
- console.log(document.cookie);
 </script>

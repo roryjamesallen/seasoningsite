@@ -101,6 +101,7 @@ include 'lib.php';
 
 <script type="module" src="scripts.js"></script>
 <script>
+ console.log(document.cookie);
  const create_popup_cookie = '<?php echo json_encode($_SESSION["create_popup_cookie"]); ?>';
  console.log(create_popup_cookie);
 
@@ -135,4 +136,5 @@ include 'lib.php';
  } else if (getCookie('popup') != 'false'){ // If not previously submitted either
      document.getElementById('popup').style.top = 0; // Show popup
  }
+ console.log(document.cookie);
 </script>

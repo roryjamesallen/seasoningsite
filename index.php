@@ -131,10 +131,8 @@ include 'lib.php';
      popup_element.parentNode.parentNode.style.top = ' -100vh';
  }
  
- if (create_popup_cookie == 'true'){ // Create the cookie to prevent popup next time (just submitted email or closed popup)
+ if (create_popup_cookie == 'true' || getCookie('popup') != 'false'){
      closePopup();
- } else if (getCookie('popup') != 'false'){ // If not previously submitted either
-     document.getElementById('popup').style.top = 0; // Show popup
  }
  console.log(document.cookie);
 </script>

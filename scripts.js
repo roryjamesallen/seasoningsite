@@ -180,7 +180,7 @@ logo_img.src = 'images/seasoning-logo-pink.svg';
 const popup_element = document.getElementById('close-popup');
 popup_element.addEventListener('click', closePopup);
 
-if (create_popup_cookie){
+if (create_popup_cookie == 'true'){
     closePopup();
 }
 

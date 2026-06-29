@@ -130,10 +130,13 @@ include 'lib.php';
      setCookie('popup', 'false', 365);
      popup_element.parentNode.parentNode.style.top = ' -100vh';
  }
- 
+
+ console.log(create_popup_cookie);
  if (create_popup_cookie == 'true' && getCookie('popup') != 'false'){
+     console.log('na');
      closePopup();
  } else {
+     console.log('ya');
      popup_element.parentNode.parentNode.style.top = '0px';
  }
 </script>

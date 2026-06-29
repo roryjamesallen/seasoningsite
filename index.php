@@ -132,7 +132,7 @@ include 'lib.php';
  }
 
  console.log(create_popup_cookie);
- if (create_popup_cookie != 'true' && getCookie('popup') != 'false'){
+ if (create_popup_cookie == 'true' || getCookie('popup') == 'false'){
      console.log('na');
      closePopup();
  } else {

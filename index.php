@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 date_default_timezone_set("Europe/London");
 session_start();
 
-$create_popup_cookie = 'false';
+$_SESSION['create_popup_cookie'] = 'false';
 if (isset($_POST['signup'])){
     if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
         $old_emails = json_decode(file_get_contents('../emails.json'), true);
@@ -14,7 +14,7 @@ if (isset($_POST['signup'])){
             $old_emails[$_POST['email']] = array('time'=>date('c'), 'ip'=>$_SERVER['REMOTE_ADDR']);
             file_put_contents('../emails.json', json_encode($old_emails));
         }
-        $create_popup_cookie = 'true';
+        $_SESSION['create_popup_cookie'] = 'true';
         header('Location: ?msg=Signed+up!');
     } else {
         header('Location: ?e=Please+enter+a+valid+email+address!');
@@ -99,5 +99,5 @@ include 'lib.php';
 
 <script type="module" src="scripts.js"></script>
 <script>
- const create_popup_cookie = '<?php echo json_encode($create_popup_cookie); ?>';
+ const create_popup_cookie = '<?php echo json_encode($_SESSION["create_popup_cookie"]); ?>';
 </script>

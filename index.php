@@ -124,7 +124,7 @@ include 'lib.php';
 	     return c.substring(name.length, c.length);
 	 }
      }
-     return null;
+     return true;
  }
  function closePopup(){
      setCookie('popup', 'false', 365);

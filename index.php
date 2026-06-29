@@ -100,4 +100,5 @@ include 'lib.php';
 <script type="module" src="scripts.js"></script>
 <script>
  const create_popup_cookie = '<?php echo json_encode($_SESSION["create_popup_cookie"]); ?>';
+console.log(create_popup_cookie);
 </script>

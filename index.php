@@ -99,8 +99,13 @@ include 'lib.php';
     <?php renderFooter() ?>
 </html>
 
+<script type="module" src="scripts.js"></script>
 <script>
  const create_popup_cookie = '<?php echo json_encode($_SESSION["create_popup_cookie"]); ?>';
-console.log(create_popup_cookie);
+ console.log(create_popup_cookie);
+ if (create_popup_cookie == 'true'){ // Create the cookie to prevent popup next time (just submitted email or closed popup)
+     closePopup();
+ } else if (getCookie('popup') != 'false'){ // If not previously submitted either
+     document.getElementById('popup').style.top = 0; // Show popup
+ }
 </script>
-<script type="module" src="scripts.js"></script>

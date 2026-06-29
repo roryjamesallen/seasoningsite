@@ -5,7 +5,9 @@ error_reporting(E_ALL);
 date_default_timezone_set("Europe/London");
 session_start();
 
-$_SESSION['create_popup_cookie'] = 'false';
+if (!isset($_SESSION['create_popup_cookie'])){
+    $_SESSION['create_popup_cookie'] = 'false';
+}
 if (isset($_POST['signup'])){
     if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
         $old_emails = json_decode(file_get_contents('../emails.json'), true);

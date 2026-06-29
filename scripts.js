@@ -169,11 +169,13 @@ function closePopup(){
 }
 
 // POPUP
-if (create_popup_cookie == 'true'){
-    closePopup();
-} else if (getCookie('popup') != 'false'){
-    setTimeout(function(){ document.getElementById('popup').style.top = 0; }, 10);
-}
+setTimeout(function(){
+    if (create_popup_cookie == 'true'){ // Create the cookie to prevent popup next time (just submitted email or closed popup)
+	closePopup();
+    } else if (getCookie('popup') != 'false'){ // If not previously submitted either
+	document.getElementById('popup').style.top = 0; // Show popup
+    }
+}, 10);
 
 initialiseCollapsers();
 initialiseTogglers();

@@ -133,5 +133,7 @@ include 'lib.php';
  
  if (create_popup_cookie == 'true' || getCookie('popup') != 'false'){
      closePopup();
+ } else {
+     popup_element.parentNode.parentNode.style.top = '0px';
  }
 </script>

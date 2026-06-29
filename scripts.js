@@ -169,7 +169,9 @@ function closePopup(){
 }
 
 // POPUP
-if (getCookie('popup') != 'false'){
+if (create_popup_cookie == 'true'){
+    closePopup();
+} else if (getCookie('popup') != 'false'){
     setTimeout(function(){ document.getElementById('popup').style.top = 0; }, 10);
 }
 
@@ -179,9 +181,3 @@ logo_img.onload = logoLoaded;
 logo_img.src = 'images/seasoning-logo-pink.svg';
 const popup_element = document.getElementById('close-popup');
 popup_element.addEventListener('click', closePopup);
-
-if (create_popup_cookie == 'true'){
-    closePopup();
-}
-
-console.log(document.cookie);

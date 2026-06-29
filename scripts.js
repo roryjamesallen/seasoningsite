@@ -141,10 +141,7 @@ function logoLoaded(){
     document.body.onresize = moveStars;
 }
 
-
 initialiseCollapsers();
 initialiseTogglers();
 logo_img.onload = logoLoaded;
 logo_img.src = 'images/seasoning-logo-pink.svg';
-const popup_element = document.getElementById('close-popup');
-popup_element.addEventListener('click', closePopup);

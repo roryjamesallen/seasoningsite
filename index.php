@@ -103,7 +103,8 @@ include 'lib.php';
 <script>
  console.log(document.cookie);
  const create_popup_cookie = '<?php echo json_encode($_SESSION["create_popup_cookie"]); ?>';
- console.log(create_popup_cookie);
+ const popup_element = document.getElementById('close-popup');
+ popup_element.addEventListener('click', closePopup);
 
  function setCookie(cname, cvalue, exdays) {
      const d = new Date();

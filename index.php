@@ -2,14 +2,24 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+date_default_timezone_set("Europe/London");
 session_start();
-//$_SESSION['popup'] = true;
+
+$_SESSION['popup'] = true;
 if (isset($_POST['signup'])){
-    // record email
-    $popup = false;
-    $_SESSION['popup'] = false;
-    header('Location: ?msg=Signed+up!');
+    if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+        $old_emails = json_decode(file_get_contents('../emails.json'), true);
+        //$old_emails = [];
+        if (!isset($old_emails[$_POST['email']])){ // Only submit if not already submitted
+            $old_emails[$_POST['email']] = array('time'=>date('c'), 'ip'=>$_SERVER['REMOTE_ADDR']);
+            file_put_contents('../emails.json', json_encode($old_emails));
+        }
+        $popup = false;
+        $_SESSION['popup'] = false;
+        header('Location: ?msg=Signed+up!');
+    } else {
+        header('Location: ?e=Please+enter+a+valid+email+address!');
+    }
 } else if (isset($_POST['close'])){
     $popup = false;
     $_SESSION['popup'] = false;
@@ -34,6 +44,7 @@ include 'lib.php';
 	<div id="popup">
 	    <form method="POST">
 		<h2 class="star-container" stars="5" star-size="5">Keep in touch!</h2>
+		<p class="error"><?php if (isset($_GET['e'])){ echo $_GET['e']; } ?></p>
 		<input type="email" name="email" placeholder="you@example.com">
 		<input type="submit" value="Sign Up" name="signup">
 		<input type="submit" id="close-popup" name="close" value="✖">

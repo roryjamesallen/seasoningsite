@@ -158,12 +158,18 @@ function getArtistList(){
     return getEventValueList('artists');
 }
 function renderArtistList($artists=false, $class=''){
+    $spotlight_artists = json_decode(file_get_contents('artists.json'), true);
     if (!$artists){
-	$artists = getArtistList();
+        $artists = getArtistList();
     }
     echo '<span class="'.$class.'"><span>';
     foreach ($artists as $artist){
-        echo '<a class="artist-link" href="artist/'.urlencode($artist).'">'.$artist.'</a>';
+        if (isset($spotlight_artists[$artist]) && isset($spotlight_artists[$artist]['permalink'])){
+            $artist_link = $spotlight_artists[$artist]['permalink'];
+        } else {
+            $artist_link = urlencode($artist);
+        }
+        echo '<a class="artist-link" href="artist/'.$artist_link.'">'.$artist.'</a>';
         if ($artist != $artists[count($artists)-1]){
             echo ' / ';
         }

@@ -17,9 +17,14 @@ $date = date('Y-m-d');
 
 $events_json = json_decode(file_get_contents('../events.json'), true);
 foreach ($events_json as $event_id => $event_info){
+    if (isset($event_info['permalink'])){
+        $event_link = $event_info['permalink'];
+    } else {
+        $event_link = $event_id;
+    }
     $sitemap .= '
 <url>
-  <loc>https://seasoning.live/event/'.$event_id.'</loc>
+  <loc>https://seasoning.live/event/'.$event_link.'</loc>
   <lastmod>'.$date.'</lastmod>
   <priority>0.75</priority>
 </url>';
@@ -27,9 +32,14 @@ foreach ($events_json as $event_id => $event_info){
 
 $artists_json = json_decode(file_get_contents('../artists.json'), true);
 foreach ($artists_json as $artist_name => $artist_info){
+    if (isset($artist_info['permalink'])){
+        $artist_link = $artist_info['permalink'];
+    } else {
+        $artist_link = $artist_name;
+    }
     $sitemap .= '
 <url>
-  <loc>https://seasoning.live/artist/'.urlencode($artist_name).'</loc>
+  <loc>https://seasoning.live/artist/'.$artist_link.'</loc>
   <lastmod>'.$date.'</lastmod>
   <priority>0.5</priority>
 </url>';

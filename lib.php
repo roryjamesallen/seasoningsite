@@ -22,7 +22,7 @@ function readJSON($filename, $relational=true, $sort=true){
     }
     return $json;
 }
-function renderEvent($event_key, $event){
+function renderEventOld($event_key, $event){
     global $root;
     echo '<div class="event" tabindex="0">';
     if (isset($event['name'])){
@@ -47,6 +47,49 @@ function renderEvent($event_key, $event){
        echo '<span class="event-view-poster">View Poster</span>';
        echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" class="event-poster" src="'.$image_path.'">';
        }*/
+    echo '</div>';
+}
+function renderEvent($event_key, $event, $reverse=false){
+    global $root;
+    if ($reverse){
+	$class = 'event-reverse';
+    } else {
+	$class = '';
+    }
+    echo '<div class="event-flex paragraph '.$class.'">';
+    if (array_key_exists('image',$event)){
+	$image_path = 'images/event-posters/'.$event['image'].'.jpg';
+    } else {
+	$image_path = 'favicon/sharing.png';
+    }
+
+    echo '<div class="event-info-flex">';
+    echo '<span class="event-date-flex">';
+    if (isset($event['name'])){
+	echo ' <span class="event-name-flex star-container" stars="3" star-size="10" star-transition="60">'.$event['name'].'</span> ';
+    }
+    echo date("d.m.Y",strtotime($event['date'])).'</span>';
+    echo '<span class="event-city-flex">'.$event['venue'].' ('.$event['city'].')</span>';
+    //echo '<span class="event-venue-flex">'.$event['venue'].'</span>';
+    
+    if (isset($event['artists'])){
+        renderArtistList($event['artists'],'pale-text artists-no-underline', 10);
+    }
+    
+    if (isset($event['permalink'])){
+	$link = $event['permalink'];
+    } else {
+	$link = 'event/'.$event_key;
+    }
+    echo '<a href="'.$link.'" class="big-button" style="background-image: url('.$image_path.')"><span>See More</span></a>';
+    /*
+       if (array_key_exists('image',$event)){
+       $image_path = 'images/event-posters/'.$event['image'].'.jpg';
+       echo '<span class="event-view-poster">View Poster</span>';
+       echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" class="event-poster" src="'.$image_path.'">';
+       }*/
+    echo '</div>';
+    //echo '<img class="event-poster-container" alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" class="event-poster-flex" src="'.$image_path.'"></img>';
     echo '</div>';
 }
 function getDaysRemaining($date){
@@ -78,12 +121,12 @@ function renderEventDetails($event){
         echo '<iframe src="https://ra.co/promoters/'.$event['ra'].'/widgets/events?theme=dark" height="100%" width="100%" style="border: none;">';
     }
     if (isset($event['fixr'])){
-        echo '<a class="fixr-link" href="https://fixr.co/event/'.$event['fixr'].'">Buy Tickets</a>';
+	echo '<a class="fixr-link" href="https://fixr.co/event/'.$event['fixr'].'">Buy Tickets</a>';
     }
     echo '</span>';
     if (isset($event['image'])){
-        //echo '<style>body::before { background-image: url(images/event-posters/'.$event['image'].'.jpg); filter: blur(20px) contrast(0.3) } h1 { color: white; }</style>';
-    echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" src="images/event-posters/'.$event['image'].'.jpg">';
+	//echo '<style>body::before { background-image: url(images/event-posters/'.$event['image'].'.jpg); filter: blur(20px) contrast(0.3) } h1 { color: white; }</style>';
+	echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" src="images/event-posters/'.$event['image'].'.jpg">';
     }
     echo '</div>';
 }
@@ -96,7 +139,7 @@ function renderUpcomingAndPastEvents($artist=false, $extra_text=''){
     }
     echo '<h2 class="collapser" collapse="events">Events</h2><div id="events"><h3><span class="toggler"toggle="events-upcoming">Upcoming</span> / <span class="toggler toggler-off" toggle="events-past">Past</span></h3>';
     renderEventList('upcoming', $events, $extra_text);
-	renderEventList('past', $events, $extra_text);
+    renderEventList('past', $events, $extra_text);
     echo '</div>';
 }
 function renderEventList($mode='all', $events=false, $extra_text=''){
@@ -108,24 +151,24 @@ function renderEventList($mode='all', $events=false, $extra_text=''){
     foreach ($events as $event_key => $event){
         $event_date = new DateTime($event['date']);
         if ($mode == 'all' or ($mode == 'past' and $event_date < $now) or ($mode == 'upcoming' and $event_date > $now)){
-            $filtered_events[$event_key] = $event;
+	    $filtered_events[$event_key] = $event;
         }
     }
 
     if (count($filtered_events) > 0){
         if ($mode == 'past'){
-            $p_class = 'paragraph toggled-off';
+	    $p_class = 'toggled-off';
         } else {
-            $p_class = 'paragraph';
+	    $p_class = '';
         }
-        echo '<div class="event-list"><div class="'.$p_class.'" style="margin-top: 1rem" id="events-'.$mode.'">';
+        echo '<div class="event-list"><div class="'.$p_class.'" id="events-'.$mode.'">';
+	$reverse = false;
         foreach ($filtered_events as $event_key => $event){
-            renderEvent($event_key, $event);
+	    renderEvent($event_key, $event, $reverse);
+	    $reverse = !$reverse;
         }
         echo '</div></div>';
-        if ($mode == 'upcoming'){
-            echo '<br>';
-        }
+        
     } else {
         echo '<p class="paragraph" id="events-'.$mode.'">There are no '.$mode.' events'.$extra_text.'</p>';
     }
@@ -140,15 +183,15 @@ function getEventValueList($key){
     $values = [];
     foreach ($events_json as $event){
         if (array_key_exists($key, $event)){
-            if (is_array($event[$key])){
+	    if (is_array($event[$key])){
                 foreach ($event[$key] as $value){
-                    if (!in_array($value, $values)){
+		    if (!in_array($value, $values)){
                         $values[] = $value;
-                    }
+		    }
                 }
-            } else if (!in_array($event[$key], $values)){
+	    } else if (!in_array($event[$key], $values)){
                 $values[] = $event[$key];
-            }
+	    }
         }
     }
     sort($values);
@@ -157,22 +200,29 @@ function getEventValueList($key){
 function getArtistList(){
     return getEventValueList('artists');
 }
-function renderArtistList($artists=false, $class=''){
-    $spotlight_artists = json_decode(file_get_contents('artists.json'), true);
-    if (!$artists){
+function renderArtistList($artists=false, $class='', $limit=false){
+    global $root;
+    $spotlight_artists = json_decode(file_get_contents($root.'artists.json'), true);
+    if (!$artists){ // Render list of all artists
         $artists = getArtistList();
     }
     echo '<span class="'.$class.'"><span>';
-    foreach ($artists as $artist){
-        if (isset($spotlight_artists[$artist]) && isset($spotlight_artists[$artist]['permalink'])){
-            $artist_link = $spotlight_artists[$artist]['permalink'];
-        } else {
-            $artist_link = urlencode($artist);
-        }
-        echo '<a class="artist-link" href="artist/'.$artist_link.'">'.$artist.'</a>';
-        if ($artist != $artists[count($artists)-1]){
-            echo ' / ';
-        }
+    foreach ($artists as $index => $artist){
+	if (!$limit or $index < $limit){
+            if (isset($spotlight_artists[$artist]) && isset($spotlight_artists[$artist]['permalink'])){
+		$artist_link = $spotlight_artists[$artist]['permalink'];
+            } else {
+		$artist_link = urlencode($artist);
+            }
+            echo '<a class="artist-link" href="artist/'.$artist_link.'">'.$artist.'</a>';
+	    if (!$limit or $index != $limit - 1){
+		if ($artist != $artists[count($artists)-1]){
+		    echo ' / ';
+		}
+	    } else if ($limit && $index == $limit - 1 && count($artists) > $limit){
+		echo '...';
+	    }
+	}
     }
     echo '</span></span>';
 }
@@ -201,8 +251,8 @@ function renderArtistInfo($artist){
 	    }
 	    if (isset($artist_json['embed'])){
                 echo '
-<iframe class="artist-embed" width="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A'.$artist_json['embed'].'&color=%2331e5e6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-';
+    <iframe class="artist-embed" width="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A'.$artist_json['embed'].'&color=%2331e5e6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    ';
 	    }
 	    echo '</div><br><hr>';
         }
@@ -213,9 +263,9 @@ function getEventsForArtist($artist){
     $events_json = readJSON('events.json');
     foreach ($events_json as $event_key => $event){
         if (isset($event['artists'])){
-            if (in_array($artist, $event['artists'])){
+	    if (in_array($artist, $event['artists'])){
                 $artist_events[$event_key] = $event;
-            }
+	    }
         }
     }
     return $artist_events;
@@ -240,22 +290,22 @@ function renderEventsForArtist($artist){
 }
 function renderFooter(){
     echo '
-<footer>
-<a href="https://seasoning.live" id="footerLink" class="star-container" stars="10" star-size="5">Seasoning.live 2026</a>
-<div>
-<a href="https://www.instagram.com/seas0ning_">Instagram</a><span style="margin: 0 0.5rem">/</span>
-<a href="https://www.facebook.com/Seas0ning">Facebook</a><span style="margin: 0 0.5rem">/</span>
-<a href="https://ra.co/promoters/119677">Resident Advisor</a><span style="margin: 0 0.5rem">/</span>
-<a href="https://soundcloud.com/seas0ning">SoundCloud</a>
-</div></footer>
-<script src="https://web-cdn.fixr.co/scripts/fixr-checkout-widget.v1.min.js"></script>
+    <footer>
+    <a href="https://seasoning.live" id="footerLink" class="star-container" stars="10" star-size="5">Seasoning.live 2026</a>
+    <div>
+    <a href="https://www.instagram.com/seas0ning_">Instagram</a><span style="margin: 0 0.5rem">/</span>
+    <a href="https://www.facebook.com/Seas0ning">Facebook</a><span style="margin: 0 0.5rem">/</span>
+    <a href="https://ra.co/promoters/119677">Resident Advisor</a><span style="margin: 0 0.5rem">/</span>
+    <a href="https://soundcloud.com/seas0ning">SoundCloud</a>
+    </div></footer>
+    <script src="https://web-cdn.fixr.co/scripts/fixr-checkout-widget.v1.min.js"></script>
     ';
 }
 function renderTitle($subheading){
     //echo '<a href=""><h1 class=""><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="" movementpx="4">'.$subheading.'</h2>';
     echo '<div id="logo-container" class="paragraph star-container" stars="20" star-size="2"><a href="https://seasoning.live"><img loading="eager" src="" id="logo-img"></a></div>
     <h1 style="display: none">Seasoning - Rave Culture is Folk Culture</h1></a><h2 style="margin: -1.5rem auto 3rem;">'.$subheading.'</h2><hr>
-<style>.fixr-links-widget { --fixr-primary: var(--pink); }</style>';
+    <style>.fixr-links-widget { --fixr-primary: var(--pink); }</style>';
 }
 
 function renderSEO($title='Seasoning - Rave Culture is Folk Culture', $canonical='https://seasoning.live', $favicon_path='favicon'){

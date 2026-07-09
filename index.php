@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -25,7 +26,6 @@ if (isset($_POST['signup'])){
 
 include 'lib.php';
 ?>
-<!DOCTYPE html>
 <html lang="en">
     <head>
 	<?php renderSEO(); ?>
@@ -92,7 +92,7 @@ include 'lib.php';
 	<h2 class="collapser collapser-collapsed" collapse="mixes">Mixes</h2>
 	<div class="paragraph collapsed" id="mixes" style="margin: 1rem auto 2rem">
 	    <p>Listen back to the <a href="https://www.instagram.com/l0ve.cuts/">Love Cuts</a> 'Seasoning Special' <a href="https://www.worldwidefm.net/">Worldwide FM</a> broadcast: Fraser and <a href="artist/Lovellious">Lovellious</a> discuss the meaning behind the 'Rave Culture is Folk Culture' slogan ahead of <a href="festival">Seasoning Festival 2026</a> , interspersed with mystic folky funky music.</p>
-	    <iframe width="50%" height="400" src="https://player-widget.mixcloud.com/widget/iframe/?feed=%2Fworldwidefm%2Flove-cuts-lovellious-w-fraser-dahdouh-seasoning-special-08-05-26%2F" frameborder="0" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;" ></iframe>
+	    <iframe loading="lazy" width="50%" height="400" src="https://player-widget.mixcloud.com/widget/iframe/?feed=%2Fworldwidefm%2Flove-cuts-lovellious-w-fraser-dahdouh-seasoning-special-08-05-26%2F" frameborder="0" allow="speaker-selection; web-share;"></iframe>
 	</div>
     </body>
     
@@ -131,12 +131,9 @@ include 'lib.php';
      popup_element.parentNode.parentNode.style.top = ' -100vh';
  }
 
- console.log(create_popup_cookie);
  if (create_popup_cookie == 'true' || getCookie('popup') == 'false'){
-     console.log('na');
      closePopup();
  } else {
-     console.log('ya');
      popup_element.parentNode.parentNode.style.top = '0px';
  }
 </script>

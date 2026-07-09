@@ -100,12 +100,12 @@ const logo_stars = document.getElementById('logo-stars');
 const logo_container = document.getElementById('logo-container');
 var stars = [];
 
-function createStar(container){
+function createStar(container, transition=30){
     const star = document.createElement('img');
     star.src = 'images/icons/star-blue-' + (Math.floor(Math.random() * 3) + 1) + '.svg';
     star.style.width = ((Math.random() + 0.5) * container.getAttribute('star-size')) + '%';
     star.style.transform = 'rotate(' + Math.floor(Math.random() * 360) + 'deg)';
-    star.style.transition = 'left 30s, top 30s, transform 30s, opacity 30s, filter 30s';
+    star.style.transition = 'left '+transition+'s, top '+transition+'s, transform '+transition+'s, opacity '+transition+'s, filter '+transition+'s';
     star.classList.add('logo-star');
     container.appendChild(star);
     return star;
@@ -115,8 +115,12 @@ function initialiseStars(){
     for (let i=0; i<star_containers.length; ++i){
 	const container = star_containers[i]
 	const number = container.getAttribute('stars');
+	let transition = 30;
+	if (container.getAttribute('star-transition') != null){
+	    transition = container.getAttribute('star-transition')
+	}
 	for (let j=0; j<number; ++j){
-	    const new_star = createStar(container);
+	    const new_star = createStar(container, transition);
 	    setStarPosition(new_star);
 	    stars.push(new_star);
 	    moveStars();

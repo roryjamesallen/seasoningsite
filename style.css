@@ -83,7 +83,7 @@ br {
 }
 h2 {
     color: var(--beige);
-    font-size: 2.75rem;
+    font-size: 4rem;
     margin: 0 auto;
     width: var(--page-width);
     font-family: var(--title-font);
@@ -516,10 +516,9 @@ h1.moving-children  > * {
     cursor: pointer;
     padding: 0 !important;
 }
-.fixr-link {
+.big-button, .fixr-link {
     font-family: BlackBeard;
     text-decoration: none;
-    margin-top: 1rem;
     color: var(--pink);
     display: flex;
     justify-content: center;
@@ -527,11 +526,76 @@ h1.moving-children  > * {
     width: fit-content;
     min-width: 10rem;
     height: 2rem;
-    border: 2px solid var(--pink);
+}
+.big-button {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    color: var(--white);
+}
+.fixr-link {
+    margin-top: 1rem;
+    border: 2px solid var(--white);
+    border-color: var(--pink);
 }
 .error {
     font-size: 1.5rem;
     margin: 0;
+}
+
+.event-flex {
+    flex-basis: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+}
+.event-poster-container {
+    object-fit: cover;
+    object-position: center;
+    width: 0;
+}
+.event-info-flex {
+    width: var(--page-width);
+    display: flex;
+    flex-direction: column;
+}
+.event-date-flex {
+    width: fit-content;
+    font-size: 2rem;
+    color: var(--light-blue);
+    font-family: BlackBeard;
+    /*border-top: 2px solid var(--beige);*/
+}
+.event-reverse .event-date-flex {
+    margin-left: auto;
+}
+.event-name-flex {
+    position: relative;
+    color: var(--beige);
+}
+.artists-no-underline .artist-link {
+    text-decoration: none;
+}
+.event-reverse {
+    justify-content: right;
+    text-align: right;
+    flex-direction: row-reverse;
+}
+.event-reverse .event-info-flex {
+    justify-content: right;
+}
+.event-info-flex .big-button {
+    margin-bottom: 1rem;
+}
+.event-reverse .big-button {
+    margin-left: auto;
+}
+.event-info-flex .big-button span {
+    mix-blend-mode: difference;
+}
+#events-past, #events-upcoming {
+    gap: 1rem;
+    margin: 1rem auto 0;
 }
 
 @media screen and (max-width: 1000px){
@@ -543,7 +607,7 @@ h1.moving-children  > * {
 	font-size: 15px;
     }
     h2 {
-	font-size: 1.75rem;
+	font-size: 3rem;
     }
     h3 {
 	font-size: 1.75rem;

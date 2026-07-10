@@ -30,9 +30,9 @@ if (isset($_GET['a'])){
     
     <body>
 	<?php
-	renderTitle('Artist Spotlight: '.$artist);
+	renderTitle('<span style="opacity: 0.75">Artist Spotlight:</span> '.$artist);
 	renderArtistInfo($artist);
-renderUpcomingAndPastEvents($artist, ' featuring '.$artist);
+	renderUpcomingAndPastEvents($artist, ' featuring '.$artist);
 	?>
     </body>
 

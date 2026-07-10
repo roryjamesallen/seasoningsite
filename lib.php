@@ -66,7 +66,7 @@ function renderEvent($event_key, $event, $reverse=false){
     echo '<div class="event-info-flex">';
     echo '<span class="event-date-flex">';
     if (isset($event['name'])){
-	echo ' <span class="event-name-flex star-container" stars="3" star-size="10" star-transition="60">'.$event['name'].'</span> ';
+	echo ' <span class="event-name-flex star-container" stars="3" star-size="10" star-transition="60"><span>'.$event['name'].'</span></span> ';
     }
     echo date("d.m.Y",strtotime($event['date'])).'</span>';
     echo '<span class="event-city-flex">'.$event['venue'].' ('.$event['city'].')</span>';
@@ -81,7 +81,7 @@ function renderEvent($event_key, $event, $reverse=false){
     } else {
 	$link = 'event/'.$event_key;
     }
-    echo '<a href="'.$link.'" class="big-button" style="background-image: url('.$image_path.')"><span>See More</span></a>';
+    echo '<a href="'.$link.'" class="big-button"><span>See More</span></a>';
     /*
        if (array_key_exists('image',$event)){
        $image_path = 'images/event-posters/'.$event['image'].'.jpg';
@@ -137,7 +137,7 @@ function renderUpcomingAndPastEvents($artist=false, $extra_text=''){
     } else {
         $events = false;
     }
-    echo '<h2 class="collapser" collapse="events">Events</h2><div id="events"><h3><span class="toggler"toggle="events-upcoming">Upcoming</span> / <span class="toggler toggler-off" toggle="events-past">Past</span></h3>';
+    echo '<h2 class="" collapse="events">Events</h2><div id="events"><h3><span class="toggler"toggle="events-upcoming">Upcoming</span> / <span class="toggler toggler-off" toggle="events-past">Past</span></h3>';
     renderEventList('upcoming', $events, $extra_text);
     renderEventList('past', $events, $extra_text);
     echo '</div>';
@@ -162,7 +162,7 @@ function renderEventList($mode='all', $events=false, $extra_text=''){
 	    $p_class = '';
         }
         echo '<div class="event-list"><div class="'.$p_class.'" id="events-'.$mode.'">';
-	$reverse = false;
+	$reverse = true;
         foreach ($filtered_events as $event_key => $event){
 	    renderEvent($event_key, $event, $reverse);
 	    $reverse = !$reverse;
@@ -254,7 +254,7 @@ function renderArtistInfo($artist){
     <iframe class="artist-embed" width="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A'.$artist_json['embed'].'&color=%2331e5e6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
     ';
 	    }
-	    echo '</div><br><hr>';
+	    echo '</div><br>';
         }
     }
 }
@@ -304,7 +304,7 @@ function renderFooter(){
 function renderTitle($subheading){
     //echo '<a href=""><h1 class=""><span>S</span><span>e</span><span>a</span><span>s</span><span>o</span><span>n</span><span>i</span><span>n</span><span>g</span></h1></a><h2 class="" movementpx="4">'.$subheading.'</h2>';
     echo '<div id="logo-container" class="paragraph star-container" stars="20" star-size="2"><a href="https://seasoning.live"><img loading="eager" src="" id="logo-img"></a></div>
-    <h1 style="display: none">Seasoning - Rave Culture is Folk Culture</h1></a><h2 style="margin: -1.5rem auto 3rem;">'.$subheading.'</h2><hr>
+    <h1 style="display: none">Seasoning - Rave Culture is Folk Culture</h1></a><h2 style="margin: -1.5rem auto 1rem;">'.$subheading.'</h2>
     <style>.fixr-links-widget { --fixr-primary: var(--pink); }</style>';
 }
 

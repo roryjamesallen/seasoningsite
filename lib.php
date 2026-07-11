@@ -72,7 +72,7 @@ function renderEvent($event_key, $event, $reverse=false){
     //echo '<span class="event-venue-flex">'.$event['venue'].'</span>';
     
     if (isset($event['artists'])){
-        renderArtistList($event['artists'],'pale-text artists-no-underline', 10);
+        renderArtistList($event['artists'],'pale-text', 10);
     }
     
     if (isset($event['permalink'])){
@@ -208,12 +208,16 @@ function renderArtistList($artists=false, $class='', $limit=false){
     echo '<span class="'.$class.'"><span>';
     foreach ($artists as $index => $artist){
 	if (!$limit or $index < $limit){
-            if (isset($spotlight_artists[$artist]) && isset($spotlight_artists[$artist]['permalink'])){
-		$artist_link = $spotlight_artists[$artist]['permalink'];
-            } else {
-		$artist_link = urlencode($artist);
-            }
-            echo '<a class="artist-link" href="artist/'.$artist_link.'">'.$artist.'</a>';
+            if (isset($spotlight_artists[$artist])){
+		if (isset($spotlight_artists[$artist]['permalink'])){
+		    $artist_link = $spotlight_artists[$artist]['permalink'];
+		} else {
+		    $artist_link = urlencode($artist);
+		}
+		echo '<a class="artist-link" href="artist/'.$artist_link.'">'.$artist.'</a>';
+	    } else {
+		echo '<span class="artist-link">'.$artist.'</span>';
+	    }
 	    if (!$limit or $index != $limit - 1){
 		if ($artist != $artists[count($artists)-1]){
 		    echo ' / ';
@@ -228,44 +232,44 @@ function renderArtistList($artists=false, $class='', $limit=false){
 function renderArtistInfo($artist){
     $artists_json = readJSON('artists.json', true, false);
     if (isset($artists_json[$artist])){
-        $artist_json = $artists_json[$artist];
-        $started = false;
-        $links = [];
-        foreach (['Instagram','Facebook','SoundCloud','Bandcamp','Resident Advisor','Website'] as $link){
+	$artist_json = $artists_json[$artist];
+	$started = false;
+	$links = [];
+	foreach (['Instagram','Facebook','SoundCloud','Bandcamp','Resident Advisor','Website'] as $link){
 	    if (isset($artist_json[strtolower($link)])){
-                if (!$started){
+		if (!$started){
 		    $started = true;
-                }
-                $links[] = '<a class="artist-link" href="'.$artist_json[strtolower($link)].'">'.$link.'</a>';
+		}
+		$links[] = '<a class="artist-link" href="'.$artist_json[strtolower($link)].'">'.$link.'</a>';
 	    }
-        }
-        if ($started | isset($artist_json['bio'])){
+	}
+	if ($started | isset($artist_json['bio'])){
 	    echo '<div class="paragraph" style="margin-top: 2rem"><div class="artist-info"><span><h3 style="margin-top: 1rem;">About</h3>';
 	    if (isset($artist_json['bio'])){
-                echo $artist_json['bio'];
+		echo $artist_json['bio'];
 	    }
 	    echo '</span><span class="artist-links">'.join('<span style="margin: 0 5px">/</span>', $links).'</span></div>';
 	    if (file_exists('../images/artists/'.urlencode($artist).'.jpg')){
-                echo '<img width="0" height="0" alt="Profile photo for '.$artist.'" src="images/artists/'.urlencode($artist).'.jpg">';
+		echo '<img width="0" height="0" alt="Profile photo for '.$artist.'" src="images/artists/'.urlencode($artist).'.jpg">';
 	    }
 	    if (isset($artist_json['embed'])){
-                echo '
+		echo '
     <iframe class="artist-embed" width="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A'.$artist_json['embed'].'&color=%2331e5e6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
     ';
 	    }
 	    echo '</div><br>';
-        }
+	}
     }
 }
 function getEventsForArtist($artist){
     $artist_events = [];
     $events_json = readJSON('events.json');
     foreach ($events_json as $event_key => $event){
-        if (isset($event['artists'])){
+	if (isset($event['artists'])){
 	    if (in_array($artist, $event['artists'])){
-                $artist_events[$event_key] = $event;
+		$artist_events[$event_key] = $event;
 	    }
-        }
+	}
     }
     return $artist_events;
 }
@@ -273,18 +277,18 @@ function renderEventsForArtist($artist){
     $events_json = readJSON('events.json');
     $started = false;
     foreach ($events_json as $event_key => $event){
-        if (isset($event['artists'])){
+	if (isset($event['artists'])){
 	    if (in_array($artist, $event['artists'])){
-                if (!$started){
+		if (!$started){
 		    echo '<h3 style="margin-top: 2rem;">Shows</h3><div class="paragraph" style="margin-top: 1rem"><div class="event-list">';
 		    $started = true;
-                }
-                renderEvent($event_key, $event);
+		}
+		renderEvent($event_key, $event);
 	    }
-        }
+	}
     }
     if ($started){
-        echo '</div></div>';
+	echo '</div></div>';
     }
 }
 function renderFooter(){
@@ -332,45 +336,45 @@ function renderSEO($title='Seasoning - Rave Culture is Folk Culture', $canonical
 function getArtistOptions(){
     $artist_options = '';
     foreach (getArtistList() as $artist){
-        $artist_options .= '<option value="'.$artist.'">'.$artist.'</option>';
+	$artist_options .= '<option value="'.$artist.'">'.$artist.'</option>';
     }
     return $artist_options;
 }
 function renderArtistEditor($artist){
     $artists_json = readJSON('artists.json', true, false);
     if (isset($artists_json[$artist])){
-        $artist_json = $artists_json[$artist];
+	$artist_json = $artists_json[$artist];
     } else {
-        $artist_json = [];
+	$artist_json = [];
     }
     echo '<h2>Editing: '.$artist.'</h2>';
     echo '<form method="POST">';
     foreach (["Bio","Instagram","SoundCloud","Bandcamp","Resident Advisor","Website","Embed"] as $category){
-        $key = strtolower($category);
-        $name = str_replace(' ','-',$key);
-        echo '<label for="'.$name.'">'.$category.'</label><br>';
-        echo '<textarea id="'.$name.'" name="'.$name.'">';
-        if (isset($artist_json[$key])){
+	$key = strtolower($category);
+	$name = str_replace(' ','-',$key);
+	echo '<label for="'.$name.'">'.$category.'</label><br>';
+	echo '<textarea id="'.$name.'" name="'.$name.'">';
+	if (isset($artist_json[$key])){
 	    echo $artist_json[$key];
-        }
-        echo '</textarea><br>';
+	}
+	echo '</textarea><br>';
     }
     echo '<input type="submit" value="Submit Edits"></form>';
 }
 function renderAdmin($post){
     echo '<style>textarea { width: 20rem; height: 5rem; }</style>';
     if (isset($post['pwd'])){
-        if ($post['pwd'] == 'H{*z_l$esyGVN.(('){
+	if ($post['pwd'] == 'H{*z_l$esyGVN.(('){
 	    echo '<form method="POST"><label for="artist-selector">Select Artist To Edit</label><br><select id="artist-selector" name="artist">'.getArtistOptions().'</select><input type="submit" value="Edit Artist"></form>';
-        } else {
+	} else {
 	    echo 'wrong password!!';
-        }
+	}
     } else if (isset($post['artist'])){
-        renderArtistEditor($post['artist']);
+	renderArtistEditor($post['artist']);
     } else if (isset($post['bio'])){
-        echo 'submit edits /  confirm';
+	echo 'submit edits /  confirm';
     } else {
-        echo '<form method="POST"><label for="pwd">Enter Password</label><br><input id="pwd" name="pwd"><input type="submit" value="Enter"></form>';
+	echo '<form method="POST"><label for="pwd">Enter Password</label><br><input id="pwd" name="pwd"><input type="submit" value="Enter"></form>';
     }
 }
 

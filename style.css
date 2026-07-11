@@ -313,6 +313,9 @@ footer a {
     flex-wrap: wrap;
     z-index: 1;
 }
+a.artist-link {
+    text-decoration: underline;
+}
 .full-artist-list {
     color: var(--beige);
 }

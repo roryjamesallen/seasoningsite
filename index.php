@@ -45,7 +45,7 @@ include 'lib.php';
 	    
 	</div>
 	
-	<?php renderTitle('Rave Culture is Folk Culture'); ?>
+	<?php renderTitle('Rave Culture is<br>Folk Culture'); ?>
 
 	<div class="page-break-image pb1 secondary-background">
 	    <img src="images/page-break.svg">

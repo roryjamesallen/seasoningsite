@@ -87,6 +87,7 @@ h2 {
     color: var(--beige);
     font-size: 4rem;
     font-weight: normal;
+    line-height: 4rem;
     margin: 0 auto;
     width: var(--page-width);
     font-family: var(--title-font);
@@ -615,6 +616,8 @@ h1.moving-children  > * {
     filter: opacity(0.25) !important;
 }
 .event-name-flex *:not(.logo-star) {
+    display: block;
+    line-height: 4rem;
     position: relative;
     z-index: 1;
 }
@@ -685,6 +688,10 @@ h1.moving-children  > * {
     }
     h2 {
 	font-size: 3rem;
+	line-height: 2.5rem;
+    }
+    .event-name-flex *:not(.logo-star) {
+	line-height: 2.5rem;
     }
     h3 {
 	font-size: 1.75rem;

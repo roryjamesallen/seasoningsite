@@ -32,8 +32,20 @@ if (isset($_GET['a'])){
 	<?php
 	renderTitle('<span style="opacity: 0.75">Artist Spotlight:</span> '.$artist);
 	renderArtistInfo($artist);
+	?>
+	<div class="page-break-image pb1 secondary-background">
+	    <img src="images/page-break.svg">
+	</div>
+	
+	<div class="secondary-background">
+	<?php 
 	renderUpcomingAndPastEvents($artist, ' featuring '.$artist);
 	?>
+	    <br>
+	    <div class="page-break-image pb2 primary-background">
+		<img src="images/page-break-2.svg">
+	    </div>
+	</div>
     </body>
 
     <?php renderFooter() ?>

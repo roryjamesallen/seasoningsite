@@ -64,12 +64,11 @@ function renderEvent($event_key, $event, $reverse=false){
     }
 
     echo '<div class="event-info-flex">';
-    echo '<span class="event-date-flex">';
+    
     if (isset($event['name'])){
-	echo ' <span class="event-name-flex star-container" stars="3" star-size="10" star-transition="60"><span>'.$event['name'].'</span></span> ';
+	echo ' <span class="event-name-flex star-container" stars="3" star-size="5" star-transition="60"><span>'.$event['name'].'</span></span>';
     }
-    echo date("d.m.Y",strtotime($event['date'])).'</span>';
-    echo '<span class="event-city-flex">'.$event['venue'].' ('.$event['city'].')</span>';
+    echo '<span class="event-location-flex"><span class="event-date-flex">'.date("d.m.Y",strtotime($event['date'])).'</span><span class="event-separator-icon">✹</span><span class="event-city-flex">'.$event['venue'].' ('.$event['city'].')</span></span>';
     //echo '<span class="event-venue-flex">'.$event['venue'].'</span>';
     
     if (isset($event['artists'])){

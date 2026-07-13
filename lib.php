@@ -136,12 +136,27 @@ function renderUpcomingAndPastEvents($artist=false, $extra_text=''){
     } else {
         $events = false;
     }
-    echo '<h2 class="" collapse="events">Events</h2><div id="events"><h3><span class="toggler"toggle="events-upcoming">Upcoming</span> / <span class="toggler toggler-off" toggle="events-past">Past</span></h3>';
-    renderEventList('upcoming', $events, $extra_text);
-    renderEventList('past', $events, $extra_text);
+    
+    ob_start();
+    $show_past = !renderEventList('upcoming', $events, $extra_text);
+    renderEventList('past', $events, $extra_text, $show_past);
+    $event_dom = ob_get_contents();
+    ob_end_clean();
+    if ($show_past){
+	$class_one = ' toggler-off';
+	$class_two = '';
+    } else {
+	$class_one = '';
+	$class_two = ' toggler-off';
+    }
+    echo '<h2 class="" collapse="events">Events</h2><div id="events"><h3>
+<span class="toggler'.$class_one.'" toggle="events-upcoming">Upcoming</span>
+ /
+<span class="toggler'.$class_two.'" toggle="events-past">Past</span></h3>';
+    echo $event_dom;
     echo '</div>';
 }
-function renderEventList($mode='all', $events=false, $extra_text=''){
+function renderEventList($mode='all', $events=false, $extra_text='', $force_show=false){
     if (!$events){
         $events = readJSON('events.json');
     }
@@ -153,13 +168,13 @@ function renderEventList($mode='all', $events=false, $extra_text=''){
 	    $filtered_events[$event_key] = $event;
         }
     }
-
-    if (count($filtered_events) > 0){
-        if ($mode == 'past'){
+    
+    if (count($filtered_events) > 0){ // There are events for this time period
+	if ($mode == 'past' && $force_show == false){ // Past events shown if force_show == true
 	    $p_class = 'toggled-off';
-        } else {
+	} else {
 	    $p_class = '';
-        }
+	}
         echo '<div class="event-list"><div class="'.$p_class.'" id="events-'.$mode.'">';
 	$reverse = true;
         foreach ($filtered_events as $event_key => $event){
@@ -167,11 +182,11 @@ function renderEventList($mode='all', $events=false, $extra_text=''){
 	    $reverse = !$reverse;
         }
         echo '</div></div>';
-        
+        return true;
     } else {
-        echo '<p class="paragraph" id="events-'.$mode.'">There are no '.$mode.' events'.$extra_text.'</p>';
+        echo '<p class="paragraph toggled-off" id="events-'.$mode.'">There are no '.$mode.' events'.$extra_text.'</p>';
+	return false;
     }
-    return false;
 }
 function getEventFromId($id){
     $json = readJSON('events.json', true, false);
@@ -291,6 +306,14 @@ function renderEventsForArtist($artist){
 	echo '</div></div>';
     }
 }
+function renderPageBreak($version=1, $background='primary'){
+    if ($version != 1){
+	$version_text = '-'.$version;
+    } else {
+	$version_text = '';
+    }
+    echo '<div class="page-break-image pb'.$version.' '.$background.'-background"></div>';
+}
 function renderFooter(){
     echo '
     <footer>
@@ -312,7 +335,7 @@ function renderTitle($subheading){
 }
 
 function renderSEO($title='Seasoning - Rave Culture is Folk Culture', $canonical='https://seasoning.live', $favicon_path='favicon'){
-    echo '
+											 echo '
     <meta name="robots" content="noindex">
 <meta charset="utf-8">
      <meta name="description" content="Rave Culture is Folk Culture. Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.">

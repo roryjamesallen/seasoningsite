@@ -45,34 +45,31 @@ include 'lib.php';
 	    
 	</div>
 	
-	<?php renderTitle('Rave Culture is<br>Folk Culture'); ?>
+	<?php renderTitle('Rave Culture is<br>Folk Culture');
+	?>
 
-	<div class="page-break-image pb1 secondary-background">
-	    <img src="images/page-break.svg">
-	</div>
 	<div class="secondary-background">
 	    <?php
+	    renderPageBreak(1, 'primary');
 	    renderUpcomingAndPastEvents(false,'. Watch this space...');
 	    ?>
-	    <div class="page-break-image pb2 primary-background">
-		<img src="images/page-break-2.svg">
-	    </div>
 	</div>
 	
 	
 	<!--
-	<h2 class="collapser collapser-collapsed" collapse="faqs">FAQs</h2>
-	<div class="paragraph collapsed" id="faqs" style="margin: 1rem auto 2rem">
-	    <hr>
-	    <h3>What is this?</h3>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	    <hr>
-	    <h3>What is this?</h3>
-	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	</div>
-	<hr>
+	     <h2 class="collapser collapser-collapsed" collapse="faqs">FAQs</h2>
+	     <div class="paragraph collapsed" id="faqs" style="margin: 1rem auto 2rem">
+	     <hr>
+	     <h3>What is this?</h3>
+	     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	     <hr>
+	     <h3>What is this?</h3>
+	     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	     </div>
+	     <hr>
 	-->
 
+	<?php renderPageBreak(2, 'secondary'); ?>
 	<h2 class="collapser" collapse="mixes">Mixes</h2>
 	<div class="paragraph" id="mixes" style="margin: 1rem auto 2rem">
 
@@ -86,12 +83,10 @@ include 'lib.php';
 	</div>
 
 	
-	<div class="page-break-image pb1 tertiary-background">
-	    <img src="images/page-break.svg">
-	</div>
 	<div class="tertiary-background">
+	    <?php renderPageBreak(1, 'primary');?>
 	    <h2 class="collapser collapser" collapse="gallery">Gallery</h2>
-	    <div class="paragraph" id="gallery" style="margin: 1rem auto 2rem">
+	    <div class="paragraph" id="gallery">
 		<p style="flex-basis: 100%; margin: 0 auto">Relive <a href="festival">Seasoning Festival 2026</a> through the lens of on-site photographer <a href="https://www.instagram.com/samuelwilsonphotography/">Samuel Wilson</a>.
 		</p>
 		<div class="gallery-container">
@@ -111,10 +106,9 @@ include 'lib.php';
 		    </div>
 		</div>
 	    </div>
-	    <div class="page-break-image pb2 primary-background">
-		<img src="images/page-break-2.svg">
-	    </div>
+	    <br>
 	</div>
+	<?php renderPageBreak(2, 'tertiary');?>
     </body>
     
     <?php renderFooter() ?>

@@ -568,7 +568,7 @@ h1.moving-children  > * {
     width: 0;
 }
 .event-info-flex {
-    width: var(--page-width);
+    max-width: fit-content;
     display: flex;
     flex-direction: column;
 }
@@ -663,18 +663,13 @@ h1.moving-children  > * {
 
 .page-break-image {
     width: 100%;
-    transform: scale(1, -1);
-    margin-bottom: -5px;
+    height: 5rem;
 }
 .pb1 {
-    mask: url(images/page-break.svg) center/cover no-repeat;
+    mask: url(images/page-break.svg) bottom / 100% 100% no-repeat;
 }
 .pb2 {
-    mask: url(images/page-break-2.svg) center/cover no-repeat;
-}
-.page-break-image > img {
-    width: 100%;
-    opacity: 0;
+    mask: url(images/page-break-2.svg) bottom / 100% 100% no-repeat;
 }
 
 

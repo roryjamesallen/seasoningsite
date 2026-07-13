@@ -33,12 +33,10 @@ if (isset($_GET['a'])){
 	renderTitle('<span style="opacity: 0.75">Artist Spotlight:</span> '.$artist);
 	renderArtistInfo($artist);
 	?>
-	<div class="page-break-image pb1 secondary-background">
-	    <img src="images/page-break.svg">
-	</div>
 	
 	<div class="secondary-background">
-	<?php 
+	<?php
+	renderPageBreak(1, 'primary');
 	renderUpcomingAndPastEvents($artist, ' featuring '.$artist);
 	?>
 	    <br>

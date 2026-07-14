@@ -6,10 +6,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">';
 
+date_default_timezone_set('Europe/London');
 $sitemap .= '
 <url>
   <loc>https://seasoning.live/</loc>
-  <lastmod>2026-03-13T16:31:41+00:00</lastmod>
+  <lastmod>'.strtotime("now").'</lastmod>
   <priority>1.00</priority>
 </url>';
 

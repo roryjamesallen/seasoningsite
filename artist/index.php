@@ -35,15 +35,12 @@ if (isset($_GET['a'])){
 	?>
 	
 	<div class="secondary-background">
-	<?php
-	renderPageBreak(1, 'primary');
-	renderUpcomingAndPastEvents($artist, ' featuring '.$artist);
-	?>
-	    <br>
-	    <div class="page-break-image pb2 primary-background">
-		<img src="images/page-break-2.svg">
-	    </div>
+	    <?php
+            renderPageBreak(1, 'primary');
+	    renderUpcomingAndPastEvents($artist, ' featuring '.$artist);
+	    ?>
 	</div>
+	<?php renderPageBreak(2, 'secondary'); ?>
     </body>
 
     <?php renderFooter() ?>

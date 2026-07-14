@@ -165,27 +165,34 @@ function renderEventList($mode='all', $events=false, $extra_text='', $force_show
     foreach ($events as $event_key => $event){
         $event_date = new DateTime($event['date']);
         if ($mode == 'all' or ($mode == 'past' and $event_date < $now) or ($mode == 'upcoming' and $event_date > $now)){
-	    $filtered_events[$event_key] = $event;
+            $filtered_events[$event_key] = $event;
         }
     }
     
     if (count($filtered_events) > 0){ // There are events for this time period
-	if ($mode == 'past' && $force_show == false){ // Past events shown if force_show == true
-	    $p_class = 'toggled-off';
-	} else {
-	    $p_class = '';
-	}
+        if ($mode == 'upcoming'){
+            ksort($filtered_events); // If upcoming then show oldest (first to happen) at the top
+        } else {
+            krsort($filtered_events); // If past then show newest (most recently gone by) at the top
+        }
+        
+        if ($mode == 'past' && $force_show == false){ // Past events shown if force_show == true
+            $p_class = 'toggled-off';
+        } else {
+            $p_class = '';
+        }
+        
         echo '<div class="event-list"><div class="'.$p_class.'" id="events-'.$mode.'">';
-	$reverse = true;
+        $reverse = true;
         foreach ($filtered_events as $event_key => $event){
-	    renderEvent($event_key, $event, $reverse);
-	    $reverse = !$reverse;
+            renderEvent($event_key, $event, $reverse);
+            $reverse = !$reverse;
         }
         echo '</div></div>';
         return true;
     } else {
         echo '<p class="paragraph toggled-off" id="events-'.$mode.'">There are no '.$mode.' events'.$extra_text.'</p>';
-	return false;
+        return false;
     }
 }
 function getEventFromId($id){

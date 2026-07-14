@@ -37,7 +37,7 @@ function renderEventOld($event_key, $event){
         renderArtistList($event['artists'],'pale-text');
     }
     if (isset($event['permalink'])){
-        echo '<a href="'.$event['permalink'].'" class="event-view-poster">See More</a>';
+        echo '<a href="'.$event['permalink'].'" class="event-view-poster">See Details</a>';
     } else {
         echo '<a href="event/'.$event_key.'" class="event-view-poster">See More</a>';
     }
@@ -80,7 +80,7 @@ function renderEvent($event_key, $event, $reverse=false){
     } else {
 	$link = 'event/'.$event_key;
     }
-    echo '<a href="'.$link.'" class="big-button"><span>See More</span></a>';
+    echo '<a href="'.$link.'" class="big-button"><span>See Details</span></a>';
     /*
        if (array_key_exists('image',$event)){
        $image_path = 'images/event-posters/'.$event['image'].'.jpg';

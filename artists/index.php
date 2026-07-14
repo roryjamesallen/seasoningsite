@@ -17,9 +17,11 @@ include '../lib.php';
     <?php echo $analytics ?>
     
     <body>
-	<?php renderTitle('The Roster'); ?>
+        <?php renderTitle('The Roster');?>
 <?php renderArtistList(false, 'paragraph full-artist-list'); ?>
     </body>
 
     <?php renderFooter() ?>
 </html>
+
+        <script type="module" src="scripts.js"></script>

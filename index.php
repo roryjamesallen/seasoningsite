@@ -45,8 +45,7 @@ include 'lib.php';
 	    
 	</div>
 	
-	<?php renderTitle('Rave Culture is<br>Folk Culture');
-	?>
+<?php renderTitle('Rave Culture is<br>Folk Culture');?>
 
 	<div class="secondary-background">
 	    <?php

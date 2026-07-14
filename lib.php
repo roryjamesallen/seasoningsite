@@ -120,7 +120,10 @@ function renderEventDetails($event){
         echo '<iframe src="https://ra.co/promoters/'.$event['ra'].'/widgets/events?theme=dark" height="100%" width="100%" style="border: none;">';
     }
     if (isset($event['fixr'])){
-	echo '<a class="fixr-link" href="https://fixr.co/event/'.$event['fixr'].'">Buy Tickets</a>';
+        echo '<a class="fixr-link" href="https://fixr.co/event/'.$event['fixr'].'">Buy Tickets</a>';
+    }
+    if (isset($event['tickets'])){
+        echo '<a class="fixr-link" href="'.$event['tickets'].'">Buy Tickets</a>';
     }
     echo '</span>';
     if (isset($event['image'])){

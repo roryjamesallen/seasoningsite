@@ -195,7 +195,7 @@
 	"venue": "Studio 18",
 	"city": "Stroud",
 	"artists": [
-	    "BAKEY",
+	    "Bakey",
 	    "Amelie",
 	    "Neon Pumps",
 	    "Darius Akashic",
@@ -341,7 +341,17 @@
 	"date": "2026-07-23T00:00:00-00:00",
 	"venue": "The Garden",
 	"city": "Tisno, Croatia",
-	"image": "23"
+	"image": "23",
+	"artists": [
+	    "Bakey",
+	    "Josi Devil",
+	    "Ehua",
+	    "Deena Adbelwahed",
+	    "Gyrofield",
+	    "Lovellious",
+	    "LWS"
+	],
+	"tickets": "https://booking.outlookorigins.com/extras?t=kaboodle-9y4i4&c=104&p=26913&k=57fcf376a5883f12f7f5a241e2ee59448c776001"
     },
     "20260411": {
 	"name": "4 Years of Seasoning",

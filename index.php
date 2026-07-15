@@ -97,17 +97,17 @@ include 'lib.php';
 		<div class="gallery-container">
 		    <div class="gallery-gradient"></div>
 		    <div class="gallery">
-			<img src="images/gallery/seasoning-festival-photo-1.jpg" alt="Fabric sails at Seasoning Festival 2026, Stroud" draggable="false">
-			<img src="images/gallery/seasoning-festival-photo-2.jpg" alt="Attendees outside The SVA, Stroud at Seasoning Festival 2026" draggable="false">
-			<img src="images/gallery/seasoning-festival-photo-4.jpg" alt="Person wearing Seasoning Festival 2026 T-Shirt" draggable="false">
-			<img src="images/gallery/seasoning-festival-photo-5.jpg" alt="Pizzas being served at Seasoning Festival 2026, Stroud" draggable="false">
-			<img src="images/gallery/seasoning-festival-photo-6.jpg" alt="Wall art being drawn at Seasoning Festival 2026, Stroud" draggable="false">
-			<img src="images/gallery/seasoning-festival-photo-7.jpg" alt="Printing press beig used at Seasoning Festival 2026, Stroud" draggable="false">
- 			<img src="images/gallery/seasoning-festival-photo-8.jpg" alt="Hand painted blue and pink moon for Seasoning Festival 2026, Stroud" draggable="false">
-			<img src="images/gallery/seasoning-festival-photo-9.jpg" alt="Hay bales and fabric flags at Seasoning Festival 2026, Stroud" draggable="false">
-			<img src="images/gallery/seasoning-festival-photo-10.jpg" alt="A person in the stocks at Seasoning Festival 2026, Stroud" draggable="false">
-			<img src="images/gallery/seasoning-festival-photo-11.jpg" alt="The Goods Yard outside bar at Seasoning Festival 2026, Stroud" draggable="false">
-			<img src="images/gallery/seasoning-festival-photo-3.jpg" alt="Attendees at at Seasoning Festival 2026, Stroud" draggable="false">
+			<img src="images/gallery/seasoning-festival-photo-1.jpg" loading="lazy" alt="Fabric sails at Seasoning Festival 2026, Stroud" draggable="false">
+			<img src="images/gallery/seasoning-festival-photo-2.jpg" loading="lazy" alt="Attendees outside The SVA, Stroud at Seasoning Festival 2026" draggable="false">
+			<img src="images/gallery/seasoning-festival-photo-4.jpg" loading="lazy" alt="Person wearing Seasoning Festival 2026 T-Shirt" draggable="false">
+			<img src="images/gallery/seasoning-festival-photo-5.jpg" loading="lazy" alt="Pizzas being served at Seasoning Festival 2026, Stroud" draggable="false">
+			<img src="images/gallery/seasoning-festival-photo-6.jpg" loading="lazy" alt="Wall art being drawn at Seasoning Festival 2026, Stroud" draggable="false">
+			<img src="images/gallery/seasoning-festival-photo-7.jpg" loading="lazy" alt="Printing press beig used at Seasoning Festival 2026, Stroud" draggable="false">
+ 			<img src="images/gallery/seasoning-festival-photo-8.jpg" loading="lazy" alt="Hand painted blue and pink moon for Seasoning Festival 2026, Stroud" draggable="false">
+			<img src="images/gallery/seasoning-festival-photo-9.jpg" loading="lazy" alt="Hay bales and fabric flags at Seasoning Festival 2026, Stroud" draggable="false">
+			<img src="images/gallery/seasoning-festival-photo-10.jpg" loading="lazy" alt="A person in the stocks at Seasoning Festival 2026, Stroud" draggable="false">
+			<img src="images/gallery/seasoning-festival-photo-11.jpg" loading="lazy" alt="The Goods Yard outside bar at Seasoning Festival 2026, Stroud" draggable="false">
+			<img src="images/gallery/seasoning-festival-photo-3.jpg" loading="lazy" alt="Attendees at at Seasoning Festival 2026, Stroud" draggable="false">
 		    </div>
 		</div>
 	    </div>

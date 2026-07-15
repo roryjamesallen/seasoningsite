@@ -4,7 +4,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 date_default_timezone_set("Europe/London");
 @session_start();
-
 if (!isset($_SESSION['create_popup_cookie'])){
     $_SESSION['create_popup_cookie'] = 'false';
 }
@@ -22,10 +21,10 @@ if (isset($_POST['signup'])){
         header('Location: ?e=Please+enter+a+valid+email+address!');
     }
 }
-
 include 'lib.php';
 ?>
 <!DOCTYPE html>
+<?php startup();?>
 <html lang="en">
     <head>
 	<?php renderSEO(); ?>

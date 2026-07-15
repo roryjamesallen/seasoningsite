@@ -3,15 +3,16 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-if (!isset($root)){
-    $root = '';
+function startup(){
+    if (!isset($root)){
+        $root = '';
+    }
+    if (isset($popup)){
+        echo '<script>popup = <?php echo json_encode($popup);?></script>';
+    } else {
+        echo '<script>popup = false</script>';
+    }
 }
-if (isset($popup)){
-    echo '<script>popup = <?php echo json_encode($popup);?></script>';
-} else {
-    echo '<script>popup = false</script>';
-}
-
 function readJSON($filename, $relational=true, $sort=true){
     global $root;
     $json = json_decode(file_get_contents($root.$filename), $relational);

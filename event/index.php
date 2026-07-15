@@ -23,6 +23,7 @@ if (isset($_GET['e'])){
 }
 ?>
 <!DOCTYPE html>
+<?php startup();?>
 <html lang="en">
     <head>
 	<base href="../">

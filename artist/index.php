@@ -20,6 +20,7 @@ if (isset($_GET['a'])){
 
 ?>
 <!DOCTYPE html>
+<?php startup();?>
 <html lang="en">
     <head>
 	<base href="../">

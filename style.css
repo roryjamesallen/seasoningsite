@@ -606,6 +606,9 @@ h1.moving-children  > * {
 .event-reverse > .event-info-flex > .event-name-flex {
     margin-left: auto;
 }
+.event-reverse > .event-city-flex {
+    text-align: left;
+}
 .event-city-flex {
     color: var(--light-blue);
     font-family: BlackBeard;

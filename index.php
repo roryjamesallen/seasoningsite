@@ -48,8 +48,7 @@ include 'lib.php';
 
 	<div class="secondary-background">
 	    <?php
-	    renderPageBreak(1, 'primary');
-	    echo '<br>';
+	     renderPageBreak(1, 'primary');
 	    renderUpcomingAndPastEvents(false,'. Watch this space...');
 	    ?>
 	</div>

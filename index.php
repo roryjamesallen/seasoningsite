@@ -28,7 +28,7 @@ include 'lib.php';
 <html lang="en">
     <head>
 	<?php renderSEO(); ?>
-	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
+	<link rel="stylesheet" href="style.css?v=<?php cssVersion(); ?>">
     </head>
     <?php echo $analytics ?>
     

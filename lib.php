@@ -14,6 +14,10 @@ function startup(){
         echo '<script>popup = false</script>';
     }
 }
+function cssVersion(){
+    global $root;
+    echo file_get_contents($root.'css-version.txt');
+}
 function readJSON($filename, $relational=true, $sort=true){
     global $root;
     $json = json_decode(file_get_contents($root.$filename), $relational);

@@ -107,6 +107,7 @@ function createStar(container, transition=30){
     star.style.transform = 'rotate(' + Math.floor(Math.random() * 360) + 'deg)';
     star.style.transition = 'left '+transition+'s, top '+transition+'s, transform '+transition+'s, opacity '+transition+'s, filter '+transition+'s';
     star.classList.add('logo-star');
+    star.alt = "Animated hand drawn star";
     container.appendChild(star);
     return star;
 }

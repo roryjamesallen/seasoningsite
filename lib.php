@@ -69,7 +69,7 @@ function renderEvent($event_key, $event, $reverse=false){
     if (isset($event['name'])){
 	echo ' <span class="event-name-flex star-container" stars="3" star-size="5" star-transition="60"><span>'.$event['name'].'</span></span>';
     }
-    echo '<span class="event-location-flex"><span class="event-date-flex">'.date("d.m.Y",strtotime($event['date'])).'</span><span class="event-separator-icon">✹</span><span class="event-city-flex">'.$event['venue'].' ('.$event['city'].')</span></span>';
+    echo '<span class="event-location-flex"><span class="event-city-flex">'.$event['venue'].' ('.$event['city'].')</span><span class="event-separator-icon">✹</span><span class="event-date-flex">'.date("d.m.Y",strtotime($event['date'])).'</span></span>';
     //echo '<span class="event-venue-flex">'.$event['venue'].'</span>';
     
     if (isset($event['artists'])){
@@ -231,7 +231,7 @@ function renderArtistList($artists=false, $class='', $limit=false){
     if (!$artists){ // Render list of all artists
         $artists = getArtistList();
     }
-    echo '<span class="'.$class.'"><span>';
+    echo '<span class="artist-list '.$class.'">';
     foreach ($artists as $index => $artist){
 	if (!$limit or $index < $limit){
             if (isset($spotlight_artists[$artist])){
@@ -246,14 +246,14 @@ function renderArtistList($artists=false, $class='', $limit=false){
 	    }
 	    if (!$limit or $index != $limit - 1){
 		if ($artist != $artists[count($artists)-1]){
-		    echo ' / ';
+		    echo ', ';
 		}
 	    } else if ($limit && $index == $limit - 1 && count($artists) > $limit){
 		echo '...';
 	    }
 	}
     }
-    echo '</span></span>';
+    echo '</span>';
 }
 function renderArtistInfo($artist){
     $artists_json = readJSON('artists.json', true, false);

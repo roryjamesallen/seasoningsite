@@ -299,6 +299,9 @@ footer a {
     cursor: pointer;
 }
 
+.artist-link:last-child {
+    white-space: nowrap;
+}
 .artist-info {
     display: flex;
     flex-wrap: wrap;
@@ -584,11 +587,11 @@ h1.moving-children  > * {
     /*border-top: 2px solid var(--beige);*/
 }
 .event-separator-icon {
-    margin-top: 0.25rem;
+    margin-top: 0.15rem;
     color: var(--light-blue);
     opacity: 0.5;
 }
-.event-reverse .event-date-flex {
+.event-reverse .event-city-flex {
     margin-left: auto;
 }
 .event-name-flex {
@@ -604,7 +607,6 @@ h1.moving-children  > * {
 .event-city-flex {
     color: var(--light-blue);
     font-family: BlackBeard;
-    margin-top: 0.15rem;
     font-size: 2rem;
 }
 .event-location-flex {
@@ -617,7 +619,7 @@ h1.moving-children  > * {
 }
 .event-name-flex *:not(.logo-star) {
     display: block;
-    line-height: 4rem;
+    line-height: 3rem;
     position: relative;
     z-index: 1;
 }
@@ -687,6 +689,24 @@ h1.moving-children  > * {
     }
     .event-name-flex *:not(.logo-star) {
 	line-height: 2.5rem;
+    }
+    .event-separator-icon {
+	display: none;
+    }
+    .event-location-flex {
+	flex-wrap: wrap;
+	gap: 0;
+    }
+    .event-reverse .event-location-flex {
+	justify-content: right;
+    }
+    .event-city-flex {
+	filter: brightness(0.5);
+    }
+    .event-date-flex {
+	flex-basis: 100%;
+	margin-top: -0.75rem;
+	font-size: 2rem;
     }
     h3 {
 	font-size: 1.75rem;

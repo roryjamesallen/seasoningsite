@@ -352,7 +352,6 @@ function renderTitle($subheading){
 
 function renderSEO($title='Seasoning - Rave Culture is Folk Culture', $canonical='https://seasoning.live', $favicon_path='favicon'){
 											 echo '
-    <meta name="robots" content="noindex">
 <meta charset="utf-8">
      <meta name="description" content="Rave Culture is Folk Culture. Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.">
      <meta property="og:title" content="Seasoning - Live Events">

@@ -1,7 +1,8 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
+date_default_timezone_set("Europe/London");
 
 function startup(){
     if (!isset($root)){
@@ -328,7 +329,7 @@ function renderPageBreak($version=1, $background='primary'){
 function renderFooter(){
     echo '
     <footer>
-    <a href="https://seasoning.live" id="footerLink" class="star-container" stars="10" star-size="5">Seasoning.live 2026</a>
+    <a href="https://seasoning.live" id="footerLink" class="star-container" stars="10" star-size="5">Seasoning.live '.date("Y").'</a>
     <div>
     <a href="https://www.instagram.com/seas0ning_">Instagram</a><span style="margin: 0 0.5rem">/</span>
     <a href="https://www.facebook.com/Seas0ning">Facebook</a><span style="margin: 0 0.5rem">/</span>

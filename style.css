@@ -179,10 +179,12 @@ footer {
     margin: 1rem auto 4rem;
     font-family: var(--title-font);
     width: var(--page-width);
+    text-align: center;
 }
 footer > div {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 footer a {
     text-decoration: none;

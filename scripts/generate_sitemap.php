@@ -7,14 +7,14 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">';
 
 date_default_timezone_set('Europe/London');
+$date = date('Y-m-d');
+
 $sitemap .= '
 <url>
   <loc>https://seasoning.live/</loc>
-  <lastmod>'.strtotime("now").'</lastmod>
+  <lastmod>'.$date.'</lastmod>
   <priority>1.00</priority>
 </url>';
-
-$date = date('Y-m-d');
 
 $events_json = json_decode(file_get_contents('../events.json'), true);
 foreach ($events_json as $event_id => $event_info){

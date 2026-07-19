@@ -718,6 +718,6 @@ h1.moving-children  > * {
 	font-size: 1.75rem;
     }
     .paragraph > * {
-	flex-basis: 100%;
+	flex-basis: 100% !important;
     }
 }

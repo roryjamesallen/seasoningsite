@@ -101,6 +101,10 @@ h3 {
     font-weight: normal;
     font-family: var(--title-font);
 }
+h4 {
+    margin: 0;
+    font-weight: normal;
+}
 a {
     color: inherit;
 }

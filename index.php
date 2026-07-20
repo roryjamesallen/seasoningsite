@@ -81,7 +81,7 @@ include 'lib.php';
 	    <p style="flex-basis: 100%;">Across the last 90 minutes of his closing set, Om Unit moves with unmistakable emotional fluency through dubstep classics, bleep pressure, contemporary club foundations, unreleased edits and his own idiosyncratic productions. Caspa & Rusko-era nostalgia, Ability II’s “Pressure Dub,” Gaszia’s “Taste,” deep bassweight, breakbeat lift and rave euphoria all pass through the mix with class, warmth and soul.</p>
 	    <hr style="flex-basis: 100%;">
 	    <iframe width="50%" height="400" src="https://player-widget.mixcloud.com/widget/iframe/?feed=%2Fworldwidefm%2Flove-cuts-lovellious-w-fraser-dahdouh-seasoning-special-08-05-26%2F" frameborder="0" allow="speaker-selection; web-share;"></iframe>
-	    <div><h3 style="display: inline; color: var(--pink)">Love Cuts</h3><br>Listen back to the <a href="https://www.instagram.com/l0ve.cuts/">Love Cuts</a> 'Seasoning Special' <a href="https://www.worldwidefm.net/">Worldwide FM</a> broadcast: Fraser and <a href="artist/Lovellious">Lovellious</a> discuss the meaning behind the 'Rave Culture is Folk Culture' slogan ahead of <a href="festival">Seasoning Festival 2026</a> , interspersed with mystic folky funky music.</p>
+	    <div><h3 style="display: inline; color: var(--pink)">Love Cuts</h3><br>Listen back to the <a href="https://www.instagram.com/l0ve.cuts/">Love Cuts</a> 'Seasoning Special' <a href="https://www.worldwidefm.net/">Worldwide FM</a> broadcast: Fraser and <a href="artist/Lovellious">Lovellious</a> discuss the meaning behind the 'Rave Culture is Folk Culture' slogan ahead of <a href="festival">Seasoning Festival 2026</a> , interspersed with mystic folky funky music.</div>
 	</div>
             <br>
 

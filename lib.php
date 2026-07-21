@@ -28,51 +28,24 @@ function readJSON($filename, $relational=true, $sort=true){
     }
     return $json;
 }
-function renderEventOld($event_key, $event){
-    global $root;
-    echo '<div class="event" tabindex="0">';
-    if (isset($event['name'])){
-	echo '<span class="event-name">'.$event['name'].'</span><hr>';
-    }
-    echo '<span class="event-date">'.date("d.m.Y",strtotime($event['date'])).'</span>';
-    echo '<span class="event-city">'.$event['city'].'</span>';
-    echo '<span class="event-venue">'.$event['venue'].'</span>';
-    
-    if (isset($event['artists'])){
-        echo '<hr>';
-        renderArtistList($event['artists'],'pale-text');
-    }
-    if (isset($event['permalink'])){
-        echo '<a href="'.$event['permalink'].'" class="event-view-poster">See Details</a>';
-    } else {
-        echo '<a href="event/'.$event_key.'" class="event-view-poster">See More</a>';
-    }
-    /*
-       if (array_key_exists('image',$event)){
-       $image_path = 'images/event-posters/'.$event['image'].'.jpg';
-       echo '<span class="event-view-poster">View Poster</span>';
-       echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" class="event-poster" src="'.$image_path.'">';
-       }*/
-    echo '</div>';
-}
 function renderEvent($event_key, $event, $reverse=false){
     global $root;
     if ($reverse){
-	$class = 'event-reverse';
+        $class = 'event-reverse';
     } else {
-	$class = '';
+        $class = '';
     }
     echo '<div class="event-flex paragraph '.$class.'">';
     if (array_key_exists('image',$event)){
-	$image_path = 'images/event-posters/'.$event['image'].'.jpg';
+        $image_path = 'images/event-posters/'.$event['image'].'.jpg';
     } else {
-	$image_path = 'favicon/sharing.png';
+        $image_path = 'favicon/sharing.png';
     }
 
     echo '<div class="event-info-flex">';
     
     if (isset($event['name'])){
-	echo ' <span class="event-name-flex star-container" stars="3" star-size="5" star-transition="60"><h4>'.$event['name'].'</h4></span>';
+        echo ' <span class="event-name-flex star-container" stars="3" star-size="5" star-transition="60"><h4>'.$event['name'].'</h4></span>';
     }
     echo '<span class="event-location-flex"><span class="event-city-flex">'.$event['venue'].' ('.$event['city'].')</span><span class="event-separator-icon">✹</span><span class="event-date-flex">'.date("d.m.Y",strtotime($event['date'])).'</span></span>';
     //echo '<span class="event-venue-flex">'.$event['venue'].'</span>';
@@ -82,20 +55,77 @@ function renderEvent($event_key, $event, $reverse=false){
     }
     
     if (isset($event['permalink'])){
-	$link = $event['permalink'];
+        $link = $event['permalink'];
     } else {
-	$link = 'event/'.$event_key;
+        $link = 'event/'.$event_key;
     }
     echo '<a href="'.$link.'" class="big-button"><span>See Details</span></a>';
     /*
-       if (array_key_exists('image',$event)){
-       $image_path = 'images/event-posters/'.$event['image'].'.jpg';
-       echo '<span class="event-view-poster">View Poster</span>';
-       echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" class="event-poster" src="'.$image_path.'">';
-       }*/
+      if (array_key_exists('image',$event)){
+      $image_path = 'images/event-posters/'.$event['image'].'.jpg';
+      echo '<span class="event-view-poster">View Poster</span>';
+      echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" class="event-poster" src="'.$image_path.'">';
+      }*/
     echo '</div>';
     //echo '<img class="event-poster-container" alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" class="event-poster-flex" src="'.$image_path.'"></img>';
     echo '</div>';
+}
+function renderEventSchema($event, $event_name){ // For Google Rich Results https://developers.google.com/search/docs/appearance/structured-data/event#add-structured-data
+    $end_date = $event['date'];
+    if (isset($event['end-date'])){
+        $end_date = $event['end-date'];
+    }
+    $images = '';
+    if (isset($event['image'])){
+        $images = '
+      "image": [
+        "https://seasoning.live/images/event-posters/'.$event['image'].'.jpg"
+      ],';
+    }
+    $artists = '';
+    if (isset($event['artists'])){
+        $artists = '
+      "performer": [';
+        foreach ($event['artists'] as $index => $artist){
+            $artists .= '
+        {
+          "@type": "Person",
+          "name": "'.$artist.'"
+        }';
+            if ($index != count($event['artists']) - 1){
+                $artists .= ',';
+            }
+        }
+        $artists .= '
+      ],';
+    }
+    $description = '';
+    if (isset($event['description'])){
+        $description = '"description": "'.$event['description'].'",';
+    }
+    echo '<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "'.$event_name.'",
+      "startDate": "'.$event['date'].'",
+      "endDate": "'.$end_date.'",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "'.$event['venue'].'",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "'.$event['city'].'"
+        }
+      },'.$images.$artists.$description.'
+      "organizer": {
+        "@type": "Organization",
+        "name": "Seasoning",
+        "url": "https://seasoning.live"
+      }
+}
+</script>';
 }
 function getDaysRemaining($date){
     $days_remaining = round((strtotime($date) - strtotime(date('Y-m-d'))) / 86400);

@@ -41,6 +41,7 @@ if (isset($_GET['e'])){
         $title = $artist_text.' at '.$event['venue'].', '.$event['city'].' - '.date("d.m.Y",strtotime($event['date']));
     }
 renderSEO($title);
+renderEventSchema($event, $title);
 ?>
 	<link rel="stylesheet" href="style.css?v=39">
     <link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">

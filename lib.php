@@ -400,6 +400,27 @@ function renderSEO($title='Seasoning - Rave Culture is Folk Culture', $canonical
 <meta name="viewport" content="width=device-width, initial-scale=1" />
      ';
 }
+function renderOrganisationSchema(){
+echo '<script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://seasoning.live",
+      "logo": "https://seasoning.live/favicon/web-app-manifest-512x512.png",
+      "name": "Seasoning",
+      "description": "Rave Culture is Folk Culture. Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.",
+      "email": "fraser@seasoning.live",
+      "foundingDate": "2022-04-02",
+      "sameAs": [
+        "https://www.instagram.com/seas0ning_",
+        "https://www.facebook.com/Seas0ning",
+        "https://ra.co/promoters/119677",
+        "https://soundcloud.com/seas0ning",
+        "https://fixr.co/organiser/666971023"
+      ]
+    }
+</script>';
+}
 
 function getArtistOptions(){
     $artist_options = '';

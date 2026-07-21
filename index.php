@@ -27,7 +27,10 @@ include 'lib.php';
 <?php startup();?>
 <html lang="en">
     <head>
-	<?php renderSEO(); ?>
+	<?php
+	renderSEO();
+	renderOrganisationSchema();
+	?>
 	<link rel="stylesheet" href="style.css?v=<?php cssVersion(); ?>">
     </head>
     <?php echo $analytics ?>

@@ -28,20 +28,8 @@ if (isset($_GET['e'])){
     <head>
 	<base href="../">
 <?php
-    if (isset($event['name'])){
-        $title = $event['name'];
-    } else if (isset($event['artists'])){
-        if (count($event['artists']) == 1){
-            $artist_text = $event['artists'][0];
-        } else if (count($event['artists']) == 2){
-            $artist_text = $event['artists'][0].' & '.$event['artists'][1];
-        } else {
-            $artist_text = $event['artists'][0].', '.$event['artists'][1].' & More';
-        }
-        $title = $artist_text.' at '.$event['venue'].', '.$event['city'].' - '.date("d.m.Y",strtotime($event['date']));
-    }
-renderSEO($title);
-renderEventSchema($event, $title);
+renderSEO(generateEventTitle($event));
+renderEventSchema($event);
 ?>
 	<link rel="stylesheet" href="style.css?v=39">
     <link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">

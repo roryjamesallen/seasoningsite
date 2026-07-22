@@ -70,7 +70,7 @@ function renderEvent($event_key, $event, $reverse=false){
     //echo '<img class="event-poster-container" alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" class="event-poster-flex" src="'.$image_path.'"></img>';
     echo '</div>';
 }
-function renderEventSchema($event, $event_name){ // For Google Rich Results https://developers.google.com/search/docs/appearance/structured-data/event#add-structured-data
+function renderEventSchema($event){ // For Google Rich Results https://developers.google.com/search/docs/appearance/structured-data/event#add-structured-data
     $end_date = $event['date'];
     if (isset($event['end-date'])){
         $end_date = $event['end-date'];
@@ -99,15 +99,12 @@ function renderEventSchema($event, $event_name){ // For Google Rich Results http
         $artists .= '
       ],';
     }
-    $description = '';
-    if (isset($event['description'])){
-        $description = '"description": "'.$event['description'].'",';
-    }
+    
     echo '<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Event",
-      "name": "'.$event_name.'",
+      "name": "'.generateEventTitle($event).'",
       "startDate": "'.$event['date'].'",
       "endDate": "'.$end_date.'",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -118,7 +115,8 @@ function renderEventSchema($event, $event_name){ // For Google Rich Results http
           "@type": "PostalAddress",
           "addressLocality": "'.$event['city'].'"
         }
-      },'.$images.$artists.$description.'
+      },'.$images.$artists.'
+      '.generateEventDescription($event, true).'
       "organizer": {
         "@type": "Organization",
         "name": "Seasoning",
@@ -126,6 +124,31 @@ function renderEventSchema($event, $event_name){ // For Google Rich Results http
       }
 }
 </script>';
+}
+function generateEventTitle($event, $extra=false){
+    if (isset($event['name'])){
+        $title = $event['name']; // e.g. Seasoning Festival 2026
+    } else if (isset($event['artists'])){
+        if (count($event['artists']) == 1){
+            $title = $event['artists'][0]; // e.g. Lovellious
+        } else if (count($event['artists']) == 2){
+            $title = $event['artists'][0].' & '.$event['artists'][1]; // e.g. Lovellious & Bakey
+        } else {
+            $title = $event['artists'][0].', '.$event['artists'][1].' & More'; // e.g. Lovellious, Bakey & More
+        }
+    }
+    if ($extra){
+        $title .= ' at '.$event['venue'].', '.$event['city'].' - '.date("d M Y",strtotime($event['date'])); // e.g. Lovellious, Bakey & More at SVA, Stroud - 01.02.2026
+    }
+    return $title;
+}
+function generateEventDescription($event, $extra=false){
+    $description = '"description": "'.generateEventTitle($event, $extra);
+    if (isset($event['description'])){
+        $description = '. '.$event['description'];
+    }
+    $description .= '",';
+    return $description;
 }
 function getDaysRemaining($date){
     $days_remaining = round((strtotime($date) - strtotime(date('Y-m-d'))) / 86400);

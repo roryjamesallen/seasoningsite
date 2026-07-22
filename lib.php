@@ -117,6 +117,7 @@ function renderEventSchema($event){ // For Google Rich Results https://developer
         }
       },'.$images.$artists.'
       '.generateEventDescription($event, true).'
+      '.generateEventTicketOffers($event).'
       "organizer": {
         "@type": "Organization",
         "name": "Seasoning",
@@ -142,6 +143,18 @@ function generateEventTitle($event, $extra=false){
     }
     return $title;
 }
+function generateEventTicketOffers($event){
+    $link = '';
+    if (isset($event['fixr'])){
+        $link = generateFIXRLink($event['fixr']);
+    } else if (isset($event['tickets'])){
+        $link = $event['tickets'];
+    }
+    return '"offers": {
+        "@type": "Offer",
+        "url": "'.$link.'"
+      }';
+}
 function generateEventDescription($event, $extra=false){
     $description = '"description": "'.generateEventTitle($event, $extra);
     if (isset($event['description'])){
@@ -161,6 +174,9 @@ function getDaysRemaining($date){
     }
     return $text;
 }
+function generateFIXRLink($fixr_id){
+    return 'https://fixr.co/event/'.$fixr_id;
+}
 function renderEventDetails($event){
     echo '<div class="paragraph"><span><span class="pale-text">Date:</span> '.date("d M Y",strtotime($event['date']));
     if (isset($event['end-date'])){
@@ -179,7 +195,7 @@ function renderEventDetails($event){
         echo '<iframe src="https://ra.co/promoters/'.$event['ra'].'/widgets/events?theme=dark" height="100%" width="100%" style="border: none;">';
     }
     if (isset($event['fixr'])){
-        echo '<a class="fixr-link" href="https://fixr.co/event/'.$event['fixr'].'">Buy Tickets</a>';
+        echo '<a class="fixr-link" href="'.generateFIXRLink($event['fixr']).'">Buy Tickets</a>';
     }
     if (isset($event['tickets'])){
         echo '<a class="fixr-link" href="'.$event['tickets'].'">Buy Tickets</a>';

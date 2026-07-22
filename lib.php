@@ -153,7 +153,7 @@ function generateEventTicketOffers($event){
     return '"offers": {
         "@type": "Offer",
         "url": "'.$link.'"
-      }';
+      },';
 }
 function generateEventDescription($event, $extra=false){
     $description = '"description": "'.generateEventTitle($event, $extra);

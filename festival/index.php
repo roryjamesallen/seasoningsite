@@ -6,8 +6,7 @@ error_reporting(E_ALL);
 $root = '../';
 include '../lib.php';
 
-$event_id = '20260529';
-$event = getEventFromId($event_id);
+$event = getEventFromId('festival');
 
 $date_now = new DateTime('now');
 $date_start = new DateTime('2026-05-29T12:00:00');

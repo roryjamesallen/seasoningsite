@@ -273,16 +273,24 @@ function renderEventList($mode='all', $events=false, $extra_text='', $force_show
         return false;
     }
 }
+function getEndOfPermalink($event){
+    $permalink_elements = explode('/', $event['permalink']); // Allow permalinks inside directories e.g. event/outlook-origins-2026
+    return end($permalink_elements);
+}
 function getEventFromId($id){
     $json = readJSON('events.json', true, false);
-    if (in_array($id, array_keys($json))){
-        return $json[$id];
+    if (in_array($id, array_keys($json))){ // Event exists ($id is key in events.json)
+        if (isset($json[$id]['permalink'])){ // $id is not permalink but permalink exists
+            header("HTTP/1.1 301 Moved Permanently"); // Redirect
+            header('Location: '.getEndOfPermalink($json[$id]));
+            die();
+        } else {
+            return $json[$id]; // No permalink exists so return event
+        }
     } else {
-        foreach ($json as $event){
-            if (isset($event['permalink'])){
-                $permalink_elements = explode('/', $event['permalink']); // Allow permalinks inside directories e.g. event/outlook-origins-2026
-                $permalink_end = end($permalink_elements);
-                if ($id == $permalink_end){
+        foreach ($json as $event){ // $id isn't a key in events.json but might be a permalink
+            if (isset($event['permalink'])){ // $id is a valid permalink to an event
+                if ($id == getEndOfPermalink($event)){
                     return $event;
                 }
             }

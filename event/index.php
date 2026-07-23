@@ -10,17 +10,17 @@ if (isset($_GET['e'])){
     $event_id = urldecode($_GET['e']);
     try {
         $event = getEventFromId($event_id);
-    } catch (Exception $e) {
+    } catch (Exception $e) { // Page doesn't exist
         header('Location: ../');
     }
-
+    /*
     $REDIRECTS = array(
         '20260529'=>'../festival',
         '20260723'=>'outlook-origins-2026'
     );
     if (in_array($event_id, array_keys($REDIRECTS))){
         header('Location: '.$REDIRECTS[$event_id]);
-    }
+        }*/
 } else {
     header("HTTP/1.1 301 Moved Permanently");
     header('Location: ../');

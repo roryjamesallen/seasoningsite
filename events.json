@@ -338,7 +338,7 @@
     },
     "20260723": {
 	"name": "Outlook Origins 2026",
-	"date": "2026-07-23T00:00:00-00:00",
+	"date": "2026-07-25T23:59:00-00:00",
 	"venue": "The Garden",
 	"city": "Tisno, Croatia",
 	"image": "23",
@@ -351,6 +351,8 @@
 	    "Lovellious",
 	    "LWS"
 	],
+	"description": "Seasoning emerged in 2022 from the breaks-driven garage revival that shaped post-pandemic dance music culture in the UK.<br><br>From our home in Stroud, we spent two years building beautiful dancefloors across the town, Bristol and further afield. Along the way, we reached a musical impasse. We began questioning our understanding of the music, the relationship between soundsystem sonics and deep, progressive playstyles, and how all of this could connect with the depth of soul we were searching for.<br><br>In 2024, at The Garden in Tisno, a small gateway opened. At Outlook, a few of the dots between sounds, cultures and ways of playing began to connect. The 2025 edition carried us deeper, taking many of our crew through social, emotional and musical journeys that we are still feeling our way through.<br><br><h3 style='color: var(--pink)'>Being invited to contribute a boat party this year is a serious honour.</h3><br>It carries the work of our crew, residents, friends, venues, soundsystems and selectors. It belongs equally to the open-minded dancers and ravers who have met us, time after time, in Stroud, in warehouses and in some of the best clubs in the UK, trusting us to keep pushing this thing forward.<br><br>Outlook is a major keystone of the soundsystem culture that has shaped our lives. Its purity of heart, clarity of purpose and singularity of vision are second to none.<br><br>This programme touches several adjacent strands within the wider journey Seasoning has travelled. Some old friends, some new. Every artist here continues to inform, challenge and inspire the vision through their productions and the worlds they build behind the decks.",
+	"permalink": "event/outlook-origins-2026",
 	"tickets": "https://booking.outlookorigins.com/extras?t=kaboodle-9y4i4&c=104&p=26913&k=57fcf376a5883f12f7f5a241e2ee59448c776001",
 	"image": "24"
     },

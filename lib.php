@@ -275,7 +275,19 @@ function renderEventList($mode='all', $events=false, $extra_text='', $force_show
 }
 function getEventFromId($id){
     $json = readJSON('events.json', true, false);
-    return $json[$id];
+    if (in_array($id, array_keys($json))){
+        return $json[$id];
+    } else {
+        foreach ($json as $event){
+            if (isset($event['permalink'])){
+                $permalink_elements = explode('/', $event['permalink']); // Allow permalinks inside directories e.g. event/outlook-origins-2026
+                $permalink_end = end($permalink_elements);
+                if ($id == $permalink_end){
+                    return $event;
+                }
+            }
+        }
+    }
 }
 function getEventValueList($key){
     $events_json = readJSON('events.json');

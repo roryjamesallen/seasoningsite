@@ -14,8 +14,12 @@ if (isset($_GET['e'])){
         header('Location: ../');
     }
 
-    if ($event_id == '20260529'){
-        header('Location: ../festival');
+    $REDIRECTS = array(
+        '20260529'=>'../festival',
+        '20260723'=>'outlook-origins-2026'
+    );
+    if (in_array($event_id, array_keys($REDIRECTS))){
+        header('Location: '.$REDIRECTS[$event_id]);
     }
 } else {
     header("HTTP/1.1 301 Moved Permanently");

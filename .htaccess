@@ -1,5 +1,11 @@
 RewriteEngine On
 RewriteBase /seasoningsite
+
+ErrorDocument 404 https://seasoning.live/404
+RewriteCond "%{REQUEST_FILENAME}" !-f
+RewriteCond "%{REQUEST_FILENAME}" !-d
+RewriteRule   "^404$" "404.php" [NC,L]
+
 RewriteRule /artist/^([^/]*)$ /artist/index.php?a=$1 [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

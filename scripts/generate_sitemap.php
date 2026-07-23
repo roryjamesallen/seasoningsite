@@ -21,11 +21,11 @@ foreach ($events_json as $event_id => $event_info){
     if (isset($event_info['permalink'])){
         $event_link = $event_info['permalink'];
     } else {
-        $event_link = $event_id;
+        $event_link = 'event/'.$event_id;
     }
     $sitemap .= '
 <url>
-  <loc>https://seasoning.live/event/'.$event_link.'</loc>
+  <loc>https://seasoning.live/'.$event_link.'</loc>
   <lastmod>'.$date.'</lastmod>
   <priority>0.75</priority>
 </url>';

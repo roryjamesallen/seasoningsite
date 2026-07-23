@@ -23,7 +23,8 @@
 	    "Ansätze",
 	    "Yorke"
 	],
-	"image": "2"
+	"image": "2",
+	"permalink": "event/winter-party-2022"
     },
     "20230304": {
 	"name": "Earthquake Solidarity Fundraiser",
@@ -45,7 +46,8 @@
 	    "Ansätze",
 	    "spr1ng br34ka"
 	],
-	"image": "3"
+	"image": "3",
+	"permalink": "event/earthquake-solidarity-fundraiser"
     },
     "20230324": {
 	"date": "2023-03-24T00:00:00-00:00",
@@ -109,7 +111,8 @@
 	    "SASK",
 	    "Wizard Tree"
 	],
-	"image": "6"
+	"image": "6",
+	"permalink": "event/ram-fete-2023"
     },
     "20231222": {
 	"name": "Xmas Party",
@@ -126,7 +129,8 @@
 	    "Joice",
 	    "Throblabs"
 	],
-	"image": "7"
+	"image": "7",
+	"permalink": "event/xmas-party-2023"
     },
     "20240330": {
 	"date": "2024-03-30T00:00:00-00:00",
@@ -160,7 +164,8 @@
 	    "Subterra",
 	    "Webb"
 	],
-	"image": "9"
+	"image": "9",
+	"permalink": "event/festival-2024"
     },
     "20241102": {
 	"name": "Palestine Solidarity Fundraiser",
@@ -172,7 +177,8 @@
 	    "Loefah",
 	    "YouYou"
 	],
-	"image": "10"
+	"image": "10",
+	"permalink": "event/palestine-solidarity-fundraiser"
     },
     "20241221": {
 	"name": "Seasoning Winter Party 2024",
@@ -187,7 +193,8 @@
 	    "Lovellious",
 	    "Amelie"
 	],
-	"image": "11"
+	"image": "11",
+	"permalink": "event/winter-party-2024"
     },
     "20250531": {
 	"name": "Seasoning Day Festival 2025",
@@ -241,7 +248,8 @@
 	    "Righteous Heretics",
 	    "Yorke"
 	],
-	"image": "12"
+	"image": "12",
+	"permalink": "event/festival-2025"
     },
     "20250405": {
 	"date": "2025-04-05T00:00:00-00:00",
@@ -265,7 +273,8 @@
 	    "Amelie",
 	    "Lovellious"
 	],
-	"image": "14"
+	"image": "14",
+	"permalink": "event/3-years-of-Seasoning"
     },
     "20250606": {
 	"date": "2025-06-06T00:00:00-00:00",
@@ -309,7 +318,8 @@
 	    "Papi Clamm",
 	    "Mandrill Sound"
 	],
-	"image": "17"
+	"image": "17",
+	"permalink": "event/winter-party-2025"
     },
     "20260227": {
 	"date": "2026-02-27T00:00:00-00:00",
@@ -319,7 +329,8 @@
 	    "Tim Reaper",
 	    "Severine"
 	],
-	"image": "18"
+	"image": "18",
+	"permalink": "event/tim-reaper-severine-strange-brew"
     },
     "20260207": {
 	"name": "Seasoning X Independent Venue Week",
@@ -334,14 +345,15 @@
 	    "Ostad",
 	    "spr1ng br34ka"
 	],
-	"image": "19"
+	"image": "19",
+	"permalink": "event/independent-venue-week-2026"
     },
     "20260723": {
 	"name": "Outlook Origins 2026",
 	"date": "2026-07-25T23:59:00-00:00",
 	"venue": "The Garden",
 	"city": "Tisno, Croatia",
-	"image": "23",
+	"image": "24",
 	"artists": [
 	    "Bakey",
 	    "Josi Devil",
@@ -352,9 +364,8 @@
 	    "LWS"
 	],
 	"description": "Seasoning emerged in 2022 from the breaks-driven garage revival that shaped post-pandemic dance music culture in the UK.<br><br>From our home in Stroud, we spent two years building beautiful dancefloors across the town, Bristol and further afield. Along the way, we reached a musical impasse. We began questioning our understanding of the music, the relationship between soundsystem sonics and deep, progressive playstyles, and how all of this could connect with the depth of soul we were searching for.<br><br>In 2024, at The Garden in Tisno, a small gateway opened. At Outlook, a few of the dots between sounds, cultures and ways of playing began to connect. The 2025 edition carried us deeper, taking many of our crew through social, emotional and musical journeys that we are still feeling our way through.<br><br><h3 style='color: var(--pink)'>Being invited to contribute a boat party this year is a serious honour.</h3><br>It carries the work of our crew, residents, friends, venues, soundsystems and selectors. It belongs equally to the open-minded dancers and ravers who have met us, time after time, in Stroud, in warehouses and in some of the best clubs in the UK, trusting us to keep pushing this thing forward.<br><br>Outlook is a major keystone of the soundsystem culture that has shaped our lives. Its purity of heart, clarity of purpose and singularity of vision are second to none.<br><br>This programme touches several adjacent strands within the wider journey Seasoning has travelled. Some old friends, some new. Every artist here continues to inform, challenge and inspire the vision through their productions and the worlds they build behind the decks.",
-	"permalink": "event/outlook-origins-2026",
 	"tickets": "https://booking.outlookorigins.com/extras?t=kaboodle-9y4i4&c=104&p=26913&k=57fcf376a5883f12f7f5a241e2ee59448c776001",
-	"image": "24"
+	"permalink": "event/outlook-origins-2026"
     },
     "20260411": {
 	"name": "4 Years of Seasoning",
@@ -369,7 +380,8 @@
 	    "Allysha Joy",
 	    "Neue Grafik"
 	],
-	"image": "21"
+	"image": "21",
+	"permalink": "event/4-years-of-Seasoning"
     },
     "20260529": {
 	"name": "Seasoning Festival 2026",
@@ -449,6 +461,7 @@
 	"description": "The current returns. Four days in Stroud, carried through rooms, yards, fields and bodies. A space for encounter… a temporary commons for dancers, crews, listeners, dreamers, wanderers and friends not yet met.",
 	"venue": "TBA",
 	"city": "Stroud",
-	"fixr": "918859891"
+	"fixr": "918859891",
+	"permalink": "event/festival-2027"
     }
 }

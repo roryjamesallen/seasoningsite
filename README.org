@@ -1,0 +1,41 @@
+* Seasoning.live
+This is the website code for [[https://seasoning.live][seasoning.live]], a Stroud based events promotion organisation.
+
+* The Code
++ Almost all of the HTML rendering is done by functions in ~lib.php~.
++ Two directories exist for basic sub-pages: ~/artist~ and ~/event~. All index pages are very basic and just call functions from ~lib.php~ to render information.
++ ~events.json~ contains all the information about events.
++ ~artists.json~ allows artists to have information manually added.
++ Links to events and artists are handled by ~.htaccess~ to convert pretty urls e.g. ~seasoning.live/artist/Lovellious~ into URL parameters the PHP script can interpret e.g. ~seasoning.live/artist?a=Lovellious~.
++ A script is used to generate ~sitemap.xml~ when ~deploy.sh~ is run so that only artists with information
+
+** lib.php
+All functions are broken up into:
++ Non HTML functions (just data manipulation)
++ HTML 'Generator' functions that return (don't echo) HTML content
++ HTML 'Render' functions that echo HTML content
+These roughly execute in order, reading files, manipulating that information into HTML content, and finally rendering that content to the page before serving.
+
+** artists.json
+Adding an entry into ~artists.json~ will cause the artist's name to appear as a link when rendered in event previews and pages, and their page (~/artist/ArtistName~) will show the details added. The artist's name (not urlencoded) is the JSON key and the details are a JSON dictionary with the below keys:
++ ~bio~: Basic description/biography
++ ~instagram~: A full link to their Instagram page
++ ~soundcloud~: A full link to their SoundCloud page
++ ~resident advisor~: A full link to their Resident Advisor page
++ ~bandcamp~: A full link to their Bandcamp page
++ ~embed~: The ID of a SoundCloud embed
++ ~permalink~: A 'pretty' permalink if the artist's name doesn't look good with a basic urlencode
+
+** events.json
+Adding an entry into ~events.json~ will cause the event to show up on the homepage as well as the pages of any artists who feature. The event's date in the form yyyymmdd is the JSON key and the details are a JSON dictionary with the below keys:
++ ~name~: The name of the event e.g. Seasoning Festival 2026
++ ~date~: IOS 8601 date i.e. YYYY-MM-DD
++ ~end-date~: Optional end date for multi-day events
++ ~description~: Long description of the event. Can contain HTML content but be careful doing anything complex.
++ ~venue~: Name of the venue (no city)
++ ~city~: Name of the city (if country isn't UK then use a comma e.g. ~Tisno, Croatia~)
++ ~image~: The number of the ~.jpg~ image in ~/images/event-posters~ if one exists
++ ~artists~: An optional array of all artists playing the event (full non-urlencoded names, the same format as the JSON keys in ~artists.json~)
++ ~permalink~: An optional permalink (use wherever possible). Needs to include the ~event~ directory if not a real custom page in the root directory e.g. ~/event/outlook-origins-2026~.
++ ~fixr~: An optional FIXR event ID which will show the buy tickets button with an on-page embedded popup from FIXR.
++ ~tickets~: An optional full URL to a non-FIXR ticket link. 

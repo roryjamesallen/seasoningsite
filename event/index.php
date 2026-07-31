@@ -32,7 +32,7 @@ if (isset($_GET['e'])){
     <head>
 	<base href="../">
 <?php
-renderSEO(generateEventTitle($event));
+    renderSEO(generateEventTitle($event), 'https://seasoning.live/'.$event_id, generateEventDescription($event, false, false));
 renderEventSchema($event);
 ?>
 	<link rel="stylesheet" href="style.css?v=39">

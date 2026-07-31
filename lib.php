@@ -105,14 +105,20 @@ function generateEventTicketOffers($event){ // For Google Rich Results https://d
       },';
     }
 }
-function generateEventDescription($event, $extra=false){ // For Google Rich Results https://developers.google.com/search/docs/appearance/structured-data/event#add-structured-data
-    $description = '"description": "';
+function generateEventDescription($event, $extra=false, $schema=true){
+    if ($schema){
+        $description = '"description": "';
+    } else {
+        $description = '';
+    }
     if (isset($event['description'])){
         $description .= $event['description'];
     } else {
-        $description .= generateEventTitle($event, $extra);
+        $description .= EventTitle($event, $extra);
     }
-    $description .= '",';
+    if ($schema){
+        $description .= '",';
+    }
     return $description;
 }
 function generateEventTitle($event, $extra=false){ // $extra=true will add 'at Venue, City - dd.mm.yyyy' to the end of the title
@@ -437,12 +443,12 @@ function renderTitle($subheading){ // The full page title with logo and stars. T
     <style>.fixr-links-widget { --fixr-primary: var(--pink); }</style>';
 }
 
-function renderSEO($title='Seasoning - Rave Culture is Folk Culture', $canonical='https://seasoning.live', $favicon_path='favicon'){ // HTML head content for SEO, favicon, and stylesheets etc
+function renderSEO($title='Seasoning - Rave Culture is Folk Culture', $canonical='https://seasoning.live', $description='Rave Culture is Folk Culture. Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.', $favicon_path='favicon'){ // HTML head content for SEO, favicon, and stylesheets etc
     echo '
 <meta charset="utf-8">
-     <meta name="description" content="Rave Culture is Folk Culture. Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.">
+     <meta name="description" content="'.$description.'">
      <meta property="og:title" content="Seasoning - Live Events">
-     <meta property="og:description" content="Rave Culture is Folk Culture. Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.">
+     <meta property="og:description" content="'.$description.'">
 <meta name="keywords" content="Stroud, Bristol, London, Rave, Live, Events, Performance, Club, Dance, Music, Scene, Studio, Community, Culture, Collective, Party">
      <meta property="og:url" content="'.$canonical.'">
      <title>'.$title.'</title>

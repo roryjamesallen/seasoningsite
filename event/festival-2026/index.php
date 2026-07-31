@@ -34,9 +34,9 @@ if ($diff->format('%r') == '-'){
 <html lang="en">
     <head>
 	<base href="<?php echo $root; ?>">
-	<?php renderSEO('Seasoning Festival 2026 - Rave Culture Is Folk Culture', 'https://seasoning.live/festival', 'Seasoning festival is over for 2026, thank you for joining us!', 'event/festival/favicon'); ?>
+	<?php renderSEO('Seasoning Festival 2026 - Rave Culture Is Folk Culture', 'https://seasoning.live/festival', 'Seasoning festival is over for 2026, thank you for joining us!', 'event/festival-2026/favicon'); ?>
 	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
-	<link rel="stylesheet" href="event/festival/festival-style.css?v=5">
+	<link rel="stylesheet" href="event/festival-2026/festival-style.css?v=5">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <?php echo $analytics ?>
@@ -109,15 +109,15 @@ if ($diff->format('%r') == '-'){
 	     <img src="festival/seasoning-festival-logo.svg" id="festival-logo" alt="Logo for Seasoning Festival 2026">-->
 	<h1 style="transform: none; margin: 1rem auto 0; height: unset; font-size: 3.5rem; text-align: center; z-index: 2; display: none">Seasoning Festival</h1>
 	<div class="paragraph" style="margin: 2rem auto">
-	    <img style="max-height: unset" src="event/festival/seasoning-festival-logo.svg">
+	    <img style="max-height: unset" src="event/festival-2026/seasoning-festival-logo.svg">
 	</div>
 
 	<h2 style="font-family: Cormorant; color: var(--paragraph); font-size: 2rem">Seasoning festival is over for 2026, thank you for joining us!</h2>
 
 	<div id="timetable">
-	    <div><img src="event/festival/seasoning-festival-timetable-friday.svg"></div>
-	    <div><img src="event/festival/seasoning-festival-timetable-saturday.svg"></div>
-	    <div><img src="event/festival/seasoning-festival-timetable-sunday.svg"></div>
+	    <div><img src="event/festival-2026/seasoning-festival-timetable-friday.svg"></div>
+	    <div><img src="event/festival-2026/seasoning-festival-timetable-saturday.svg"></div>
+	    <div><img src="event/festival-2026/seasoning-festival-timetable-sunday.svg"></div>
 	    <div style="flex-basis: 100%; text-align: center">
 		* 12pm to 1pm: The Ritual Dimensions of Rave Culture / 1pm to 2pm: The Dancefloor's Role in Socio-Political Tensions<br>
 		** 2pm to 3pm: Intersections of Folk, Rave & The Idea Of Fusion w/ Lovellious<br>
@@ -126,9 +126,9 @@ if ($diff->format('%r') == '-'){
 	    </div>
 	</div>
 
-	<img id="map" src="event/festival/seasoning-festival-map.png">
-	<img id="campsite-map" src="event/festival/seasoning-festival-campsite-map.png">
-	<img id="festival-poster" src="event/festival/seasoning-festival-poster.jpg">
+	<img id="map" src="event/festival-2026/seasoning-festival-map.png">
+	<img id="campsite-map" src="event/festival-2026/seasoning-festival-campsite-map.png">
+	<img id="festival-poster" src="event/festival-2026/seasoning-festival-poster.jpg">
 	
 	<div class="paragraph" style="margin-bottom: 2rem">
 	    <span style="font-family: Cormorant; text-align: center">
@@ -143,16 +143,16 @@ if ($diff->format('%r') == '-'){
 	<div class="paragraph">
 	    <hr>
 	    <p class="full" id="partners" style="margin-bottom: -1rem; margin-top: 0">
-		<a href="https://www.instagram.com/fortyldn/"><img src="event/festival/partners/forty.png" alt="Logo for Seasoning Festival 2026 partner - Forty"></a>
-		<a href="https://www.dancepolicy.com/"><img src="event/festival/partners/dance-policy.png" alt="Logo for Seasoning Festival 2026 partner - Dance Policy"></a>
-		<a href="https://www.instagram.com/joy__lift/"><img src="event/festival/partners/joy-lift.png" alt="Logo for Seasoning Festival 2026 partner - Joy Lift"></a>
-		<a href="https://www.instagram.com/craniummmmmmm/"><img src="event/festival/partners/cranium.png" alt="Logo for Seasoning Festival 2026 partner - Cranium"></a>
+		<a href="https://www.instagram.com/fortyldn/"><img src="event/festival-2026/partners/forty.png" alt="Logo for Seasoning Festival 2026 partner - Forty"></a>
+		<a href="https://www.dancepolicy.com/"><img src="event/festival-2026/partners/dance-policy.png" alt="Logo for Seasoning Festival 2026 partner - Dance Policy"></a>
+		<a href="https://www.instagram.com/joy__lift/"><img src="event/festival-2026/partners/joy-lift.png" alt="Logo for Seasoning Festival 2026 partner - Joy Lift"></a>
+		<a href="https://www.instagram.com/craniummmmmmm/"><img src="event/festival-2026/partners/cranium.png" alt="Logo for Seasoning Festival 2026 partner - Cranium"></a>
 	    </p>
 	    <p class="full" id="partners">
-		<a href=""><img src="event/festival/partners/loose-joints.png" alt="Logo for Seasoning Festival 2026 partner - Loose Joints"></a>
-		<a href="https://www.instagram.com/cabinfeverldn/"><img src="event/festival/partners/cabin-fever.png" alt="Logo for Seasoning Festival 2026 partner - Cabin Fever"></a>
-		<a href="https://www.instagram.com/clubblanco/?hl=en"><img src="event/festival/partners/club-blanco.png" alt="Logo for Seasoning Festival 2026 partner - Club Blanco"></a>
-		<a href="https://www.artscouncil.org.uk/"><img src="event/festival/partners/arts-council-england.png" alt="Logo for Seasoning Festival 2026 partner - Arts Council England"></a>
+		<a href=""><img src="event/festival-2026/partners/loose-joints.png" alt="Logo for Seasoning Festival 2026 partner - Loose Joints"></a>
+		<a href="https://www.instagram.com/cabinfeverldn/"><img src="event/festival-2026/partners/cabin-fever.png" alt="Logo for Seasoning Festival 2026 partner - Cabin Fever"></a>
+		<a href="https://www.instagram.com/clubblanco/?hl=en"><img src="event/festival-2026/partners/club-blanco.png" alt="Logo for Seasoning Festival 2026 partner - Club Blanco"></a>
+		<a href="https://www.artscouncil.org.uk/"><img src="event/festival-2026/partners/arts-council-england.png" alt="Logo for Seasoning Festival 2026 partner - Arts Council England"></a>
 		
 	    </p>
 	    

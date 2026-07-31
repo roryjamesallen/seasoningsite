@@ -114,7 +114,7 @@ function generateEventDescription($event, $extra=false, $schema=true){
     if (isset($event['description'])){
         $description .= $event['description'];
     } else {
-        $description .= EventTitle($event, $extra);
+        $description .= generateEventTitle($event, $extra);
     }
     if ($schema){
         $description .= '",';

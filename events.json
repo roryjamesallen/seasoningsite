@@ -463,5 +463,18 @@
 	"city": "Stroud",
 	"fixr": "918859891",
 	"permalink": "event/festival-2027"
+    },
+    "20260904": {
+	"name": "Peverelist and Pinch",
+	"date": "2026-09-04",
+	"venue": "Old Blue Last",
+	"city": "London",
+	"permalink": "event/pinch-peverelist-youyou-old-blue",
+	"artists": [
+	    "Pinch",
+	    "Peverelist",
+	    "YouYou"
+	],
+	"image": "25"
     }
 }

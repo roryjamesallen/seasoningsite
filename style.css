@@ -349,6 +349,15 @@ a.artist-link {
 .artist-list > a {
 
 }
+.paragraph-html-img-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem;
+    background-color: var(--black);
+    width: fit-content;
+    color: var(--pink);
+}
 .paragraph:has(> .artist-info) > img, .paragraph-html > img {
     filter: saturate(0);
     mix-blend-mode: lighten;

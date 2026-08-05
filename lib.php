@@ -387,7 +387,7 @@ function renderArtistList($artists=false, $class='', $limit=false){ // Render a 
             }
         }
     }
-    echo '</span>';
+    echo '.</span>';
 }
 function renderArtistInfo($artist){ // Render an artist's whole page
     $artists_json = readJSON('artists.json', true, false);

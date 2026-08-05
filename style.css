@@ -162,6 +162,9 @@ span:empty {
 .goo-minor {
     filter: blur(1.5px) contrast(10);
 }
+.paragraph-html {
+    position: relative;
+}
 .paragraph {
     display: flex;
     flex-wrap: wrap;
@@ -184,6 +187,12 @@ footer {
     font-family: var(--title-font);
     width: var(--page-width);
     text-align: center;
+}
+.website-credit {
+    mix-blend-mode: difference;
+    opacity: 0.35;
+    font-size: 1rem;
+    margin-top: 0.5rem;
 }
 footer > div {
     display: flex;
@@ -340,13 +349,15 @@ a.artist-link {
 .artist-list > a {
 
 }
+.paragraph:has(> .artist-info) > img, .paragraph-html > img {
+    filter: saturate(0);
+    mix-blend-mode: lighten;
+}
 .paragraph:has(> .artist-info) > img {
     position: relative;
     width: 0;
     height: fit-content;
     object-fit: contain;
-    filter: saturate(0);
-    mix-blend-mode: lighten;
 }
 
 .collapsed {

@@ -265,8 +265,8 @@ function renderEventDetails($event){ // The actual event page (not preview in a 
     if (isset($event['end-date'])){
         echo ' - '.date("d M Y",strtotime($event['end-date']));
     }
-    echo ' <span class="pale-text">'.generateDaysRemaining($event['date']).'</span>';
-    echo '<br><span class="pale-text">Venue:</span> '.$event['venue'].', '.$event['city'];
+    echo ' <span class="pale-text">'.generateDaysRemaining($event['date']).'.</span>';
+    echo '<br><span class="pale-text">Venue:</span> '.$event['venue'].', '.$event['city'].'.';
     if (isset($event['artists'])){
         echo '<br><span class="pale-text">Artists:</span> ';
         renderArtistList($event['artists']);

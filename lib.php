@@ -240,7 +240,7 @@ function renderEventSchema($event){ // For Google Rich Results https://developer
 </script>'; // Echo the schema into the HTML <head>
 }
 function renderOrganisationSchema(){ // For Google Rich Results https://developers.google.com/search/docs/appearance/structured-data/event#add-structured-data
-echo '<script type="application/ld+json">
+    echo '<script type="application/ld+json">
 {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -354,6 +354,13 @@ function renderEventList($mode='all', $events=false, $extra_text='', $force_show
         return false;
     }
 }
+function getArtistLink($artist, $details){
+    if (isset($details['permalink'])){ // Artist has a permalink (used for prettier links vs urlencode)
+        return $details['permalink'];
+    } else {
+        return urlencode($artist); // No permalink so just use artist's name urlencoded
+    }
+}
 function renderArtistList($artists=false, $class='', $limit=false){ // Render a list of artists from a given array
     global $root;
     $spotlight_artists = json_decode(file_get_contents($root.'artists.json'), true); // Artists with manually set information in artists.json
@@ -363,23 +370,19 @@ function renderArtistList($artists=false, $class='', $limit=false){ // Render a 
     echo '<span class="artist-list '.$class.'">';
     foreach ($artists as $index => $artist){
         if (!$limit or $index < $limit){ // As long as the number of artists listed hasn't hit the limit (or no limit exists)
-            if (isset($spotlight_artists[$artist])){ // Artist has some manually set information from artists.json
-                if (isset($spotlight_artists[$artist]['permalink'])){ // Artist has a permalink (used for prettier links vs urlencode)
-                    $artist_link = $spotlight_artists[$artist]['permalink'];
-                } else {
-                    $artist_link = urlencode($artist); // No permalink so just use artist's name urlencoded
-                }
+	    if (isset($spotlight_artists[$artist])){ // Artist has some manually set information from artists.json
+		$artist_link = getArtistLink($artist, $spotlight_artists[$artist]);
                 echo '<a class="artist-link" href="artist/'.$artist_link.'">'.$artist.'</a>';
-            } else {
+	    } else {
                 echo '<span class="artist-link">'.$artist.'</span>'; // Don't use a link if they have no info on their page
-            }
-            if (!$limit or $index != $limit - 1){ // Add a comma before the next artist
+	    }
+	    if (!$limit or $index != $limit - 1){ // Add a comma before the next artist
                 if ($artist != $artists[count($artists)-1]){
-                    echo ', ';
+		    echo ', ';
                 }
-            } else if ($limit && $index == $limit - 1 && count($artists) > $limit){ // Hit the limit so add an ellipsis
+	    } else if ($limit && $index == $limit - 1 && count($artists) > $limit){ // Hit the limit so add an ellipsis
                 echo '...';
-            }
+	    }
         }
     }
     echo '</span>';
@@ -391,28 +394,28 @@ function renderArtistInfo($artist){ // Render an artist's whole page
         $started = false; // Used to set if any information is set that should cause the info box to be rendered
         $links = [];
         foreach (['Instagram','Facebook','SoundCloud','Bandcamp','Resident Advisor','Website'] as $link){
-            if (isset($artist_json[strtolower($link)])){
+	    if (isset($artist_json[strtolower($link)])){
                 if (!$started){
-                    $started = true; // Some info that will go in the info box exists
+		    $started = true; // Some info that will go in the info box exists
                 }
                 $links[] = '<a class="artist-link" href="'.$artist_json[strtolower($link)].'">'.$link.'</a>';
-            }
+	    }
         }
         if ($started or isset($artist_json['bio'])){ // If there is something that needs to be shown in the info box
-            echo '<div class="paragraph" style="margin-top: 2rem"><div class="artist-info"><span><h3 style="margin-top: 1rem;">About</h3>';
-            if (isset($artist_json['bio'])){
+	    echo '<div class="paragraph" style="margin-top: 2rem"><div class="artist-info"><span><h3 style="margin-top: 1rem;">About</h3>';
+	    if (isset($artist_json['bio'])){
                 echo $artist_json['bio'];
-            }
-            echo '</span><span class="artist-links">'.join('<span style="margin: 0 5px">/</span>', $links).'</span></div>';
-            if (file_exists('../images/artists/'.urlencode($artist).'.jpg')){
+	    }
+	    echo '</span><span class="artist-links">'.join('<span style="margin: 0 5px">/</span>', $links).'</span></div>';
+	    if (file_exists('../images/artists/'.urlencode($artist).'.jpg')){
                 echo '<img width="0" height="0" alt="Profile photo for '.$artist.'" src="images/artists/'.urlencode($artist).'.jpg">';
-            }
-            if (isset($artist_json['embed'])){ // SoundCloud embed
+	    }
+	    if (isset($artist_json['embed'])){ // SoundCloud embed
                 echo '
     <iframe class="artist-embed" width="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A'.$artist_json['embed'].'&color=%2331e5e6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
     ';
-            }
-            echo '</div><br>';
+	    }
+	    echo '</div><br>';
         }
     }
 }
@@ -476,48 +479,48 @@ $analytics = '
 '; // Allows Google Analytics to view page stats
 
 /*
-function getArtistOptions(){ // Not yet fully implemented, used in the admin page. Renders all artists as an HTML selection list to add to new events
-    $artist_options = '';
-    foreach (getArtistList() as $artist){
-        $artist_options .= '<option value="'.$artist.'">'.$artist.'</option>';
-    }
-    return $artist_options;
-}
-function renderArtistEditor($artist){ // Not yet fully implemented, used in the admin page.
-    $artists_json = readJSON('artists.json', true, false);
-    if (isset($artists_json[$artist])){
-        $artist_json = $artists_json[$artist];
-    } else {
-        $artist_json = [];
-    }
-    echo '<h2>Editing: '.$artist.'</h2>';
-    echo '<form method="POST">';
-    foreach (["Bio","Instagram","SoundCloud","Bandcamp","Resident Advisor","Website","Embed"] as $category){
-        $key = strtolower($category);
-        $name = str_replace(' ','-',$key);
-        echo '<label for="'.$name.'">'.$category.'</label><br>';
-        echo '<textarea id="'.$name.'" name="'.$name.'">';
-        if (isset($artist_json[$key])){
-            echo $artist_json[$key];
-        }
-        echo '</textarea><br>';
-    }
-    echo '<input type="submit" value="Submit Edits"></form>';
-}
-function renderAdmin($post){ // Not yet fully implemented, used in the admin page.
-    echo '<style>textarea { width: 20rem; height: 5rem; }</style>';
-    if (isset($post['pwd'])){
-        if ($post['pwd'] == 'H{*z_l$esyGVN.(('){
-            echo '<form method="POST"><label for="artist-selector">Select Artist To Edit</label><br><select id="artist-selector" name="artist">'.getArtistOptions().'</select><input type="submit" value="Edit Artist"></form>';
-        } else {
-            echo 'wrong password!!';
-        }
-    } else if (isset($post['artist'])){
-        renderArtistEditor($post['artist']);
-    } else if (isset($post['bio'])){
-        echo 'submit edits /  confirm';
-    } else {
-        echo '<form method="POST"><label for="pwd">Enter Password</label><br><input id="pwd" name="pwd"><input type="submit" value="Enter"></form>';
-    }
-    }*/
+   function getArtistOptions(){ // Not yet fully implemented, used in the admin page. Renders all artists as an HTML selection list to add to new events
+   $artist_options = '';
+   foreach (getArtistList() as $artist){
+   $artist_options .= '<option value="'.$artist.'">'.$artist.'</option>';
+   }
+   return $artist_options;
+   }
+   function renderArtistEditor($artist){ // Not yet fully implemented, used in the admin page.
+   $artists_json = readJSON('artists.json', true, false);
+   if (isset($artists_json[$artist])){
+   $artist_json = $artists_json[$artist];
+   } else {
+   $artist_json = [];
+   }
+   echo '<h2>Editing: '.$artist.'</h2>';
+   echo '<form method="POST">';
+   foreach (["Bio","Instagram","SoundCloud","Bandcamp","Resident Advisor","Website","Embed"] as $category){
+   $key = strtolower($category);
+   $name = str_replace(' ','-',$key);
+   echo '<label for="'.$name.'">'.$category.'</label><br>';
+   echo '<textarea id="'.$name.'" name="'.$name.'">';
+   if (isset($artist_json[$key])){
+   echo $artist_json[$key];
+   }
+   echo '</textarea><br>';
+   }
+   echo '<input type="submit" value="Submit Edits"></form>';
+   }
+   function renderAdmin($post){ // Not yet fully implemented, used in the admin page.
+   echo '<style>textarea { width: 20rem; height: 5rem; }</style>';
+   if (isset($post['pwd'])){
+   if ($post['pwd'] == 'H{*z_l$esyGVN.(('){
+   echo '<form method="POST"><label for="artist-selector">Select Artist To Edit</label><br><select id="artist-selector" name="artist">'.getArtistOptions().'</select><input type="submit" value="Edit Artist"></form>';
+   } else {
+   echo 'wrong password!!';
+   }
+   } else if (isset($post['artist'])){
+   renderArtistEditor($post['artist']);
+   } else if (isset($post['bio'])){
+   echo 'submit edits /  confirm';
+   } else {
+   echo '<form method="POST"><label for="pwd">Enter Password</label><br><input id="pwd" name="pwd"><input type="submit" value="Enter"></form>';
+   }
+   }*/
 ?>

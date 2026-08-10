@@ -8,10 +8,12 @@ include '../lib.php';
 
 if (isset($_GET['a'])){
     $artist = urldecode($_GET['a']);
+    $details = null;
     $spotlight_artists = json_decode(file_get_contents('../artists.json'), true);
     foreach ($spotlight_artists as $match_name => $potential_match){
         if (isset($potential_match['permalink']) && $potential_match['permalink'] == $artist){
             $artist = $match_name;
+	    $details = $potential_match;
         }
     }
 } else {
@@ -24,7 +26,7 @@ if (isset($_GET['a'])){
 <html lang="en">
     <head>
 	<base href="../">
-<?php renderSEO($artist.' - Seasoning Artist Spotlight', 'https://seasoning.live/artist?a='.urlencode($artist)); ?>
+	<?php renderSEO($artist.' - Seasoning Artist Spotlight', 'https://seasoning.live/artist/'.getArtistLink($artist, $details)); ?>
 	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
     </head>
     <?php echo $analytics ?>

@@ -475,6 +475,17 @@
 	    "Peverelist",
 	    "YouYou"
 	],
-	"image": "25"
+	"image": "25",
+	"tickets": "https://ra.co/events/2505058",
+	"paragraphs": [
+	    "On Friday 4 September, Seasoning takes over the upstairs room at The Old Blue Last for a close-quarters journey through more than two decades of Bristol soundsystem sonics. Lauren Martin will be in conversation fleshing out the history of the sounds before handing over the keys to YouYou to open proceedings. Peverelist and Pinch both emerged from the same city at a moment when dubstep was still being worked out through small clubs, record shops, dubplates, soundsystems and a close network of producers and dancers.",
+	    "<img width='100%' src='images/misc/pinch.jpg'><h2 class='paragraph-html-img-title' style='left: unset; right: 0'>Pinch</h2>",
+	    "<img width='100%' src='images/misc/peverelist.jpg'><h2 class='paragraph-html-img-title'>Peverelist</h2>",
+	    "Pinch helped give that sound a physical home in Bristol through Context and Subloaded before founding Tectonic. Peverelist documented the city’s own mutations through Punch Drunk, later carrying the sounds rhythmic and psychedelic possibilities into Livity Sound.",
+	    "Their music has travelled through dubstep and techno, flourishing in the spaces between… guided by a shared commitment to bass pressure, rhythmic freedom and the dancefloor as a place of discovery.",
+	    "<img width='100%' src='images/artists/YouYou.jpg'><h2 class='paragraph-html-img-title' style='left: unset; right: 0'>YouYou</h2>",
+	    "This extended set gives them room to follow those connections properly. No compressed history lesson or quick succession of classics. A long-form meeting between two selectors whose work has continually pushed UK soundsystem music forward. Seasoning family <a href='artist/YouYou'>YouYou</a> opens the room.",
+	    "At 9pm, before the music begins, Lauren Martin will join us all for a discussion and Q&A around her seminal new book on dubstep’s story, Aftershock: The Seismic Impact of Dubstep, where the book will be available for purchase. Her original interviews and reporting offer an original insight of the culture surrounding the sound, creating a natural point of entry into the night."
+	    ]
     }
 }

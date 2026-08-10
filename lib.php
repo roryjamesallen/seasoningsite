@@ -261,12 +261,12 @@ function renderOrganisationSchema(){ // For Google Rich Results https://develope
 </script>';
 }
 function renderEventDetails($event){ // The actual event page (not preview in a list)
-    echo '<div class="paragraph"><span><span class="pale-text">Date:</span> '.date("d M Y",strtotime($event['date']));
+    echo '<div class="paragraph"><div style="flex-basis: 100%"><span class="pale-text">Date:</span> '.date("d M Y",strtotime($event['date']));
     if (isset($event['end-date'])){
         echo ' - '.date("d M Y",strtotime($event['end-date']));
     }
-    echo ' <span class="pale-text">'.generateDaysRemaining($event['date']).'</span>';
-    echo '<br><span class="pale-text">Venue:</span> '.$event['venue'].', '.$event['city'];
+    echo ' <span class="pale-text">'.generateDaysRemaining($event['date']).'.</span>';
+    echo '<br><span class="pale-text">Venue:</span> '.$event['venue'].', '.$event['city'].'.';
     if (isset($event['artists'])){
         echo '<br><span class="pale-text">Artists:</span> ';
         renderArtistList($event['artists']);
@@ -283,7 +283,12 @@ function renderEventDetails($event){ // The actual event page (not preview in a 
     if (isset($event['tickets'])){
         echo '<a class="fixr-link" href="'.$event['tickets'].'">Buy Tickets</a>';
     }
-    echo '</span>';
+    echo '</div>';
+    if (isset($event['paragraphs'])){
+        foreach ($event['paragraphs'] as $paragraph){
+            echo '<div class="paragraph-html">'.$paragraph.'</div>';
+        }
+    }
     if (isset($event['image'])){
         echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" src="images/event-posters/'.$event['image'].'.jpg">';
     }
@@ -385,7 +390,7 @@ function renderArtistList($artists=false, $class='', $limit=false){ // Render a 
 	    }
         }
     }
-    echo '</span>';
+    echo '.</span>';
 }
 function renderArtistInfo($artist){ // Render an artist's whole page
     $artists_json = readJSON('artists.json', true, false);
@@ -436,7 +441,9 @@ function renderFooter(){ // HTML footer with the logo, current year, and social 
     <a href="https://www.facebook.com/Seas0ning">Facebook</a><span style="margin: 0 0.5rem">/</span>
     <a href="https://ra.co/promoters/119677">Resident Advisor</a><span style="margin: 0 0.5rem">/</span>
     <a href="https://soundcloud.com/seas0ning">SoundCloud</a>
-    </div></footer>
+    </div>
+<div class="website-credit"><span>Website by <a href="mailto:rory@hogwild.uk">Rory Allen</a></span></div>
+</footer>
     <script src="https://web-cdn.fixr.co/scripts/fixr-checkout-widget.v1.min.js"></script>
     ';
 }

@@ -150,7 +150,13 @@ function generateDaysRemaining($date){ // Generate text to say how many days lef
     } else if ($days_remaining < 0){
         $text = '(This event has been and gone)';
     } else {
-        $text = '('.$days_remaining.' days to go)';
+        $start = DateTime::createFromFormat("Y-m-d", $date);
+        $now = DateTime::createFromFormat("Y-m-d", date('Y-m-d'));
+        if (date_diff($start, $now)->format('%m') == '0'){
+            $text = '('.date_diff($start, $now)->format('%d days').' to go)';
+        } else {
+            $text = '('.date_diff($start, $now)->format('%m months, %d days').' to go)';
+        }
     }
     return $text;
 }

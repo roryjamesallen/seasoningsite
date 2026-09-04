@@ -334,6 +334,7 @@ function renderEventList($mode='all', $events=false, $extra_text='', $force_show
     $now = new DateTime('now');
     foreach ($events as $event_key => $event){
         $event_date = new DateTime($event['date']);
+        $event_date->setTime(23, 59, 59); // The very latest time on that day (so it shows as upcoming if it's this evening)
         if ($mode == 'all' or ($mode == 'past' and $event_date < $now) or ($mode == 'upcoming' and $event_date > $now)){ // If all events are being shown or the date is allowed by the mode
             $filtered_events[$event_key] = $event;
         }

@@ -16,11 +16,11 @@
   + add wizard - not full opacity / going across multiple sections / mask-image
 
 ** mixes
-+ add more mixes - go to mixcloud with everything
++ add more mixes - go to mixcloud with everything (not soundcloud)
   + severine
   + ostad
   + tim reaper (once live)
-  + player at bottom of page
+  + player at bottom of page - thin embed - click play change to pause but real player pops up at the bottom
 
 + remove artist pages and just link to instagram
 

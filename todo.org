@@ -1,0 +1,48 @@
++ htmx
+
+** gallery
++ day heavy
++ add ike's photos mix with sam's - put credit at the bottom
++ subcategories
+  + goods yard goods shed sva (?) SVA needs naming etc for venues (map)
+  + sva up "the nest"
+  + sva down "?"
+  + community build -
+
+** festival section
+  + looping video of spiral
+  + hand drawn (like main logo) of 'seasoning festival 2027' in the middle
+  + maybe exclude from past events
+  + add wizard - not full opacity / going across multiple sections / mask-image
+
+** mixes
++ add more mixes - go to mixcloud with everything
+  + severine
+  + ostad
+  + tim reaper (once live)
+  + player at bottom of page
+
++ remove artist pages and just link to instagram
+
++ merch - sold out (coming soon) - add asap
+
+** about seasoning page
++ philoshopy, impacts, why Stroud?
++ rework but take from manifesto
+
+** faq
++ india can write copy asap
+
+** contact section
++ contact us with emails - only bookings production
++ emails fix photos
+
+** landing page for festival - set the vibe
++ waking life as example
++ map as landing page - links to venue lineups, shuttle bus times + camping information
+
+** dates
++ Thu 15 Oct - full announcement with strong seasoning fest 2027 video etc
+  + website - teaser
++ Thu 22 Oct - strongest photography ever, mixcloud carousel
++ Tue 27 Oct - tickets aim to get on sale payday week - 100 tickets maybe and sell out early bird

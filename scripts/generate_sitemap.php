@@ -31,6 +31,7 @@ foreach ($events_json as $event_id => $event_info){
 </url>';
 }
 
+/*
 $artists_json = json_decode(file_get_contents('../artists.json'), true);
 foreach ($artists_json as $artist_name => $artist_info){
     if (isset($artist_info['permalink'])){
@@ -45,12 +46,15 @@ foreach ($artists_json as $artist_name => $artist_info){
   <priority>0.5</priority>
 </url>';
 }
+*/
 
+/*
 $sitemap .= '<url>
   <loc>https://seasoning.live/artists</loc>
   <lastmod>'.$date.'</lastmod>
   <priority>0.25</priority>
 </url>';
+*/
 
 $sitemap .= '</urlset>';
 

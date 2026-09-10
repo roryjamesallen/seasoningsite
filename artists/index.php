@@ -1,27 +1,3 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-$root = '../';
-include '../lib.php';
-
+header('Location: ../');
 ?>
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-	<base href="../">
-<?php renderSEO('Seasoning - The Roster', 'https://seasoning.live/artists'); ?>
-    <link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
-    </head>
-    <?php echo $analytics ?>
-    
-    <body>
-        <?php renderTitle('The Roster');?>
-<?php renderArtistList(false, 'paragraph full-artist-list'); ?>
-    </body>
-
-    <?php renderFooter() ?>
-</html>
-
-        <script type="module" src="scripts.js"></script>

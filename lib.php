@@ -382,7 +382,7 @@ function renderArtistList($artists=false, $class='', $limit=false){ // Render a 
     echo '<span class="artist-list '.$class.'">';
     foreach ($artists as $index => $artist){
         if (!$limit or $index < $limit){ // As long as the number of artists listed hasn't hit the limit (or no limit exists)
-	    if (isset($spotlight_artists[$artist])){ // Artist has some manually set information from artists.json
+	    if (isset($spotlight_artists[$artist]) && isset($spotlight_artists[$artist]['instagram'])){ // Artist has some manually set information from artists.json
 		$artist_link = getArtistLink($artist, $spotlight_artists[$artist]);
                 echo '<a class="artist-link" href="artist/'.$artist_link.'">'.$artist.'</a>';
 	    } else {

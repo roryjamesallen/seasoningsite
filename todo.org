@@ -4,27 +4,29 @@
 + day heavy
 + add ike's photos mix with sam's - put credit at the bottom
 + subcategories
-  + goods yard goods shed sva (?) SVA needs naming etc for venues (map)
-  + sva up "the nest"
-  + sva down "?"
-  + community build -
++ goods yard goods shed sva (?) SVA needs naming etc for venues (map)
++ sva up "the nest"
++ sva down "?"
++ community build -
 
 ** festival section
-  + looping video of spiral
-  + hand drawn (like main logo) of 'seasoning festival 2027' in the middle
-  + maybe exclude from past events
-  + add wizard - not full opacity / going across multiple sections / mask-image
++ looping video of spiral
++ hand drawn (like main logo) of 'seasoning festival 2027' in the middle
++ maybe exclude from past events
++ add wizard - not full opacity / going across multiple sections / mask-image
 
 ** mixes
 + add more mixes - go to mixcloud with everything (not soundcloud)
-  + severine
-  + ostad
-  + tim reaper (once live)
-  + player at bottom of page - thin embed - click play change to pause but real player pops up at the bottom
++ severine
++ ostad
++ tim reaper (once live)
++ player at bottom of page - thin embed - click play change to pause but real player pops up at the bottom
 
 + remove artist pages and just link to instagram
 
+** merch
 + merch - sold out (coming soon) - add asap
++ clobber@seasoning.live
 
 ** about seasoning page
 + philoshopy, impacts, why Stroud?
@@ -46,3 +48,7 @@
   + website - teaser
 + Thu 22 Oct - strongest photography ever, mixcloud carousel
 + Tue 27 Oct - tickets aim to get on sale payday week - 100 tickets maybe and sell out early bird
+
+** analytics
++ metapixel
++ conversion api

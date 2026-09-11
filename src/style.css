@@ -121,6 +121,60 @@ hr {
     background: var(--white);
     /*background-image: url('images/icons/horizontal-rule.svg');*/
 }
+.paypal > div {
+    display: flex;
+    justify-content: center;
+}
+.paypal select {
+    font-family: Cormorant !important;
+    font-size: 1.25rem !important;
+    background-color: transparent;
+    color: white;
+    border-radius: 0 !important;
+    border-width: 2px !important;
+    border-color: white !important;
+}
+.paypal .selectContainer::after {
+    border-color: transparent transparent white white !important;
+}
+.paypal .paypal-buttons-layout {
+    margin-top: 0;
+}
+.paypal .js-sdk-container {
+    display: none !important;
+}
+.paypal label {
+    font-family: BlackBeard;
+    font-size: 1.5rem !important;
+}
+.paypal-card-art {
+    display: none !important;
+}
+.paypal > div > div > div { /* Carousel Image */
+    margin: 0 auto;
+}
+
+
+.paragraph:has(#sold-out-label) form:has(.variantContainer){
+    display: none !important;
+}
+.paypal:has(#sold-out-label) > div {
+    margin-bottom: 0;
+}
+.stock-notification-form h2 {
+    margin-bottom: 0.75rem;
+}
+.stock-notification-form input {
+    font-size: 1.25rem;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem 1.85rem 0.5rem 0.75rem;
+  font-family: Cormorant;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.75rem;
+}
 span:empty {
     display: block;
     width: 10px;
@@ -561,7 +615,7 @@ h1.moving-children  > * {
     cursor: pointer;
     padding: 0 !important;
 }
-.big-button, .fixr-link {
+.big-button, .fixr-link, .paypal #checkout-button {
     font-family: BlackBeard;
     text-decoration: none;
     color: var(--pink);
@@ -579,9 +633,23 @@ h1.moving-children  > * {
     color: var(--black);
     border-color: var(--black);
 }
+.fixr-link, .paypal #checkout-button {
+    border-color: var(--pink);
+}
 .fixr-link {
     margin-top: 1rem;
-    border-color: var(--pink);
+}
+.paypal #checkout-button {
+    width: 100%;
+    min-height: 3rem;
+    color: var(--pink) !important;
+    font-size: 1.5rem !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+}
+.paypal #checkout-button:hover {
+    opacity: 0.75;
+    filter: unset;
 }
 .error {
     font-size: 1.5rem;

@@ -125,6 +125,10 @@ hr {
     display: flex;
     justify-content: center;
 }
+.paypal #price-text {
+    width: fit-content;
+    margin: 0;
+}
 .paypal select {
     font-family: Cormorant !important;
     font-size: 1.25rem !important;
@@ -154,7 +158,10 @@ hr {
     margin: 0 auto;
 }
 
-
+#sold-out-label {
+    color: var(--red);
+    width: fit-content;
+}
 .paragraph:has(#sold-out-label) form:has(.variantContainer){
     display: none !important;
 }
@@ -162,7 +169,13 @@ hr {
     margin-bottom: 0;
 }
 .stock-notification-form h2 {
+    font-size: 2rem;
     margin-bottom: 0.75rem;
+    text-align: center;
+}
+.stock-notification-form .error {
+    text-align: center;
+    margin-bottom: 0.25rem;
 }
 .stock-notification-form input {
     font-size: 1.25rem;
@@ -171,9 +184,10 @@ hr {
   color: white;
   padding: 0.5rem 1.85rem 0.5rem 0.75rem;
   font-family: Cormorant;
-  width: 100%;
+  width: 20rem;
+  display: block;
   box-sizing: border-box;
-  margin-bottom: 0.75rem;
+  margin: 0 auto 0.75rem;
 }
 span:empty {
     display: block;

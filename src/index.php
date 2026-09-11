@@ -73,7 +73,7 @@ include '../lib.php';
         }
 	     ?>
 
-	<?php renderPageBreak(2, 'secondary'); ?>
+	     <?php renderPageBreak(2, 'secondary'); ?>
         <br>
 	<h2 class="collapser" collapse="mixes">Mixes</h2>
 	<div class="paragraph" id="mixes" style="margin: 1rem auto 2rem">

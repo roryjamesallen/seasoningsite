@@ -21,7 +21,7 @@ if (isset($_POST['signup'])){
         header('Location: ?e=Please+enter+a+valid+email+address!');
     }
 }
-include '../lib.php';
+include 'lib.php';
 ?>
 <!DOCTYPE html>
 <?php startup();?>

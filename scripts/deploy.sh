@@ -1,3 +1,5 @@
-#!/bin/bash
-printf '(1/3) Generating XML Sitemap\n'
-php generate_sitemap.php && printf '(2/3) Pushing Git\n' && git add ../sitemap.xml && git commit -m 'Automatic Sitemap Update' && git push && printf '(2/3) Pulling Git\n' && ssh -p 9284 seasoning@seasoning.live "cd public_html;git pull;cd ~/test/seasoningsite;git pull"
+php generate_sitemap.php
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd ) # Get the path of this script
+rm -rf $SCRIPT_DIR/../public_html/ # Delete any old built files
+mkdir $SCRIPT_DIR/../public_html # Make the build directory
+cp -rp $SCRIPT_DIR/../src/* $SCRIPT_DIR/../public_html/ # Copy every file and dir from src to public_html

@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /seasoningsite/src
+RewriteBase /seasoningsite
 
 ErrorDocument 404 https://seasoning.live/404
 RewriteCond "%{REQUEST_FILENAME}" !-f

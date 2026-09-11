@@ -16,6 +16,13 @@ $sitemap .= '
   <priority>1.00</priority>
 </url>';
 
+$sitemap .= '
+<url>
+  <loc>https://seasoning.live/contact</loc>
+  <lastmod>'.$date.'</lastmod>
+  <priority>0.5</priority>
+</url>';
+
 $events_json = json_decode(file_get_contents('../src/events.json'), true);
 foreach ($events_json as $event_id => $event_info){
     if (isset($event_info['permalink'])){
@@ -32,7 +39,7 @@ foreach ($events_json as $event_id => $event_info){
 }
 
 /*
-$artists_json = json_decode(file_get_contents('../artists.json'), true);
+$artists_json = json_decode(file_get_contents('../src/artists.json'), true);
 foreach ($artists_json as $artist_name => $artist_info){
     if (isset($artist_info['permalink'])){
         $artist_link = $artist_info['permalink'];
@@ -58,5 +65,5 @@ $sitemap .= '<url>
 
 $sitemap .= '</urlset>';
 
-file_put_contents('../sitemap.xml', $sitemap);
+file_put_contents('../src/sitemap.xml', $sitemap);
 ?>

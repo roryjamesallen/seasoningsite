@@ -179,6 +179,9 @@ span:empty {
     flex-grow: 1;
     max-width: 100%;
 }
+.faq-container > p {
+    margin: 0;
+}
 footer {
     color: var(--beige);
     font-size: 2rem;
@@ -333,7 +336,7 @@ footer a {
     z-index: 1;
 }
 a.artist-link {
-    text-decoration: underline;
+    text-decoration: none;
 }
 .full-artist-list {
     display: block;
@@ -743,5 +746,8 @@ h1.moving-children  > * {
     }
     .paragraph > * {
 	flex-basis: 100% !important;
+    }
+    .faq-container {
+	gap: 0.5rem;
     }
 }

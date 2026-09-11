@@ -16,7 +16,7 @@ $sitemap .= '
   <priority>1.00</priority>
 </url>';
 
-$events_json = json_decode(file_get_contents('../events.json'), true);
+$events_json = json_decode(file_get_contents('../src/events.json'), true);
 foreach ($events_json as $event_id => $event_info){
     if (isset($event_info['permalink'])){
         $event_link = $event_info['permalink'];
@@ -27,7 +27,7 @@ foreach ($events_json as $event_id => $event_info){
 <url>
   <loc>https://seasoning.live/'.$event_link.'</loc>
   <lastmod>'.$date.'</lastmod>
-  <priority>0.75</priority>
+  <priority>0.5</priority>
 </url>';
 }
 

@@ -174,12 +174,17 @@ span:empty {
     width: var(--page-width);
     margin: 0 auto;
 }
-.paragraph > *:not(.artist-link) {
+.paragraph:not(.faq-container) > *:not(.artist-link) {
     flex-basis: 35%;
     flex-grow: 1;
     max-width: 100%;
 }
+.faq-container > h3 {
+    flex-basis: 20%;
+    text-align: right;
+}
 .faq-container > p {
+    flex-basis: 70%;
     margin: 0;
 }
 footer {
@@ -448,30 +453,6 @@ h1.moving-children  > * {
 }
 .page-banner > span {
     mix-blend-mode: difference;
-}
-
-#faqs {
-    gap: 0.5rem;
-}
-#faqs > h3 {
-    color: var(--pink);
-    margin-top: -1rem;
-} 
-#faqs > p, #mixes > p {
-    margin: 0;
-}
-#faqs > hr {
-    background-color: var(--pink);
-    flex-basis: 100%;
-}
-#faqs > img {
-    flex-basis: 100%;
-    height: 10rem;
-    object-fit: cover;
-}
-#faqs > br {
-    flex-basis: 100%;
-    height: 1rem;
 }
 
 #logo-container {
@@ -749,5 +730,13 @@ h1.moving-children  > * {
     }
     .faq-container {
 	gap: 0.5rem;
+    }
+    .faq-container > h3 {
+	flex-basis: 80%;
+	text-align: left;
+    }
+    .faq-container > p {
+	flex-basis: 35%;
+	margin: 0;
     }
 }

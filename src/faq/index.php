@@ -19,12 +19,20 @@ include '../../lib.php';
     <?php echo $analytics ?>
     <body>
 	<?php renderTitle('Frequently Asked Questions'); ?>
+        <div class="secondary-background">
+	    <?php
+     renderPageBreak(1, 'primary');
+	    ?>
+	</div>
+        <div class="full-width secondary-background">
         <div class="faq-container paragraph">
 	    <h3>Question?</h3>
 	    <p>Please email bookings@seasoning.live for enquiries relating to booking an artist.</p>
 	    <h3>Question?</h3>
 	    <p>Or email production@seasoning.live for anything relating to other Seasoning goings on!</p>
+     </div>
 	</div>
+            <?php renderPageBreak(2, 'secondary'); ?>
     </body>
 
     <?php renderFooter(); ?>

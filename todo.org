@@ -37,7 +37,7 @@
 
 ** contact section
 + contact us with emails - only bookings production
-+ emails fix photos
++ emails fix profile photos
 
 ** landing page for festival - set the vibe
 + waking life as example
@@ -50,5 +50,5 @@
 + Tue 27 Oct - tickets aim to get on sale payday week - 100 tickets maybe and sell out early bird
 
 ** analytics
-+ metapixel
-+ conversion api
++ metapixel - need login from fraser
++ conversion api - after metapixel

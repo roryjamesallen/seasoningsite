@@ -157,16 +157,25 @@ hr {
 .paypal > div > div > div { /* Carousel Image */
     margin: 0 auto;
 }
-
+.paypal .item-header { /* Product title and price */
+    align-items: center !important;
+    max-width: 100%;
+}
 #sold-out-label {
     color: var(--red);
     width: fit-content;
 }
-.paragraph:has(#sold-out-label) form:has(.variantContainer){
+.paragraph:has(#sold-out-label:not(.hidden-sold-out-label)) form:has(.variantContainer){ /* Hide the variant options when sold out */
     display: none !important;
 }
-.paypal:has(#sold-out-label) > div {
+.paragraph:has(#sold-out-label:not(.hidden-sold-out-label)) .item-title, .paragraph:has(#sold-out-label:not(.hidden-sold-out-label)) #price-text { /* Dim price and title when sold out */
+    opacity: 0.5;
+}
+.paypal:has(#sold-out-label:not(.hidden-sold-out-label)) > div { /* Remove margins between variant options when sold out */
     margin-bottom: 0;
+}
+.paragraph:not(:has(#sold-out-label:not(.hidden-sold-out-label))) .stock-notification-form { /* Hide the notification form when not sold out */
+    display: none !important;
 }
 .stock-notification-form h2 {
     font-size: 2rem;

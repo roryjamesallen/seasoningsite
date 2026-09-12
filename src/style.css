@@ -268,16 +268,21 @@ footer {
     width: var(--page-width);
     text-align: center;
 }
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+}
+.footer-separator {
+    width: 0.75rem;
+    filter: hue-rotate(130deg) saturate(0.6) brightness(1.4);
+}
 .website-credit {
     mix-blend-mode: difference;
     opacity: 0.35;
     font-size: 1rem;
     margin-top: 0.5rem;
-}
-footer > div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 footer a {
     text-decoration: none;
@@ -840,5 +845,10 @@ h1.moving-children  > * {
     }
     .faq-container {
 	gap: 0.5rem;
+    }
+}
+@media screen and (max-width: 1000px){
+    .footer-links {
+	font-size: 1.25rem;
     }
 }

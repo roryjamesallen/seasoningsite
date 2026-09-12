@@ -251,6 +251,15 @@ span:empty {
     width: var(--page-width);
     margin: 0 auto;
 }
+.paragraph-with-titles h3 {
+    width: fit-content;
+}
+.paragraph-with-titles p {
+    margin: 0;
+}
+.centred {
+    text-align: center;
+}
 .paragraph > *:not(.artist-link) {
     flex-basis: 35%;
     flex-grow: 1;
@@ -273,6 +282,16 @@ footer {
     justify-content: center;
     gap: 0.5rem;
     font-size: 1.5rem;
+    font-family: BlackBeard;
+}
+.footer-links a {
+    text-decoration: none;
+}
+.big-links {
+    font-size: 2rem;
+}
+.justify-left {
+    justify-content: left;
 }
 .footer-separator {
     width: 0.75rem;
@@ -296,6 +315,18 @@ footer a {
 .gallery-container {
     position: relative;
 }
+.gallery-container h3 {
+    position: absolute;
+    top: 0.1rem;
+    left: 0.5rem;
+    font-size: 2.5rem;
+}
+.samuel-wilson::after {
+    content: " (" attr(href) ")";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 .gallery {
     display: flex;
     overflow-x: scroll;
@@ -306,9 +337,17 @@ footer a {
     scroll-behaviour: smooth;
 }
 .gallery a {
-    opacity: 0.5;
+    opacity: 1 !important;
+    position: absolute;
+    bottom: 0.1rem;
+    left: 50%;
+    transform: translate(-50%);
+    text-decoration: none;
 }
-.gallery > img {
+.gallery-image-container {
+    position: relative;
+}
+.gallery img {
     height: 100%;
     z-index: 0;
     user-select: none;

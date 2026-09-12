@@ -4,6 +4,10 @@
 //error_reporting(E_ALL);
 date_default_timezone_set("Europe/London");
 
+$CREDITS = array(
+    'Samuel Wilson' => 'https://google.com'
+    );
+
 // ==== NON HTML FUNCTIONS ====
 
 function startup(){ // Initialise the page (after headers have been sent)
@@ -163,6 +167,10 @@ function generateDaysRemaining($date){ // Generate text to say how many days lef
 
 // ==== RENDERING FUNCTIONS (Echo actual HTML) ====
 
+function renderPhoto($filename, $alt, $credit){
+    global $CREDITS;
+    echo '<div class="gallery-image-container"><img src="images/gallery/'.$filename.'" loading="lazy" alt="'.$alt.'" draggable="false"><a href="'.$CREDITS[$credit].'">'.$credit.'</a></div>';
+}
 function renderEvent($event_key, $event, $reverse=false){ // Render an event in a list of events (preview)
     global $root;
     if ($reverse){
@@ -324,7 +332,7 @@ function renderUpcomingAndPastEvents($artist=false, $extra_text=''){ // Toggleab
  /
 <span class="toggler'.$class_two.'" toggle="events-past">Past</span></h3>';
     echo $event_dom;
-    echo '</div>';
+    echo '</div><script src="https://web-cdn.fixr.co/scripts/fixr-checkout-widget.v1.min.js"></script>';
 }
 function renderEventList($mode='all', $events=false, $extra_text='', $force_show=false){ // Can be past, upcoming, for artist, or all events
     if (!$events){
@@ -442,17 +450,24 @@ function renderPageBreak($version=1, $background='primary'){ // Background shoul
 function renderFooterSeparator(){
     echo '<img src="images/icons/star-blue-'.strval(rand(0,2)+1).'.svg" class="footer-separator">';
 }
-function renderFooter(){ // HTML footer with the logo, current year, and social links
-    echo '<footer><a href="https://seasoning.live" id="footerLink" class="star-container" stars="10" star-size="5">Seasoning.live '.date("Y").'</a><div class="footer-links">';
-    $pages = ['Events','Mixes','Clobber','Gallery','Contact'];
+function renderMenu($pages, $links=null){
     foreach ($pages as $index => $page){
-	echo '<a href="https://seasoning.live/'.strtolower($page).'">'.$page.'</a>';
+	echo '<a href="';
+	if ($links != null){
+	    echo $links[$index];
+	} else {
+	    echo strtolower($page);
+	}
+	echo '">'.$page.'</a>';
 	if ($index != count($pages) - 1){
 	    renderFooterSeparator();
 	}
     }
-    echo '</div><div class="website-credit"><span>Website by <a href="mailto:rory@hogwild.uk">Rory Allen</a></span></div></footer>
-    <script src="https://web-cdn.fixr.co/scripts/fixr-checkout-widget.v1.min.js"></script>';
+}
+function renderFooter(){ // HTML footer with the logo, current year, and social links
+    echo '<footer><a href="https://seasoning.live" id="footerLink" class="star-container" stars="10" star-size="5">Seasoning.live '.date("Y").'</a><div class="footer-links">';
+    renderMenu(['Events','Mixes','Clobber','Gallery','Contact']);
+    echo '</div><div class="website-credit"><span>Website by <a href="mailto:rory@hogwild.uk">Rory Allen</a></span></div></footer>';
 }
 function renderTitle($subheading){ // The full page title with logo and stars. The real <h1> is hidden but present for SEO
     echo '<div id="logo-container" class="paragraph star-container" stars="20" star-size="2"><a href="https://seasoning.live"><img loading="eager" src="" id="logo-img" alt="Pink hand drawn logo for Seasoning"></a></div>

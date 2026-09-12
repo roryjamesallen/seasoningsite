@@ -1,11 +1,6 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
+ <?php
 $root = '../';
 include '../../lib.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,10 +14,34 @@ include '../../lib.php';
     <?php echo $analytics ?>
     <body>
 	<?php renderTitle('Contact Us!'); ?>
-	<h3>Bookings</h3>
-	<p class="paragraph">Please email bookings@seasoning.live for enquiries relating to booking an artist.</p>
-	<h3>Production</h3>
-	<p class="paragraph">Or email production@seasoning.live for anything relating to other Seasoning goings on!</p>
+	<div class="paragraph">
+	    <div>
+		<div class="footer-links big-links justify-left">
+		    <?php
+		    $pages = ['Instagram','Facebook','Mixcloud','Resident Advisor'];
+		    $links = ['Instagram','Facebook','Mixcloud','Resident Advisor'];
+		    renderMenu($pages, $links);
+		    ?>
+		</div>
+		<br>
+	    </div>
+	</div>
+	<div class="secondary-background">
+	    <?php
+	    renderPageBreak(1, 'primary');
+	    ?>
+	    <div class="paragraph paragraph-with-titles centred">
+		<div>
+		    <h3>Bookings</h3>
+		    <p>Please email bookings@seasoning.live for enquiries relating to booking an artist.</p>
+		</div>
+		<div>
+		    <h3>Production</h3>
+		    <p>Or email production@seasoning.live for anything relating to other Seasoning goings on!</p>
+		</div>
+	    </div>
+	</div>
+	<?php renderPageBreak(2, 'secondary'); ?>
     </body>
 
     <?php renderFooter(); ?>

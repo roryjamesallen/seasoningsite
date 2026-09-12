@@ -49,31 +49,13 @@ include '../lib.php';
 	
 <?php renderTitle('Rave Culture is<br>Folk Culture');?>
 
-	<div class="secondary-background">
-	    <?php
-	    renderPageBreak(1, 'primary');
-	    renderUpcomingAndPastEvents(false,'. Watch this space...');
-	    ?>
-	</div>
+	<a href="event/festival-2027" class="no-underline banner-content">
+	    <img src="images/gallery/seasoning-festival-photo-1.jpg" class="banner-image">
+	    <?php renderPageBreak(1, 'primary'); ?>
+	    <h2 class="centred">Seasoning Festival 2027</h2>
+	<?php renderPageBreak(2, 'primary', true); ?>
+	</a>
 	
-	
-	<?php
-        if (false){
-            echo '
-	     <h2 class="collapser collapser-collapsed" collapse="faqs">FAQs</h2>
-	     <div class="paragraph collapsed" id="faqs" style="margin: 1rem auto 2rem">
-	     <hr>
-	     <h3>What is this?</h3>
-	     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	     <hr>
-	     <h3>What is this?</h3>
-	     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-	     </div>
-	     <hr>';
-        }
-	?>
-
-	<?php renderPageBreak(2, 'secondary'); ?>
         <br>
 	<h2 class="collapser" collapse="mixes">Mixes</h2>
 	<div class="paragraph" id="mixes" style="margin: 1rem auto 2rem">

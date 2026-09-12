@@ -471,7 +471,7 @@ function renderMenu($pages, $links=null){
 }
 function renderFooter(){ // HTML footer with the logo, current year, and social links
     echo '<footer><a href="https://seasoning.live" id="footerLink" class="star-container" stars="10" star-size="5">Seasoning.live '.date("Y").'</a><div class="footer-links">';
-    renderMenu(['Events','Mixes','Clobber','Gallery','Contact']);
+    renderMenu(['Events','Mixes','Clobber','Gallery','FAQ','Contact']);
     echo '</div><div class="website-credit"><span>Website by <a href="mailto:rory@hogwild.uk">Rory Allen</a></span></div></footer>';
 }
 function renderTitle($subheading){ // The full page title with logo and stars. The real <h1> is hidden but present for SEO

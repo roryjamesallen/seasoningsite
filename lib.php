@@ -439,20 +439,20 @@ function renderPageBreak($version=1, $background='primary'){ // Background shoul
     }
     echo '<div class="page-break-image pb'.$version.' '.$background.'-background"></div>';
 }
+function renderFooterSeparator(){
+    echo '<img src="images/icons/star-blue-'.strval(rand(0,2)+1).'.svg" class="footer-separator">';
+}
 function renderFooter(){ // HTML footer with the logo, current year, and social links
-    echo '
-    <footer>
-    <a href="https://seasoning.live" id="footerLink" class="star-container" stars="10" star-size="5">Seasoning.live '.date("Y").'</a>
-    <div>
-    <a href="https://www.instagram.com/seas0ning_">Instagram</a><span style="margin: 0 0.5rem">/</span>
-    <a href="https://www.facebook.com/Seas0ning">Facebook</a><span style="margin: 0 0.5rem">/</span>
-    <a href="https://ra.co/promoters/119677">Resident Advisor</a><span style="margin: 0 0.5rem">/</span>
-    <a href="https://soundcloud.com/seas0ning">SoundCloud</a>
-    </div>
-<div class="website-credit"><span>Website by <a href="mailto:rory@hogwild.uk">Rory Allen</a></span></div>
-</footer>
-    <script src="https://web-cdn.fixr.co/scripts/fixr-checkout-widget.v1.min.js"></script>
-    ';
+    echo '<footer><a href="https://seasoning.live" id="footerLink" class="star-container" stars="10" star-size="5">Seasoning.live '.date("Y").'</a><div class="footer-links">';
+    $pages = ['Events','Mixes','Clobber','Gallery','Contact'];
+    foreach ($pages as $index => $page){
+	echo '<a href="https://seasoning.live/'.strtolower($page).'">'.$page.'</a>';
+	if ($index != count($pages) - 1){
+	    renderFooterSeparator();
+	}
+    }
+    echo '</div><div class="website-credit"><span>Website by <a href="mailto:rory@hogwild.uk">Rory Allen</a></span></div></footer>
+    <script src="https://web-cdn.fixr.co/scripts/fixr-checkout-widget.v1.min.js"></script>';
 }
 function renderTitle($subheading){ // The full page title with logo and stars. The real <h1> is hidden but present for SEO
     echo '<div id="logo-container" class="paragraph star-container" stars="20" star-size="2"><a href="https://seasoning.live"><img loading="eager" src="" id="logo-img" alt="Pink hand drawn logo for Seasoning"></a></div>

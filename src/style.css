@@ -260,6 +260,24 @@ span:empty {
 .centred {
     text-align: center;
 }
+.no-underline {
+    text-decoration: none;
+}
+.banner-content {
+    position: relative;
+    display: block;
+    overflow: clip;
+}
+.banner-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
 .paragraph > *:not(.artist-link) {
     flex-basis: 35%;
     flex-grow: 1;
@@ -840,8 +858,14 @@ h1.moving-children  > * {
 .pb1 {
     mask: url(images/page-break.svg) bottom / 110% 100% no-repeat;
 }
+.pb1-inverted {
+    mask: url(images/page-break-inverted.svg) bottom / 110% 100% no-repeat;
+}
 .pb2 {
     mask: url(images/page-break-2.svg) bottom / 110% 100% no-repeat;
+}
+.pb2-inverted {
+    mask: url(images/page-break-2-inverted.svg) bottom / 110% 100% no-repeat;
 }
 
 

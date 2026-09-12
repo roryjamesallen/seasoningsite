@@ -439,13 +439,18 @@ function renderArtistInfo($artist){ // Render an artist's whole page
         }
     }
 }
-function renderPageBreak($version=1, $background='primary'){ // Background should be set to the colour of the section before/above
+function renderPageBreak($version=1, $background='primary', $inverted=false){ // Background should be set to the colour of the section before/above
     if ($version != 1){
         $version_text = '-'.$version;
     } else {
         $version_text = '';
     }
-    echo '<div class="page-break-image pb'.$version.' '.$background.'-background"></div>';
+    if ($inverted){
+	$inversion_text = '-inverted';
+    } else {
+	$inversion_text = '';
+    }
+    echo '<div class="page-break-image pb'.$version.$inversion_text.' '.$background.'-background"></div>';
 }
 function renderFooterSeparator(){
     echo '<img src="images/icons/star-blue-'.strval(rand(0,2)+1).'.svg" class="footer-separator">';

@@ -27,7 +27,7 @@ include '../../lib.php';
     <head>
 	<base href="../">
 <?php
-	renderSEO('Seasoning Merch', 'https://seasoning.live/merch', 'Wear Rave Culture is Folk Culture on your chest.');
+	renderSEO('Seasoning Clobber', 'https://seasoning.live/clobber', 'Wear Rave Culture is Folk Culture on your chest.');
 ?>
         <link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
 	<script 
@@ -36,7 +36,7 @@ include '../../lib.php';
     </head>
 <?php echo $analytics ?>
     <body>
-<?php renderTitle('Merch'); ?>
+<?php renderTitle('Clobber'); ?>
         <div class="paragraph">
 	    
     <div id="paypal-container-KJE3R63X4RYD8" class="paypal"></div>

@@ -4,10 +4,6 @@
 //error_reporting(E_ALL);
 date_default_timezone_set("Europe/London");
 
-$CREDITS = array(
-    'Samuel Wilson' => 'https://google.com'
-    );
-
 // ==== NON HTML FUNCTIONS ====
 
 function startup(){ // Initialise the page (after headers have been sent)
@@ -92,6 +88,12 @@ function getEventsForArtist($artist){ // Get an array of events (full event json
     }
     return $artist_events;
 }
+function creditFromFilename($filename){
+    return '@'.str_replace('-', ' ', explode('.', explode('@', $filename)[1])[0]);
+}
+function altFromFilename($filename){
+    return str_replace('-', ' ', explode('@', $filename)[0]);
+}
 
 // ==== GENERATOR FUNCTIONS (Generate HTML and and return it) ====
 
@@ -167,63 +169,72 @@ function generateDaysRemaining($date){ // Generate text to say how many days lef
 
 // ==== RENDERING FUNCTIONS (Echo actual HTML) ====
 
+function renderGallery($gallery_name){
+    echo '<div class="gallery-container">';
+    echo '<div class="gallery">';
+    foreach (scandir('../images/gallery/'.$gallery_name) as $filename){
+	if (str_contains($filename, '.jpg')){
+	    renderPhoto($gallery_name.'/'.$filename, altFromFilename($filename), creditFromFilename($filename));
+	}
+    }
+    echo '</div></div>';
+}
 function renderPhoto($filename, $alt, $credit){
-    global $CREDITS;
-    echo '<div class="gallery-image-container"><img src="images/gallery/'.$filename.'" loading="lazy" alt="'.$alt.'" draggable="false"><a href="'.$CREDITS[$credit].'">'.$credit.'</a></div>';
+    echo '<div class="gallery-image-container"><img src="images/gallery/'.$filename.'" loading="lazy" alt="'.$alt.'" draggable="false"><a class="photography-credit" href="https://instagram.com/'.$credit.'">'.$credit.'</a></div>';
 }
 function renderEvent($event_key, $event, $reverse=false){ // Render an event in a list of events (preview)
     global $root;
     if ($reverse){
-        $class = 'event-reverse'; // CSS to reverse the direction of the event flexbox
+	$class = 'event-reverse'; // CSS to reverse the direction of the event flexbox
     } else {
-        $class = '';
+	$class = '';
     }
     echo '<div class="event-flex paragraph '.$class.'"><div class="event-info-flex">';
     
     if (isset($event['name'])){ // Show the event's name if set and add some stars behind it
-        echo ' <span class="event-name-flex star-container" stars="3" star-size="5" star-transition="60"><h4>'.$event['name'].'</h4></span>';
+	echo ' <span class="event-name-flex star-container" stars="3" star-size="5" star-transition="60"><h4>'.$event['name'].'</h4></span>';
     }
-    
+
     echo '<span class="event-location-flex"><span class="event-city-flex">'.$event['venue'].' ('.$event['city'].')</span><span class="event-separator-icon">✹</span><span class="event-date-flex">'.date("d.m.Y",strtotime($event['date'])).'</span></span>'; // Show the event's venue, city, and date
-    
+
     if (isset($event['artists'])){
-        renderArtistList($event['artists'],'pale-text', 10); // Show a list of the artists playing the event (up to 10)
+	renderArtistList($event['artists'],'pale-text', 10); // Show a list of the artists playing the event (up to 10)
     }
-    
+
     if (isset($event['permalink'])){ // Override default link to event page
-        $link = $event['permalink'];
+	$link = $event['permalink'];
     } else {
-        $link = 'event/'.$event_key; // Default link is just the event's key
+	$link = 'event/'.$event_key; // Default link is just the event's key
     }
     echo '<a href="'.$link.'" class="big-button"><span>See Details</span></a></div></div>';
 }
 function renderEventSchema($event){ // For Google Rich Results https://developers.google.com/search/docs/appearance/structured-data/event#add-structured-data
     $end_date = $event['date']; // Default is single day event (end date = start date)
     if (isset($event['end-date'])){ // Update end date if it's actually a multi-day event
-        $end_date = $event['end-date'];
+	$end_date = $event['end-date'];
     }
     $images = '';
     if (isset($event['image'])){
-        $images = '
+	$images = '
       "image": [
         "https://seasoning.live/images/event-posters/'.$event['image'].'.jpg"
       ],'; // Add the event poster as the event's image
     }
     $artists = '';
     if (isset($event['artists'])){
-        $artists = '
+	$artists = '
       "performer": [';
-        foreach ($event['artists'] as $index => $artist){
-            $artists .= '
+	foreach ($event['artists'] as $index => $artist){
+	    $artists .= '
         {
           "@type": "Person",
           "name": "'.$artist.'"
         }'; // Add each artist playing as a performer
-            if ($index != count($event['artists']) - 1){
-                $artists .= ','; // Only add a comma if this isn't the last artist
-            }
-        }
-        $artists .= '
+	    if ($index != count($event['artists']) - 1){
+		$artists .= ','; // Only add a comma if this isn't the last artist
+	    }
+	}
+	$artists .= '
       ],'; // Close the performers array
     }
     
@@ -277,42 +288,42 @@ function renderOrganisationSchema(){ // For Google Rich Results https://develope
 function renderEventDetails($event){ // The actual event page (not preview in a list)
     echo '<div class="paragraph"><div style="flex-basis: 100%"><span class="pale-text">Date:</span> '.date("d M Y",strtotime($event['date']));
     if (isset($event['end-date'])){
-        echo ' - '.date("d M Y",strtotime($event['end-date']));
+	echo ' - '.date("d M Y",strtotime($event['end-date']));
     }
     echo ' <span class="pale-text">'.generateDaysRemaining($event['date']).'.</span>';
     echo '<br><span class="pale-text">Venue:</span> '.$event['venue'].', '.$event['city'].'.';
     if (isset($event['artists'])){
-        echo '<br><span class="pale-text">Artists:</span> ';
-        renderArtistList($event['artists']);
+	echo '<br><span class="pale-text">Artists:</span> ';
+	renderArtistList($event['artists']);
     }
     if (isset($event['description'])){
-        echo '<br><br>'.$event['description'];
+	echo '<br><br>'.$event['description'];
     }
     if (isset($event['ra'])){
-        echo '<iframe src="https://ra.co/promoters/'.$event['ra'].'/widgets/events?theme=dark" height="100%" width="100%" style="border: none;">';
+	echo '<iframe src="https://ra.co/promoters/'.$event['ra'].'/widgets/events?theme=dark" height="100%" width="100%" style="border: none;">';
     }
     if (isset($event['fixr'])){
-        echo '<a class="fixr-link" href="'.generateFIXRLink($event['fixr']).'">Buy Tickets</a>';
+	echo '<a class="fixr-link" href="'.generateFIXRLink($event['fixr']).'">Buy Tickets</a>';
     }
     if (isset($event['tickets'])){
-        echo '<a class="fixr-link" href="'.$event['tickets'].'">Buy Tickets</a>';
+	echo '<a class="fixr-link" href="'.$event['tickets'].'">Buy Tickets</a>';
     }
     echo '</div>';
     if (isset($event['paragraphs'])){
-        foreach ($event['paragraphs'] as $paragraph){
-            echo '<div class="paragraph-html">'.$paragraph.'</div>';
-        }
+	foreach ($event['paragraphs'] as $paragraph){
+	    echo '<div class="paragraph-html">'.$paragraph.'</div>';
+	}
     }
     if (isset($event['image'])){
-        echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" src="images/event-posters/'.$event['image'].'.jpg">';
+	echo '<img alt="Poster for Seasoning event on '.date("d.m.Y",strtotime($event['date'])).' at '.$event['venue'].' in '.$event['city'].'" src="images/event-posters/'.$event['image'].'.jpg">';
     }
     echo '</div>';
 }
 function renderUpcomingAndPastEvents($artist=false, $extra_text=''){ // Toggleable list as shown on the homepage and artist pages
     if ($artist){
-        $events = getEventsForArtist($artist); // Restrict to only the artist's events
+	$events = getEventsForArtist($artist); // Restrict to only the artist's events
     } else {
-        $events = false; // False will cause renderEventList to render all events regardless of artist
+	$events = false; // False will cause renderEventList to render all events regardless of artist
     }
     
     ob_start(); // Buffer the output so the output of event rendering can be checked before actually outputting to HTML
@@ -321,11 +332,11 @@ function renderUpcomingAndPastEvents($artist=false, $extra_text=''){ // Toggleab
     $event_dom = ob_get_contents(); // Get the HTML for both upcoming and past
     ob_end_clean(); // Clear the buffer
     if ($show_past){ // There are upcoming events so have that tab toggled on
-        $class_one = ' toggler-off';
-        $class_two = '';
+	$class_one = ' toggler-off';
+	$class_two = '';
     } else { // No upcoming events so show past instead
-        $class_one = '';
-        $class_two = ' toggler-off';
+	$class_one = '';
+	$class_two = ' toggler-off';
     }
     echo '<h2 class="" collapse="events">Events</h2><div id="events"><h3>
 <span class="toggler'.$class_one.'" toggle="events-upcoming">Upcoming</span>
@@ -336,114 +347,123 @@ function renderUpcomingAndPastEvents($artist=false, $extra_text=''){ // Toggleab
 }
 function renderEventList($mode='all', $events=false, $extra_text='', $force_show=false){ // Can be past, upcoming, for artist, or all events
     if (!$events){
-        $events = readJSON('events.json'); // No specific events array passed (artist events) so get all events
+	$events = readJSON('events.json'); // No specific events array passed (artist events) so get all events
     }
     $filtered_events = [];
     $now = new DateTime('now');
     foreach ($events as $event_key => $event){
-        $event_date = new DateTime($event['date']);
-        $event_date->setTime(23, 59, 59); // The very latest time on that day (so it shows as upcoming if it's this evening)
-        if ($mode == 'all' or ($mode == 'past' and $event_date < $now) or ($mode == 'upcoming' and $event_date > $now)){ // If all events are being shown or the date is allowed by the mode
-            $filtered_events[$event_key] = $event;
-        }
+	$event_date = new DateTime($event['date']);
+	$event_date->setTime(23, 59, 59); // The very latest time on that day (so it shows as upcoming if it's this evening)
+	if ($mode == 'all' or ($mode == 'past' and $event_date < $now) or ($mode == 'upcoming' and $event_date > $now)){ // If all events are being shown or the date is allowed by the mode
+	    $filtered_events[$event_key] = $event;
+	}
     }
     
     if (count($filtered_events) > 0){ // There are events for this time period
-        if ($mode == 'upcoming'){
-            ksort($filtered_events); // If upcoming then show oldest (first to happen) at the top
-        } else {
-            krsort($filtered_events); // If past then show newest (most recently gone by) at the top
-        }
-        
-        if ($mode == 'past' && $force_show == false){ // Past events shown if force_show == true
-            $p_class = 'toggled-off';
-        } else {
-            $p_class = '';
-        }
-        
-        echo '<div class="event-list"><div class="'.$p_class.'" id="events-'.$mode.'">';
-        $reverse = true;
-        foreach ($filtered_events as $event_key => $event){
-            renderEvent($event_key, $event, $reverse);
-            $reverse = !$reverse; // Toggle reverse to the opposite for the next event
-        }
-        echo '</div></div>';
-        return true;
+	if ($mode == 'upcoming'){
+	    ksort($filtered_events); // If upcoming then show oldest (first to happen) at the top
+	} else {
+	    krsort($filtered_events); // If past then show newest (most recently gone by) at the top
+	}
+	
+	if ($mode == 'past' && $force_show == false){ // Past events shown if force_show == true
+	    $p_class = 'toggled-off';
+	} else {
+	    $p_class = '';
+	}
+	
+	echo '<div class="event-list"><div class="'.$p_class.'" id="events-'.$mode.'">';
+	$reverse = true;
+	foreach ($filtered_events as $event_key => $event){
+	    renderEvent($event_key, $event, $reverse);
+	    $reverse = !$reverse; // Toggle reverse to the opposite for the next event
+	}
+	echo '</div></div>';
+	return true;
     } else {
-        echo '<p class="paragraph toggled-off" id="events-'.$mode.'">There are no '.$mode.' events'.$extra_text.'</p>'; // Extra text allows this to be customised for artist event lists
-        return false;
+	echo '<p class="paragraph toggled-off" id="events-'.$mode.'">There are no '.$mode.' events'.$extra_text.'</p>'; // Extra text allows this to be customised for artist event lists
+	return false;
     }
 }
 function getArtistLink($artist, $details){
     if (isset($details['permalink'])){ // Artist has a permalink (used for prettier links vs urlencode)
-        return $details['permalink'];
+	return $details['permalink'];
     } else {
-        return urlencode($artist); // No permalink so just use artist's name urlencoded
+	return urlencode($artist); // No permalink so just use artist's name urlencoded
     }
 }
 function renderArtistList($artists=false, $class='', $limit=false){ // Render a list of artists from a given array
     global $root;
     $spotlight_artists = json_decode(file_get_contents($root.'artists.json'), true); // Artists with manually set information in artists.json
     if (!$artists){ // Render list of all artists
-        $artists = getArtistList();
+	$artists = getArtistList();
     }
     echo '<span class="artist-list '.$class.'">';
     foreach ($artists as $index => $artist){
-        if (!$limit or $index < $limit){ // As long as the number of artists listed hasn't hit the limit (or no limit exists)
+	if (!$limit or $index < $limit){ // As long as the number of artists listed hasn't hit the limit (or no limit exists)
 	    if (isset($spotlight_artists[$artist]) && isset($spotlight_artists[$artist]['instagram'])){ // Artist has some manually set information from artists.json
 		$artist_link = getArtistLink($artist, $spotlight_artists[$artist]);
-                echo '<a class="artist-link" href="artist/'.$artist_link.'">'.$artist.'</a>';
+		echo '<a class="artist-link" href="artist/'.$artist_link.'">'.$artist.'</a>';
 	    } else {
-                echo '<span class="artist-link">'.$artist.'</span>'; // Don't use a link if they have no info on their page
+		echo '<span class="artist-link">'.$artist.'</span>'; // Don't use a link if they have no info on their page
 	    }
 	    if (!$limit or $index != $limit - 1){ // Add a comma before the next artist
-                if ($artist != $artists[count($artists)-1]){
+		if ($artist != $artists[count($artists)-1]){
 		    echo ', ';
-                }
+		}
 	    } else if ($limit && $index == $limit - 1 && count($artists) > $limit){ // Hit the limit so add an ellipsis
-                echo '...';
+		echo '...';
 	    }
-        }
+	}
     }
     echo '.</span>';
 }
 function renderArtistInfo($artist){ // Render an artist's whole page
     $artists_json = readJSON('artists.json', true, false);
     if (isset($artists_json[$artist])){ // Artist has manually set information in artists.json
-        $artist_json = $artists_json[$artist];
-        $started = false; // Used to set if any information is set that should cause the info box to be rendered
-        $links = [];
-        foreach (['Instagram','Facebook','SoundCloud','Bandcamp','Resident Advisor','Website'] as $link){
+	$artist_json = $artists_json[$artist];
+	$started = false; // Used to set if any information is set that should cause the info box to be rendered
+	$links = [];
+	foreach (['Instagram','Facebook','SoundCloud','Bandcamp','Resident Advisor','Website'] as $link){
 	    if (isset($artist_json[strtolower($link)])){
-                if (!$started){
+		if (!$started){
 		    $started = true; // Some info that will go in the info box exists
-                }
-                $links[] = '<a class="artist-link" href="'.$artist_json[strtolower($link)].'">'.$link.'</a>';
+		}
+		$links[] = '<a class="artist-link" href="'.$artist_json[strtolower($link)].'">'.$link.'</a>';
 	    }
-        }
-        if ($started or isset($artist_json['bio'])){ // If there is something that needs to be shown in the info box
+	}
+	if ($started or isset($artist_json['bio'])){ // If there is something that needs to be shown in the info box
 	    echo '<div class="paragraph" style="margin-top: 2rem"><div class="artist-info"><span><h3 style="margin-top: 1rem;">About</h3>';
 	    if (isset($artist_json['bio'])){
-                echo $artist_json['bio'];
+		echo $artist_json['bio'];
 	    }
 	    echo '</span><span class="artist-links">'.join('<span style="margin: 0 5px">/</span>', $links).'</span></div>';
 	    if (file_exists('../images/artists/'.urlencode($artist).'.jpg')){
-                echo '<img width="0" height="0" alt="Profile photo for '.$artist.'" src="images/artists/'.urlencode($artist).'.jpg">';
+		echo '<img width="0" height="0" alt="Profile photo for '.$artist.'" src="images/artists/'.urlencode($artist).'.jpg">';
 	    }
 	    if (isset($artist_json['embed'])){ // SoundCloud embed
-                echo '
+		echo '
     <iframe class="artist-embed" width="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A'.$artist_json['embed'].'&color=%2331e5e6&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
     ';
 	    }
 	    echo '</div><br>';
-        }
+	}
     }
+}
+function renderOverlayBreak($background='primary', $title=null){
+    echo '<div class="page-break-overlay text-'.$background.'">';
+    if ($title){
+	echo '<h2>'.$title.'</h2>';
+    }
+    echo '<div class="page-break-image pb1-inverted '.$background.'-background"></div>';
+    echo '<div class="page-break-image pb2 '.$background.'-background"></div>';
+    echo '</div>';
 }
 function renderPageBreak($version=1, $background='primary', $inverted=false){ // Background should be set to the colour of the section before/above
     if ($version != 1){
-        $version_text = '-'.$version;
+	$version_text = '-'.$version;
     } else {
-        $version_text = '';
+	$version_text = '';
     }
     if ($inverted){
 	$inversion_text = '-inverted';

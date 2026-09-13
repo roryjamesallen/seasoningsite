@@ -13,10 +13,7 @@ include '../../lib.php';
     </head>
     <?php echo $analytics ?>
     <body>							
-	<?php renderTitle('Gallery'); ?>
-	<p class="paragraph">
-	    See what Seasoning is all about.
-	</p>
+	<?php renderTitle(''); ?>
 	<br><br><br>
 	<?php
 	renderOverlayBreak('primary', 'Goods Shed');
@@ -27,15 +24,18 @@ include '../../lib.php';
 	renderGallery('the-bur');
 	renderOverlayBreak('primary', 'The Nest');
 	renderGallery('the-nest');
-	renderOverlayBreak('secondary', 'Talks');
-	renderGallery('talks');
+	renderOverlayBreak('secondary', 'Loganberry');
+	renderGallery('loganberry');
 	renderOverlayBreak('tertiary', 'Community Build');
 	renderGallery('community-build');
 	renderOverlayBreak('primary');
 	?>
 	<br>
+	<div class="paragraph">
+	    <?php renderPhotoCredits(); ?>
+	</div>
     </body>
-`
+
     <?php renderFooter(); ?>
 </html>
 

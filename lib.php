@@ -4,6 +4,11 @@
 //error_reporting(E_ALL);
 date_default_timezone_set("Europe/London");
 
+$CREDITS = array(
+    'pinchsnookhams' => 'pink',
+    'samuelwilsonphotography' => 'blue'
+);
+
 // ==== NON HTML FUNCTIONS ====
 
 function startup(){ // Initialise the page (after headers have been sent)
@@ -89,10 +94,13 @@ function getEventsForArtist($artist){ // Get an array of events (full event json
     return $artist_events;
 }
 function creditFromFilename($filename){
-    return '@'.str_replace('-', ' ', explode('.', explode('@', $filename)[1])[0]);
+    return explode('.', explode('@', $filename)[1])[0];
 }
 function altFromFilename($filename){
     return str_replace('-', ' ', explode('@', $filename)[0]);
+}
+function instaFromHandle($handle){
+    return 'https://instagram.com/'.$handle;
 }
 
 // ==== GENERATOR FUNCTIONS (Generate HTML and and return it) ====
@@ -172,15 +180,26 @@ function generateDaysRemaining($date){ // Generate text to say how many days lef
 function renderGallery($gallery_name){
     echo '<div class="gallery-container">';
     echo '<div class="gallery">';
-    foreach (scandir('../images/gallery/'.$gallery_name) as $filename){
+    $files = scandir('../images/gallery/'.$gallery_name);
+    sort($files);
+    foreach ($files as $filename){
 	if (str_contains($filename, '.jpg')){
 	    renderPhoto($gallery_name.'/'.$filename, altFromFilename($filename), creditFromFilename($filename));
 	}
     }
     echo '</div></div>';
 }
+function renderPhotoCredits(){
+    global $CREDITS;
+    echo '<div class="photo-credit-list">';
+    foreach ($CREDITS as $credit => $colour){
+	echo '<a href="'.instaFromHandle($credit).'"><img src="images/icons/star-blue-2.svg" class="star-'.$colour.' photo-credit-star"> @'.$credit.'</a>';
+    }
+    echo '</div>';
+}
 function renderPhoto($filename, $alt, $credit){
-    echo '<div class="gallery-image-container"><img src="images/gallery/'.$filename.'" loading="lazy" alt="'.$alt.'" draggable="false"><a class="photography-credit" href="https://instagram.com/'.$credit.'">'.$credit.'</a></div>';
+    global $CREDITS;
+    echo '<div class="gallery-image-container"><img src="images/gallery/'.$filename.'" loading="lazy" alt="'.$alt.'" draggable="false"><a class="photography-credit" href="'.instaFromHandle($credit).'"><img src="images/icons/star-blue-2.svg" class="star-'.$CREDITS[$credit].'"></a></div>';
 }
 function renderEvent($event_key, $event, $reverse=false){ // Render an event in a list of events (preview)
     global $root;

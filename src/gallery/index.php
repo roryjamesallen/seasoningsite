@@ -14,7 +14,10 @@ include '../../lib.php';
     <?php echo $analytics ?>
     <body>							
 	<?php renderTitle('Gallery'); ?>
-	<br><br>
+	<p class="paragraph">
+	    See what Seasoning is all about.
+	</p>
+	<br><br><br>
 	<?php
 	renderOverlayBreak('primary', 'Goods Shed');
 	renderGallery('goods-shed');
@@ -32,7 +35,7 @@ include '../../lib.php';
 	?>
 	<br>
     </body>
-
+`
     <?php renderFooter(); ?>
 </html>
 

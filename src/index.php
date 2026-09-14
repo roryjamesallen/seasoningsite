@@ -50,39 +50,12 @@ include '../lib.php';
 <?php renderTitle('Rave Culture is<br>Folk Culture');?>
 
 	<a href="event/festival-2027" class="no-underline banner-content">
-	    <img src="images/gallery/seasoning-festival-photo-1.jpg" class="banner-image">
+	    <img src="images/gallery/goods-yard/Seasoning-Festival-2026-The-Goods-Yard-03-@samuelwilsonphotography.jpg" class="banner-image">
 	    <?php renderPageBreak(1, 'primary'); ?>
 	    <h2 class="centred">Seasoning Festival 2027</h2>
 	<?php renderPageBreak(2, 'primary', true); ?>
 	</a>
 	
-        <br>
-	<h2 class="collapser" collapse="mixes">Mixes</h2>
-	<div class="paragraph" id="mixes" style="margin: 1rem auto 2rem">
-
-	    <div><h3 style="display: inline; color: var(--pink)"><a href="artist/Om+Unit">Om Unit</a></h3> closes <a href="festival">Seasoning Festival 2026</a> as part of the Spirit takeover, recorded live on Sunday night in Stroud. Our first post-festival contribution to the Seasoning mix series begins where the weekend ended: in the final stretch of a room still moving, still open, still finding new reserves of energy after three days together.</div>
-	    
-	    <iframe width="100%" height="400" src="https://player-widget.mixcloud.com/widget/iframe/?feed=%2FSeas0ning%2Fseason%25C9%25AAng005-om-unit-l%25C9%25AAve-from-season%25C9%25AAng-fest%25C9%25AAval-2026%2F" frameborder="0" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;" ></iframe>
-	    <p style="flex-basis: 100%;">Across the last 90 minutes of his closing set, Om Unit moves with unmistakable emotional fluency through dubstep classics, bleep pressure, contemporary club foundations, unreleased edits and his own idiosyncratic productions. Caspa & Rusko-era nostalgia, Ability II’s “Pressure Dub,” Gaszia’s “Taste,” deep bassweight, breakbeat lift and rave euphoria all pass through the mix with class, warmth and soul.</p>
-	    <hr style="flex-basis: 100%;">
-	    <iframe width="50%" height="400" src="https://player-widget.mixcloud.com/widget/iframe/?feed=%2Fworldwidefm%2Flove-cuts-lovellious-w-fraser-dahdouh-seasoning-special-08-05-26%2F" frameborder="0" allow="speaker-selection; web-share;"></iframe>
-	    <div><h3 style="display: inline; color: var(--pink)">Love Cuts</h3><br>Listen back to the <a href="https://www.instagram.com/l0ve.cuts/">Love Cuts</a> 'Seasoning Special' <a href="https://www.worldwidefm.net/">Worldwide FM</a> broadcast: Fraser and <a href="artist/Lovellious">Lovellious</a> discuss the meaning behind the 'Rave Culture is Folk Culture' slogan ahead of <a href="festival">Seasoning Festival 2026</a> , interspersed with mystic folky funky music.</div>
-	</div>
-            <br>
-
-	
-	<div class="tertiary-background">
-	    <?php renderPageBreak(1, 'primary');?>
-            <br>
-	    <h2 class="collapser collapser" collapse="gallery">Gallery</h2>
-	    <div class="paragraph" id="gallery">
-		<p style="flex-basis: 100%; margin: 0 auto">Relive <a href="festival">Seasoning Festival 2026</a> through the lens of on-site photographer <a href="https://www.instagram.com/samuelwilsonphotography/">Samuel Wilson</a>.
-		</p>
-		<?php renderGallery('goods-shed'); ?>
-	    </div>
-	    <br>
-	</div>
-	<?php renderPageBreak(2, 'tertiary');?>
     </body>
     
     <?php renderFooter() ?>

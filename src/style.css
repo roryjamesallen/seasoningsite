@@ -265,8 +265,16 @@ span:empty {
 }
 .banner-content {
     position: relative;
-    display: block;
+    display: flex;
+    flex-direction: column;
     overflow: clip;
+    min-height: 25rem;
+}
+.banner-content h2 {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .banner-image {
     position: absolute;

@@ -52,6 +52,10 @@
     --page-width: min(750px, 80vw);
     --h1-size: 8rem;
     --h1-margin-sides: -5.25rem;
+
+    --spiral-size: 5rem;
+    --menu-padding: 1rem;
+    --menu-transition: 0.5s;
 }
 html {
     font-family: MinionPro;
@@ -62,6 +66,7 @@ body {
     /*background-image: url('images/gl5-outline.png');*/
     margin: 0;
     overflow-x: hidden;
+    position: relative;
 }
 body::before {
     display: none;
@@ -90,6 +95,60 @@ body::before {
 }
 br {
     height: 0.5rem;
+}
+.h2-container {
+    position: absolute;
+    top: var(--menu-padding);
+    right: var(--menu-padding);
+}
+#h2-menu, #h2-menu-spiral {
+    position: absolute;
+}
+#h2-menu-spiral {
+    top: 0;
+    right: 0;
+    width: var(--spiral-size);
+    z-index: 4;
+    transition: transform var(--menu-transition);
+}
+#h2-menu {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transform: translate(0, 100%);
+    bottom: calc(var(--menu-padding) + var(--spiral-size));
+    right: calc(0px - var(--menu-padding));
+    padding: var(--menu-padding);
+    background-color: rgba(0,0,0,0.9);
+    box-shadow: 0 0 5rem 5rem rgba(0,0,0,0.9);
+    box-sizing: border-box;
+    border: 2px solid var(--white);
+    border-radius: calc(var(--spiral-size) / 2);
+    transition: opacity var(--menu-transition), width var(--menu-transition);
+}
+#h2-menu:not(.open){
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+#h2-menu.open {
+    width: calc(100% + var(--menu-padding));
+    opacity: 1;
+    pointer-events: all;
+}
+.h2-container:has(.open) #h2-menu-spiral {
+    transform: rotate(-360deg);
+}
+#h2-menu a {
+    text-decoration: none;
+    width: fit-content;
+    font-family: BlackBeard;
+    font-size: 2rem;
+}
+#h2-menu img {
+    display: none;
 }
 h2 {
     z-index: 2;

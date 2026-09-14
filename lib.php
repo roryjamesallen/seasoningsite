@@ -4,6 +4,8 @@
 //error_reporting(E_ALL);
 date_default_timezone_set("Europe/London");
 
+$FOOTER_MENU = ['Events','Mixes','Clobber','Gallery','FAQ','Contact'];
+
 $CREDITS = array(
     'pitchsnookhams' => 'pink',
     'samuelwilsonphotography' => 'blue'
@@ -509,15 +511,24 @@ function renderMenu($pages, $links=null){
     }
 }
 function renderFooter(){ // HTML footer with the logo, current year, and social links
+    global $FOOTER_MENU;
     echo '<footer><a href="https://seasoning.live" id="footerLink" class="star-container" stars="10" star-size="5">Seasoning.live '.date("Y").'</a><div class="footer-links">';
-    renderMenu(['Events','Mixes','Clobber','Gallery','FAQ','Contact']);
+    renderMenu($FOOTER_MENU);
     echo '</div><div class="website-credit"><span>Website by <a href="mailto:rory@hogwild.uk">Rory Allen</a></span></div></footer>';
 }
+function renderBurger(){
+    global $FOOTER_MENU;
+    ob_start();
+        renderMenu($FOOTER_MENU);
+        $menu = ob_get_clean();
+        echo '<div class="h2-container"><div id="h2-menu">'.$menu.'</div><img src="images/icons/menu-spiral.svg" id="h2-menu-spiral"></div>';
+}
 function renderTitle($subheading){ // The full page title with logo and stars. The real <h1> is hidden but present for SEO
+    renderBurger();
     echo '<div id="logo-container" class="paragraph star-container" stars="20" star-size="2"><a href="https://seasoning.live"><img loading="eager" id="logo-img" src="images/seasoning-logo-pink.svg" alt="Pink hand drawn logo for Seasoning"></a></div>
     <h1 style="display: none">Seasoning - Rave Culture is Folk Culture</h1></a>';
     if ($subheading != ''){
-	echo '<h2 style="margin: -1.5rem auto 1rem;">'.$subheading.'</h2>';
+        echo '<h2>'.$subheading.'</h2>';
     }
     echo '<style>.fixr-links-widget { --fixr-primary: var(--pink); }</style>';
 }

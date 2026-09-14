@@ -638,6 +638,7 @@ h1.moving-children  > * {
 #logo-container {
     position: relative;
     margin-top: 3rem;
+    z-index: 2;
 }
 .logo-star {
     position: absolute;

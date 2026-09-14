@@ -7,7 +7,7 @@ include '../../lib.php';
     <head>
 	<base href="../">
 	<?php
-	renderSEO('Seasoning Gallery', 'https://seasoning.live/gallery', 'See with your own eyes what Seasoning is all about.');
+	renderSEO('Gallery', 'https://seasoning.live/gallery', 'See with your own eyes what Seasoning is all about.');
 	?>
 	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
     </head>

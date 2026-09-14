@@ -27,7 +27,7 @@ include '../../lib.php';
     <head>
 	<base href="../">
 	<?php
-	renderSEO('Seasoning Clobber', 'https://seasoning.live/clobber', 'Wear Rave Culture is Folk Culture on your chest.');
+	renderSEO('Clobber', 'https://seasoning.live/clobber', 'Wear Rave Culture is Folk Culture on your chest.');
 	?>
 	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
 	<script 

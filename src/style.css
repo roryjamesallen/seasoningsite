@@ -3,6 +3,14 @@
     src: url('fonts/Cormorant.ttf');
 }
 @font-face {
+    font-family: MinionPro;
+    src: url('fonts/MinionPro.otf');
+}
+@font-face {
+    font-family: PPMori;
+    src: url('fonts/PPMori.ttf');
+}
+@font-face {
     font-family: BlackBeard;
     src: url('fonts/BlackBeard.otf');
 }
@@ -27,14 +35,15 @@
     --purple: #796684;
     --red: #CE1A19;
     --orange: #e1a25d;
-    --yellow: #b0b859;
-    --black: rgb(30,30,8);
-    --black-separate: 30, 30, 8;
+    --yellow: #c9bc2d;
+    --brown: #4f4d1f;
+    --black: #131215;
+    --black-separate: 19, 18, 21;
     --white: #d6d6e2;
 
     --beige: #f5eee5;
-    --pink: rgb(230,152,190);
-    --light-blue: rgb(58, 132, 169);
+    --pink: #f291bc;
+    --light-blue: #0389b3;
     
     --cyan: #31e5e6;
 
@@ -45,7 +54,7 @@
     --h1-margin-sides: -5.25rem;
 }
 html {
-    font-family: Cormorant;
+    font-family: MinionPro;
     color: var(--beige);
 }
 body {
@@ -872,7 +881,10 @@ h1.moving-children  > * {
     background-color: var(--red);
     color: var(--white);
 }
-.secondary-background .event-name-flex, .secondary-background h2, .secondary-background h3 {
+.fifth-background {
+    background-color: var(--yellow);
+}
+.secondary-background .event-name-flex, .secondary-background h2, .secondary-background h3, .fourth-background h3 {
     color: var(--black);
 }
 .text-secondary, .text-secondary h2 {
@@ -899,6 +911,9 @@ h1.moving-children  > * {
     margin-bottom: -5%;
     position: relative;
     z-index: 1;
+}
+.page-break-overlay.break-padding {
+    padding: 7% 0;
 }
 .page-break-overlay .page-break-image:nth-of-type(2){
     margin-top: -1px;
@@ -958,6 +973,9 @@ h1.moving-children  > * {
     .page-break-overlay {
 	margin-top: -10%;
 	margin-bottom: -10%;
+    }
+    .page-break-overlay.break-padding {
+	padding: 12% 0;
     }
     .page-break-overlay .page-break-image {
 	aspect-ratio: 20 / 2;

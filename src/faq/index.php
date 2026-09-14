@@ -14,7 +14,13 @@ include '../../lib.php';
     <?php echo $analytics ?>
     <body>
 	<?php renderTitle('FAQs!'); ?>
-	<h2>
+        
+	<div class="secondary-background">
+	    <?php
+	    renderPageBreak(1, 'primary');
+	    ?>
+
+	    <h2>
 	    Seasoning Festival
 	</h2>
 	<br>
@@ -48,20 +54,6 @@ include '../../lib.php';
 		Animals are not allowed on the festival site, with the exception of service animals.
 	    </p>
 	</div>
-	<div class="secondary-background">
-	    <?php
-	    renderPageBreak(1, 'primary');
-	    ?>
-	    <div class="paragraph paragraph-with-titles centred">
-		<div>
-		    <h3>Bookings</h3>
-		    <p>Please email bookings@seasoning.live for enquiries relating to booking an artist.</p>
-		</div>
-		<div>
-		    <h3>Production</h3>
-		    <p>Or email production@seasoning.live for anything relating to other Seasoning goings on!</p>
-		</div>
-	    </div>
 	</div>
 	<?php renderPageBreak(2, 'secondary'); ?>
     </body>

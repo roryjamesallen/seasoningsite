@@ -469,8 +469,8 @@ function renderArtistInfo($artist){ // Render an artist's whole page
 	}
     }
 }
-function renderOverlayBreak($background='primary', $title=null){
-    echo '<div class="page-break-overlay text-'.$background.'">';
+function renderOverlayBreak($background='primary', $title=null, $extra_class=''){
+    echo '<div class="page-break-overlay text-'.$background.' '.$extra_class.'">';
     if ($title){
 	echo '<h2>'.$title.'</h2>';
     }

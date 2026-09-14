@@ -14,7 +14,7 @@ include '../../lib.php';
     <?php echo $analytics ?>
     <body>
 	<?php renderTitle(''); ?>
-	<div class="secondary-background">
+	<div class="secondary-background" style="position: relative; z-index: -1">
 	    <?php
 	     renderPageBreak(1, 'primary');
 	    renderUpcomingAndPastEvents(false,'. Watch this space...');

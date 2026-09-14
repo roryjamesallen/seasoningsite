@@ -346,8 +346,9 @@ footer a {
 }
 .gallery .photography-credit {
     position: absolute;
-    top: 25%;
-    right: 0.1rem;
+    top: 50%;
+    right: 0;
+    margin-right: -0.75rem;
     transform: translate(0, -50%);
     width: 1.5rem;
 }
@@ -362,11 +363,11 @@ a:has(.photo-credit-star) {
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
+    overflow: clip;
 }
 .gallery .gallery-image-container:nth-of-type(even) .photography-credit {
-    top: 75%;
-    right: unset;
-    left: 0.1rem;
+    left: 0;
+    margin-left: -0.75rem;
 }
 .star-pink {
     filter: hue-rotate(130deg) saturate(0.6) brightness(1.4);

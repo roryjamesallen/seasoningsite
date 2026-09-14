@@ -146,6 +146,21 @@ function logoLoaded(){
     document.body.onresize = moveStars;
 }
 
+// Menu
+const menu_spiral = document.getElementById('h2-menu-spiral');
+const menu = document.getElementById('h2-menu');
+function toggleMenu(event){
+    if (menu.classList.contains('open')){
+	menu.classList.remove('open');
+    } else {
+	menu.classList.add('open');
+    }
+}
+function initialiseSpiral(){
+    menu_spiral.addEventListener('click', toggleMenu)
+}
+
 initialiseCollapsers();
 initialiseTogglers();
+initialiseSpiral();
 window.onload = logoLoaded;

@@ -5,7 +5,7 @@
 date_default_timezone_set("Europe/London");
 
 $CREDITS = array(
-    'pinchsnookhams' => 'pink',
+    'pitchsnookhams' => 'pink',
     'samuelwilsonphotography' => 'blue'
 );
 
@@ -514,13 +514,16 @@ function renderFooter(){ // HTML footer with the logo, current year, and social 
     echo '</div><div class="website-credit"><span>Website by <a href="mailto:rory@hogwild.uk">Rory Allen</a></span></div></footer>';
 }
 function renderTitle($subheading){ // The full page title with logo and stars. The real <h1> is hidden but present for SEO
-    echo '<div id="logo-container" class="paragraph star-container" stars="20" star-size="2"><a href="https://seasoning.live"><img loading="eager" src="" id="logo-img" alt="Pink hand drawn logo for Seasoning"></a></div>
-    <h1 style="display: none">Seasoning - Rave Culture is Folk Culture</h1></a><h2 style="margin: -1.5rem auto 1rem;">'.$subheading.'</h2>
-    <style>.fixr-links-widget { --fixr-primary: var(--pink); }</style>';
+    echo '<div id="logo-container" class="paragraph star-container" stars="20" star-size="2"><a href="https://seasoning.live"><img loading="eager" id="logo-img" src="images/seasoning-logo-pink.svg" alt="Pink hand drawn logo for Seasoning"></a></div>
+    <h1 style="display: none">Seasoning - Rave Culture is Folk Culture</h1></a>';
+    if ($subheading != ''){
+	echo '<h2 style="margin: -1.5rem auto 1rem;">'.$subheading.'</h2>';
+    }
+    echo '<style>.fixr-links-widget { --fixr-primary: var(--pink); }</style>';
 }
 
-function renderSEO($title='Seasoning - Rave Culture is Folk Culture', $canonical='https://seasoning.live', $description='Rave Culture is Folk Culture. Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.', $favicon_path='favicon'){ // HTML head content for SEO, favicon, and stylesheets etc
-    echo '
+    function renderSEO($title='Seasoning - Rave Culture is Folk Culture', $canonical='https://seasoning.live', $description='Rave Culture is Folk Culture. Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.', $favicon_path='favicon'){ // HTML head content for SEO, favicon, and stylesheets etc
+	echo '
 <meta charset="utf-8">
      <meta name="description" content="'.$description.'">
      <meta property="og:title" content="Seasoning - Live Events">
@@ -538,9 +541,9 @@ function renderSEO($title='Seasoning - Rave Culture is Folk Culture', $canonical
      <link rel="canonical" href="'.$canonical.'"/>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
      ';
-}
+    }
 
-$analytics = '
+    $analytics = '
 <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DJ0H3P8DZ0"></script>
     <script>
@@ -549,51 +552,51 @@ $analytics = '
      gtag("js", new Date());
      gtag("config", "G-DJ0H3P8DZ0");
     </script>
-'; // Allows Google Analytics to view page stats
+    '; // Allows Google Analytics to view page stats
 
-/*
-   function getArtistOptions(){ // Not yet fully implemented, used in the admin page. Renders all artists as an HTML selection list to add to new events
-   $artist_options = '';
-   foreach (getArtistList() as $artist){
-   $artist_options .= '<option value="'.$artist.'">'.$artist.'</option>';
-   }
-   return $artist_options;
-   }
-   function renderArtistEditor($artist){ // Not yet fully implemented, used in the admin page.
-   $artists_json = readJSON('artists.json', true, false);
-   if (isset($artists_json[$artist])){
-   $artist_json = $artists_json[$artist];
-   } else {
-   $artist_json = [];
-   }
-   echo '<h2>Editing: '.$artist.'</h2>';
-   echo '<form method="POST">';
-   foreach (["Bio","Instagram","SoundCloud","Bandcamp","Resident Advisor","Website","Embed"] as $category){
-   $key = strtolower($category);
-   $name = str_replace(' ','-',$key);
-   echo '<label for="'.$name.'">'.$category.'</label><br>';
-   echo '<textarea id="'.$name.'" name="'.$name.'">';
-   if (isset($artist_json[$key])){
-   echo $artist_json[$key];
-   }
-   echo '</textarea><br>';
-   }
-   echo '<input type="submit" value="Submit Edits"></form>';
-   }
-   function renderAdmin($post){ // Not yet fully implemented, used in the admin page.
-   echo '<style>textarea { width: 20rem; height: 5rem; }</style>';
-   if (isset($post['pwd'])){
-   if ($post['pwd'] == 'H{*z_l$esyGVN.(('){
-   echo '<form method="POST"><label for="artist-selector">Select Artist To Edit</label><br><select id="artist-selector" name="artist">'.getArtistOptions().'</select><input type="submit" value="Edit Artist"></form>';
-   } else {
-   echo 'wrong password!!';
-   }
-   } else if (isset($post['artist'])){
-   renderArtistEditor($post['artist']);
-   } else if (isset($post['bio'])){
-   echo 'submit edits /  confirm';
-   } else {
-   echo '<form method="POST"><label for="pwd">Enter Password</label><br><input id="pwd" name="pwd"><input type="submit" value="Enter"></form>';
-   }
-   }*/
+    /*
+       function getArtistOptions(){ // Not yet fully implemented, used in the admin page. Renders all artists as an HTML selection list to add to new events
+       $artist_options = '';
+       foreach (getArtistList() as $artist){
+       $artist_options .= '<option value="'.$artist.'">'.$artist.'</option>';
+       }
+       return $artist_options;
+       }
+       function renderArtistEditor($artist){ // Not yet fully implemented, used in the admin page.
+       $artists_json = readJSON('artists.json', true, false);
+       if (isset($artists_json[$artist])){
+       $artist_json = $artists_json[$artist];
+       } else {
+       $artist_json = [];
+       }
+       echo '<h2>Editing: '.$artist.'</h2>';
+       echo '<form method="POST">';
+       foreach (["Bio","Instagram","SoundCloud","Bandcamp","Resident Advisor","Website","Embed"] as $category){
+       $key = strtolower($category);
+       $name = str_replace(' ','-',$key);
+       echo '<label for="'.$name.'">'.$category.'</label><br>';
+       echo '<textarea id="'.$name.'" name="'.$name.'">';
+       if (isset($artist_json[$key])){
+       echo $artist_json[$key];
+       }
+       echo '</textarea><br>';
+       }
+       echo '<input type="submit" value="Submit Edits"></form>';
+       }
+       function renderAdmin($post){ // Not yet fully implemented, used in the admin page.
+       echo '<style>textarea { width: 20rem; height: 5rem; }</style>';
+       if (isset($post['pwd'])){
+       if ($post['pwd'] == 'H{*z_l$esyGVN.(('){
+       echo '<form method="POST"><label for="artist-selector">Select Artist To Edit</label><br><select id="artist-selector" name="artist">'.getArtistOptions().'</select><input type="submit" value="Edit Artist"></form>';
+       } else {
+       echo 'wrong password!!';
+       }
+       } else if (isset($post['artist'])){
+       renderArtistEditor($post['artist']);
+       } else if (isset($post['bio'])){
+       echo 'submit edits /  confirm';
+       } else {
+       echo '<form method="POST"><label for="pwd">Enter Password</label><br><input id="pwd" name="pwd"><input type="submit" value="Enter"></form>';
+       }
+       }*/
 ?>

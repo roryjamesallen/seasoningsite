@@ -148,5 +148,4 @@ function logoLoaded(){
 
 initialiseCollapsers();
 initialiseTogglers();
-logo_img.onload = logoLoaded;
-logo_img.src = 'images/seasoning-logo-pink.svg';
+window.onload = logoLoaded;

@@ -7,7 +7,7 @@ include '../../lib.php';
     <head>
 	<base href="../">
 	<?php
-	renderSEO('Contact the Seasoning Crew', 'https://seasoning.live/contact', 'Email us for bookings or other enquiries.');
+	renderSEO('Contact Us', 'https://seasoning.live/contact', 'Email us for bookings or other enquiries.');
 	?>
 	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
     </head>

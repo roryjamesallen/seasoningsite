@@ -427,7 +427,6 @@ footer a {
     overscroll-behavior-x: contain;
     flex-wrap: nowrap !important;
     height: 80vh;
-    scroll-snap-type: x mandatory;
     scrollbar-width: none;
     scroll-behaviour: smooth;
     background-color: var(--beige);
@@ -465,12 +464,12 @@ a:has(.photo-credit-star) {
 .gallery-image-container {
     position: relative;
     overflow-y: clip;
+    height: 100%;
 }
 .gallery img {
     height: 100%;
     z-index: 0;
     user-select: none;
-    scroll-snap-align: center;
     cursor: grab;
 }
 .gallery-gradient {

@@ -129,6 +129,9 @@ br {
     border-radius: calc(var(--spiral-size) / 2);
     transition: opacity var(--menu-transition), width var(--menu-transition), max-height var(--menu-transition), font-size var(--menu-transition);
 }
+#h2-menu .active-page {
+    color: var(--pink);
+}
 #h2-menu:not(.open){
     width: var(--spiral-size);
     max-height: var(--spiral-size);

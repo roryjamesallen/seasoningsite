@@ -550,6 +550,7 @@ function renderTitle($subheading){ // The full page title with logo and stars. T
      <meta property="og:image" content="'.$favicon_path.'/sharing.png">
      <link rel="canonical" href="'.$canonical.'"/>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex">
      ';
     }
 

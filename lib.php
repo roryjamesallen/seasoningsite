@@ -495,11 +495,15 @@ function renderMenu($pages, $links=null){
     foreach ($pages as $index => $page){
 	echo '<a href="';
 	if ($links != null){
-	    echo $links[$index];
+	    $link = $links[$index];
 	} else {
-	    echo strtolower($page);
+	    $link = strtolower($page);
 	}
-	echo '">'.$page.'</a>';
+    echo $link.'" ';
+    if (str_contains($_SERVER['REQUEST_URI'], $link)){
+        echo 'class="active-page"';
+    }
+	echo '>'.$page.'</a>';
 	if ($index != count($pages) - 1){
 	    renderFooterSeparator();
 	}

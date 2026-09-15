@@ -110,7 +110,7 @@ br {
     right: 0;
     width: var(--spiral-size);
     z-index: 4;
-    transition: transform var(--menu-transition);
+    transition: transform var(--menu-transition), filter var(--menu-transition);
     cursor: pointer;
 }
 #h2-menu {
@@ -148,6 +148,7 @@ br {
 }
 .h2-container:has(.open) #h2-menu-spiral {
     transform: rotate(-360deg);
+    filter: saturate(0) brightness(1.4);
 }
 #h2-menu a {
     text-decoration: none;

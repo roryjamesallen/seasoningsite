@@ -17,11 +17,6 @@ function startup(){ // Initialise the page (after headers have been sent)
     if (!isset($root)){
         $root = '';
     }
-    if (isset($popup)){
-        echo '<script>popup = <?php echo json_encode($popup);?></script>';
-    } else {
-        echo '<script>popup = false</script>';
-    }
 }
 function cssVersion(){ // Dynamically update css version of all files
     global $root;
@@ -525,10 +520,10 @@ function renderBurger(){
 }
 function renderTitle($subheading){ // The full page title with logo and stars. The real <h1> is hidden but present for SEO
     renderBurger();
-    echo '<div id="logo-container" class="paragraph star-container" stars="20" star-size="2"><a href="https://seasoning.live"><img loading="eager" id="logo-img" src="images/seasoning-logo-pink.svg" alt="Pink hand drawn logo for Seasoning"></a></div>
+    echo '<div class="logo-padding"></div><div id="logo-container" class="paragraph star-container" stars="20" star-size="2"><a href="https://seasoning.live"><img loading="eager" id="logo-img" src="images/seasoning-logo-pink.svg" alt="Pink hand drawn logo for Seasoning"></a></div>
     <h1 style="display: none">Seasoning - Rave Culture is Folk Culture</h1></a>';
     if ($subheading != ''){
-        echo '<h2>'.$subheading.'</h2>';
+        echo '<h2 class="h2-main">'.$subheading.'</h2>';
     }
     echo '<style>.fixr-links-widget { --fixr-primary: var(--pink); }</style>';
 }

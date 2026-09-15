@@ -53,7 +53,7 @@
     --h1-size: 8rem;
     --h1-margin-sides: -5.25rem;
 
-    --spiral-size: 5rem;
+    --spiral-size: 3rem;
     --menu-padding: 1rem;
     --menu-transition: 0.5s;
 }
@@ -98,8 +98,9 @@ br {
 }
 .h2-container {
     position: absolute;
-    top: var(--menu-padding);
-    right: var(--menu-padding);
+    top: calc(var(--menu-padding) * 2);
+    right: calc(var(--menu-padding) * 2);
+    width: calc(100% - var(--menu-padding));
 }
 #h2-menu, #h2-menu-spiral {
     position: absolute;
@@ -110,6 +111,7 @@ br {
     width: var(--spiral-size);
     z-index: 4;
     transition: transform var(--menu-transition);
+    cursor: pointer;
 }
 #h2-menu {
     z-index: 3;
@@ -117,8 +119,7 @@ br {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    transform: translate(0, 100%);
-    bottom: calc(var(--menu-padding) + var(--spiral-size));
+    top: calc(0px - var(--menu-padding));
     right: calc(0px - var(--menu-padding));
     padding: var(--menu-padding);
     background-color: rgba(0,0,0,0.9);
@@ -126,15 +127,19 @@ br {
     box-sizing: border-box;
     border: 2px solid var(--white);
     border-radius: calc(var(--spiral-size) / 2);
-    transition: opacity var(--menu-transition), width var(--menu-transition);
+    transition: opacity var(--menu-transition), width var(--menu-transition), max-height var(--menu-transition), font-size var(--menu-transition);
 }
 #h2-menu:not(.open){
-    width: 0;
+    width: var(--spiral-size);
+    max-height: var(--spiral-size);
     opacity: 0;
+    font-size: 0;
     pointer-events: none;
 }
 #h2-menu.open {
-    width: calc(100% + var(--menu-padding));
+    width: calc(100% - var(--menu-padding));
+    max-height: 100vh;
+    font-size: 2rem;
     opacity: 1;
     pointer-events: all;
 }
@@ -145,7 +150,7 @@ br {
     text-decoration: none;
     width: fit-content;
     font-family: BlackBeard;
-    font-size: 2rem;
+    
 }
 #h2-menu img {
     display: none;
@@ -159,6 +164,9 @@ h2 {
     margin: 0 auto;
     width: var(--page-width);
     font-family: var(--title-font);
+}
+.h2-main {
+    margin: -1rem auto 0;
 }
 h3 {
     z-index: 1;
@@ -702,10 +710,14 @@ h1.moving-children  > * {
     height: 1rem;
 }
 
+.logo-padding {
+    height: 3rem;
+}
 #logo-container {
     position: relative;
-    margin-top: 3rem;
     z-index: 2;
+    margin-left: calc(calc(100% - var(--page-width)) / 2);
+    width: var(--page-width);
 }
 .logo-star {
     position: absolute;
@@ -993,6 +1005,12 @@ h1.moving-children  > * {
     }
     html {
 	font-size: 15px;
+    }
+    #logo-container {
+	width: calc(var(--page-width) * 0.8);
+    }
+    .logo-padding {
+	height: 1.35rem;
     }
     h2 {
 	font-size: 3rem;

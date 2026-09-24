@@ -1,54 +1,53 @@
-+ htmx
-
+* TODO
 ** gallery
-+ day heavy
-+ add ike's photos mix with sam's - put credit at the bottom
-+ subcategories
-+ goods yard goods shed sva (?) SVA needs naming etc for venues (map)
-+ sva up "the nest"
-+ sva down "?"
-+ community build -
+*** TODO day heavy
+*** TODO add ike's photos mix with sam's - put credit at the bottom
+*** TODO subcategories
+*** TODO goods yard goods shed sva (?) SVA needs naming etc for venues (map)
+*** TODO sva up "the nest"
+*** TODO sva down "?"
+*** TODO community build -
 
 ** festival section
-+ looping video of spiral
-+ hand drawn (like main logo) of 'seasoning festival 2027' in the middle
-+ maybe exclude from past events
-+ add wizard - not full opacity / going across multiple sections / mask-image
+*** TODO looping video of spiral
+*** TODO hand drawn (like main logo) of 'seasoning festival 2027' in the middle
+*** TODO maybe exclude from past events
+*** TODO add wizard - not full opacity / going across multiple sections / mask-image
 
 ** mixes
-+ add more mixes - go to mixcloud with everything (not soundcloud)
-+ severine
-+ ostad
-+ tim reaper (once live)
-+ player at bottom of page - thin embed - click play change to pause but real player pops up at the bottom
+*** TODO add more mixes - go to mixcloud with everything (not soundcloud)
+*** TODO severine
+*** TODO ostad
+*** TODO tim reaper (once live)
+*** TODO player at bottom of page - thin embed - click play change to pause but real player pops up at the bottom
 
-+ remove artist pages and just link to instagram
+*** TODO remove artist pages and just link to instagram
 
 ** merch
-+ merch - sold out (coming soon) - add asap
-+ clobber@seasoning.live
+*** TODO merch - sold out (coming soon) - add asap
+*** TODO clobber@seasoning.live
 
 ** about seasoning page
-+ philoshopy, impacts, why Stroud?
-+ rework but take from manifesto
+*** TODO philoshopy, impacts, why Stroud?
+*** TODO rework but take from manifesto
 
 ** faq
-+ india can write copy asap
+*** TODO india can write copy asap
 
 ** contact section
-+ contact us with emails - only bookings production
-+ emails fix profile photos
+*** TODO contact us with emails - only bookings production
+*** TODO emails fix profile photos
 
 ** landing page for festival - set the vibe
-+ waking life as example
-+ map as landing page - links to venue lineups, shuttle bus times + camping information
+*** TODO waking life as example
+*** TODO map as landing page - links to venue lineups, shuttle bus times *** TODO camping information
 
 ** dates
-+ Thu 15 Oct - full announcement with strong seasoning fest 2027 video etc
-  + website - teaser
-+ Thu 22 Oct - strongest photography ever, mixcloud carousel
-+ Tue 27 Oct - tickets aim to get on sale payday week - 100 tickets maybe and sell out early bird
+*** TODO Thu 15 Oct - full announcement with strong seasoning fest 2027 video etc
+  *** TODO website - teaser
+*** TODO Thu 22 Oct - strongest photography ever, mixcloud carousel
+*** TODO Tue 27 Oct - tickets aim to get on sale payday week - 100 tickets maybe and sell out early bird
 
 ** analytics
-+ metapixel - need login from fraser
-+ conversion api - after metapixel
+*** TODO metapixel - need login from fraser
+*** TODO conversion api - after metapixel

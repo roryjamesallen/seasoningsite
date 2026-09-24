@@ -80,7 +80,7 @@ include '../../lib.php';
 	    <?php
 	    renderPageBreak(1, 'primary');
 	    ?>
-	    <img class="figure" src="images/manifesto/figure-1.png">
+	    <img class="figure page-width" src="images/manifesto/figure-1.png">
 	    <span class="page-width figure-caption"><strong>Figure 1:</strong> From continuum to archipelago: a schematic shift from linear genre succession toward a distributed network of scenes, with Stroud as a local node rather than a peripheral afterthought.</span>
 	</div>
 	<?php renderPageBreak(2, 'secondary'); ?>
@@ -102,7 +102,7 @@ include '../../lib.php';
 	    <div class="paragraph">
 		<span>A dancefloor worth building has to think about hospitality. Not hospitality in the shallow sense of service, but in the deeper ethical sense given to it by Emmanuel Levinas: the room as a site of encounter with the stranger. Here the other is not reduced to the familiar. The challenge is to remain open without demanding sameness in return. Rave does not dissolve difference. At its best it suspends the demand to resolve it.</span><span>This matters because Seasoning is not trying to produce a closed local identity. It is trying to build a room in which strangers can arrive carrying other places inside them. The host is changed by that arrival. The room is changed by it too. A local scene becomes durable not by purifying itself but by learning how to receive pressure, unfamiliarity and the social risk of encounter.</span>
 	    </div>
-	    <img class="figure" src="images/manifesto/figure-2.png">
+	    <img class="figure page-width" src="images/manifesto/figure-2.png">
 	    <span class="page-width figure-caption"><strong>Figure 2:</strong> Hospitality as threshold relation: the room does not erase difference; it learns to hold it.</span>
 	</div>
 	<?php renderPageBreak(2, 'secondary'); ?>
@@ -124,7 +124,7 @@ include '../../lib.php';
 		<span class="ref-content" style="flex-basis: 100%;"><span class="ref">2. </span>Bookchin helps here: ecology is never just nature. It is always also the pattern of relations that a community makes and inherits. In this expanded sense, a scene has an ecology too.</span><span><a href="https://www.instagram.com/brown.exe.uk">Brown Excellence</a> makes another necessary intervention. Their project does not simply insert South Asian identity into UK club culture. It restructures the frame. Zain Shah and Rishi Bagdai map a continuum that runs from Bollywood and bhangra through dubstep, techno and UKG into a bass practice that is texturally complex, politically alert and irreducibly hybrid because hybridity is the condition, not the exception. Their own framing wrestles with the pressure to represent a whole scene or culture just to be understood, while their sets make South and West Asian genealogies newly audible inside Bristol’s and Britain’s bass histories. In analytic terms, Brown Excellence does not diversify the room from outside. It recomposes its memory from within.</span>
 		<span style="flex-basis: 100%;" class="figure-caption">Diaspora is not an accent. It is infrastructure, and also a method of hearing otherwise.</span>
 	    </div>
-	    <img class="figure" src="images/manifesto/figure-3.png">
+	    <img class="figure page-width" src="images/manifesto/figure-3.png">
 	    <span class="page-width figure-caption"><strong>Figure 3:</strong> A social-ecological sketch of the room: from place and weather, through venues, neighbours and councils, into crews, artists, listeners, stewards, afterglow and archive.</span>
 	</div>
 	<?php renderPageBreak(2, 'secondary'); ?>
@@ -138,7 +138,7 @@ include '../../lib.php';
 	    <?php
 	    renderPageBreak(1, 'primary');
 	    ?>
-	    <img class="figure" src="images/manifesto/figure-4.png">
+	    <img class="figure page-width" src="images/manifesto/figure-4.png">
 	    <span class="page-width figure-caption"><strong>Figure 4:</strong> The soundsystem as boundary object: one stack, many publics held in
 		temporary relation.</span>
 	    <br>
@@ -169,9 +169,9 @@ include '../../lib.php';
 	    ?>
 	    <h2>VIII. Figure Plate</h2>
 	    <br>
-	    <img class="figure" src="images/manifesto/figure-5.png"><br>
+	    <img class="figure page-width" src="images/manifesto/figure-5.png"><br>
 	    <span class="page-width figure-caption"><strong>Figure 5:</strong> Moon phase circle culminating in the 31 May 2026 blue moon, with dated phases distributed around the orbit and a ray extending inward to Stroud as both site and concept.</span><br>
-	    <img class="figure" src="images/manifesto/figure-6.png">
+	    <img class="figure page-width" src="images/manifesto/figure-6.png">
 	    <span class="page-width figure-caption"><strong>Figure 6:</strong> British Isles outline without national borders, labelled by partner-city nodes and by fugitive routes flowing along rail and road corridors into Stroud.</span>
 	</div>
 	<?php renderPageBreak(2, 'secondary'); ?>

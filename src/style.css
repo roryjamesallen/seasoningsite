@@ -319,6 +319,9 @@ span:empty {
 .goo-minor {
     filter: blur(1.5px) contrast(10);
 }
+.full-width {
+    flex-basis: 100%;
+}
 .paragraph-html {
     position: relative;
 }

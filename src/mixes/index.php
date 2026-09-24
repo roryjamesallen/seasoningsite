@@ -15,6 +15,13 @@ include '../../lib.php';
     <body>
 	<?php renderTitle('Mixes'); ?>
 
+	<?php renderOverlayBreak('tertiary', 'Matt Pond', 'break-padding'); ?>
+	<div class="paragraph">
+	    <div><h3 style="display: inline; color: var(--pink)">Matt Pond / Deep Systems</h3> Matt Pond / Deep Systems recorded during Lovellious’ Love Cuts takeover at <a href="event/festival-2026">Seasoning Festival 2026</a>, tucked between Amelie and Lovellious b2b XL Regular + Shy One, before Bake and Spirit took us into the evening. A particularly ambrosial few hours, if memory serves. Anyone familiar with Matt’s Deep Systems mixes or his endless Discogs excavations will know the method. Patient selections, odd little connections, nothing in too much of a hurry to explain itself. By Sunday afternoon the festival had found that peculiar loose-limbed rhythm of its own. Matt understood the assignment.</div>
+	    <iframe width="100%" height="400" src="https://player-widget.mixcloud.com/widget/iframe/?feed=%2FSeas0ning%2Fseason%25C9%25AAng007-matt-pond-l%25C9%25AAve-from-season%25C9%25AAng-fest%25C9%25AAval-2026%2F&utm_medium=share&utm_source=embed&utm_content=show&utm_term=MWYxNDhjM2VfY2RkOV80YmI1X2FhNGZfNmVlNGIyZGE0YTc5" frameborder="0" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;" ></iframe>
+	    <br>
+	</div>
+	
 	<?php renderOverlayBreak('secondary', 'Om Unit', 'break-padding'); ?>
 	<div class="paragraph">
 	    <div><h3 style="display: inline; color: var(--pink)">Om Unit</h3> closes <a href="event/festival-2026">Seasoning Festival 2026</a> as part of the Spirit takeover, recorded live on Sunday night in Stroud. Our first post-festival contribution to the Seasoning mix series begins where the weekend ended: in the final stretch of a room still moving, still open, still finding new reserves of energy after three days together.</div>

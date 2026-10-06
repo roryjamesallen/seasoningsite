@@ -9,9 +9,8 @@ if (isset($_POST['signup'])){
 	//$old_emails = [];
 	if (!isset($old_emails[$_POST['email']])){ // Only submit if not already submitted
 	    $old_emails[$_POST['email']] = array('time'=>date('c'), 'ip'=>$_SERVER['REMOTE_ADDR']);
-	    file_put_contents('../../emails.json', json_encode($old_emails));
+	    file_put_contents('../../merch-emails.json', json_encode($old_emails));
 	}
-	$_SESSION['create_popup_cookie'] = 'true';
 	header('Location: ?msg=Signed+up!');
     } else {
 	header('Location: ?e=Please+enter+a+valid+email+address!');

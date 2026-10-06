@@ -25,33 +25,58 @@ include '../../lib.php';
 	</h2>
 	<br>
 	<div class="paragraph faq-container">
-	    <h3>When is the next festival?</h3>
+
+	    <h3>When?</h3>
 	    <p>27th - 30th May 2027</p>
-	    <h3>Where is it?</h3>
-	    <p>Seasoning Festival takes place across the beautiful Stroud, in the heart of the Cotswolds, GL5 3AP.</p>
-	    <h3>How do I get there?</h3>
+	    <h3>Where?</h3>
+	    <p><a href="https://www.openstreetmap.org/node/21369320#map=13/51.74481/-2.21821">Stroud.</a></p>
+	    <h3>Camping</h3>
 	    <p>
-		<strong>• By Car</strong><br>
-		If you’re coming by car, you’ll need to purchase a car parking pass. 
-		There is not a great deal of space and we’re keen to reduce our carbon footprint, so book early and car share.<br>
-		<strong>• By Train</strong><br>
-		If you’re coming by train, our venues are located a stones throw from Stroud Train Station. 
-		You can hop on a bus to the campsite.<br>
-		<strong>• By Bus</strong><br>
-		There are many bus stops coming from Bristol, Cheltenham, Gloucester etc all across Stroud. Find the service for you here.<br>
-		<strong>• By Taxi</strong><br>
-		There is a taxi rank outside, a list of taxi services here. 
-		Stroud also has Uber.
+		Camping is included with your entry ticket.<br>
+		Exact location released at a later date.<br>
+		Live in vehicle passes released at a later date.
 	    </p>
-	    <h3>Can I camp?</h3>
-	    <p>Camping is included with your entry ticket, you need to bring your own camping equipment. We ask that everyone leaves site by 12pm on Tuesday 1st June. There are no showers on site.<br>
-		<strong>Camper Vans</strong><br>
-		You can bring your camper van if you purchase a Camper Van Pass. 
-		Non-live-in vans are not permitted in the campsite.
-	    </p>
-	    <h3>Can I bring my pet?</h3>
+	    <h3>Tickets</h3>
 	    <p>
-		Animals are not allowed on the festival site, with the exception of service animals.
+		Your ticket will be sent via your ticketing platform.<br>
+		Tickets are non-refundable.<br>
+		A small selection of day tickets released at a later date.
+	    </p>
+	    <h3>Accreditation</h3>
+	    <p>
+		Accreditation will be open 12:00 - 22:00 each day.<br>
+		After 22:00, there will be no first time entries.
+	    </p>
+	    <h3>Water Points</h3>
+	    <p>Water available at all of our bars and campsite.</p>
+	    <h3>Food</h3>
+	    <p>
+		We have multiple food vendors on site.<br>
+		A small selection of discounted local spots released at a later date.
+	    </p>
+	    <h3>Alcohol</h3>
+	    <p>
+		You may bring alcohol to our campsite but not into our venues.<br>
+		All our venues have their own bar.
+	    </p>
+	    <h3>Accessibility</h3>
+	    <p>
+		Most of our venues are wheelchair accessible.<br>
+		We offer companion tickets.<br>
+		For more information email India@seasoning.live.<br>
+	    </p>
+	    <h3>Leave No Trace</h3>
+	    <p>
+		Look after our home.<br>
+		Use the bins, recycle where you can.<br>
+		Stub and bin your cigs.<br>
+		Take everything home.
+	    </p>
+	    <h3>Get Involved</h3>
+	    <p>For work / volunteering / vendors / PR and more, introduce yourself at India@seasoning.live</p>
+	    <h3>WhatsApp Community</h3>
+	    <p>
+		For more information and regular updates, join our WhatsApp Community <a href="https://chat.whatsapp.com/EILf1gofVFmHHWf35QEoXB">here</a>
 	    </p>
 	</div>
 	</div>

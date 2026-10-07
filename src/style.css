@@ -3,6 +3,10 @@
     src: url('fonts/BroadSheetRegular.ttf');
 }
 @font-face {
+    font-family: GaramonoRegular;
+    src: url('fonts/GaramonoRegular.otf');
+}
+@font-face {
     font-family: Cormorant;
     src: url('fonts/Cormorant.ttf');
 }
@@ -62,7 +66,7 @@
     --menu-transition: 0.5s;
 }
 html {
-    font-family: Cormorant;
+    font-family: GaramonoRegular;
     color: var(--beige);
 }
 body {

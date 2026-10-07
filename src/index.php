@@ -23,12 +23,11 @@ include '../lib.php';
     <?php echo $analytics ?>
     
     <body>
-	<?php renderTitle('Rave Culture is<br>Folk Culture');?>
+	<?php renderTitle('<img src="images/icons/rave-culture-is-folk-culture.svg" class="rave-culture-icon">');?>
 
 	<div href="event/festival-2027" class="no-underline banner-content">
         <video width="1920" height="1080" class="banner-image" muted autoplay playsinline loop>
-        <source src="images/loop.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+            <source src="images/loop.mp4" type="video/mp4">
         </video>
 	    <?php renderPageBreak(1, 'primary'); ?>
 	    <h2 class="centred"></h2>

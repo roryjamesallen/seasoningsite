@@ -1,4 +1,8 @@
 @font-face {
+    font-family: BroadsheetRegular;
+    src: url('fonts/BroadSheetRegular.ttf');
+}
+@font-face {
     font-family: Cormorant;
     src: url('fonts/Cormorant.ttf');
 }
@@ -58,7 +62,7 @@
     --menu-transition: 0.5s;
 }
 html {
-    font-family: PPMori;
+    font-family: Cormorant;
     color: var(--beige);
 }
 body {
@@ -95,6 +99,9 @@ body::before {
 }
 br {
     height: 0.5rem;
+}
+.rave-culture-icon {
+    width: 20rem;
 }
 .h2-container {
     position: absolute;
@@ -1068,6 +1075,9 @@ h1.moving-children  > * {
     }
     .page-break-overlay h2 {
 
+    }
+    .rave-culture-icon {
+	width: 40%;
     }
 }
 @media screen and (max-width: 1000px){

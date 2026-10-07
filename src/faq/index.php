@@ -13,7 +13,7 @@ include '../../lib.php';
     </head>
     <?php echo $analytics ?>
     <body>
-	<?php renderTitle('FAQs!'); ?>
+	<?php renderTitle('FAQs'); ?>
         
 	<div class="secondary-background">
 	    <?php

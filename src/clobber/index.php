@@ -3,6 +3,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+if (!isset($_GET['code']) or $_GET['code'] != '902713957356037174235233235'){
+    header('Location: https://seasoning.live/404');
+}
+
 if (isset($_POST['signup'])){
     if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 	$old_emails = json_decode(file_get_contents('../../merch-emails.json'), true);

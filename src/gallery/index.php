@@ -1,5 +1,6 @@
  <?php
 header('Location: https://seasoning.live/404');
+exit();
 $root = '../';
 include '../../lib.php';
 ?>

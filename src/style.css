@@ -101,7 +101,7 @@ br {
     height: 0.5rem;
 }
 .rave-culture-icon {
-    width: 20rem;
+    width: 45rem;
 }
 .h2-container {
     position: absolute;
@@ -1077,7 +1077,7 @@ h1.moving-children  > * {
 
     }
     .rave-culture-icon {
-	width: 40%;
+	width: 80%;
     }
 }
 @media screen and (max-width: 1000px){

@@ -13,7 +13,7 @@ include '../../lib.php';
     </head>
     <?php echo $analytics ?>
     <body>
-	<?php renderTitle('Contact Us!'); ?>
+	<?php renderTitle('Contact Us'); ?>
 	<div class="paragraph">
 	    <div>
 		<div class="footer-links big-links justify-left">

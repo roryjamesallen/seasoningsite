@@ -12,14 +12,14 @@ include '../../../lib.php';
     <head>
 	<base href="../../">
 	<?php
-	renderSEO('Thanks for your order!', 'https://seasoning.live/clobber/thanks', 'Thanks for your order!');
+	renderSEO('Thanks for your order', 'https://seasoning.live/clobber/thanks', 'Thanks for your order');
 	?>
 	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
      <meta name="robots" content="noindex">
     </head>
     <?php echo $analytics ?>
     <body>
-	<?php renderTitle('<span style="display: block; text-align: center">Thanks for your order!</span>'); ?>
+	<?php renderTitle('<span style="display: block; text-align: center">Thanks for your order</span>'); ?>
         <br><br>
 	<div class="paragraph">
 

@@ -29,9 +29,9 @@ function startMailingListForm($POST){
                 file_put_contents($filename, json_encode($old_emails));
             }
             $_SESSION['create_popup_cookie'] = 'true';
-            header('Location: ?msg=Signed+up!');
+            header('Location: ?msg=Signed+up');
         } else {
-            header('Location: ?e=Please+enter+a+valid+email+address!');
+            header('Location: ?e=Please+enter+a+valid+email+address');
         }
     }
 }
@@ -173,9 +173,9 @@ function generateFIXRLink($fixr_id){ // Function used in case the FIXR link form
 function generateDaysRemaining($date){ // Generate text to say how many days left (or event been and gone) based on event date
     $days_remaining = floor((strtotime($date) - strtotime(date('Y-m-d'))) / 86400); // Floor so that if the event is later in the day tomorrow it won't round up to 2 days
     if ($days_remaining == 0){
-        $text = '(Today!)';
+        $text = '(Today)';
     } else if ($days_remaining == 1){
-        $text = '(Tomorrow!)';
+        $text = '(Tomorrow)';
     } else if ($days_remaining < 0){
         $text = '(This event has been and gone)';
     } else {

@@ -63,7 +63,7 @@ include '../../lib.php';
 	    <p>
 		Most of our venues are wheelchair accessible.<br>
 		We offer companion tickets.<br>
-		For more information email India@seasoning.live.<br>
+		For more information email production@seasoning.live.<br>
 	    </p>
 	    <h3>Leave No Trace</h3>
 	    <p>
@@ -73,7 +73,7 @@ include '../../lib.php';
 		Take everything home.
 	    </p>
 	    <h3>Get Involved</h3>
-	    <p>For work / volunteering / vendors / PR and more, introduce yourself at India@seasoning.live</p>
+	    <p>For work / volunteering / vendors / PR and more, introduce yourself at production@seasoning.live</p>
 	    <h3>WhatsApp Community</h3>
 	    <p>
 		For more information and regular updates, join our WhatsApp Community <a href="https://chat.whatsapp.com/EILf1gofVFmHHWf35QEoXB">here</a>

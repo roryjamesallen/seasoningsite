@@ -37,7 +37,7 @@ include '../../lib.php';
 		</div>
 		<div>
 		    <h3>Production</h3>
-		    <p>Or email production@seasoning.live for anything relating to other Seasoning goings on!</p>
+		    <p>Or email production@seasoning.live for any work / volunteering / vendors / PR or other related enquiries.</p>
 		</div>
 	    </div>
 	</div>

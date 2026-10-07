@@ -13,23 +13,16 @@ include '../../lib.php';
     </head>
     <?php echo $analytics ?>
     <body>							
-	<?php renderTitle(''); ?>
-	<br><br><br>
+	<?php renderTitle('Gallery'); ?>
+	<div class="page-width">
 	<?php
-	renderOverlayBreak('primary', 'Goods Shed');
-	renderGallery('goods-shed');
-	renderOverlayBreak('tertiary', 'Goods Yard');
-	renderGallery('goods-yard');
-	renderOverlayBreak('fourth', 'The Bur');
-	renderGallery('the-bur');
-	renderOverlayBreak('primary', 'The Nest');
-	renderGallery('the-nest');
-	renderOverlayBreak('secondary', 'Loganberry');
-	renderGallery('loganberry');
-	renderOverlayBreak('tertiary', 'Community Build');
-	renderGallery('community-build');
-	renderOverlayBreak('primary');
-	?>
+	foreach (scandir('../images/gallery') as $file){
+	    if (str_contains($file, '.jpg')){
+		echo '<img class="gallery-image-full-width" src="./images/gallery/'.$file.'">';
+	    }
+	};	
+        ?>
+        </div>
 	<br>
 	<div class="paragraph">
 	    <?php renderPhotoCredits(); ?>

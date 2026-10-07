@@ -4,7 +4,7 @@
 //error_reporting(E_ALL);
 date_default_timezone_set("Europe/London");
 
-$FOOTER_MENU = ['Events','Mixes','Clobber','Gallery','FAQ','Contact'];
+$FOOTER_MENU = ['Events','Mixes','Clobber','Manifesto','FAQ','Contact'];
 
 $CREDITS = array(
     'pitchsnookhams' => 'pink',
@@ -18,6 +18,24 @@ function startup(){ // Initialise the page (after headers have been sent)
         $root = '';
     }
 }
+function startMailingListForm($POST){
+    if (isset($POST['signup'])){
+        if (filter_var($POST['email'], FILTER_VALIDATE_EMAIL)){
+            $filename = __DIR__.'/emails.json';
+            $old_emails = json_decode(file_get_contents($filename), true);
+            //$old_emails = [];
+            if (!isset($old_emails[$POST['email']])){ // Only submit if not already submitted
+                $old_emails[$POST['email']] = array('time'=>date('c'), 'ip'=>$_SERVER['REMOTE_ADDR']);
+                file_put_contents($filename, json_encode($old_emails));
+            }
+            $_SESSION['create_popup_cookie'] = 'true';
+            header('Location: ?msg=Signed+up!');
+        } else {
+            header('Location: ?e=Please+enter+a+valid+email+address!');
+        }
+    }
+}
+
 function cssVersion(){ // Dynamically update css version of all files
     global $root;
     echo file_get_contents($root.'css-version.txt');
@@ -174,6 +192,21 @@ function generateDaysRemaining($date){ // Generate text to say how many days lef
 
 // ==== RENDERING FUNCTIONS (Echo actual HTML) ====
 
+function renderMailingListForm($GET, $text="Sign up to the mailing list"){
+    echo '<form method="POST" class="stock-notification-form show">
+		<h2>'.$text.'</h2>
+		<p class="error">';
+    if (isset($GET['e'])){
+        echo $GET['e'];
+    }
+    echo '</p><p class="message">';
+    if (isset($GET['msg'])){
+        echo $GET['msg'];
+    }
+    echo '</p><input type="email" name="email" placeholder="you@example.com">
+		<input type="submit" value="Sign Up" name="signup">
+	    </form>';
+}
 function renderGallery($gallery_name){
     echo '<div class="gallery-container">';
     echo '<div class="gallery">';
@@ -535,6 +568,7 @@ function renderTitle($subheading){ // The full page title with logo and stars. T
     function renderSEO($title='Seasoning - Rave Culture is Folk Culture', $canonical='https://seasoning.live', $description='Rave Culture is Folk Culture. Building durable scenes in a thriving dance music ecosystem, inspired by the spirit of rave.', $favicon_path='favicon'){ // HTML head content for SEO, favicon, and stylesheets etc
 	echo '
 <meta charset="utf-8">
+
      <meta name="description" content="'.$description.'">
      <meta property="og:title" content="Seasoning - Live Events">
      <meta property="og:description" content="'.$description.'">

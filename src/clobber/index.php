@@ -44,13 +44,11 @@ include '../../lib.php';
 		 hostedButtonId: "KJE3R63X4RYD8",
 	     }).render("#paypal-container-KJE3R63X4RYD8")
 	    </script>
-
-	    <form method="POST" class="stock-notification-form">
-		<h2>Get notified when we get new stock!</h2>
-		<p class="error"><?php if (isset($_GET['e'])){ echo $_GET['e']; } ?></p>
-		<input type="email" name="email" placeholder="you@example.com">
-		<input type="submit" value="Sign Up" name="signup">
-	    </form>
+        
+<?php
+        startMailingListForm($_POST);
+renderMailingListForm($_GET, "Get notified when we get new stock!");
+?>
 
 	</div>
 	</div>

@@ -26,7 +26,7 @@ include '../lib.php';
 	<?php renderTitle('Rave Culture is<br>Folk Culture');?>
 
 	<div href="event/festival-2027" class="no-underline banner-content">
-        <video width="1920" height="1080" class="banner-image" autoplay muted loop>
+        <video width="1920" height="1080" class="banner-image" muted autoplay playsinline loop>
         <source src="images/loop.mp4" type="video/mp4">
         Your browser does not support the video tag.
         </video>

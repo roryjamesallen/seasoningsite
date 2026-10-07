@@ -221,7 +221,7 @@ hr {
     margin: 0;
 }
 .paypal select {
-    font-family: Cormorant !important;
+    font-family: GaramonoRegular !important;
     font-size: 1.25rem !important;
     background-color: transparent;
     color: white;
@@ -273,9 +273,21 @@ hr {
     margin-bottom: 0.75rem;
     text-align: center;
 }
+
+.stock-notification-form .error {
+    border: 2px solid var(--red);
+    width: fit-content;
+    width: 20rem;
+    padding: 0.5rem;
+    margin: 0 auto 0.75rem !important;
+    box-sizing: border-box;
+}
 .stock-notification-form .error, .stock-notification-form .message {
     text-align: center;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+.stock-notification-form .error:empty, .stock-notification-form .message:empty {
+    display: none;
 }
 .stock-notification-form input {
     font-size: 1.25rem;
@@ -283,11 +295,14 @@ hr {
   background-color: transparent;
   color: white;
   padding: 0.5rem 1.85rem 0.5rem 0.75rem;
-  font-family: Cormorant;
+  font-family: BlackBeard;
   width: 20rem;
   display: block;
   box-sizing: border-box;
   margin: 0 auto 0.75rem;
+}
+.stock-notification-form input[type="email"] {
+    font-family: GaramonoRegular;
 }
 span:empty {
     display: block;
@@ -789,7 +804,7 @@ h1.moving-children  > * {
 #popup > form > input[type=email] {
     padding: 0.5rem 0;
     width: 0;
-    font-family: Cormorant;
+    font-family: GaramonoRegular;
     font-size: 1.25rem;
     color: var(--black);
 }
@@ -860,7 +875,7 @@ h1.moving-children  > * {
     filter: unset;
 }
 .error, .message {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 0;
 }
 

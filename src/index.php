@@ -30,7 +30,7 @@ include '../lib.php';
             <source src="images/loop.mp4" type="video/mp4">
         </video>
 	    <?php renderPageBreak(1, 'primary'); ?>
-	    <h2 class="centred"></h2>
+	    <h2 class="centred" style="pointer-events: none"></h2>
 	    <?php renderPageBreak(2, 'primary', true); ?>
 	</div>
 <br>

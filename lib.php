@@ -213,7 +213,7 @@ function renderGallery($gallery_name){
     $files = scandir('../images/gallery/'.$gallery_name);
     sort($files);
     foreach ($files as $filename){
-	if (str_contains($filename, '.jpg')){
+	if (strpos($filename, '.jpg') !== false){
 	    renderPhoto($gallery_name.'/'.$filename, altFromFilename($filename), creditFromFilename($filename));
 	}
     }
@@ -533,7 +533,7 @@ function renderMenu($pages, $links=null){
 	    $link = strtolower($page);
 	}
     echo $link.'" ';
-    if (str_contains($_SERVER['REQUEST_URI'], $link)){
+    if (strpos($_SERVER['REQUEST_URI'], $link) !== false){
         echo 'class="active-page"';
     }
 	echo '>'.$page.'</a>';

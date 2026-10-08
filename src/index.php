@@ -9,6 +9,7 @@ $_SESSION['create_popup_cookie'] = 'false';
 }
 
 include '../lib.php';
+startMailingListForm($_POST);
 ?>
 <!DOCTYPE html>
 <?php startup();?>
@@ -34,8 +35,7 @@ include '../lib.php';
 	    <?php renderPageBreak(2, 'primary', true); ?>
 	</div>
 <br>
-<?php startMailingListForm($_POST);
-        renderMailingListForm($_GET); ?>
+<?php renderMailingListForm($_GET); ?>
 	
     </body>
     

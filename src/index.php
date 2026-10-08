@@ -26,7 +26,7 @@ include '../lib.php';
 	<?php renderTitle('<img src="images/icons/rave-culture-is-folk-culture.svg" class="rave-culture-icon">');?>
 
 	<div href="event/festival-2027" class="no-underline banner-content">
-        <video width="1920" height="1080" class="banner-image" preload="auto" muted autoplay playsinline loop>
+        <video width="1920" height="1080" class="banner-image" preload="auto" muted autoplay playsinline loop muted="muted" playsinline="playsinline">
             <source src="images/loop.mp4" type="video/mp4">
         </video>
 	    <?php renderPageBreak(1, 'primary'); ?>

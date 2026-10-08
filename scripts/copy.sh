@@ -1,5 +1,6 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd ) # Get the path of this script
 ssh seasoning@seasoning.live '
+rm -rf tmp/* &&
 mv public_html/cgi-bin tmp/ &&
 mv public_html/php.ini tmp/ &&
 mv public_html/.htaccess tmp/ &&

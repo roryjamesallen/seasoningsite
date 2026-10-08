@@ -16,6 +16,8 @@ startMailingListForm($_POST);
 	renderSEO('Clobber', 'https://seasoning.live/clobber', 'Wear Rave Culture is Folk Culture on your chest.');
 	?>
 	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
+
+	
 	<script 
 	    src="https://www.paypal.com/sdk/js?client-id=BAAG1rDK9Lt0FDRPXSliNfUOupFjPni_QLvsxRsMwm8ziJJfzR2zZcuj2b41S6kfTPRZlTy5OMKfsSdXic&components=hosted-buttons&disable-funding=venmo&currency=GBP">
 	</script>
@@ -23,14 +25,14 @@ startMailingListForm($_POST);
     <?php echo $analytics ?>
     <body>
 	<?php renderTitle('Clobber'); ?>
-	<div class="paragraph">
+	<div class="paragraph paypal">
 
-	    <div id="paypal-container-KJE3R63X4RYD8" class="paypal"></div>
-	    <script>
-	     paypal.HostedButtons({
-		 hostedButtonId: "KJE3R63X4RYD8",
-	     }).render("#paypal-container-KJE3R63X4RYD8")
-	    </script>
+	    <div id="paypal-container-KJE3R63X4RYD8"></div>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "KJE3R63X4RYD8",
+  }).render("#paypal-container-KJE3R63X4RYD8")
+</script>
         
 <?php
 renderMailingListForm($_GET);

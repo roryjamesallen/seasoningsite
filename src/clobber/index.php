@@ -63,3 +63,42 @@ renderMailingListForm($_GET, "Get notified when we get new stock!");
 </html>
 
 <script type="module" src="scripts.js"></script>
+
+<script>
+ const hero = ['01','02'];
+ let started = false;
+ function tim(){
+     const hero_images = document.getElementsByClassName('hero-img');
+     if (hero_images.length != 0){
+	 started = true;
+	 check();
+     } else {
+	 setTimeout(tim, 100);
+	 console.log('timming');
+     }
+ }
+ function check(){
+     const hero_images = document.getElementsByClassName('hero-img');
+     let wait = false;
+     let current_img = 0;
+     for (hero_image of hero_images){
+	 if (hero_image == null){
+	     wait = true;	     
+	 } else {
+	     if (!hero_image.classList.contains('changed')){
+		 hero_image.src = 'images/clobber/SEASONING-TEE-01_' + hero[current_img] + '.jpg';
+		 hero_image.classList.add('changed');
+	     }
+	 }
+	 ++current_img;
+     }
+     if (wait){
+	 setTimeout(check, 100);
+	 console.log('waiting');
+     }
+ }
+ 
+ window.addEventListener('load', function(){
+     //tim();
+ });
+</script>

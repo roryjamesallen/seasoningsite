@@ -219,6 +219,8 @@ hr {
 .paypal #price-text {
     width: fit-content;
     margin: 0;
+    font-size: 1.5rem;
+    font-family: GaramonoRegular;
 }
 .paypal select {
     font-family: GaramonoRegular !important;
@@ -239,7 +241,7 @@ hr {
     display: none !important;
 }
 .paypal label {
-    font-family: BlackBeard;
+    font-family: GaramonoRegular;
     font-size: 1.5rem !important;
 }
 .paypal-card-art {
@@ -867,6 +869,25 @@ h1.moving-children  > * {
 }
 .fixr-link {
     margin-top: 1rem;
+}
+.paypal > div > div {
+    width: 100%;
+}
+.paypal > div > div > .small {
+    max-width: unset !important;
+}
+.paypal .thumbnail-container {
+    display: flex !important;
+    justify-content: center;
+}
+.paypal .hero-img {
+    object-fit: cover !important;
+}
+.paypal .hero-container {
+    border-radius: 0 !important;
+}
+.paypal .hero-container .nav-button {
+    display: none !important;
 }
 .paypal #checkout-button {
     width: 100%;

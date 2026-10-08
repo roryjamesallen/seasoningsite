@@ -873,7 +873,7 @@ h1.moving-children  > * {
 .paypal > div > div {
     width: 100%;
 }
-.paypal > div > div > .small {
+.paypal .small {
     max-width: unset !important;
 }
 .paypal .thumbnail-container {

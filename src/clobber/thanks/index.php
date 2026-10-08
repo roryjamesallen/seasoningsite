@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 $root = '../../';
 include '../../../lib.php';
 
+startMailingListForm($_POST);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,8 +25,7 @@ include '../../../lib.php';
 	<div class="paragraph">
 
 <?php
-     startMailingListForm($_POST);
-renderMailingListForm($_GET);
+     renderMailingListForm($_GET);
 ?>
 
 	</div>

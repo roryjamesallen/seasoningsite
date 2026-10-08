@@ -3,27 +3,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-if (!isset($_GET['code']) or $_GET['code'] != '902713957356037174235233235'){
-    header('Location: https://seasoning.live/404');
-}
-
-if (isset($_POST['signup'])){
-    if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-	$old_emails = json_decode(file_get_contents('../../merch-emails.json'), true);
-	//$old_emails = [];
-	if (!isset($old_emails[$_POST['email']])){ // Only submit if not already submitted
-	    $old_emails[$_POST['email']] = array('time'=>date('c'), 'ip'=>$_SERVER['REMOTE_ADDR']);
-	    file_put_contents('../../merch-emails.json', json_encode($old_emails));
-	}
-	header('Location: ?msg=Signed+up!');
-    } else {
-	header('Location: ?e=Please+enter+a+valid+email+address!');
-    }
-}
-
 $root = '../';
 include '../../lib.php';
 
+startMailingListForm($_POST);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,8 +33,7 @@ include '../../lib.php';
 	    </script>
         
 <?php
-        startMailingListForm($_POST);
-renderMailingListForm($_GET, "Get notified when we get new stock!");
+renderMailingListForm($_GET);
 ?>
 
 	</div>

@@ -4,7 +4,7 @@
 //error_reporting(E_ALL);
 date_default_timezone_set("Europe/London");
 
-$FOOTER_MENU = ['Events','Mixes','Manifesto','FAQ','Contact'];
+$FOOTER_MENU = ['Events','Mixes','Clobber','Manifesto','FAQ','Contact'];
 
 $CREDITS = array(
     'pitchsnookhams' => 'pink',

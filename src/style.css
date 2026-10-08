@@ -882,9 +882,11 @@ h1.moving-children  > * {
 }
 .paypal .hero-img {
     object-fit: cover !important;
+    aspect-ratio: unset !important;
 }
 .paypal .hero-container {
     border-radius: 0 !important;
+    aspect-ratio: unset !important;
 }
 .paypal .hero-container .nav-button {
     display: none !important;

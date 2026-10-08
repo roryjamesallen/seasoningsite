@@ -26,7 +26,7 @@ include '../lib.php';
 	<?php renderTitle('<img src="images/icons/rave-culture-is-folk-culture.svg" class="rave-culture-icon">');?>
 
 	<div href="event/festival-2027" class="no-underline banner-content">
-        <video width="1920" height="1080" class="banner-image" preload="auto" muted autoplay playsinline loop muted="muted" playsinline="playsinline">
+        <video id="video" width="1920" height="1080" class="banner-image" preload="auto" muted autoplay playsinline loop muted="muted" playsinline="playsinline">
             <source src="images/loop.mp4" type="video/mp4">
         </video>
 	    <?php renderPageBreak(1, 'primary'); ?>
@@ -43,3 +43,13 @@ include '../lib.php';
 </html>
 
 <script type="module" src="scripts.js"></script>
+
+<script>
+ window.addEventListener('load', function(){
+     const video = document.getElementById('video');
+     const isVideoPlaying = video => !!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2);
+     if (!isVideoPlaying){
+	 video.play();
+     }
+ });
+</script>

@@ -870,10 +870,36 @@ h1.moving-children  > * {
 .fixr-link {
     margin-top: 1rem;
 }
+
+
+#cart-btn {
+    position: fixed;
+    bottom: calc(var(--menu-padding) * 2);
+    right: calc(var(--menu-padding) * 2);
+    height: unset !important;
+    width: var(--spiral-size) !important;
+    font-family: Garamono;
+    font-size: 1rem !important;
+    letter-spacing: 0.25rem;
+    background-color: transparent;
+    background-image: url(images/icons/shopping-cart.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    aspect-ratio: 1;
+}
+#cart-btn_count {
+    position: absolute;
+    top: 65%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    color: var(--pink);
+}
+
+
 .paypal > div > div {
     width: 100%;
 }
-.paypal .small {
+.paypal .small, .paypal *:not(select) {
     max-width: unset !important;
 }
 .paypal .thumbnail-container {
@@ -891,13 +917,14 @@ h1.moving-children  > * {
 .paypal .hero-container .nav-button {
     display: none !important;
 }
-.paypal #checkout-button {
+.paypal #checkout-button, .paypal .addToCartButtonContainer {
     width: 100%;
     min-height: 3rem;
-    color: var(--pink) !important;
+    color: black !important;
     font-size: 1.5rem !important;
-    background-color: transparent !important;
+    background-color: var(--pink) !important;
     border-radius: 0 !important;
+    font-family: BlackBeard;
 }
 .paypal #checkout-button:hover {
     opacity: 0.75;

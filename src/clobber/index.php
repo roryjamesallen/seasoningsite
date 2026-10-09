@@ -17,21 +17,34 @@ startMailingListForm($_POST);
 	?>
 	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
 
-	
-	<script 
+	<meta name="robots" content="noindex">
+	<!--<script 
 	    src="https://www.paypal.com/sdk/js?client-id=BAAG1rDK9Lt0FDRPXSliNfUOupFjPni_QLvsxRsMwm8ziJJfzR2zZcuj2b41S6kfTPRZlTy5OMKfsSdXic&components=hosted-buttons&disable-funding=venmo&currency=GBP">
-	</script>
+	     </script>-->
+	<script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="R3SRC5S7RP4DJ"></script>
     </head>
     <?php echo $analytics ?>
     <body>
 	<?php renderTitle('Clobber'); ?>
 	<div class="paragraph paypal">
 
+	    <!--
 	    <div id="paypal-container-KJE3R63X4RYD8"></div>
 <script>
   paypal.HostedButtons({
     hostedButtonId: "KJE3R63X4RYD8",
   }).render("#paypal-container-KJE3R63X4RYD8")
+		 </script>-->
+	    <paypal-add-to-cart-button data-id="MUH874RLC5RP2"></paypal-add-to-cart-button>
+<script>
+  cartPaypal.AddToCart({ id: "MUH874RLC5RP2" })
+</script>
+	</div>
+
+	<paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+
+<script>
+  cartPaypal.Cart({ id: "pp-view-cart" })
 </script>
         
 <?php

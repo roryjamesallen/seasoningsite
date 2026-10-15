@@ -16,8 +16,6 @@ startMailingListForm($_POST);
 	renderSEO('Clobber', 'https://seasoning.live/clobber', 'Wear Rave Culture is Folk Culture on your chest.');
 	?>
 	<link rel="stylesheet" href="style.css?v=<?php echo file_get_contents($root.'css-version.txt'); ?>">
-
-	<meta name="robots" content="noindex">
 	<!--<script 
 	    src="https://www.paypal.com/sdk/js?client-id=BAAG1rDK9Lt0FDRPXSliNfUOupFjPni_QLvsxRsMwm8ziJJfzR2zZcuj2b41S6kfTPRZlTy5OMKfsSdXic&components=hosted-buttons&disable-funding=venmo&currency=GBP">
 	     </script>-->

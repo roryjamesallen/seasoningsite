@@ -27,8 +27,27 @@ function startMailingListForm($POST){
             if (!isset($old_emails[$POST['email']])){ // Only submit if not already submitted
                 $old_emails[$POST['email']] = array('time'=>date('c'), 'ip'=>$_SERVER['REMOTE_ADDR']);
                 file_put_contents($filename, json_encode($old_emails));
+
+                $url = 'https://api.sender.net/v2/subscribers';
+                
+                $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNWQ1YmQxZmQwZDI5MjUzZDY2N2U2ODNjMDBiMjg4ZWZkZTE4YzljYTA2MDAwNDA0ZjdkMGU0MTU4YTg4OGQ2ZGUyZDAzNTIxMjVjODg5ZWUiLCJpYXQiOjE3OTE4OTU0NjAuMDgxNjE3LCJuYmYiOjE3OTE4OTU0NjAuMDgxNjIsImV4cCI6NDk0NTQ5NTQ2MC4wNzk0NjcsInN1YiI6IjExMDk5NTgiLCJzY29wZXMiOltdfQ.fGHxUJgE3aXKkArfpZHfqGok5oy0ubi86LRCYvRoBePPiwzW_c4tSFqhP7i1Lx-UbK9QcOWF6VA5Xmm4daOm6k7qoTAkWupkRRSEc4BTEhHYsji7VIs42VmEFVxk-iIoh--Af5RFdXtDMtPVfEP-kbmSsszpkZMhKsTsbVWHn070aHpkaKrr4hWptErcWmmBcWccvlqPeAfLoUwPH32qjzM2dxaYr8cYcpooLCvMcS6lwGkRrGnFSgp3GKYKvzlAYRUb0MtNJ5NKAzpHazhWO_oH_8HC5f5p-izJxjDfySFq0XS7OC0RcE7h5kXuCtoeHlIbjUtt2bRhqHKvQzBtEem4DJjDp51SiPmAZlurrUNbAIX6WUghu2KdE1NEBYEDO-OiLCXeiwkAtm4btv4yh2Lm9bUWoxmg7iqe-C3ZW_3QV4pj6SIwzaVhgPGpYg-p0BZ4CCPy1HVrfzMU_Vk3aw6fk8vd5CAGmyl_XNTs4-WeIsP2HbghbEFReiGAOGwJVloseCJHReJWZWkmN41UT_artAsmVW-uA298Att3TLo_Vb5Wedm_QPK-_GhOwafXPSq8d6Ntawv1rQ9AxfD-KcXSgKCq3sAp4KCTmgI2Kpihv-ErTGRJh4fq51So7HZMFl195NuTPmrOlL_MpaoQyCVs_7RrSP5aCyynfD3sthw';
+
+                $data = array(
+                    "email" => $_POST['email'],
+                    "groups" => 'aKkWZl',
+                    "trigger_automation" => false
+                );
+                $options = array('http' => array(
+                    'method' => 'POST',
+                    'header' =>
+                        'Content-Type: application/json\r\n'.
+                        'Accept: application/json\r\n'.
+                        'Authorization: Bearer '.$token,
+                    'content' => http_build_query($data)
+                ));
+                $context = stream_context_create($options);
+                $response = file_get_contents($url, false, $context);
             }
-            $_SESSION['create_popup_cookie'] = 'true';
             header('Location: ?msg=Signed+up');
         } else {
             header('Location: ?e=Please+enter+a+valid+email+address');

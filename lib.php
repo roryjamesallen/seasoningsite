@@ -29,24 +29,29 @@ function startMailingListForm($POST){
                 file_put_contents($filename, json_encode($old_emails));
 
                 $url = 'https://api.sender.net/v2/subscribers';
-                
-                $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNWQ1YmQxZmQwZDI5MjUzZDY2N2U2ODNjMDBiMjg4ZWZkZTE4YzljYTA2MDAwNDA0ZjdkMGU0MTU4YTg4OGQ2ZGUyZDAzNTIxMjVjODg5ZWUiLCJpYXQiOjE3OTE4OTU0NjAuMDgxNjE3LCJuYmYiOjE3OTE4OTU0NjAuMDgxNjIsImV4cCI6NDk0NTQ5NTQ2MC4wNzk0NjcsInN1YiI6IjExMDk5NTgiLCJzY29wZXMiOltdfQ.fGHxUJgE3aXKkArfpZHfqGok5oy0ubi86LRCYvRoBePPiwzW_c4tSFqhP7i1Lx-UbK9QcOWF6VA5Xmm4daOm6k7qoTAkWupkRRSEc4BTEhHYsji7VIs42VmEFVxk-iIoh--Af5RFdXtDMtPVfEP-kbmSsszpkZMhKsTsbVWHn070aHpkaKrr4hWptErcWmmBcWccvlqPeAfLoUwPH32qjzM2dxaYr8cYcpooLCvMcS6lwGkRrGnFSgp3GKYKvzlAYRUb0MtNJ5NKAzpHazhWO_oH_8HC5f5p-izJxjDfySFq0XS7OC0RcE7h5kXuCtoeHlIbjUtt2bRhqHKvQzBtEem4DJjDp51SiPmAZlurrUNbAIX6WUghu2KdE1NEBYEDO-OiLCXeiwkAtm4btv4yh2Lm9bUWoxmg7iqe-C3ZW_3QV4pj6SIwzaVhgPGpYg-p0BZ4CCPy1HVrfzMU_Vk3aw6fk8vd5CAGmyl_XNTs4-WeIsP2HbghbEFReiGAOGwJVloseCJHReJWZWkmN41UT_artAsmVW-uA298Att3TLo_Vb5Wedm_QPK-_GhOwafXPSq8d6Ntawv1rQ9AxfD-KcXSgKCq3sAp4KCTmgI2Kpihv-ErTGRJh4fq51So7HZMFl195NuTPmrOlL_MpaoQyCVs_7RrSP5aCyynfD3sthw';
-
                 $data = array(
                     "email" => $_POST['email'],
-                    "groups" => 'aKkWZl',
-                    "trigger_automation" => false
+                    "groups" => ['aKkWZl']
                 );
-                $options = array('http' => array(
-                    'method' => 'POST',
-                    'header' =>
-                        'Content-Type: application/json\r\n'.
-                        'Accept: application/json\r\n'.
-                        'Authorization: Bearer '.$token,
-                    'content' => http_build_query($data)
-                ));
-                $context = stream_context_create($options);
-                //$response = file_get_contents($url, false, $context);
+                $data_string = json_encode($data);
+
+                $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjc2OTc5ZjBmOTIyYWU3MmY5ODIyZjQ3MTMxMTc0ZWVhMWYzZGU1MmU4OTJkMTZlNTgzZGM2YWQ0OGM3ZTExZWJkMGY5Y2NmNzk3ODcyYzkiLCJpYXQiOjE3OTI0OTU4NjguNDYyNTg4LCJuYmYiOjE3OTI0OTU4NjguNDYyNTkxLCJleHAiOjQ5NDYwOTU4NjguNDU5NDMzLCJzdWIiOiIxMTE0ODI4Iiwic2NvcGVzIjpbXX0.dESPiuL2bKYgOm4ylrNzeS0Sr_pdbaCuBY1oymPLqUs7qDmDy0VIb1Xi4i84mNSLe8aFBdonZuJ5Czv5P72tktLoyckBOm6vn8I7x52bGagT4-vbJW47I7c-JJ9E-UtJpt4dikuSrlaFXF7SGtyKuy_RMQJ_Z65gAWz4-7aBngCTq_KAkUiFdskYdms4SxPZrFrMXToQFTST_wj-lKuoV0Oyis1jzXdokx0JVIUM8MrflwFoBt2vtpSXcBS8PNZz8zbi6oWygw3awHku2WSo1FY_13_t7mK98_aa58u44WIp_J4LFhUMdy5YQMJOF-nXHJl8gGmU4GQ4slD85N4OqUoYeQwagGbKzE7Kuv4BgtRVNeJUL5yZ1aGDXiui5En4rRQ8wE-9DTEMwt1dfJaghP4EpdkhDoaLzl1ODD3xVFo42A6lpr6GLqYuWyBrgUySjMVKEOoZEKHSfLooMAENjLrnTJk4VJSG_h9vXatMtWIrRN3r_CcgGQDFuH4d-Sc50pNKHK-vSkTldyUQ0bQN8HlHNOgXJVVmyuu1oNmURZfFzLe1hCpY-xDJL30UaLeMNmCOQVbnid3EcCrgm0yKhmb7SyG-mIlqNBSYke3HhyXSwg7AwYZ09bEMxcyLhqtWK6lw5jCRsInzhuXonr0YStJb3fMG9FMBXThqE57nc7A';
+
+                $curl = curl_init($url);
+                curl_setopt($curl, CURLOPT_HTTPHEADER, [
+                    'Authorization: Bearer '.$token,
+                    'Accept: application/json',
+                    'Content-Type: application/json'
+                ]);
+                curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+                curl_setopt($curl, CURLOPT_POST, true);
+                curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);
+                $result = curl_exec($curl);
+                $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+                curl_close($curl);
             }
             header('Location: ?msg=Signed+up');
         } else {

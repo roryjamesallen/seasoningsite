@@ -1,6 +1,6 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd ) # Get the path of this script
 
-ssh seasoning@seasoning.live '
+ssh -p 9284 seasoning@seasoning.live '
 cd tmp &&
 git pull &&
 cd .. &&

@@ -1,6 +1,7 @@
- <?php
+<?php
 $root = '../';
 include '../../lib.php';
+startMailingListForm($_POST);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +43,7 @@ include '../../lib.php';
 	    </div>
 	</div>
 	<?php renderPageBreak(2, 'secondary'); ?>
+	<?php renderMailingListForm($_GET); ?>
     </body>
 
     <?php renderFooter(); ?>

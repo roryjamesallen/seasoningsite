@@ -1,4 +1,6 @@
 <?php
+include '../lib.php';
+
 $sitemap = '<?xml version="1.0" encoding="UTF-8"?>
 <urlset
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -16,12 +18,14 @@ $sitemap .= '
   <priority>1.00</priority>
 </url>';
 
-$sitemap .= '
+foreach ($FOOTER_MENU as $site_page){
+    $sitemap .= '
 <url>
-  <loc>https://seasoning.live/contact</loc>
+  <loc>https://seasoning.live/'.strtolower($site_page).'</loc>
   <lastmod>'.$date.'</lastmod>
   <priority>0.5</priority>
 </url>';
+}
 
 $events_json = json_decode(file_get_contents('../src/events.json'), true);
 foreach ($events_json as $event_id => $event_info){

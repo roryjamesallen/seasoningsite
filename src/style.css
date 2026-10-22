@@ -287,8 +287,8 @@ hr {
 }
 .stock-notification-form h2 {
     font-size: 2rem;
-    margin-bottom: 0.75rem;
     text-align: center;
+    margin: -0.5rem;
 }
 
 .stock-notification-form .error {
@@ -324,6 +324,7 @@ hr {
 .checkbox-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: var(--input-width);
     margin: 0;
 }

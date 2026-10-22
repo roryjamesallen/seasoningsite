@@ -1,4 +1,4 @@
- <?php
+<?php
 $root = '../';
 include '../../lib.php';
 startMailingListForm($_POST);

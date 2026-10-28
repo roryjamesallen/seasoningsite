@@ -20,7 +20,7 @@ startMailingListForm($_POST);
 		<div class="footer-links big-links justify-left">
 		    <?php
 		    $pages = ['Instagram','Facebook','Mixcloud','Resident Advisor'];
-		    $links = ['Instagram','Facebook','Mixcloud','Resident Advisor'];
+		    $links = ['https://www.instagram.com/seas0ning_/','https://www.facebook.com/Seas0ning/','https://www.mixcloud.com/Seas0ning/','https://ra.co/promoters/119677'];
 		    renderMenu($pages, $links);
 		    ?>
 		</div>
